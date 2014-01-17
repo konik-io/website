@@ -1,0 +1,23 @@
+= Project Start
+Vadim Bauer
+2013-12-1
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: on our own
+:abbreviation: The beginning of the konik library project.
+:idprefix:
+
+
+The beginning of the konik library project.
+
+
+Goal of the library is to provide an easy way to create, read and validate ZUGFeRD invoices. 
+The vision is to provide the #1 library for every application reading and writing ZUGFeRD invoices.
+
+Moreover I hope that with the help of the konik library the ZUGFeRD standard will gain momentum especially in the Small and Medium-sized Enterprises. 
+The further development of this library will be influenced by the ZUGFeRD adoption and user input.
+
+
+image::/img/konik-logo-on-white-bg.png["Konik library logo",400,alt="Konik library logo",role="text-center"]
+
+

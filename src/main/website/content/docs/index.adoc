@@ -1,0 +1,17 @@
+= Konik Documentation
+Vadim Bauer
+V1.0, 2013-12-12:
+:idprefix:
+:toc2:
+:jbake-type: documentation
+:jbake-status: published
+
+[no-bullet]
+toc::[role="col-lg-12"]
+
+[.col-lg-12]
+include::docs/1.QuickStart.adoc[]
+
+[.col-lg-12]
+include::docs/2.DataModel.adoc[]
+

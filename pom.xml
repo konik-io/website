@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.konik</groupId>
+	<artifactId>website</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>konik.io website</name>
+	<description>The konik.io website source code.</description>
+	<url>http://konik.io</url>
+	
+	<organization>
+		<name>konik.io</name>
+		<url>konik.io</url>
+	</organization>
+	
+	<developers>
+		<developer>
+			<id>Vad1mo</id>
+			<name>Vadim Bauer</name>
+			<email>vb@konik.io</email>
+		</developer>
+	</developers>
+	
+	<scm>
+		<url>https://github.com/konik-io/website</url>
+		<connection>scm:git:git://github.com/konik-io/website.git</connection>
+		<developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
+	</scm>
+	
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/konik-io/website/issues</url>
+	</issueManagement>
+	
+	
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>org.jbake.launcher.Main</mainClass>
+					<arguments>
+						<argument>${basedir}/src/main/website</argument>
+						<argument>${project.build.directory}/${project.artifactId}-${project.version}</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<outputDirectory>target</outputDirectory>
+					<finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
+					<descriptors>
+						<descriptor>src/main/assembly/website.xml</descriptor>
+					</descriptors>
+					<attach>false</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jbake</groupId>
+			<artifactId>jbake-core</artifactId>
+			<version>2.2.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+</project>

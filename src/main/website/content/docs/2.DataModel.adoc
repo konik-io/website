@@ -1,0 +1,729 @@
+== Data Model
+
+The http://www.ferd-net.de/upload/ZuGFeRD-Infopaket.zip[ZUGFeRD data model specification] from the FeRD Organization. The package also contains sample invoices. 
+
+=== Konik Data Model
+The following tree can be considered as complete although it does not contain all leaf nodes. For example leaf nodes with only a 
+value property are not displayed. Also some nodes with two properties are omitted where the type is clear by the node name itself 
+like +UniversalCommunication.java+. 
+
+Nodes with plural names are considered to be collections.
+[source,no-highlight]
+----
+invoice
+|  context
+|  |  test
+|  |  profile
+|  |  |  id
+|  |  |  schemeId
+|  header
+|  |  id
+|  |  name
+|  |  typeCode
+|  |  issued
+|  |  notes
+|  |  |  content
+|  |  |  subjectCode
+|  tradeTransactions
+|  |  agreements
+|  |  |  buyerReference
+|  |  |  seller
+|  |  |  |  id
+|  |  |  |  globalId
+|  |  |  |  name
+|  |  |  |  contact
+|  |  |  |  |  name
+|  |  |  |  |  department
+|  |  |  |  |  telephone
+|  |  |  |  |  fax
+|  |  |  |  |  email
+|  |  |  |  address
+|  |  |  |  |  postcode
+|  |  |  |  |  lineOne
+|  |  |  |  |  lineTwo
+|  |  |  |  |  city
+|  |  |  |  |  countryCode
+|  |  |  |  taxRegistration
+|  |  |  buyer
+|  |  |  |  id
+|  |  |  |  globalId
+|  |  |  |  name
+|  |  |  |  contact
+|  |  |  |  |  name
+|  |  |  |  |  department
+|  |  |  |  |  telephone
+|  |  |  |  |  fax
+|  |  |  |  |  email
+|  |  |  |  address
+|  |  |  |  |  postcode
+|  |  |  |  |  lineOne
+|  |  |  |  |  lineTwo
+|  |  |  |  |  city
+|  |  |  |  |  countryCode
+|  |  |  |  taxRegistration
+|  |  |  buyerOrder
+|  |  |  |  issued
+|  |  |  |  id
+|  |  |  contract
+|  |  |  |  issued
+|  |  |  |  id
+|  |  |  grossPrice
+|  |  |  |  chargeAmount
+|  |  |  |  basisQuantity
+|  |  |  |  allowanceCharge
+|  |  |  |  |  chargeIndicator
+|  |  |  |  |  basisAmount
+|  |  |  |  |  actualAmount
+|  |  |  |  |  reason
+|  |  |  |  |  categoryTradeTax
+|  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  typeCode
+|  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  applicablePercentage
+|  |  |  netPrice
+|  |  |  |  chargeAmount
+|  |  |  |  basisQuantity
+|  |  |  |  allowanceCharge
+|  |  |  |  |  chargeIndicator
+|  |  |  |  |  basisAmount
+|  |  |  |  |  actualAmount
+|  |  |  |  |  reason
+|  |  |  |  |  categoryTradeTax
+|  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  typeCode
+|  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  applicablePercentage
+|  |  |  customerOrder
+|  |  |  |  issued
+|  |  |  |  id
+|  |  delivery
+|  |  |  billedQuantity
+|  |  |  event
+|  |  |  note
+|  |  |  |  issued
+|  |  |  |  id
+|  |  tradeSettlement
+|  |  |  paymentReference
+|  |  |  invoiceCurrency
+|  |  |  invoicee
+|  |  |  |  id
+|  |  |  |  globalId
+|  |  |  |  name
+|  |  |  |  contact
+|  |  |  |  |  name
+|  |  |  |  |  department
+|  |  |  |  |  telephone
+|  |  |  |  |  fax
+|  |  |  |  |  email
+|  |  |  |  address
+|  |  |  |  |  postcode
+|  |  |  |  |  lineOne
+|  |  |  |  |  lineTwo
+|  |  |  |  |  city
+|  |  |  |  |  countryCode
+|  |  |  |  taxRegistration
+|  |  |  paymentMeans
+|  |  |  |  code
+|  |  |  |  information
+|  |  |  |  payerAccount
+|  |  |  |  |  iban
+|  |  |  |  |  proprietaryId
+|  |  |  |  payeeAccount
+|  |  |  |  |  iban
+|  |  |  |  |  proprietaryId
+|  |  |  |  payerInstitution
+|  |  |  |  |  bic
+|  |  |  |  |  germanBankleitzahl
+|  |  |  |  |  name
+|  |  |  |  payeeInstitution
+|  |  |  |  |  bic
+|  |  |  |  |  germanBankleitzahl
+|  |  |  |  |  name
+|  |  |  tradeTax
+|  |  |  |  calculatedAmount
+|  |  |  |  typeCode
+|  |  |  |  exemptionReason
+|  |  |  |  basisAmount
+|  |  |  |  categoryCode
+|  |  |  |  applicablePercentage
+|  |  |  billingPeriod
+|  |  |  |  startDateTime
+|  |  |  |  endDateTime
+|  |  |  allowanceCharge
+|  |  |  |  chargeIndicator
+|  |  |  |  basisAmount
+|  |  |  |  actualAmount
+|  |  |  |  reason
+|  |  |  |  categoryTradeTax
+|  |  |  |  |  calculatedAmount
+|  |  |  |  |  typeCode
+|  |  |  |  |  exemptionReason
+|  |  |  |  |  basisAmount
+|  |  |  |  |  categoryCode
+|  |  |  |  |  applicablePercentage
+|  |  |  serviceCharge
+|  |  |  |  description
+|  |  |  |  amount
+|  |  |  |  tradeTax
+|  |  |  |  |  calculatedAmount
+|  |  |  |  |  typeCode
+|  |  |  |  |  exemptionReason
+|  |  |  |  |  basisAmount
+|  |  |  |  |  categoryCode
+|  |  |  |  |  applicablePercentage
+|  |  |  paymentTerms
+|  |  |  |  description
+|  |  |  |  due
+|  |  |  monetarySummation
+|  |  |  |  netTotal
+|  |  |  |  chargeTotal
+|  |  |  |  allowanceTotal
+|  |  |  |  taxBasisTotal
+|  |  |  |  taxTotal
+|  |  |  |  grandTotal
+|  |  |  |  totalPrepaid
+|  |  |  |  duePayable
+|  |  |  accountingAccount
+|  |  items
+|  |  |  position
+|  |  |  |  itemNumber
+|  |  |  |  notes
+|  |  |  |  |  content
+|  |  |  |  |  subjectCode
+|  |  |  agreement
+|  |  |  |  buyerReference
+|  |  |  |  seller
+|  |  |  |  |  id
+|  |  |  |  |  globalId
+|  |  |  |  |  name
+|  |  |  |  |  contact
+|  |  |  |  |  |  name
+|  |  |  |  |  |  department
+|  |  |  |  |  |  telephone
+|  |  |  |  |  |  fax
+|  |  |  |  |  |  email
+|  |  |  |  |  address
+|  |  |  |  |  |  postcode
+|  |  |  |  |  |  lineOne
+|  |  |  |  |  |  lineTwo
+|  |  |  |  |  |  city
+|  |  |  |  |  |  countryCode
+|  |  |  |  |  taxRegistration
+|  |  |  |  buyer
+|  |  |  |  |  id
+|  |  |  |  |  globalId
+|  |  |  |  |  name
+|  |  |  |  |  contact
+|  |  |  |  |  |  name
+|  |  |  |  |  |  department
+|  |  |  |  |  |  telephone
+|  |  |  |  |  |  fax
+|  |  |  |  |  |  email
+|  |  |  |  |  address
+|  |  |  |  |  |  postcode
+|  |  |  |  |  |  lineOne
+|  |  |  |  |  |  lineTwo
+|  |  |  |  |  |  city
+|  |  |  |  |  |  countryCode
+|  |  |  |  |  taxRegistration
+|  |  |  |  buyerOrder
+|  |  |  |  |  issued
+|  |  |  |  |  id
+|  |  |  |  contract
+|  |  |  |  |  issued
+|  |  |  |  |  id
+|  |  |  |  grossPrice
+|  |  |  |  |  chargeAmount
+|  |  |  |  |  basisQuantity
+|  |  |  |  |  allowanceCharge
+|  |  |  |  |  |  chargeIndicator
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  actualAmount
+|  |  |  |  |  |  reason
+|  |  |  |  |  |  categoryTradeTax
+|  |  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  |  typeCode
+|  |  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  |  applicablePercentage
+|  |  |  |  netPrice
+|  |  |  |  |  chargeAmount
+|  |  |  |  |  basisQuantity
+|  |  |  |  |  allowanceCharge
+|  |  |  |  |  |  chargeIndicator
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  actualAmount
+|  |  |  |  |  |  reason
+|  |  |  |  |  |  categoryTradeTax
+|  |  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  |  typeCode
+|  |  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  |  applicablePercentage
+|  |  |  |  customerOrder
+|  |  |  |  |  issued
+|  |  |  |  |  id
+|  |  |  delivery
+|  |  |  |  billedQuantity
+|  |  |  |  event
+|  |  |  |  note
+|  |  |  |  |  issued
+|  |  |  |  |  id
+|  |  |  settlement
+|  |  |  |  paymentReference
+|  |  |  |  invoiceCurrency
+|  |  |  |  invoicee
+|  |  |  |  |  id
+|  |  |  |  |  globalId
+|  |  |  |  |  name
+|  |  |  |  |  contact
+|  |  |  |  |  |  name
+|  |  |  |  |  |  department
+|  |  |  |  |  |  telephone
+|  |  |  |  |  |  fax
+|  |  |  |  |  |  email
+|  |  |  |  |  address
+|  |  |  |  |  |  postcode
+|  |  |  |  |  |  lineOne
+|  |  |  |  |  |  lineTwo
+|  |  |  |  |  |  city
+|  |  |  |  |  |  countryCode
+|  |  |  |  |  taxRegistration
+|  |  |  |  paymentMeans
+|  |  |  |  |  code
+|  |  |  |  |  information
+|  |  |  |  |  payerAccount
+|  |  |  |  |  |  iban
+|  |  |  |  |  |  proprietaryId
+|  |  |  |  |  payeeAccount
+|  |  |  |  |  |  iban
+|  |  |  |  |  |  proprietaryId
+|  |  |  |  |  payerInstitution
+|  |  |  |  |  |  bic
+|  |  |  |  |  |  germanBankleitzahl
+|  |  |  |  |  |  name
+|  |  |  |  |  payeeInstitution
+|  |  |  |  |  |  bic
+|  |  |  |  |  |  germanBankleitzahl
+|  |  |  |  |  |  name
+|  |  |  |  tradeTax
+|  |  |  |  |  calculatedAmount
+|  |  |  |  |  typeCode
+|  |  |  |  |  exemptionReason
+|  |  |  |  |  basisAmount
+|  |  |  |  |  categoryCode
+|  |  |  |  |  applicablePercentage
+|  |  |  |  billingPeriod
+|  |  |  |  |  startDateTime
+|  |  |  |  |  endDateTime
+|  |  |  |  allowanceCharge
+|  |  |  |  |  chargeIndicator
+|  |  |  |  |  basisAmount
+|  |  |  |  |  actualAmount
+|  |  |  |  |  reason
+|  |  |  |  |  categoryTradeTax
+|  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  typeCode
+|  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  applicablePercentage
+|  |  |  |  serviceCharge
+|  |  |  |  |  description
+|  |  |  |  |  amount
+|  |  |  |  |  tradeTax
+|  |  |  |  |  |  calculatedAmount
+|  |  |  |  |  |  typeCode
+|  |  |  |  |  |  exemptionReason
+|  |  |  |  |  |  basisAmount
+|  |  |  |  |  |  categoryCode
+|  |  |  |  |  |  applicablePercentage
+|  |  |  |  paymentTerms
+|  |  |  |  |  description
+|  |  |  |  |  due
+|  |  |  |  monetarySummation
+|  |  |  |  |  netTotal
+|  |  |  |  |  chargeTotal
+|  |  |  |  |  allowanceTotal
+|  |  |  |  |  taxBasisTotal
+|  |  |  |  |  taxTotal
+|  |  |  |  |  grandTotal
+|  |  |  |  |  totalPrepaid
+|  |  |  |  |  duePayable
+|  |  |  |  accountingAccount
+|  |  |  product
+|  |  |  |  globalId
+|  |  |  |  sellerAssignedId
+|  |  |  |  buyerAssignedId
+|  |  |  |  name
+|  |  |  |  description
+|  |  |  |  origin
+----
+
+
+////
+only up to level 5 supported then it doesn't work properly
+=== Konik Tree Model
+
+[.tree.unstyled]
+Invoice::
+* context
+** test
+** profile
+*** id
+*** schemeId
+* header
+** id
+** name
+** typeCode
+** issued
+** notes
+*** content
+*** subjectCode
+* tradeTransactions
+** agreements
+*** buyerReference
+*** seller
+**** id
+**** globalId
+**** name
+**** contact
+***** name
+***** department
+***** telephone
+***** fax
+***** email
+**** address
+***** postcode
+***** lineOne
+***** lineTwo
+***** city
+***** countryCode
+**** taxRegistration
+*** buyer
+**** id
+**** globalId
+**** name
+**** contact
+***** name
+***** department
+***** telephone
+***** fax
+***** email
+**** address
+***** postcode
+***** lineOne
+***** lineTwo
+***** city
+***** countryCode
+**** taxRegistration
+*** buyerOrder
+**** issued
+**** id
+*** contract
+**** issued
+**** id
+*** grossPrice
+**** chargeAmount
+**** basisQuantity
+**** allowanceCharge
+***** chargeIndicator
+***** basisAmount
+***** actualAmount
+***** reason
+***** categoryTradeTax
+****** calculatedAmount
+****** typeCode
+****** exemptionReason
+****** basisAmount
+****** categoryCode
+****** applicablePercentage
+*** netPrice
+**** chargeAmount
+**** basisQuantity
+**** allowanceCharge
+***** chargeIndicator
+***** basisAmount
+***** actualAmount
+***** reason
+***** categoryTradeTax
+****** calculatedAmount
+****** typeCode
+****** exemptionReason
+****** basisAmount
+****** categoryCode
+****** applicablePercentage
+*** customerOrder
+**** issued
+**** id
+** delivery
+*** billedQuantity
+*** event
+*** note
+**** issued
+**** id
+** tradeSettlement
+*** paymentReference
+*** invoiceCurrency
+*** invoicee
+**** id
+**** globalId
+**** name
+**** contact
+***** name
+***** department
+***** telephone
+***** fax
+***** email
+**** address
+***** postcode
+***** lineOne
+***** lineTwo
+***** city
+***** countryCode
+**** taxRegistration
+*** paymentMeans
+**** code
+**** information
+**** payerAccount
+***** iban
+***** proprietaryId
+**** payeeAccount
+***** iban
+***** proprietaryId
+**** payerInstitution
+***** bic
+***** germanBankleitzahl
+***** name
+**** payeeInstitution
+***** bic
+***** germanBankleitzahl
+***** name
+*** tradeTax
+**** calculatedAmount
+**** typeCode
+**** exemptionReason
+**** basisAmount
+**** categoryCode
+**** applicablePercentage
+*** billingPeriod
+**** startDateTime
+**** endDateTime
+*** allowanceCharge
+**** chargeIndicator
+**** basisAmount
+**** actualAmount
+**** reason
+**** categoryTradeTax
+***** calculatedAmount
+***** typeCode
+***** exemptionReason
+***** basisAmount
+***** categoryCode
+***** applicablePercentage
+*** serviceCharge
+**** description
+**** amount
+**** tradeTax
+***** calculatedAmount
+***** typeCode
+***** exemptionReason
+***** basisAmount
+***** categoryCode
+***** applicablePercentage
+*** paymentTerms
+**** description
+**** due
+*** monetarySummation
+**** netTotal
+**** chargeTotal
+**** allowanceTotal
+**** taxBasisTotal
+**** taxTotal
+**** grandTotal
+**** totalPrepaid
+**** duePayable
+*** accountingAccount
+** items
+*** position
+**** itemNumber
+**** notes
+***** content
+***** subjectCode
+*** agreement
+**** buyerReference
+**** seller
+***** id
+***** globalId
+***** name
+***** contact
+****** name
+****** department
+****** telephone
+****** fax
+****** email
+***** address
+****** postcode
+****** lineOne
+****** lineTwo
+****** city
+****** countryCode
+***** taxRegistration
+**** buyer
+***** id
+***** globalId
+***** name
+***** contact
+****** name
+****** department
+****** telephone
+****** fax
+****** email
+***** address
+****** postcode
+****** lineOne
+****** lineTwo
+****** city
+****** countryCode
+***** taxRegistration
+**** buyerOrder
+***** issued
+***** id
+**** contract
+***** issued
+***** id
+**** grossPrice
+***** chargeAmount
+***** basisQuantity
+***** allowanceCharge
+****** chargeIndicator
+****** basisAmount
+****** actualAmount
+****** reason
+****** categoryTradeTax
+******* calculatedAmount
+******* typeCode
+******* exemptionReason
+******* basisAmount
+******* categoryCode
+******* applicablePercentage
+**** netPrice
+***** chargeAmount
+***** basisQuantity
+***** allowanceCharge
+****** chargeIndicator
+****** basisAmount
+****** actualAmount
+****** reason
+****** categoryTradeTax
+******* calculatedAmount
+******* typeCode
+******* exemptionReason
+******* basisAmount
+******* categoryCode
+******* applicablePercentage
+**** customerOrder
+***** issued
+***** id
+*** delivery
+**** billedQuantity
+**** event
+**** note
+***** issued
+***** id
+*** settlement
+**** paymentReference
+**** invoiceCurrency
+**** invoicee
+***** id
+***** globalId
+***** name
+***** contact
+****** name
+****** department
+****** telephone
+****** fax
+****** email
+***** address
+****** postcode
+****** lineOne
+****** lineTwo
+****** city
+****** countryCode
+***** taxRegistration
+**** paymentMeans
+***** code
+***** information
+***** payerAccount
+****** iban
+****** proprietaryId
+***** payeeAccount
+****** iban
+****** proprietaryId
+***** payerInstitution
+****** bic
+****** germanBankleitzahl
+****** name
+***** payeeInstitution
+****** bic
+****** germanBankleitzahl
+****** name
+**** tradeTax
+***** calculatedAmount
+***** typeCode
+***** exemptionReason
+***** basisAmount
+***** categoryCode
+***** applicablePercentage
+**** billingPeriod
+***** startDateTime
+***** endDateTime
+**** allowanceCharge
+***** chargeIndicator
+***** basisAmount
+***** actualAmount
+***** reason
+***** categoryTradeTax
+****** calculatedAmount
+****** typeCode
+****** exemptionReason
+****** basisAmount
+****** categoryCode
+****** applicablePercentage
+**** serviceCharge
+***** description
+***** amount
+***** tradeTax
+****** calculatedAmount
+****** typeCode
+****** exemptionReason
+****** basisAmount
+****** categoryCode
+****** applicablePercentage
+**** paymentTerms
+***** description
+***** due
+**** monetarySummation
+***** netTotal
+***** chargeTotal
+***** allowanceTotal
+***** taxBasisTotal
+***** taxTotal
+***** grandTotal
+***** totalPrepaid
+***** duePayable
+**** accountingAccount
+*** product
+**** globalId
+**** sellerAssignedId
+**** buyerAssignedId
+**** name
+**** description
+**** origin
+////

@@ -1,0 +1,38 @@
+title=Development
+date=2013-11-14
+type=page
+status=published
+~~~~~~
+= Development
+Vadim Bauer
+2013-11-14
+:idprefix:
+
+== Source Code
+The konik.io source code is hosted on bitbucket. 
+
+https://bitbucket.org/Vad1mo/konik.io/
+
+== First Steps
+
+Before you start make sure that http://maven.apache.org[Maven] and http://git-scm.com/[Git] are installed and working on your computer.
+
+Check out the source code to a directory of your choice. We use +konik.io+ as a default example. 
+[source,bash] 
+	> hg clone https://bitbucket.org/Vad1mo/konik.io/ konik.io
+
+Next Step will build the konik library and run the tests.
+
+[source,bash]
+----
+	> cd konik.io
+	> mvn install
+----
+
+Now you should take you favorite IDE and import the project.
+
+=== Get to know the data model
+
+Make yourself familiar with the ZUGFeRD Standard. Read first the link:/docs/index.html#data_model[konik documentation] and download the the http://www.ferd-net.de/front_content.php?idart=865[ZUGFeRD info package] for reference. 
+
+
