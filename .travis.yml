@@ -1,13 +1,13 @@
 language: java
 
 jdk:
-  - openjdk6
+  - oraclejdk7
 
 install: ./build_jbake_snapshot.sh
 
 #before_script: #bump verison
 
-script: mvn -q clean package site
+script: mvn clean package site
 
 #after_success: #new snapshot version
 
