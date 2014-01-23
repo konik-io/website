@@ -1,6 +1,6 @@
 language: java
 
-install: build_jbake_snapshot.sh
+install: ./build_jbake_snapshot.sh
 
 #before_script: #bump verison
 
