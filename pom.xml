@@ -10,12 +10,12 @@
 	<name>konik.io website</name>
 	<description>The konik.io website source code.</description>
 	<url>http://konik.io</url>
-	
+
 	<organization>
 		<name>konik.io</name>
 		<url>konik.io</url>
 	</organization>
-	
+
 	<developers>
 		<developer>
 			<id>Vad1mo</id>
@@ -23,20 +23,18 @@
 			<email>vb@konik.io</email>
 		</developer>
 	</developers>
-	
+
 	<scm>
 		<url>https://github.com/konik-io/website</url>
 		<connection>scm:git:git://github.com/konik-io/website.git</connection>
 		<developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
 	</scm>
-	
+
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/konik-io/website/issues</url>
 	</issueManagement>
-	
-	
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -63,27 +61,49 @@
 					</arguments>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4</version>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.9</version>
 				<configuration>
-					<outputDirectory>target</outputDirectory>
-					<finalName>${project.groupId}-${project.artifactId}-${project.version}</finalName>
-					<descriptors>
-						<descriptor>src/main/assembly/website.xml</descriptor>
-					</descriptors>
-					<attach>false</attach>
+					<message>Deploy baked website ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}</outputDirectory>
+					<excludes>
+						<exclude>.DS_Store</exclude>
+					</excludes>
+					<oauth2Token>${env.GH_TOKEN}</oauth2Token>
 				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
 						<goals>
-							<goal>single</goal>
+							<goal>site</goal>
 						</goals>
+						<phase>site</phase>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -95,5 +115,5 @@
 			<version>2.2.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	
+
 </project>

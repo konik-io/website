@@ -4,7 +4,7 @@
 
 The following code from the test case +MinimalInvoice.java+ represents a valid invoice data according to the ZUGFeRD data model. 
 
-Let us step thru the code and take a look at the interesting parts.
+Let us step through the code and take a look at the interesting parts.
 [source,java]
 ----
       Invoice invoice = new Invoice(BASIC);# <1>
