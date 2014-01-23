@@ -4,9 +4,13 @@ install: ./build_jbake_snapshot.sh
 
 #before_script: #bump verison
 
-script: mvn site
+script: mvn -q clean package site
 
 #after_success: #new snapshot version
+
+cache:
+  directories:
+  - $HOME/.m2
 
 env:
   global:
