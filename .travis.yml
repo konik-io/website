@@ -1,5 +1,8 @@
 language: java
 
+jdk:
+  - oraclejdk7
+
 install: ./build_jbake_snapshot.sh
 
 #before_script: #bump verison
