@@ -7,5 +7,4 @@ The generated website which the visitor sees is located in the [gh-pages](https:
 You can see the result in action on [konik.io](http://konik.io)
 
 
-
-Project [![build status](https://travis-ci.org/konik-io/website.png?branch=master)](https://travis-ci.org/konik-io/website)
+[![Build Status](https://travis-ci.org/konik-io/website.png?branch=master)](https://travis-ci.org/konik-io/website)

@@ -7,15 +7,17 @@ install: ./build_jbake_snapshot.sh
 
 #before_script: #bump verison
 
-script: mvn clean package site
+script:
+  - mvn -q clean package
+  - mvn site
 
 #after_success: #new snapshot version
 
 after_failure: cat hs_err*.log
 
-cache:
-  directories:
-  - $HOME/.m2
+#cache:
+#  directories:
+#  - $HOME/.m2
 
 env:
   global:
