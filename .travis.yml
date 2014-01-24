@@ -3,7 +3,11 @@ language: java
 jdk:
   - oraclejdk7
 
-install: ./build_jbake_snapshot.sh
+install: 
+	- echo -e "building jbake snapshot from repository\n"
+  	- git clone https://github.com/Vad1mo/JBake.git jbake
+  	- mvn -q -f ./jbake/pom.xml install -DskipTests
+  	- rm -rf jbake
 
 #before_script: #bump verison
 
@@ -13,11 +17,8 @@ script:
 
 #after_success: #new snapshot version
 
-after_failure: cat hs_err*.log
-
-#cache:
-#  directories:
-#  - $HOME/.m2
+after_failure: 
+	- 
 
 env:
   global:

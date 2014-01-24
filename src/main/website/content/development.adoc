@@ -9,9 +9,9 @@ Vadim Bauer
 :idprefix:
 
 == Source Code
-The konik.io source code is hosted on bitbucket. 
+The konik.io source code is hosted on github. 
 
-https://bitbucket.org/Vad1mo/konik.io/
+https://github.com/konik-io/
 
 == First Steps
 
@@ -19,13 +19,13 @@ Before you start make sure that http://maven.apache.org[Maven] and http://git-sc
 
 Check out the source code to a directory of your choice. We use +konik.io+ as a default example. 
 [source,bash] 
-	> hg clone https://bitbucket.org/Vad1mo/konik.io/ konik.io
+	> git clone https://github.com/konik-io/barn barn
 
 Next Step will build the konik library and run the tests.
 
 [source,bash]
 ----
-	> cd konik.io
+	> cd barn
 	> mvn install
 ----
 
