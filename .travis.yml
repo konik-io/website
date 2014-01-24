@@ -4,21 +4,18 @@ jdk:
   - oraclejdk7
 
 install: 
-	- echo -e "building jbake snapshot from repository\n"
-  	- git clone https://github.com/Vad1mo/JBake.git jbake
-  	- mvn -q -f ./jbake/pom.xml install -DskipTests
-  	- rm -rf jbake
+    - echo -e "building jbake snapshot from repository\n"
+    - git clone https://github.com/Vad1mo/JBake.git jbake
+    - mvn -q -f ./jbake/pom.xml install -DskipTests
+    - rm -rf jbake
 
-#before_script: #bump verison
+#before_script: mvn versions:set -DnewVersion=1.0.1
 
 script:
   - mvn -q clean package
   - mvn site
 
-#after_success: #new snapshot version
-
-after_failure: 
-	- 
+#after_success: mvn versions:set -DnewVersion=1.0.2-SNAPSHOT
 
 env:
   global:
