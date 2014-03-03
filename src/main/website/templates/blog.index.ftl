@@ -16,9 +16,8 @@
 		          	<h2>${post.title}</h2>
 		          	<p><i class="fa fa-clock-o"></i> Posted on ${post.date?string("dd MMMM yyyy")}</p>
 		          	<#if (post.abbreviation)??> <#-- if we have defined an abbreviation-->
-		          		<p>${post.abbreviation}...</p>
+		          		${post.body}
 					</#if>  
-		          		<a class="btn btn-primary" href="${post.uri}">Read More <i class="fa fa-angle-right"></i></a>
 		          		<hr>
 				</#if>
 		  	</#list>
