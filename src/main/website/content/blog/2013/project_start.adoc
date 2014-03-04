@@ -11,10 +11,10 @@ Vadim Bauer
 The beginning of the konik library project.
 
 
-Goal of the library is to provide an easy way to create, read and validate ZUGFeRD invoices. 
+The goal of the library is to provide an easy way to create, read and validate ZUGFeRD invoices. 
 The vision is to provide the #1 library for every application reading and writing ZUGFeRD invoices.
 
-Moreover I hope that with the help of the konik library the ZUGFeRD standard will gain momentum especially in the Small and Medium-sized Enterprises. 
+Moreover I hope that with the Konik library the ZUGFeRD standard will gain momentum especially in the Small and Medium-sized Enterprises. 
 The further development of this library will be influenced by the ZUGFeRD adoption and user input.
 
 
