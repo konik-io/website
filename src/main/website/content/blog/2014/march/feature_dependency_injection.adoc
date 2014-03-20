@@ -17,8 +17,8 @@ The Singleton classes +InvoiceTransformer+ in the Konik library, +ITextPdfInvoic
 All common Dependency Injection Frameworks and JEE6 compatible Application Servers support JSR-330 Dependency Injection. This means if your application is based on Spring, Guice, JEE6, Apache OpenWebBeans or JBoss Weld you are able to inject the Konik classes mentioned above into your application. The only requirement is that the JSR-330 API +javax.inject.*+ is on your classpath. 
 
 === Konik library Spring example
-Only Spring above Version 3 supports JSR-330. Because the JSR-330 dependency is optional in spring you need to add it yourself.
-In you project +pom.xml+ add the following dependecy. 
+Only Spring above Version 3 supports JSR-330. Because the dependency to JSR-330 API is declared optional in Spring you need to add it yourself.
+For example in your project +pom.xml+ file add the following dependency. 
 
 [source,xml]
 ----
@@ -28,8 +28,9 @@ In you project +pom.xml+ add the following dependecy.
 		<version>1</version>
 	</dependency>
 ----
+The next step is to tell Spring to look for additional dependencies. The step is only needed if you restricted Spring component scanning to certain packages otherwise you are now ready to go.
 
-When using Spring with a XML configuration append the Konik library package name +io.konik+ to the component scanning directive.
+For Spring with a XML configuration append the Konik library package name +io.konik+ to the component scanning directive.
 [source,xml]
 ----
 	<context:component-scan base-package="com.myCompany, io.konik" /> 
@@ -47,7 +48,7 @@ For Java based Spring configuration append the +io.konik+ package in the +@Compo
 ----
 
 === Other Dependency Injection Frameworks
-OpenWebBeans has also JSR-330 API as an optional dependency similar to Spring. But for OpenWebBeans a slightly different JSR-330 dependency coordinates are used.
+OpenWebBeans has also JSR-330 API as an optional dependency similar to Spring. But for OpenWebBeans a recommended to use a different JSR-330 dependency coordinates.
 
 [source,xml]
 ----
@@ -58,8 +59,7 @@ OpenWebBeans has also JSR-330 API as an optional dependency similar to Spring. B
 	</dependency>
 ----
 
-Using the Konik library with Goolge Guice does not need any special setup as Guice already bundled with JSR-330. This is also true for JEE6 Applications Servers. If in doubt you should look up the reference manual of your Dependency Injection Framework which normally deals in a greater detail with this topic.
-
+Using the Konik library with Goolge Guice does not need any special setup as Google Guice is already bundled with JSR-330. This is also true for JEE6 Applications Servers. If in doubt you should look up the reference manual of your Dependency Injection Framework which normally deals in a greater detail with this topic.
 
 
 
