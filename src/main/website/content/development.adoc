@@ -21,7 +21,7 @@ Check out the source code to a directory of your choice. We use +konik.io+ as a 
 [source,bash] 
 	> git clone https://github.com/konik-io/barn barn
 
-Next Step will build the konik library and run the tests.
+Next Step will build the Konik library and run the tests.
 
 [source,bash]
 ----

@@ -1,0 +1,43 @@
+title=Invoice Validation Service 
+date=2014-03-10 
+type=page
+status=published 
+~~~~~~
+
+
+
+<div class="container">
+   <div class="row well">
+
+      <div class="col-lg-6 col-md-6">
+         <h4>ZUGFeRD Online Validation</h4>
+         <p>This online service allows you to validate your PDF or XML file with the konik library.</p>
+      </div>
+
+      <div class="col-lg-6 col-md-6">
+         <form id = "validate_form" method="post" action="//localhost:8080/validate" enctype="multipart/form-data" onsubmit="">
+            <div class="form-group">
+               <label for="upload_file">PDF or XML</label> 
+               <input type="file" name="file" id="upload_file">
+               <p id="upload_file_help_block"class="help-block">Create validation report</p>
+<!--                <p class="bg-danger"></p> -->
+            </div>
+            <button type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
+         </form>
+      </div>
+   </div>
+</div>
+<script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var options = {
+			dataType : 	'json',
+			success : 	successResponse
+		};
+		$('#validate_form').ajaxForm(options);
+	});
+	function successResponse(data) {
+		console.log("repsonse received");
+		console.log(data.message);
+	}
+</script>

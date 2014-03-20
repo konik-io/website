@@ -1,25 +1,23 @@
-= Konik 0.1.0 and iText-Carriage released to Maven Central
+= Konik library and iText-Carriage version 0.1.0 released to Maven Central
 Vadim Bauer
 2014-03-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release, Konik 0.1.0, Changelog,
-:abbreviation: Today the Konik library and the Konik iText Carriage were released to the Maven Central repository.  All libraries have the version 0.1.0
+:jbake-tags: Release, Konik 0.1.0, Changelog
 :idprefix:
 :linkattrs:
 
 
-Today the Konik library and the Konik iText Carriage were released to the Maven Central repository. 
-Both libraries have the version *0.1.0*.
+Today the Konik library and the Konik iText Carriage were released to the Maven Central Repository. 
+Both libraries carry the version *0.1.0*.
  
 === Release Notes
 
 Since this is the first release everything has changed compared to the previous version. These Release Notes are intended to highlight what already works what does not work and what you can expect for the next release.
 
-The +Konik+ ZUGFeRD model is completely implemented. Reading and writing XML according to the standard should be fine. 
+The ZUGFeRD model is completely supported by Konik. Reading and writing XML content according to the ZUGFeRD specification is working. 
 
-On the Konik to do list there are various model validations which are still not implemented. 
-
+On the Konik to do list there are various model validations which are still not implemented.
 
 +iText-Carriage+ allows to attach and extract ZUGFeRD Model Data from a PDF. 
 The functionality is still limited as iText-Carriage currently strictly expects the incoming PDFs to be *PDF/3-B* compliant. 

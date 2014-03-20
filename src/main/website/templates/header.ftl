@@ -13,15 +13,17 @@
     <title>Konik is a open source ZUGFeRD invoicing in and output library for Java.</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="//yandex.st/highlightjs/7.5/styles/default.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/obsidian.css" rel="stylesheet" type="text/css">
-    <link href="/css/mb.css" rel="stylesheet" type="text/css">
-	<link href="/css/konik.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="//yandex.st/highlightjs/7.5/styles/default.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/obsidian.css" type="text/css">
+    <link rel="stylesheet" href="/css/mb.css"  type="text/css">
+	<link rel="stylesheet" href="/css/konik.css" type="text/css">
     
     <!-- icon -->
     <link href="/favicon.ico"  rel="konik.io icon"  type="image/x-icon" >
+    
+    <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
     
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

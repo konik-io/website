@@ -4,7 +4,6 @@ Vadim Bauer
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: on our own
-:abbreviation: The beginning of the konik library project.
 :idprefix:
 
 
