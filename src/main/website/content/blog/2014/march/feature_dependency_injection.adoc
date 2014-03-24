@@ -1,6 +1,6 @@
-= JSR 330 Dependency Injection Integration into the Konik libraries
+= Dependency Injection with the Konik library
 Vadim Bauer
-2014-20-03
+2014-03-20
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: Feature, Development, Dependency Injection,
@@ -8,55 +8,54 @@ Vadim Bauer
 :linkattrs:
 
 
-Starting with the Version 0.2.0 the Konik library and iText-Carriage support https://jcp.org/en/jsr/detail?id=330[JSR 330^] dependency injection.
+Starting with version 0.2.0 the Konik library and iText-Carriage are supporting https://jcp.org/en/jsr/detail?id=330[JSR 330^] dependency injection.
 
 == Injectable Konik classes
-The Singleton classes +InvoiceTransformer+ in the Konik library, +ITextPdfInvoiceExtractor+ and +ITextPdfInvoiceAppender+ in iText-Carriage module can be injected into your application. The only requirement is that your Dependency Injection Framework supports JSR-330. Even though DI frameworks are widely used the Konik library and its modules does not enforce you to use a DI framework. You can still instantiate the classes above with the +new+ Operator.
+The Singleton classes +InvoiceTransformer+ in the Konik library, +ITextPdfInvoiceExtractor+ and +ITextPdfInvoiceAppender+ in iText-Carriage module can now be injected into your application. The only requirement is that your Dependency Injection Framework supports JSR-330. Even though DI frameworks are widely used the Konik library and its modules does not enforce you to use a DI framework framework at all. You can still instantiate the above classes with the +new+ Operator.
 
 === Which Dependency Injection Frameworks are supported?
-All common Dependency Injection Frameworks and JEE6 compatible Application Servers support JSR-330 Dependency Injection. This means if your application is based on Spring, Guice, JEE6, Apache OpenWebBeans or JBoss Weld you are able to inject the Konik classes mentioned above into your application. The only requirement is that the JSR-330 API +javax.inject.*+ is on your classpath. 
+All common Dependency Injection Frameworks and JEE6 compatible Application Servers support JSR-330 Dependency Injection. This means if your application is based on Spring, Guice, JEE6, Apache OpenWebBeans or JBoss Weld you are able to inject the Konik classes mentioned above into your application. The only requirement is that the JSR-330 API +javax.inject.*+ is on your classpath, which is not always true like the following examples explain. 
 
-=== Konik library Spring example
-Only Spring above Version 3 supports JSR-330. Because the dependency to JSR-330 API is declared optional in Spring you need to add it yourself.
-For example in your project +pom.xml+ file add the following dependency. 
+=== Spring and Konik example
+Make sure that you use Spring above Version 3 which supports JSR-330. The dependency to the JSR-330 API are declared optional in Spring, this means you need to add the JSR-330 library to your application.
+In your project +pom.xml+ file add the following dependency. 
 
 [source,xml]
 ----
-	<dependency>
-		<groupId>javax.inject</groupId>
-		<artifactId>javax.inject</artifactId>
-		<version>1</version>
-	</dependency>
+<dependency>
+	<groupId>javax.inject</groupId>
+	<artifactId>javax.inject</artifactId>
+	<version>1</version>
+</dependency>
 ----
-The next step is to tell Spring to look for additional dependencies. The step is only needed if you restricted Spring component scanning to certain packages otherwise you are now ready to go.
+The next step is to configure Spring to search additional dependencies. This step is only needed if you restricted Spring component scanning to certain packages beforehand. Otherwise you are ready to go.
 
-For Spring with a XML configuration append the Konik library package name +io.konik+ to the component scanning directive.
+For Spring with a XML configuration append the Konik library package name +io.konik+ to the existing component scanning directive.
 [source,xml]
 ----
-	<context:component-scan base-package="com.myCompany, io.konik" /> 
+<context:component-scan base-package="com.myCompany, io.konik" /> 
 ----
 
-For Java based Spring configuration append the +io.konik+ package in the +@ComponentScan+ annotation which has the same result as the XML configuration.
+For Java based Spring configuration append the +io.konik+ package in the +@ComponentScan+ annotation.
 [source,xml]
 ----
-	@Configuration
-	@ComponentScan("com.myCompany, io.konik")
-	@EnableAutoConfiguration
-	class Application {
-
-	//...
+@Configuration
+@ComponentScan("com.myCompany, io.konik")
+@EnableAutoConfiguration
+class Application {
+// ...
 ----
 
 === Other Dependency Injection Frameworks
-OpenWebBeans has also JSR-330 API as an optional dependency similar to Spring. But for OpenWebBeans a recommended to use a different JSR-330 dependency coordinates.
+OpenWebBeans has also JSR-330 API as an optional dependency similar to Spring. Only minor difference is that OpenWebBeans recommended the use of a different JSR-330 dependency Jar package.
 
 [source,xml]
 ----
-	<dependency>
-		<groupId>org.apache.geronimo.specs</groupId>
-	    <artifactId>geronimo-atinject_1.0_spec</artifactId>
-	    <version>1.0</version>
-	</dependency>
+<dependency>
+	<groupId>org.apache.geronimo.specs</groupId>
+    <artifactId>geronimo-atinject_1.0_spec</artifactId>
+    <version>1.0</version>
+</dependency>
 ----
 
 Using the Konik library with Goolge Guice does not need any special setup as Google Guice is already bundled with JSR-330. This is also true for JEE6 Applications Servers. If in doubt you should look up the reference manual of your Dependency Injection Framework which normally deals in a greater detail with this topic.
