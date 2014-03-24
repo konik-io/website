@@ -10,7 +10,7 @@
     <meta content="/img/logo.png" property="og:image">
     <meta name="keywords" content="ZUGFeRD, Open Source, Java">
 
-    <title>Konik is a open source ZUGFeRD invoicing in and output library for Java.</title>
+    <title>Konik is a open source ZUGFeRD invoicing in and output library for Java and JVM.</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css">
