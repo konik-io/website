@@ -1,4 +1,4 @@
-= Project Start
+= Konik project Start
 Vadim Bauer
 2013-12-1
 :jbake-type: post

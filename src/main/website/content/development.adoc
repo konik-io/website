@@ -1,4 +1,4 @@
-title=Development
+title=Development resources
 date=2013-11-14
 type=page
 status=published

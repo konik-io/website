@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZUGFeRD open source data model implementation for Java and the JVM done right with the konik library.">
+    <meta name="description" content="ZUGFeRD open source data model implementation for Java and the JVM done right with the Konik library.">
     <meta name="author" content="Vadim Bauer">
     <meta content="/img/logo.png" property="og:image">
-    <meta name="keywords" content="ZUGFeRD, Open Source, Java">
+    <meta name="keywords" content="ZUGFeRD, Open Source, Java, JVM">
 
-    <title>Konik is a open source ZUGFeRD invoicing in and output library for Java and JVM.</title>
+    <title><#if (content.title)??><#escape x as x?xml>${content.title}</#escape><#else>Konik is a open source ZUGFeRD compliant invoicing in and output library for the JVM.</#if></title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css">
