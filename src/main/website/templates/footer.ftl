@@ -8,9 +8,10 @@
       </footer>
     </div><!-- /.container -->
 
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-    <script src="//yandex.st/highlightjs/7.5/highlight.min.js"></script>
-    <script src="/js/konik.js"></script>
+ 	<script async src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+    <script async src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script async src="//yandex.st/highlightjs/7.5/highlight.min.js"></script>
+    <script async src="/js/konik.js"></script>
 	
   </body>
 
