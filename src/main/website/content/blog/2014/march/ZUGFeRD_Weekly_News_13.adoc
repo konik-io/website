@@ -1,0 +1,27 @@
+= ZUGFeRD Weekly News #13
+Vadim Bauer
+2014-03-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:link_1: http://artikelfan.de/pm/recht-und-gesetz/eu-parlament-bringt-e-invoicing-richtlinie-auf-den-weg-20119.htm
+:link_2: https://www2.gotomeeting.com/register/186086394
+:link_3: http://www.postmaster-magazin.de/index.php/software2/11524-rechnungen-im-mittelstand.html
+:link_4: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/?etcc_med=Advertising&etcc_cmp=Veranstaltungen&etgs1_prod=Praxistag+Elektronische+Rechnung&etcc_#Beschreibung
+
+
+This is a new format for the Konik Blog to summarize this week happenings in the ZUGFeRD universe.
+
+=== News
+- {link_1}[The European Parliament adopted a new directive on electronic invoicing^]. Maybe one of this weeks highlights regarding ZUGFeRD.
+
+- Webinar Announcement {link_2}[ZUGFeRD für SAP^] on May 9, 11:00 by LuraTech and LS GmbH. Both companies present their SAP ZUGFeRD Module to create and process invoices.
+
+- Crossinx announced a software module {link_3}[Invoice1 Inbound^] for processing inbound invoice. The Software is also capable processing ZUGFeRD invoices.
+
+- GS1 Germany is hosting an {link_4}[all-day electronic invoicing workshop^] on the 12th July. Main focus of the event is ZUGFeRD.
+
+=== Articles
+- http://www.cowo.de/a/2556240[ZUGFeRD für die E-Rechnung^]. Article explaining ZUGFeRD for the decision-makers. Within the article there is also an announcement that the final release of ZUGFeRD is expected this summer. 
