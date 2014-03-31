@@ -5,6 +5,8 @@ V1.0, 2013-12-12:
 :toc2:
 :jbake-type: documentation
 :jbake-status: published
+:meta_keywords: Konik User Guide, Konik manual, Konik HowTo
+:meta_description: Documentation for Konik users and how to use the Konik Library in your projects.
 
 [no-bullet]
 toc::[role="col-lg-12"]

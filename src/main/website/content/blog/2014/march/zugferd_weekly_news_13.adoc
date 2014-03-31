@@ -11,7 +11,6 @@ Vadim Bauer
 :link_3: http://www.postmaster-magazin.de/index.php/software2/11524-rechnungen-im-mittelstand.html
 :link_4: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/?etcc_med=Advertising&etcc_cmp=Veranstaltungen&etgs1_prod=Praxistag+Elektronische+Rechnung&etcc_#Beschreibung
 
-
 This is a new format for the Konik Blog to summarize this week happenings in the ZUGFeRD universe.
 
 === News

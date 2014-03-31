@@ -1,23 +1,23 @@
-title=Development resources
-date=2013-11-14
-type=page
-status=published
-~~~~~~
 = Development
 Vadim Bauer
 2013-11-14
+:jbake-type: page
+:jbake-status: published
 :idprefix:
+:meta_keywords: Konik contributor, Konik Source Code
+:meta_description: Documentation for Konik contributors and how to build the Code from sources.
+
 
 == Source Code
 The konik.io source code is hosted on github. 
 
 https://github.com/konik-io/
 
-== First Steps
+== Build from Source Code
 
-Before you start make sure that http://maven.apache.org[Maven] and http://git-scm.com/[Git] are installed and working on your computer.
+Before you start make sure that http://maven.apache.org[Maven] and http://git-scm.com/[Git] are both installed and working on your computer.
 
-Check out the source code to a directory of your choice. We use +konik.io+ as a default example. 
+Check out the source code to a directory of your choice. We choose +barn+ in the following example. 
 [source,bash] 
 	> git clone https://github.com/konik-io/barn barn
 
