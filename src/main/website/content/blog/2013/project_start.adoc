@@ -7,16 +7,16 @@ Vadim Bauer
 :idprefix:
 
 
-The beginning of the konik library project.
+The beginning of the Konik library project.
 
 
-The goal of the library is to provide an easy way to create, read and validate ZUGFeRD invoices. 
-The vision is to provide the #1 library for every application reading and writing ZUGFeRD invoices.
+The goal of the library is to provide an easy way to create, read, and validate ZUGFeRD invoices. 
+Our vision is to provide the #1 library resource for every application that deals with reading and writing ZUGFeRD invoices.
 
-Moreover I hope that with the Konik library the ZUGFeRD standard will gain momentum especially in the Small and Medium-sized Enterprises. 
-The further development of this library will be influenced by the ZUGFeRD adoption and user input.
+Moreover, I hope that with the Konik library, the ZUGFeRD standard will continue to gain momentum, especially in small and medium-sized enterprises. 
+Further development of this highly useful library will be influenced by increased adoption of the ZUGFeRD standard, as well as user input.
 
 
 image::/img/konik-logo-on-white-bg.png["Konik library logo",400,alt="Konik library logo",role="text-center"]
-
-
+[role="text-center"]
+Uma (Horse). Ink drawing on paper by unnamed artist. Year ca. 1890.
