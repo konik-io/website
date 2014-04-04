@@ -1,4 +1,4 @@
-title=Invoice Validation Service 
+title=ZUGFeRD Online invoice validation service
 date=2014-03-10 
 type=page
 status=published 
@@ -6,9 +6,8 @@ status=published
 
 <div class="container">
    <div class="row well">
-
       <div class="col-lg-6 col-md-6">
-         <h4>ZUGFeRD Online Validation</h4>
+         <h4>Online validation for ZUGFeRD compliant invoices</h4>
          <p>This online service allows you to validate your PDF or XML file with the konik library.</p>
       </div>
 
@@ -24,6 +23,9 @@ status=published
          </form>
       </div>
    </div>
+   <div id="server_result" class="row">
+     
+   </div>
 </div>
 <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
 <script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
@@ -38,5 +40,13 @@ status=published
 	function successResponse(data) {
 		console.log("repsonse received");
 		console.log(data.message);
+		String alarmType; 
+		switch(data.status){
+			case "VALID":alarmType = "alert-success" break;
+			case "INVALID": case "ERROR"; alarmType = "alert-danger" break;
+			default: alarmType = "alert-danger";
+		}
+		$("#server_result").append('<div class="alert alert-success"> <p class="bg-danger">'+ data.statusMessage +'</p></div>');
+		
 	}
 </script>
