@@ -30,7 +30,8 @@ However, this will change with a feature release. The second issue is that
 in the current state, no http://de.wikipedia.org/wiki/Extensible_Metadata_Platform[XMP^] 
 Metadata is written to the PDF when the XML content is attached.
 
-A +zip+ https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/0.1.0/distribution-0.1.0.zip[distribution package] in the Maven Central Repository is intended for users who are not using a Build System. 
+A +zip+ https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/0.1.0/distribution-0.1.0.zip[distribution package^, role="download-zip-package"] 
+in the Maven Central Repository is intended for users who are not using a Build System. 
 The package contains the Konik libraries and all dependent libraries.
 
 All artifacts can be found on Maven Central by the Group ID: 
