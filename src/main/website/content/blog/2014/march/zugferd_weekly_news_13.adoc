@@ -16,7 +16,7 @@ Vadim Bauer
 This is a new format for the Konik Blog to summarize this week’s happenings in the ZUGFeRD universe.
 
 === News
-- {link_1}[The European Parliament adopted a new directive on electronic invoicing^]. Maybe one of this week’s highlights regarding ZUGFeRD.
+- {link_1}[The European Parliament adopted a new directive on electronic invoicing^]. This is one of this week's news highlights.
 
 - Webinar Announcement {link_2}[ZUGFeRD für SAP^] on May 9, 11:00 by LuraTech and LS GmbH. Both companies will present their SAP ZUGFeRD Module to create and process invoices.
 
