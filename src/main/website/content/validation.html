@@ -20,7 +20,7 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
                <input type="file" name="file" id="upload_file">
                <p id="upload_file_help_block"class="help-block">Create validation report</p>
             </div>
-            <button type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
+            <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
          </form>
       </div>
    </div>
@@ -69,4 +69,8 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
 				'<div class="alert alert-danger"> <p class="bg-danger">'
 						+ data.responseJSON.message + '</p></div>');
 	}
+	
+	$('#validation-button').on('click', function() {
+		  ga('send', 'event', 'button', 'click', 'validation-submit');
+		});
 </script>
