@@ -16,6 +16,7 @@
         <li><a href="/index.html#Quickstart">Quick Start</a></li>
         <li><a href="/docs/index.html">Documentation</a></li>
         <li><a href="/development.html">Development</a></li>
+        <li><a href="/validation.html">Validation</a></li>
         <li><a href="/blog.html">Blog</a></li>
          <li><a href="/index.html#Support">Support</a></li>
       </ul>
