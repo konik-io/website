@@ -12,7 +12,7 @@ status=published
       </div>
 
       <div class="col-lg-6 col-md-6">
-         <form id = "validate_form" method="post" action="//localhost:8080/validate" enctype="multipart/form-data" onsubmit="">
+         <form id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
             <div class="form-group">
                <label for="upload_file">PDF or XML</label> 
                <input type="file" name="file" id="upload_file">
@@ -27,26 +27,45 @@ status=published
      
    </div>
 </div>
-<script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
 <script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
 <script>
 	$(document).ready(function() {
 		var options = {
 			dataType : 	'json',
-			success : 	successResponse
+			beforeSubmit:  	restResult,
+			error: 			errorHandling,
+			success : 		successResponse
+			
 		};
 		$('#validate_form').ajaxForm(options);
 	});
 	function successResponse(data) {
 		console.log("repsonse received");
 		console.log(data.message);
-		String alarmType; 
+		var alarmType; 
 		switch(data.status){
-			case "VALID":alarmType = "alert-success" break;
-			case "INVALID": case "ERROR"; alarmType = "alert-danger" break;
-			default: alarmType = "alert-danger";
+			case "VALID":
+				alarmType = "alert-success";
+				break;
+			case "INVALID": 
+			case "ERROR":
+				alarmType = "alert-danger";
+				break;
+		default:
+			alarmType = "alert-danger";
 		}
-		$("#server_result").append('<div class="alert alert-success"> <p class="bg-danger">'+ data.statusMessage +'</p></div>');
-		
+		$("#server_result").append(
+				'<div class="alert '+alarmType+'"> <p class="bg-danger">'
+						+ data.statusMessage + '</p></div>');
+	}
+	
+	function restResult(){
+		$("#server_result").empty();
+	}
+	
+	function errorHandling(data){
+		$("#server_result").append(
+				'<div class="alert alert-danger"> <p class="bg-danger">'
+						+ data.responseJSON.message + '</p></div>');
 	}
 </script>
