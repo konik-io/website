@@ -32,11 +32,10 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
 <script>
 	$(document).ready(function() {
 		var options = {
-			dataType : 	'json',
+			dataType : 		'json',
 			beforeSubmit:  	restResult,
 			error: 			errorHandling,
 			success : 		successResponse
-			
 		};
 		$('#validate_form').ajaxForm(options);
 	});
@@ -64,7 +63,11 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
 		$("#server_result").empty();
 	}
 	
-	function errorHandling(data){
+	function errorHandling(data, status, xhr){
+		if (data.responseJSON == null){
+			data.responseJSON = {};
+			data.responseJSON.message="Service currently unavailible";
+		}
 		$("#server_result").append(
 				'<div class="alert alert-danger"> <p class="bg-danger">'
 						+ data.responseJSON.message + '</p></div>');
