@@ -6,6 +6,7 @@ Vadim Bauer
 :jbake-tags: Feature, How-to, Dependency Injection,
 :idprefix:
 :linkattrs:
+:icons: font
 
 
 Starting with version 0.2.0, the Konik library and iText-Carriage are supporting https://jcp.org/en/jsr/detail?id=330[JSR 330^] dependency injection.
@@ -23,9 +24,9 @@ In your project +pom.xml+ file, add the following dependency.
 [source,xml]
 ----
 <dependency>
-	<groupId>javax.inject</groupId>
-	<artifactId>javax.inject</artifactId>
-	<version>1</version>
+   <groupId>javax.inject</groupId>
+   <artifactId>javax.inject</artifactId>
+   <version>1</version>
 </dependency>
 ----
 The next step is to configure Spring to search additional dependencies. This step is only necessary if you restricted Spring component scanning to certain packages beforehand. Otherwise, you are ready to go.
@@ -36,15 +37,15 @@ For Spring with an XML configuration, append the Konik library package name +io.
 <context:component-scan base-package="com.myCompany, io.konik" /> 
 ----
 
-For Java-based Spring configuration, append the +io.konik+ package in the +@ComponentScan+ annotation.
-[source,xml]
+[source,java]
 ----
 @Configuration
-@ComponentScan("com.myCompany, io.konik")
+@ComponentScan("com.myCompany, io.konik")# <1>
 @EnableAutoConfiguration
 class Application {
 // ...
 ----
+<1> For Java-based Spring configuration, append the +io.konik+ package in the +@ComponentScan+ annotation.
 
 === Other Dependency Injection Frameworks
 OpenWebBeans also has JSR-330 API as an optional dependency, similar to Spring. The only minor difference is that OpenWebBeans recommends the use of a different JSR-330 dependency Jar package.
@@ -52,9 +53,9 @@ OpenWebBeans also has JSR-330 API as an optional dependency, similar to Spring. 
 [source,xml]
 ----
 <dependency>
-	<groupId>org.apache.geronimo.specs</groupId>
-    <artifactId>geronimo-atinject_1.0_spec</artifactId>
-    <version>1.0</version>
+   <groupId>org.apache.geronimo.specs</groupId>
+   <artifactId>geronimo-atinject_1.0_spec</artifactId>
+   <version>1.0</version>
 </dependency>
 ----
 
