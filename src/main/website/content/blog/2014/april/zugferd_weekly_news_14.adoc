@@ -26,30 +26,30 @@ ZUGFeRD related news and articles from 31^st^ March until 6^th^ April.
 
 - The German Insurance Association is hosting a {lnk_GDV}[Payment transaction symposium^] 
 	on the 21^^st^ and 22^nd^ of May. 
-- On the {lnk_itxt}[iText Summit 2014^] in Köln the talk {lnk_itxt_tlk}[archiving 
-	and accessibility^] will contain a ZUGFeRD use case.
+- At the {lnk_itxt}[iText Summit 2014^] in Köln, the {lnk_itxt_tlk}[archiving 
+	and accessibility^] talk will contain a ZUGFeRD use case.
 - The Congress {lnk_nv}[Neue Verwaltung^] will have an expert forum that deals 
-	with ZUGFeRD in the public administration.
+	with ZUGFeRD in terms of public administration.
 - The Tanges Academy is hosting a seminar {lnk_tng}[Die elektronische Rechnung 2014^] 
-	on the 4^^th^ June in Nürnberg. Focus of the seminar are legal and fiscal aspects 
-	of ZUGFeRD and electronic invoices. 
-- The {lnk_bva}[Bundesverwaltungsamt^] presents his experiences about eBilling in 
+	on the 4^^th^ of June in Nürenberg. The focus of the seminar will be legal 
+	and fiscal aspects  of ZUGFeRD and electronic invoices. 
+- The {lnk_bva}[Bundesverwaltungsamt^] presents his experiences with eBilling in 
 	public administration.
 - Gisa announced a new {lnk_gisa}[ZUGFeRD converter^].
 	
 === Articles
 
-- Neopost is discussing {lnk_VeR}[The consequences of the EU Directive regarding electronic invoices^].
+- Neopost is discussing {lnk_VeR}[the consequences of the EU Directive regarding electronic invoices^].
 
 - PDF Association published three talks on YouTube from seminars hosted in 2013.
 + 
-{lnk_y1}[Der neue deutsche Rechnungsdatenstandard ZUGFeRD^] presented by  Bernd Wild. 
+{lnk_y1}[Der neue deutsche Rechnungsdatenstandard ZUGFeRD^] presented by Bernd Wild. 
 + 
 {lnk_y2}[PDF/A-3 als Trägerformat für ZUGFeRD-E-Rechnungen^] by Thomas Zellmann.
 + 
 {lnk_y3}[PDF/A-3 - Das ZUGFeRD Datenmodell^] by Andreas Pelekies
   
-- Stefan Willuda asks {lnk_mc}[does ZUGFeRD bring the potential for a breakthrough in e-billing?^] 
+- Stefan Willuda asks {lnk_mc}[whether ZUGFeRD has the potential to make a breakthrough in e-billing?^]  
   
-- The {lnk_ecm}[Ecmguide^] elaborate on the findings of an AIIM study about 
+- The {lnk_ecm}[Ecmguide^] elaborates on the findings of an AIIM study about 
 	electronic invoice ROI. 
