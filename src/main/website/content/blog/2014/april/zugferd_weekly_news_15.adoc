@@ -1,6 +1,6 @@
 = ZUGFeRD Weekly News #15
 Vadim Bauer
-2014-04-03
+2014-04-13
 :jbake-type: post
 :jbake-status: published
 :jbake-tags: ZUGFeRD Weekly	
