@@ -15,7 +15,7 @@ Vadim Bauer
 ZUGFeRD related news and articles from 7^th^ April until 13^th^ April.
   
 === News
-- The Austrian e-Invoice standardization organization AustriaPro which is 
+- AustriaPro the e-Invoice standardization organization
   responsible for the {lnk_eb}[ebInterface] specification, published the 
   {lnk_eb2}[English version] of the ebInterface documentation.
 - AustriaPro {lnk_wko}[announced] to create a free ZUGFeRD to ebInterface converter and 
