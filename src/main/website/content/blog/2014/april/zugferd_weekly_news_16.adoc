@@ -1,0 +1,27 @@
+= ZUGFeRD Weekly News #16
+Vadim Bauer
+2014-04-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:lnk_lt: http://www.luratech.com/en/products/luratech-zugferd-extraction-sdk/
+:lnk_dv: http://www.d-velop.de/zugferd-rechnungen-verarbeiten/
+:lnk_ecosio: http://ecosio.com/blog/2014/04/16/EU-Richtlinie-zur-elektronischen-Rechnung-verabschiedet/
+
+
+ZUGFeRD related news and articles from 13^th^ April until 20^th^ April. 
+The last ZUGFeRD week was really quite, mostly because of the easter holidays in Germany.
+Nevertheless a few announcements and articles made it into ZUGFeRD weekly news.
+  
+=== News
+
+- {lnk_lt}[Luratech released^] a ZUGFeRD invoice extraction SDK for .NET and native C.
+- The company {lnk_dv}[D.velop^] announced ZUGFeRD support for their ECM product.
+
+=== Articles
+- Ecosio published an {lnk_ecosio}[interesting article^] elaborating
+  the European Parliament directive in respect to the different 
+  invoicing standards across Europe.
+
