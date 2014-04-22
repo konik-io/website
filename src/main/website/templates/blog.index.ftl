@@ -12,8 +12,8 @@
 	<div class="container">
 		<div class="row">
 			<!-- tags -->
-			<div class="col-lg-4 col-md-4 col-sm-3 col-xs-12 pull-right">
-			  <div class="well">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			  <div class="">
 			    <h4>Post Tags</h4>
 					<#assign tag_posts = {}>
 					<#list posts as post>
@@ -40,7 +40,7 @@
 	
 		      
 			<#list posts as post>
-				<div id="${post.title}" class="col-lg-8 col-md-8 col-sm-9">
+				<div id="${post.title}" class="col-lg-12 col-md-12 col-sm-12">
 			  		<#if (post.status == "published")>
 			          	<h2>${post.title}</h2>
 			          	<p><i class="fa fa-clock-o"></i> Posted on ${post.date?string("dd MMMM yyyy")}</p>
