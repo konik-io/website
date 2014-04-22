@@ -1,11 +1,13 @@
 :icons: font
+:allow-uri-read:
+:lnk_minimalInvoice: https://github.com/konik-io/barn/blob/master/konik/src/test/java/io/konik/examples/MinimalInvoice.java
 == Quick Start
 
 
-The following code from the test case +MinimalInvoice.java+ represents a valid invoice data according to the ZUGFeRD data model. 
+The following code from the test case {lnk_minimalInvoice}[+MinimalInvoice.java+] represents a valid invoice data according to the ZUGFeRD data model. 
 
 Let us step through the code and take a look at the interesting parts.
-[source,java]
+[source,java,indent=0]
 ----
       Invoice invoice = new Invoice(BASIC);# <1>
       invoice.setHeader(new ExchangeDocument().setId("20131122-42").setTypeCode("380")
@@ -31,7 +33,7 @@ Let us step through the code and take a look at the interesting parts.
       invoice.addTrade(tradeTransaction);
       
    
-      JAXBContext jaxb = JAXBContext.newInstance("com.konikframework.zugferd"); # <2>
+      JAXBContext jaxb = JAXBContext.newInstance("io.konik.zugferd"); # <2>
       Marshaller marshaller = jaxb.createMarshaller();
       marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);//prettify xml output for humans
       ByteArrayOutputStream os = new ByteArrayOutputStream();
@@ -40,7 +42,7 @@ Let us step through the code and take a look at the interesting parts.
       System.out.println(os.toString());
 ----
 <1> A new invoice instance with one of the three allowed profiles. BASIC, COMPFORT or EXTENDED
-<2> After filling the invoice with data create a new JAXB Context with path +com.konikframework.zugferd+.
+<2> After filling the invoice with data create a new JAXB Context with path +io.konik.zugferd+.
 
 
 
