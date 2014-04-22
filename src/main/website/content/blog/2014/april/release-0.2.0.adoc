@@ -1,0 +1,26 @@
+= Konik library and iText-Carriage version 0.2.0 released
+Vadim Bauer
+2014-04-22
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release, Konik 0.2.0, Changelog, Feature
+:idprefix:
+:linkattrs:
+
+
+A new version of the Konik library and the Konik iText Carriage.
+ 
+=== Release Notes
+Two new features were added.
+
+- https://github.com/konik-io/barn/issues/1[ZUGFeRD compliant XMP content with itext-carriage^]
+- https://github.com/konik-io/barn/issues/7[Benchmark Library^]
+
+Also some minor changes made it into the release.
+
+A +zip+ https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/0.2.0/distribution-0.2.0.zip[distribution package^, role="download-zip-package"] 
+is also available for users without a Build System.
+
+Artifacts are available on the Central Repository by the http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.konik%22[io.konik^] Group ID.
+
+
