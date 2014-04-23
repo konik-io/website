@@ -11,9 +11,11 @@ Vadim Bauer
 :lnk_git_ITextAppenderBenchmark: https://github.com/konik-io/barn/blob/master/itext-carriage/src/test/java/io/konik/benchmark/ITextPdfInvoiceAppenderBenchmark.java
 
 
-Starting with version 0.2.0 the Konik library is going to publish benchmark results of its API. 
-Goal is {lnk_git_ITextAppenderBenchmark}[The Benchmark] of {lnk_git_ITextAppender}[+ITextPdfInvoiceAppender+] 
-contains of the following steps 
+Starting with the latest release we are going to publish benchmark results of the Konik library. 
+Our objective is to create and maintain a library that is scalable enough to process many hundreds of PDFs per second. 
+Initially we start small by {lnk_git_ITextAppenderBenchmark}[benchmarking] {lnk_git_ITextAppender}[+ITextPdfInvoiceAppender+].
+
+For an brief overview the {lnk_git_ITextAppenderBenchmark}[+ITextAppenderBenchmark+] is performing the following steps.
 
 - Reading a sample PDF from disk
 - Marshalling the invoice model to XML  
@@ -22,15 +24,16 @@ contains of the following steps
 - Changing the XMP content to add ZUGFeRD information
 - Overwriting the XMP content of the PDF with the modified XMP version
 - Writing the final PDF to output stream or byte array
-  
-  
+
+//^
+
 Benchmark interpretation:: 
-	The benchmarks mode was set to measure the operation throughput per second _(ops/s)_ 
+	The benchmarks mode is set to measure operation throughput per second _(ops/s)_ 
 Benchmark setup::
-	20 samples were taken after a JVM warm up phase of also 20 iterations.
+	20 samples were taken after a JVM warm up phase of 20 iterations.
 Hardware information:: 
 	The benchmarks were performed on a MacBookAir4,2 having a 1.8 GHz Intel Core i7 CPU.
-	
+
 [source,plain]
 ----
 Benchmark                                                              Mode   Threads   Samples       Mean     Units
@@ -39,8 +42,8 @@ i.k.b.ITextPdfInvoiceAppenderBenchmark.append_witStreamsAndThreads    thrpt     
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_withByteArray           thrpt         1        20      26,88     ops/s
 ----
 
-This benchmark is equal as the above one, except that the code under benchmarked does not read, modifies or appends XMP 
-content to the PDF. Results of this benchmark represent the state of the iText-Carriage release 0.1.0.
+The following benchmark is equal to the one above, except that the code under test does not read, modify or appends XMP 
+content to the PDF. Results of this benchmark represent the state of the iText-Carriage prior version 0.2.0.
 [source,plain]
 ----
 Benchmark                                                              Mode	  Threads   Samples       Mean     Units
@@ -50,7 +53,7 @@ i.k.b.ITextPdfInvoiceAppenderBenchmark.append_withByteArray           thrpt     
 ----
   
 
-Finally we also measured, the performance of the XMP content reading modification, done in the XmpAppender. 
+Finally we also benchmarked, the throughput of the XMP Appender which parses, modifies builds XMP content. 
 [source,plain]
 ----
 Benchmark                                                      Mode	  Threads   Samples       Mean     Units
@@ -60,13 +63,13 @@ i.k.b.XmpAppenderBenchmark.append_withNewAppender             thrpt         1   
 ----
 
 === Conclusion
-Good thing is that there was no drop in performance going from release 0.1.0 to 0.2.0. On the other hand Konik and iText 
-are able to marshal invoices and modify almost 40 PDFs per second on a MacBook Air. This is not a bad number but it 
-now needs attention not to become slower with more features. Possible performance improvements can be achieved by 
-parallelizing the invoice marshalling and XMP creation. This improvements should hopefully get us close to 50 PDF per second.
+Good news is that there was no performance drop when going from release 0.1.0 to 0.2.0. On the other hand Konik and iText 
+are able to process almost 40 PDFs per second on a 2011 MacBook Air. This is not a bad number but it 
+now needs attention to not become slower when more features are added. Possible performance improvements can be achieved by 
+parallelizing the invoice marshalling and XMP creation. This improvements should hopefully get us close to the 50 PDFs per second. 
 
 More benchmark results can be obtained from the {http://ci.konik.io/view/All/job/benchmarks/}[Konik CI Server] 
-performing also nightly benchmark tests of the library.
+performing nightly benchmark tests of the library.
 
 
 
