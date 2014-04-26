@@ -366,6 +366,8 @@ invoice
 |  |  |  |  origin
 ----
 
+For you reference you can also take a look at the link:/dev/ZUGFeRD-Invoice-schema.html[visualized ZUGFeRD XSD schema].
+
 
 ////
 only up to level 5 supported then it doesn't work properly

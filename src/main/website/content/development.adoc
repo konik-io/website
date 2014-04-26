@@ -35,4 +35,5 @@ Now you should take you favorite IDE and import the project.
 
 Make yourself familiar with the ZUGFeRD Standard. Read first the link:/docs/index.html#data_model[konik documentation] and download the the http://www.ferd-net.de/front_content.php?idart=865[ZUGFeRD info package] for reference. 
 
+It might be also useful for you to link:/dev/ZUGFeRD-Invoice-schema.html[visualize the ZUGFeRD XSD schema].
 
