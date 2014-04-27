@@ -1,0 +1,22 @@
+= ZUGFeRD Weekly News #17
+Vadim Bauer
+2014-04-27
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:lnk_zf: http://www.ferd-net.de/front_content.php?idcat=231&lang=3
+:lnk_pc: http://www.project-consult.de/ecm/news/2014/zugferd_datenmodell_ebxml_ist_jetzt_internationaler_iso_standard
+:lnk_iso: http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=61433
+
+
+ZUGFeRD related news and articles from 21^st^ April until 27^th^ April. 
+  
+=== News
+
+- Yet another {lnk_zf}[ZUGFeRD Release Candidate] is available for review. The final 1.0 release should then be published on 25th^th^ of June. 
+- Electronic Business Extensible Markup Language (ebXML) is becoming an {lnk_pc}[official ISO standard]. 
+  The data model defined in {lnk_iso}[ISO 15000-5:2014] is also part of ZUGFeRD. 
+  This ISO announcement is one of the reasons for a new ZUGFeRD release candidate.
+- Konik will have a new ZUGFeRD compliant release in the next weeks.
