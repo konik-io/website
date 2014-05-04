@@ -20,7 +20,7 @@ ZUGFeRD related news and articles from 28^th^ April until 5^th^ May.
 
 - Last week was dominated by news about the {lnk_zf}[ZUGFeRD Release Candidate] like on {lnk_heise}[Heise] and
 	{lnk_pc}[Project Consult].
-- {lnk_pt}[PDF Tools] announced support of ZUGFeRD XML attachment and extraction to their PDF library. 
-- GISA published details about their {lnk_gs}[ZUGFeRD complete package]  
-- DocuWare announced the availability of their {lnk_dw}[DocuWare ZUGFeRD service]
+- {lnk_pt}[PDF Tools] announced support for attaching and extracting ZUGFeRD XML content for their PDF library products. 
+- GISA published product details about {lnk_gs}[ZUGFeRD complete package].
+- DocuWare announced the availability of their {lnk_dw}[DocuWare ZUGFeRD service].
 - FibuNet {lnk_fibu}[announced] support ZUGFeRD for incoming invoice processing of their ERP software FibuNet webIC.
