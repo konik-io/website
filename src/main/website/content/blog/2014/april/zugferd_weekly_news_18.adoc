@@ -1,0 +1,25 @@
+= ZUGFeRD Weekly News #17
+Vadim Bauer
+2014-05-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:lnk_zf: http://www.ferd-net.de/front_content.php?idcat=231&lang=3
+:lnk_heise: http://www.heise.de/ix/meldung/Standard-fuer-Elektronische-Rechnungen-weiterer-Release-Kandidat-2177616.html
+:lnk_pc: http://www.project-consult.de/ecm/news/2013/zugferd_standard_f%C3%BCr_die_elektronische_rechnung#comment-2497
+:lnk_pt: http://www.pdf-tools.com/pdf/context/zugferd.aspx?l=en-us
+:lnk_gs: http://www.gisa.de/sandbox/3076.html
+:lnk_dw: http://www.docuware.com/de/produkt/zugferd
+:lnk_fibu: http://www.fibunet.de/pressemitteilungen/artikel/invoice-control-fibunet-webic-geht-mit-zugferd-vorneweg.html
+
+ZUGFeRD related news and articles from 28^th^ April until 5^th^ May. 
+  
+=== News
+- Last week was dominated by news about the {lnk_zf}[ZUGFeRD Release Candidate] like on {lnk_heise}[Heise] and
+	{lnk_pc}[Project Consult].
+- {lnk_pt}[PDF Tools] announced support of ZUGFeRD XML attachment and extraction to their PDF library. 
+- GISA published details about their {lnk_gs}[ZUGFeRD complete package]  
+- DocuWare announced the availability of their {lnk_dw}[DocuWare ZUGFeRD service]
+- FibuNet {lnk_fibu}[announced] support ZUGFeRD for incoming invoice processing of their ERP software FibuNet webIC.

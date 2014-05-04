@@ -15,7 +15,8 @@ ZUGFeRD related news and articles from 21^st^ April until 27^th^ April.
   
 === News
 
-- Yet another {lnk_zf}[ZUGFeRD Release Candidate] is available for review. The final 1.0 release should then be published on 25th^th^ of June. 
+- Yet another {lnk_zf}[ZUGFeRD Release Candidate] is available for review. 
+	The final 1.0 release should then be published on 25th^th^ of June. 
 - Electronic Business Extensible Markup Language (ebXML) is becoming an {lnk_pc}[official ISO standard]. 
   The data model defined in {lnk_iso}[ISO 15000-5:2014] is also part of ZUGFeRD. 
   This ISO announcement is one of the reasons for a new ZUGFeRD release candidate.
