@@ -1,4 +1,4 @@
-= ZUGFeRD Weekly News #17
+= ZUGFeRD Weekly News #18
 Vadim Bauer
 2014-05-04
 :jbake-type: post
@@ -17,6 +17,7 @@ Vadim Bauer
 ZUGFeRD related news and articles from 28^th^ April until 5^th^ May. 
   
 === News
+
 - Last week was dominated by news about the {lnk_zf}[ZUGFeRD Release Candidate] like on {lnk_heise}[Heise] and
 	{lnk_pc}[Project Consult].
 - {lnk_pt}[PDF Tools] announced support of ZUGFeRD XML attachment and extraction to their PDF library. 
