@@ -1,143 +1,193 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.konik</groupId>
-	<artifactId>website</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	
-	<name>konik.io website</name>
-	<description>The konik.io website source code.</description>
-	<url>http://konik.io</url>
+   <groupId>io.konik</groupId>
+   <artifactId>website</artifactId>
+   <version>1.1.0-SNAPSHOT</version>
+   <packaging>pom</packaging>
 
-	<organization>
-		<name>konik.io</name>
-		<url>konik.io</url>
-	</organization>
+   <name>konik.io website</name>
+   <description>The konik.io website source code.</description>
+   <url>http://konik.io</url>
 
-	<developers>
-		<developer>
-			<id>Vad1mo</id>
-			<name>Vadim Bauer</name>
-			<email>vb@konik.io</email>
-		</developer>
-	</developers>
+   <organization>
+      <name>konik.io</name>
+      <url>konik.io</url>
+   </organization>
 
-	<scm>
-		<url>https://github.com/konik-io/website</url>
-		<connection>scm:git:git://github.com/konik-io/website.git</connection>
-		<developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
-	</scm>
+   <developers>
+      <developer>
+         <id>Vad1mo</id>
+         <name>Vadim Bauer</name>
+         <email>vb@konik.io</email>
+      </developer>
+   </developers>
 
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/konik-io/website/issues</url>
-	</issueManagement>
+   <scm>
+      <url>https://github.com/konik-io/website</url>
+      <connection>scm:git:git://github.com/konik-io/website.git</connection>
+      <developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
+   </scm>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+   <issueManagement>
+      <system>GitHub Issues</system>
+      <url>https://github.com/konik-io/website/issues</url>
+   </issueManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<executions>
-					<execution>
-						<id>jbake-build</id>
-						<phase>package</phase>
-						<goals>
-							<goal>java</goal>
-						</goals>
-						<configuration>
-							<mainClass>org.jbake.launcher.Main</mainClass>
-							<arguments>
-								<argument>${basedir}/src/main/website</argument>
-								<argument>${project.build.directory}/${project.artifactId}-${project.version}</argument>
-							</arguments>
-						</configuration>
-					</execution>
-					<execution>
-						<id>default-cli</id>
-						<configuration>
-							<mainClass>org.jbake.launcher.Main</mainClass>
-							<arguments>
-								<argument>${project.build.directory}/${project.artifactId}-${project.version}</argument>
-								<argument>--server</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
+   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <website.output.dir>${project.build.directory}/${project.artifactId}-${project.version}</website.output.dir>
+      <website.source.dir>${basedir}/src/main/website</website.source.dir>
+      <konik-version>0.2.1-SNAPSHOT</konik-version>
 
-			</plugin>
+   </properties>
 
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.9</version>
-				<configuration>
-					<message>Deploy baked website
-						${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
-					<noJekyll>true</noJekyll>
-					<outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}</outputDirectory>
-					<excludes>
-						<exclude>.DS_Store</exclude>
-					</excludes>
-					<oauth2Token>${env.GH_TOKEN}</oauth2Token>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-			</plugin>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+               <execution>
+                  <id>jbake-build</id>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>java</goal>
+                  </goals>
+                  <configuration>
+                     <mainClass>org.jbake.launcher.Main</mainClass>
+                     <arguments>
+                        <argument>${website.source.dir}</argument>
+                        <argument>${website.output.dir}</argument>
+                     </arguments>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>default-cli</id>
+                  <configuration>
+                     <mainClass>org.jbake.launcher.Main</mainClass>
+                     <arguments>
+                        <argument>${website.output.dir}</argument>
+                        <argument>--server</argument>
+                     </arguments>
+                  </configuration>
+               </execution>
+            </executions>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<appendAssemblyId>false</appendAssemblyId>
-					<descriptors>
-						<descriptor>src/assembly/zip.xml</descriptor>
-					</descriptors>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-website-zip</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.4.2</version>
-			</plugin>
+         </plugin>
 
-			<plugin>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.1</version>
-			</plugin>
-		</plugins>
-	</build>
+         <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <version>0.9</version>
+            <configuration>
+               <message>Deploy baked website
+                  ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
+               <noJekyll>true</noJekyll>
+               <outputDirectory>${website.output.dir}</outputDirectory>
+               <excludes>
+                  <exclude>.DS_Store</exclude>
+               </excludes>
+               <oauth2Token>${env.GH_TOKEN}</oauth2Token>
+            </configuration>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>site</goal>
+                  </goals>
+                  <phase>site</phase>
+               </execution>
+            </executions>
+         </plugin>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.jbake</groupId>
-			<artifactId>jbake-core</artifactId>
-			<version>2.2.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+               <appendAssemblyId>false</appendAssemblyId>
+               <descriptors>
+                  <descriptor>src/assembly/zip.xml</descriptor>
+               </descriptors>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>make-website-zip</id>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.4.2</version>
+         </plugin>
 
-	
+         <plugin>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.8.1</version>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+               <verbose>false</verbose>
+               <source>1.6</source>
+               <target>1.6</target>
+               <showDeprecation>true</showDeprecation>
+               <showWarnings>true</showWarnings>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.8</version>
+            <executions>
+               <execution>
+                  <id>unpack</id>
+                  <phase>prepare-package</phase>
+                  <goals>
+                     <goal>unpack</goal>
+                  </goals>
+                  <configuration>
+                     <artifactItems>
+                        <artifactItem>
+                           <groupId>io.konik</groupId>
+                           <artifactId>konik</artifactId>
+                           <version>${konik-version}</version>
+                           <classifier>javadoc</classifier>
+                           <outputDirectory>${website.output.dir}/docs/javadoc/konik-${konik-version}/</outputDirectory>
+                        </artifactItem>
+                        <artifactItem>
+                           <groupId>io.konik</groupId>
+                           <artifactId>itext-carriage</artifactId>
+                           <version>${konik-version}</version>
+                           <classifier>javadoc</classifier>
+                           <outputDirectory>${website.output.dir}/docs/javadoc/itext-carriage-${konik-version}/</outputDirectory>
+                        </artifactItem>
+                     </artifactItems>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.jbake</groupId>
+         <artifactId>jbake-core</artifactId>
+         <version>2.2.1-SNAPSHOT</version>
+      </dependency>
+   </dependencies>
+
+
 </project>

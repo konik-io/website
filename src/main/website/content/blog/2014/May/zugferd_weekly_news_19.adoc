@@ -1,0 +1,16 @@
+= ZUGFeRD Weekly News #19
+Vadim Bauer
+2014-05-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:lnk_bp: http://www.pressebox.de/inaktiv/bonpago-gmbh/Bonpago-stellt-mit-dem-Forschungsprojekt-E-Docs-kostenloses-ZUGFeRD-Tool-zum-elektronischen-Rechnungsaustausch-auf-den-M-Days-in-Frankfurt-vor/boxid/677033
+:lnk_itxt: http://sourceforge.net/p/itext/code/6355/
+
+ZUGFeRD related news and articles from 5^th^ April until 11^th^ May. 
+  
+=== News
+- Bonpago will present a free {lnk_bp}[ZUGFeRD tool] for electronic invoice exchange on the M-days in Frankfurt.
+- iText is currently implementing {lnk_itxt}[ZUGFeRD XML invoice attachment and detachment] functionality for the next iText release. 
