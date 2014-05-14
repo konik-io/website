@@ -12,7 +12,9 @@ install:
 #before_script: mvn versions:set -DnewVersion=1.0.1
 
 script:
-  - mvn -q clean package
+  - mvn -q clean
+  - mvn -q initialize
+  - mvn -q package
   - mvn site
 
 #after_success: mvn versions:set -DnewVersion=1.0.2-SNAPSHOT

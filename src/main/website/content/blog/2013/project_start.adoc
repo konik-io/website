@@ -16,6 +16,7 @@ Our vision is to provide the #1 library resource for every application that deal
 Moreover, I hope that with the Konik library, the ZUGFeRD standard will continue to gain momentum, especially in small and medium-sized enterprises. 
 Further development of this highly useful library will be influenced by increased adoption of the ZUGFeRD standard, as well as user input.
 
+https://plus.google.com/+VadimBauer?rel=author[Vadim Bauer]
 
 image::/img/konik-logo-on-white-bg.png["Konik library logo",400,alt="Konik library logo",role="text-center"]
 [role="text-center"]

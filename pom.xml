@@ -4,7 +4,7 @@
 
    <groupId>io.konik</groupId>
    <artifactId>website</artifactId>
-   <version>1.1.0-SNAPSHOT</version>
+   <version>1.2.0</version>
    <packaging>pom</packaging>
 
    <name>konik.io website</name>
@@ -39,8 +39,14 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <website.output.dir>${project.build.directory}/${project.artifactId}-${project.version}</website.output.dir>
       <website.source.dir>${basedir}/src/main/website</website.source.dir>
-      <konik-version>0.2.1-SNAPSHOT</konik-version>
-
+      <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
+      <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
+      <javadocs-latest-version>0.2.0</javadocs-latest-version>
+      <javadocs-snapshot-version>0.2.1-SNAPSHOT</javadocs-snapshot-version>
+      <!-- export for jbake -->
+      <asciidoctor.attribute.javadocs-latest-version>${javadocs-latest-version}</asciidoctor.attribute.javadocs-latest-version>
+      <asciidoctor.attribute.javadocs-snapshot-version>${javadocs-snapshot-version}</asciidoctor.attribute.javadocs-snapshot-version>
+      <asciidoctor.attribute.javadocs-dir>${website.javadoc.dir.relative}</asciidoctor.attribute.javadocs-dir>
    </properties>
 
    <build>
@@ -146,34 +152,128 @@
             </configuration>
          </plugin>
 
+         <!--
+            Get JavaDocs
+         -->
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <version>2.8</version>
             <executions>
                <execution>
-                  <id>unpack</id>
+                  <id>unpack-konik-latest-javadoc-version</id>
                   <phase>prepare-package</phase>
                   <goals>
                      <goal>unpack</goal>
                   </goals>
                   <configuration>
                      <artifactItems>
+                        <!-- LATEST RELEASE -->
                         <artifactItem>
                            <groupId>io.konik</groupId>
                            <artifactId>konik</artifactId>
-                           <version>${konik-version}</version>
+                           <version>${javadocs-latest-version}</version>
                            <classifier>javadoc</classifier>
-                           <outputDirectory>${website.output.dir}/docs/javadoc/konik-${konik-version}/</outputDirectory>
+                           <outputDirectory>${website.javadoc.dir}/konik-${javadocs-latest-version}/</outputDirectory>
                         </artifactItem>
                         <artifactItem>
                            <groupId>io.konik</groupId>
                            <artifactId>itext-carriage</artifactId>
-                           <version>${konik-version}</version>
+                           <version>${javadocs-latest-version}</version>
                            <classifier>javadoc</classifier>
-                           <outputDirectory>${website.output.dir}/docs/javadoc/itext-carriage-${konik-version}/</outputDirectory>
+                           <outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-latest-version}/</outputDirectory>
+                        </artifactItem>
+                        <!-- LATEST SNAPSHOT -->
+                        <artifactItem>
+                           <groupId>io.konik</groupId>
+                           <artifactId>konik</artifactId>
+                           <version>${javadocs-snapshot-version}</version>
+                           <classifier>javadoc</classifier>
+                           <outputDirectory>${website.javadoc.dir}/konik-${javadocs-snapshot-version}/</outputDirectory>
+                        </artifactItem>
+                        <artifactItem>
+                           <groupId>io.konik</groupId>
+                           <artifactId>itext-carriage</artifactId>
+                           <version>${javadocs-snapshot-version}</version>
+                           <classifier>javadoc</classifier>
+                           <outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-snapshot-version}/</outputDirectory>
                         </artifactItem>
                      </artifactItems>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+
+         <!--
+            Set Properties with latest versions
+            - javadocs-latest-version
+            - javadocs-snapshot-version
+         -->
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>versions-maven-plugin</artifactId>
+            <version>2.1</version>
+            <executions>
+               <execution>
+                  <id>find-javadocs-latest-version</id>
+                  <phase>initialize</phase>
+                  <goals>
+                     <goal>update-properties</goal>
+                  </goals>
+                  <configuration>
+                     <properties>
+                        <property>
+                           <name>javadocs-latest-version</name>
+                           <dependencies>
+                              <dependency>
+                                 <groupId>io.konik</groupId>
+                                 <artifactId>konik</artifactId>
+                              </dependency>
+                           </dependencies>
+                        </property>
+                     </properties>
+                  </configuration>
+               </execution>
+               <execution>
+                  <id>find-javadocs-snapshot-version</id>
+                  <phase>initialize</phase>
+                  <goals>
+                     <goal>update-properties</goal>
+                  </goals>
+                  <configuration>
+                     <allowSnapshots>true</allowSnapshots>
+                     <properties>
+                        <property>
+                           <name>javadocs-snapshot-version</name>
+                           <dependencies>
+                              <dependency>
+                                 <groupId>io.konik</groupId>
+                                 <artifactId>konik</artifactId>
+                              </dependency>
+                           </dependencies>
+                        </property>
+                     </properties>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <!-- 
+               Write Property file for jBake 
+          -->
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <version>1.0-alpha-2</version>
+            <executions>
+               <execution>
+                  <phase>generate-resources</phase>
+                  <goals>
+                     <goal>write-project-properties</goal>
+                  </goals>
+                  <configuration>
+                     <outputFile>
+                        ${website.source.dir}/custom.properties
+                     </outputFile>
                   </configuration>
                </execution>
             </executions>

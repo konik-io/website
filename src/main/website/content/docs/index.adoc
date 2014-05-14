@@ -1,12 +1,12 @@
 = Konik Documentation
 Vadim Bauer
-V1.0, 2013-12-12:
+V1.1, 2014-05-14:
 :idprefix:
 :toc2:
 :jbake-type: documentation
 :jbake-status: published
-:meta_keywords: Konik User Guide, Konik manual, Konik HowTo
-:meta_description: Documentation for Konik users and how to use the Konik Library in your projects.
+:meta_keywords: Konik User Guide, Konik manual, Konik HowTo, Konik API, Konik JavaDocs, Konik JavaDoc
+:meta_description: Konik User Documentation and how to integrate the Konik Library into projects.
 
 [no-bullet]
 toc::[role="col-lg-12"]
@@ -15,5 +15,9 @@ toc::[role="col-lg-12"]
 include::docs/1.QuickStart.adoc[]
 
 [.col-lg-12]
-include::docs/2.DataModel.adoc[]
+include::docs/2.JavaDocs.adoc[]
+
+[.col-lg-12]
+include::docs/3.DataModel.adoc[]
+
 

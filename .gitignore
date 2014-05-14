@@ -4,3 +4,7 @@
 /.settings
 
 .README.md.html
+
+*.versionsBackup
+
+src/main/website/custom.properties
