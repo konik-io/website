@@ -1,0 +1,29 @@
+= ZUGFeRD Weekly News #20
+Vadim Bauer
+2014-05-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:lnk_bp: http://www.pressebox.de/inaktiv/bonpago-gmbh/Bonpago-stellt-mit-dem-Forschungsprojekt-E-Docs-kostenloses-ZUGFeRD-Tool-zum-elektronischen-Rechnungsaustausch-auf-den-M-Days-in-Frankfurt-vor/boxid/677033
+
+:lnk_vdma: https://sw.vdma.org/article/-/articleview/3920306
+:lnk_eblc: http://www.ebusiness-lotse-chemnitz.de/veranstaltung.cfm?id=307&Menu1=3&Menu2=1
+:lnk_itxt: http://itextpdf.com/release/iText551
+:lnk_ferd: http://www.youtube.com/watch?v=QC1xWewnUI0
+:lnk_cll: http://www.combit.net/de-de/presse/Pressemitteilung-combit-intarsys.pdf#zoom=100
+
+ZUGFeRD related news and articles from 12^th^ May until 18^th^ May. 
+  
+=== News
+- The PDF library {lnk_itxt}[iText 5.5.1] now supports ZUGFeRD.
+- Combit's {lnk_cll}[List and Label] now supports ZUGFeRD.
+
+=== Events
+- The German Engineering Federation VDMA is hosting an {lnk_vdma}[Process improvement in payments] 
+	event with ZUGFeRD content on 30^th^ June in Frankfurt. 
+- The e-Business navigator Chemnitz is hosting an {lnk_eblc}[e-Invoice and e-Archiving] event on the 5^th^ June. 
+
+=== Article
+- Stefan Engel-Flechsig the head of Forum Electronic Invoicing is talking about the {lnk_ferd}[advantages of e-invoicing with ZUGFeRD].
