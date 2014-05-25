@@ -2,7 +2,7 @@
       <footer>
         <div class="row">
           <div class="col-lg-12">
-           <p class="pull-right">Copyright &copy; Konik.io 2013 Baked with <a href="http://jbake.org">JBake</a></p>
+           <p class="pull-right">| Copyright &copy; Konik.io 2013 | <a href="/legal_notice.html">Legal Notice</a> | Baked with <a href="http://jbake.org">JBake</a> |</p>
           </div>
         </div>
       </footer>
