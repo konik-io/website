@@ -1,0 +1,23 @@
+= ZUGFeRD Weekly News #21
+Vadim Bauer
+2014-05-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:1: http://mustangproject.org/
+:2: http://www.ferdmc.com/en/anmelden/
+:3: http://www.verband-e-rechnung.org/de/aktuelles/neueste-beitraege/295-neuerungen-zu-gobd-und-e-invoicing
+
+ZUGFeRD related news and articles from 19^th^ May until 25^th^ May. 
+  
+=== News
+- {1}[Mustang project] comes into being. Mustang is a ZUGFeRD open source project similar to Konik.
+	Current focus is on attaching and reading XML content to PDFs with the help of PDFBox.
+- ferd management & consulting GmbH led by Stefan Engel-Flechsig who is also head of FeRD is lunching a new {2}[invoice portal].
+
+=== Article
+- The German Electronic Invoicing Association is elaborating on a new regulation draft of 
+	{3}["Principles to ensure the proper maintenance and preservation of books, records and documents in electronic form, as well as for data access"].
+	
