@@ -2,7 +2,7 @@
       <footer>
         <div class="row">
           <div class="col-lg-12">
-           <p class="pull-right">| Copyright &copy; Konik.io 2013 | <a href="/legal_notice.html">Legal Notice</a> | Baked with <a href="http://jbake.org">JBake</a> |</p>
+           <p class="pull-right">| Copyright &copy; Konik.io 2013 | <a href="/legal_notice.html">Legal Notice</a> | <a href="/license.html">License</a> | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal the Email address">Contact</a> | Baked with <a href="http://jbake.org">JBake</a> |</p> 
           </div>
         </div>
       </footer>
