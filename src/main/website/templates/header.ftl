@@ -9,6 +9,7 @@
     <meta name="author" content="Vadim Bauer">
     <meta content="/img/logo.png" property="og:image">
     <meta name="keywords" content="<#if (content.meta_keywords)??>${content.meta_keywords}<#else>ZUGFeRD, Open Source, Java, JVM</#if>">
+	<meta name="ROBOTS" content="<#if (content.meta_robots)??>${content.meta_robots}</#if>">
 
     <title><#if (content.title)??><#escape x as x?xml>${content.title}</#escape><#else>Open Source ZUGFeRD compliant invoicing.</#if></title>
 

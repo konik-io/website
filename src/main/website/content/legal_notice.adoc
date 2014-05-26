@@ -6,7 +6,7 @@ Vadim Bauer
 :idprefix:
 :meta_keywords: Konik Legal Notice
 :meta_description:  Information disclosure about the publisher.
-
+:meta_robots: noindex, nofollow
 
 == Contact
 
