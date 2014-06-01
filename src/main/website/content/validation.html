@@ -11,10 +11,18 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
       <div class="col-lg-6 col-md-6">
          <h4>Validity test for ZUGFeRD compliant invoices</h4>
          <p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p>
+         <p>Used Versions</p>
+         <dl class="dl-horizontal">
+           <dt>Konik</dt>
+           <dd>Version 0.2.0</dd>
+           <dt>Validation Service</dt>
+           <dd>Version 0.1.0</dd>
+         </dl>
       </div>
 
       <div class="col-lg-6 col-md-6">
          <form id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
+<!--             <form id = "validate_form" method="post" action="//localhost:8802/validate" enctype="multipart/form-data" onsubmit="">  -->
             <div class="form-group">
                <label for="upload_file">PDF or XML</label> 
                <input type="file" name="file" id="upload_file">
