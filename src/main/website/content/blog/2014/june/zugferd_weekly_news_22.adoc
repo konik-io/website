@@ -1,0 +1,32 @@
+= ZUGFeRD Weekly News #22
+Vadim Bauer
+2014-06-01
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:1: http://www.bitkom.org/de/presse/8477_79507.aspx
+:2: http://www.youtube.com/watch?v=R8hqaZGUgF4
+:3: http://www.deutsche-handwerks-zeitung.de/e-rechnung-bald-pflicht-bei-oeffentlichen-auftraegen/150/3096/237430/
+:4: http://www.bitkom.org/files/documents/140505_Broschuere_ZUGFeRD_web.pdf
+:5: http://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1401623379226&uri=CELEX:32014L0055
+:6: http://www.ots.at/presseaussendung/OTS_20140306_OTS0078/umstellung-auf-e-rechnung-bmf-zieht-positive-zwischenbilanz
+:7: https://www.wko.at/Content.Node/branchen/w/sparte_iuc/Immobilien--und-Vermoegenstreuhaender/Abo_TELEFIT_Podcast__23_E-Rechnung_an_den_Bund.html
+:8: http://www.gnuaccounting.org/
+
+ZUGFeRD related news and articles from 26^th^ May until 1^st^ June. 
+  
+=== News
+- BITKOM (German ICT industry association) {1}[recommends] that companies adopt the new ZUGFeRD standard for their accounting.
+- Austrian Federal Ministry of Finance takes positive stock regarding the {6}[transition to e-invoice]. 
+- Austrian Economic Chambers published {7}[videos on Electronic invoice to the federal government].
+- {8}[GNU Accounting] Version 0.8.6 is currently the only Open Source Accounting software that can write ZUGFeRD compliant invoices.
+
+=== Article
+- This Presentation from CeBIT 2014 is now online available {2}[Electronic invoice with ZUGFeRD made ​​easy - thousand easy ways]
+- {3}[German craftsman newspaper] informs their readers that electronic invoices will soon be mandatory in public procurement.
+- BITKOM published booklet {4}[ZUGFeRD - Standard for electronic invoices Saves money for everyone]
+- {5}[DIRECTIVE 2014/55/EU] on electronic invoicing in public procurement is now mandatory.
+	I mentioned this directive a few times before in ZUGFeRD weekly but never had a link at hand.
+	
