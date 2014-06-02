@@ -21,7 +21,7 @@ ZUGFeRD related news and articles from 26^th^ May until 1^st^ June.
 - BITKOM (German ICT industry association) {1}[recommends] that companies adopt the new ZUGFeRD standard for their accounting.
 - Austrian Federal Ministry of Finance takes positive stock regarding the {6}[transition to e-invoice]. 
 - Austrian Economic Chambers published {7}[videos on Electronic invoice to the federal government].
-- {8}[GNU Accounting] Version 0.8.6 is currently the only Open Source Accounting software that can write ZUGFeRD compliant invoices.
+- {8}[GNU Accounting] Version 0.8.5 is currently the only Open Source Accounting software that can write ZUGFeRD compliant invoices.
 
 === Article
 - This Presentation from CeBIT 2014 is now online available {2}[Electronic invoice with ZUGFeRD made ​​easy - thousand easy ways]
