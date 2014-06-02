@@ -1,0 +1,16 @@
+= New Version ZUGFeRD Validation Service
+Vadim Bauer
+2014-06-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release, Changelog	
+:idprefix:
+:linkattrs:
+
+A new Version of the ZUGFeRD Validation Service is now available. 
+
+=== Changelog 
+
+The Validation Service now accepts more PDF Mime types. Especially GNUAccounting invoices will work now.
+
+	
