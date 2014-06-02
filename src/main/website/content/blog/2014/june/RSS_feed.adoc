@@ -1,0 +1,13 @@
+= Konik Blog as RSS Feed
+Vadim Bauer
+2014-06-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: RSS Feed	
+:idprefix:
+:linkattrs:
+
+The Konik Blog is now also available as a RSS feed. Subscribe to the RSS feed by clicking on the +++<a target="_blank" class="fa fa-rss fa-2x" href="feed.xml"></a>+++ RSS Feed icon here or next to the Blog title.
+
+
+	
