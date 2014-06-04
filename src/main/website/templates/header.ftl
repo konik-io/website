@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/css/mb.css"  type="text/css">
 	<link rel="stylesheet" href="/css/konik.css" type="text/css">
     
-    <!-- JQuery on top to use it in our code -->
+    <!-- JQuery at the top to use it in our code -->
     <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
     
     <!-- icon -->
