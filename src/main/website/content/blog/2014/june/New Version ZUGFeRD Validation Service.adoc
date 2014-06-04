@@ -7,10 +7,10 @@ Vadim Bauer
 :idprefix:
 :linkattrs:
 
-A new Version of the ZUGFeRD Validation Service is now available. 
+A new Version of the link:/validation.html[ZUGFeRD Validation Service] is now available. 
 
 === Changelog 
 
-The Validation Service now accepts more PDF Mime types. Especially GNUAccounting invoices will work now.
+The Validation Service now accepts more PDF Mime types. Especially http://www.gnuaccounting.org[GNUAccounting] invoices will work now.
 
 	
