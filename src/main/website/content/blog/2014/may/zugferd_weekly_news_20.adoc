@@ -25,5 +25,5 @@ ZUGFeRD related news and articles from 12^th^ May until 18^th^ May.
 	event with ZUGFeRD content on 30^th^ June in Frankfurt. 
 - The e-Business navigator Chemnitz is hosting an {lnk_eblc}[e-Invoice and e-Archiving] event on the 5^th^ June. 
 
-=== Article
+=== Articles
 - Stefan Engel-Flechsig the head of Forum Electronic Invoicing is talking about the {lnk_ferd}[advantages of e-invoicing with ZUGFeRD].

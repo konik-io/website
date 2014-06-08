@@ -1,0 +1,28 @@
+= ZUGFeRD Weekly News #23
+Vadim Bauer
+2014-06-08
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:1: http://www.ferd-net.de/front_content.php?idcat=277
+:2: http://www.youtube.com/watch?v=DwEoxXLhQ0U
+:3: http://ecosio.com/static_files/ebooks/EDI-Outsourcing-eBook.pdf
+:4: http://www.bonpago.de/images/pdf/2014_05_Bonpago_Workshops.pdf
+:5: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/
+
+
+ZUGFeRD related news and articles from 2^nd^ June until 8^th^ June.  
+  
+=== News
+- Konik is now listed as a {1}[ZUGfeRD Software vendor] on Forum electronic invoice Germany.
+- Bonpago is hosting a workshop in various locations across Germany on {4}[electronic invoicing done right].
+- Mustang project is hosting a [online developer conference] next Tuesday and Konik will be a part of it. 
+	Interested developers are welcome to sign up
+- Konik is also participating in {5}[GS1 electronic invoicing best practice] workshop, that will take place next Thursday in Cologne. 
+
+=== Articles
+- Luratech made their last Webinar {2}[ZUGFeRD for SAP] available online.
+- Ecosio published an eBook about {3}[EDI-Outsourcing].
+  

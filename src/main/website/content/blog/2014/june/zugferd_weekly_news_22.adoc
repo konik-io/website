@@ -23,7 +23,7 @@ ZUGFeRD related news and articles from 26^th^ May until 1^st^ June.
 - Austrian Economic Chambers published {7}[videos on Electronic invoice to the federal government].
 - {8}[GNU Accounting] Version 0.8.5 is currently the only Open Source Accounting software that can write ZUGFeRD compliant invoices.
 
-=== Article
+=== Articles
 - This Presentation from CeBIT 2014 is now online available {2}[Electronic invoice with ZUGFeRD made ​​easy - thousand easy ways]
 - {3}[German craftsman newspaper] informs their readers that electronic invoices will soon be mandatory in public procurement.
 - BITKOM published booklet {4}[ZUGFeRD - Standard for electronic invoices Saves money for everyone]
