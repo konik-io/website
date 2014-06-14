@@ -1,0 +1,25 @@
+= ZUGFeRD Weekly News #24
+Vadim Bauer
+2014-06-014
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:1: http://itextpdf.com/Zugferd-case
+:2: http://z-rechnung.de/
+:3: http://www.egovernment-wettbewerb.de/online-voting/online-voting.html
+:4: http://www.financialsupplychain.de/?p=364
+:5: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/
+
+
+ZUGFeRD related news and articles from 9^th^ June until 14^th^ June.  
+  
+=== News
+- iText published the {1}[Konik ZUGFeRD case] for the next weeks PDF days. iText is giving away some tickets.
+- Based on the Konik Library, {2}[z-rechnung.de] is going to be released as a open ZUGFeRD Online Invoice Service, 
+	where everyone can create ZUGFeRD compliant invoices and send the resulting PDF directly to their clients.
+- ZUGFeRD is nominated as a successful cooperation project in eGoverment. 
+	You are welcome to vote for the {3}[audience Award] until the 20^th^ of June.
+-  Bonpago {4}[comments] on their view on the {5}[GS1 electronic invoicing best practice] day last week.
+
