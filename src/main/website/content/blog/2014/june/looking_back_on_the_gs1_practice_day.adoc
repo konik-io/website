@@ -9,9 +9,10 @@ Vadim Bauer
 :1: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/
 
 
-This week I participated in the {1}[GS1 electronic invoice practice day] with Konik. :ooking back on the event which
-was full of talks related to electronic invoicing where many had an emphasis on ZUGFeLooking back on the event, 
-it was full of talks related to electronic invoicing, many of which placed an emphasis on ZUGFeRD. 
+This week I participated in the {1}[GS1 electronic invoice practice day] with Konik. 
+Looking back on the event which was full of talks related to electronic invoicing where many had an 
+emphasis on ZUGFeLooking back on the event, it was full of talks related to electronic invoicing, 
+many of which placed an emphasis on ZUGFeRD. 
 The only two presented business cases did not include ZUGFeRD. During the break I did not have time to 
 ask the two speakers if they had any plans to integrate ZUGFeRD into their electronic invoice process. 
 I plan to catch up with them via E-mail and post results of the conversation.
