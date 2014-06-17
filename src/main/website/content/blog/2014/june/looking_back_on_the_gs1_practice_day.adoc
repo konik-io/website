@@ -10,25 +10,20 @@ Vadim Bauer
 
 
 This week I participated in the {1}[GS1 electronic invoice practice day] with Konik. 
-Looking back on the event which was full of talks related to electronic invoicing where many had an 
-emphasis on ZUGFeLooking back on the event, it was full of talks related to electronic invoicing, 
-many of which placed an emphasis on ZUGFeRD. 
-The only two presented business cases did not include ZUGFeRD. During the break I did not have time to 
-ask the two speakers if they had any plans to integrate ZUGFeRD into their electronic invoice process. 
-I plan to catch up with them via E-mail and post results of the conversation.
+Looking back on the event, it was full of talks related to electronic invoicing, 
+many of which placed an emphasis on ZUGFeRD. The only two presented business cases did not include ZUGFeRD. 
+During the break I did not have time to ask the two speakers if they had any plans to integrate ZUGFeRD into 
+their electronic invoice process. I plan to catch up with them via E-mail and post results of the conversation.
 
-What pleasantly surprised me was the large number of visitors. 
-Going through the list of around 90 participants, I recognized more than half of the participants 
-were end users mainly interested in ZUGFeRD. From the IT side, some companies were already working with 
-or investigating ZUGFeRD for their projects.
+What pleasantly surprised me was the large number of visitors. Going through the list of around 90 participants, 
+I recognized more than half of the participants were end users mainly interested in ZUGFeRD. From the IT side, 
+some companies were already working with or investigating ZUGFeRD for their projects.
 
-The atmosphere was mainly dominated by people waiting for the first release with the hope of a general ZUGFeRD 
-success before ramping up their projects. Also interesting was the fact that I did not see many ERP companies, 
-but mostly backup and CMS vendors. Participants sometimes criticized the lack of PR for ZUGFeRD, especially 
-among tax consultants.
+The atmosphere was mainly dominated by people waiting for the first release with the hope of a general ZUGFeRD success 
+before ramping up their projects. Also interesting was the fact that I did not see many ERP companies, but mostly 
+backup and CMS vendors. Participants sometimes criticized the lack of PR for ZUGFeRD, especially among tax consultants.
 
 === Conclusion
-Everyone is waiting for a ZUGFeRD success to minimize risk, while at the same time hoping for success because the demand is high. 
-I personally think that with the Konik library the investment costs can be kept at a low level, which also means 
+Everyone is waiting for a ZUGFeRD success to minimize risk, while at the same time hoping for success because the demand 
+is high. I personally think that with the Konik library the investment costs can be kept at a low level, which also means 
 that it is a low risk and minimal effort to implement ZUGFeRD-compliant invoicing for vendors and end users.
-
