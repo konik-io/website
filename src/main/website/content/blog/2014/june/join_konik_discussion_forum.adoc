@@ -8,6 +8,5 @@ Vadim Bauer
 :linkattrs:
 :1: https://groups.google.com/forum/#!forum/konik-io
 
-There is a new {1}[Discussion Forum] for Konik library that is going to host all the topics and discussions that don't fit into GitHub 
-issues or on Stack Overflow.
+A new {1}[Discussion Forum] is now availibe for the Konik Community. It is going to be a new place for discussions that don't fit into GitHub or on Stack Overflow.
 
