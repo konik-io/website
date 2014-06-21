@@ -1,0 +1,13 @@
+= Join Konik Discussion Forum
+Vadim Bauer
+2014-06-21
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Discussion	
+:idprefix:
+:linkattrs:
+:1: https://groups.google.com/forum/#!forum/konik-io
+
+There is a new {1}[Discussion Forum] for Konik library that is going to host all the topics and discussions that don't fit into GitHub 
+issues or on Stack Overflow.
+
