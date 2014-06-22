@@ -1,0 +1,13 @@
+= ZUGFeRD Weekly News #25
+Vadim Bauer
+2014-06-22
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+
+ZUGFeRD related news and articles from 14^th^ June until 22^nd^ June.  
+  
+There was quite some buzz around ZUGFeRD this week, as next Wednesday ZUGFeRD 1.0 will be officially released.
+On the other hand I can't report any interesting announcements or articles around ZUGFeRD. I expect more news for the next week.
