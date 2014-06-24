@@ -4,7 +4,7 @@
 
    <groupId>io.konik</groupId>
    <artifactId>website</artifactId>
-   <version>1.2.0</version>
+   <version>1.3.0</version>
    <packaging>pom</packaging>
 
    <name>konik.io website</name>
@@ -41,8 +41,8 @@
       <website.source.dir>${basedir}/src/main/website</website.source.dir>
       <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
       <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
-      <javadocs-latest-version>0.2.0</javadocs-latest-version>
-      <javadocs-snapshot-version>0.2.1-SNAPSHOT</javadocs-snapshot-version>
+      <javadocs-latest-version>0.5.0</javadocs-latest-version>
+      <javadocs-snapshot-version>0.6.0-SNAPSHOT</javadocs-snapshot-version>
       <!-- export for jbake -->
       <asciidoctor.attribute.javadocs-latest-version>${javadocs-latest-version}</asciidoctor.attribute.javadocs-latest-version>
       <asciidoctor.attribute.javadocs-snapshot-version>${javadocs-snapshot-version}</asciidoctor.attribute.javadocs-snapshot-version>
