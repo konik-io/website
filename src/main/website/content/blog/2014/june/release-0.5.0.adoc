@@ -8,12 +8,12 @@ Vadim Bauer
 :linkattrs:
 
 
-The Konik library is approaching the 1.0 release in big steps. Just in time with the official ZUGFeRD announcement we finished our 0.5.0 release.
-This is the in between release and does not yet support all 1.0 ZUGFeRD features. 
+The Konik library 1.0 is being scheduled to be released in big steps. Just in time with the official ZUGFeRD announcement we completed our 0.5.0 release.
+This is the "in-between" release and it does not support all of the features of ZUGFeRD 1.0. 
 
 === Release Notes
 
-The Konik domain model can be considered stable. For the final 1.0 release we are planning to extend the model without breaking the 
+The Konik domain model can now be considered stable. For the final 1.0 release, we are planning to extend the model without breaking the 
 existing API.
 
 
