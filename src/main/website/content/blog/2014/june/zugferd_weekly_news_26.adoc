@@ -1,0 +1,31 @@
+= ZUGFeRD Weekly News #26
+Vadim Bauer
+2014-06-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:0: http://www.ferd-net.de/front_content.php?idart=946
+:1: http://www.handelsblatt.com/unternehmen/management/strategie/zugferd-rechnungsstandard-koennte-firmen-millionen-ersparen/10104678.html
+:2: http://www.golem.de/news/pdf-und-xml-zugferd-fuer-elektronische-rechnung-vorgestellt-1406-107463.html
+:3: http://www.tecchannel.de/software/news/2062896/zugferd_10_soll_elektronische_rechnung_auf_den_weg_bringen/
+:4: http://www.cio.de/news/wirtschaftsnachrichten/2961791/
+:5: http://www.focus.de/finanzen/news/unternehmen/abschied-vom-papier-so-kann-der-mittelstand-112-milliarden-euro-sparen_id_3945147.html
+:6: http://www.heise.de/open/meldung/ZUGFeRD-Version-1-0-des-Standards-fuer-elektronische-Rechnungen-veroeffentlicht-2237978.html
+:7: http://www.din.de/cmd?level=tpl-artikel&cmstextid=227429&bcrumblevel=1&languageid=de
+:8: https://www.din-zugferd-validation.org
+:9: http://www.awv-net.de/updates/zugferd/zugferd10.zip
+
+
+ZUGFeRD related news and articles from 22^nd^ June until 29^th^ June.  
+  
+This week was dominated by the official ZUGFeRD 1.0 announcement. Hundreds of news sources picked up this recentness.
+
+== News
+
+- An excerpt of ZUGFeRD 1.0 news from various sources.
+	 {0}[Ferd], {1}[Handelsblatt], {2}[Golem], {3}[TechChannel], {4}[CIO], {5}[Focus], {6}[Heise] and {7}[DIN].   
+- German Institute for Standardization (DIN) officially launched a {8}[ZUGFeRD validation service] 
+	which now supports ZUGFeRD 1.0
+- ZUGFeRD Info package is available for {9}[download]. 	
