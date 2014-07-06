@@ -1,0 +1,25 @@
+= ZUGFeRD Weekly News #27
+Vadim Bauer
+2014-07-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:0: http://www.ferd-net.de/front_content.php?idart=953
+:1: https://www.datev-blog.de/2014/07/03/zugferd-ein-standard-fuer-die-digitale-rechnung/
+:2: http://www.t-systems-mms.com/unternehmen/newsroom/detail/t-systems-multimedia-solutions-unterstuetzt-einheitlichen-elektronischen-rechnungsstandard-zugferd.html?tx_ttnews%5BbackPid%5D=17&cHash=56051912df5adaa1cd10de3740eaf4ee
+
+
+ZUGFeRD related news and articles from 29^th^ June until 6^th^ July.  
+  
+== News
+
+- ZUGFeRD wins the 3rd place in the {0}[eGovernment competition] that was mentioned in weekly #24.
+- T-Systems Multimedia Solutions offers a {2}[ZUGFeRD Validator] which according to the announcement should be able
+	to validate PDF content against the structured XML data.
+
+== Article
+
+- The Data Processing Organization for Tax Agents and Related Tax Services Providers Germany (DATEV) made a 
+	{1}[positive statement] about the feature of ZUGFeRD
