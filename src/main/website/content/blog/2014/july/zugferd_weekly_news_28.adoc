@@ -12,6 +12,9 @@ Vadim Bauer
 :3: http://www.e-docs-standards.de/cms/images/Publikationen/Leitfaden/Franken_Loosen_Bernius_-_eRechnung_Fallbeispiel_THW.pdf
 :4: http://www.task-edoc.de/edoc.shtml
 :5: http://www.ferd-net.de/front_content.php?idart=931
+:6: http://www.bmi.bund.de/SharedDocs/Downloads/DE/Broschueren/2014/e-rechnung.html
+:7: http://www.project-consult.de/ecm/news/2013/zugferd_standard_f%C3%BCr_die_elektronische_rechnung#comment-2547
+
 
 ZUGFeRD related news and articles from 6^th^ July until 13^th^ July.  
   
@@ -27,7 +30,8 @@ ZUGFeRD related news and articles from 6^th^ July until 13^th^ July.
 
 - E-docs published a {3}[case study] based on the electronic invoice project for the Federal Agency for Technical Relief (THW). 
   Page 133 is showing a figure of a PDF to ZUGFeRD converter from {4}[TASK eDoc Services]. 
-
+- Federal Ministry of the Interior (BMI) published the {6}[Guidelines for Electronic invoicing in public administration]. 
+- Here is a {7}[critical comment] regarding the {6}[Guidelines for Electronic invoicing in public administration]. 
 	
 == Events
 
