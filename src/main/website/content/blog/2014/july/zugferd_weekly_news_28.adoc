@@ -1,0 +1,34 @@
+= ZUGFeRD Weekly News #28
+Vadim Bauer
+2014-07-13
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:0: http://www.awv-net.de/updates/zugferd/zugferd10.zip
+:1: http://rechnungsaustausch.org/zugferd-anbieter-software-developement-kit.htm
+:2: https://groups.google.com/d/msg/mustangproject/DgZ5F1nm-bg/TjSccSlkxB4J
+:3: http://www.e-docs-standards.de/cms/images/Publikationen/Leitfaden/Franken_Loosen_Bernius_-_eRechnung_Fallbeispiel_THW.pdf
+:4: http://www.task-edoc.de/edoc.shtml
+:5: http://www.ferd-net.de/front_content.php?idart=931
+
+ZUGFeRD related news and articles from 6^th^ July until 13^th^ July.  
+  
+== News
+
+- An updated version of the ZUGFeRD 1.0 package is available for {0}[download]. The version of 11^th^ July contains corrected sample files.
+- Jochen released {2}[Version 1.1] of Mustang project adding support for ZUGFeRD 1.0. 
+- TASK eDoc Services have a ZUGFeRD {4}[Printer Driver] which is able to create automatically a ZUGFeRD compliant invoice.
+- Rechnungsaustausch.org published a list of {1}[ZUGFeRD SDK providers] and Konik is part of it.
+
+
+== Article
+
+- E-docs published a {3}[case study] based on the electronic invoice project for the Federal Agency for Technical Relief (THW). 
+  Page 133 is showing a figure of a PDF to ZUGFeRD converter from {4}[TASK eDoc Services]. 
+
+	
+== Events
+
+- The Forum electronic invoice Germany (FeRD) organizes a free {5}[Conference] on the 10 ^th^ any 11^th^ of September.
