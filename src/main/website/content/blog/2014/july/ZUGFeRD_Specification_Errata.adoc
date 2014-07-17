@@ -1,0 +1,81 @@
+= Errors in the ZUGFeRD Specification Part 1
+Vadim Bauer
+2014-07-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Specification errors	
+:idprefix:
+:linkattrs:
+:icons: font
+:0: http://www.unece.org/trade/untdid/d13b/tred/tred2379.htm
+
+
+This is a summary of my finding regarding the ZUGFeRD specification while working on Konik 1.0.
+  
+
+== Incoherent date formats 
+
+Lets take a look at chapter 6.5.3 of the ZUGFeRD format specification. The chapter defines the two date formats in ZUGFeRD. 
+One where the date string is accompanied by a format code and another one described only as a string. 
+The last one did not exist in the RC Specification.
+
+Following questions arise::
+- {0}[UN/EDIFACT 2379 - Date or time or period format code^] specifies around 80 different date formats. 
+Should all formats be allowed in ZUGFeRD or only the named +102+, +610+ and +616+? 
+Furthermore {0}[UN/EDIFACT 2379] also defines periods.
+
+- +IssueDateTime+ is defined in the specification as +yyyy-MM-ddTHH:mm:ss+ (Example: 2013-08-05T00:00:00). 
+The XSD on the other hand is a union of dateTime or date. 
++
+[source,xml,indent=0]
+----
+<xs:simpleType name="DateMandatoryDateTimeType">
+	<xs:union memberTypes="xs:dateTime xs:date"/>	# <1>
+</xs:simpleType>
+----
++
+<1> This means that +yyyy-MM-ddTHH:mm:ss+ and +yyyy-MM-dd+ are both valid types which is not clear from the specification.
+
+== Incorrect XSD
+
+=== DefinedTradeContact
+
+The +DefinedTradeContact+ within a +TradePartyType+ is defined with an unbound occurrence. According to the specification it should occur maximum one time.
+
+[source,xml,indent=0]
+----
+<xs:complexType name="TradePartyType">
+	<xs:sequence>
+		<xs:element name="ID" type="udt:IDType" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="GlobalID" type="udt:IDType" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="Name" type="udt:TextType" minOccurs="0"/>
+		<xs:element name="DefinedTradeContact" type="ram:TradeContactType" minOccurs="0" maxOccurs="unbounded"/>	# <1>
+		<xs:element name="PostalTradeAddress" type="ram:TradeAddressType" minOccurs="0"/>
+		<xs:element name="SpecifiedTaxRegistration" type="ram:TaxRegistrationType" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+----
+<1> Correct should be +maxOccurs="1"+
+
+=== NoteType
+
+Model and Schema definition declare +ContentCode+ as optional and with a max occurrence of one.
+
+.Model definition page 7.
+image::img/blog/july/IncludedNote_Model.png["Model definition page 7",alt="ZUGFeRD Model Included Note"]
+
+
+.Schema description page 50.
+image::img/blog/july/IncludedNote_Schema.png["Schema description",alt="ZUGFeRD Schema Included Note"]
+
+[source,xml,indent=0]
+----
+<xs:complexType name="NoteType">
+	<xs:sequence>
+		<xs:element name="ContentCode" type="udt:CodeType" minOccurs="0" maxOccurs="unbounded"/>	# <1>
+		<xs:element name="Content" type="udt:TextType" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="SubjectCode" type="udt:CodeType" minOccurs="0"/>
+	</xs:sequence>
+</xs:complexType>
+----
+<1> Within the XSD +ContentCode+ is defined as +0..N+

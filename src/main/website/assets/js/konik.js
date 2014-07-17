@@ -1,4 +1,8 @@
 //Highlight js init 
+hljs.configure({
+  tabReplace: '    ', // 4 spaces
+});
+
 hljs.initHighlightingOnLoad();
 
 $('.download-zip-package').on('click', function() {
