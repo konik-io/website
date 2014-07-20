@@ -1,0 +1,17 @@
+= ZUGFeRD Weekly News #29
+Vadim Bauer
+2014-07-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:0: https://www.dsin-blog.de/elektronische-rechnungen-im-unternehmen
+
+
+
+ZUGFeRD related news and articles from 13^th^ July until 20^th^ July.  
+  
+== Article
+- DsiN published a {0}[blog post] with tips and background information for invoice sender and receiver 
+regarding ZUGFeRD and electronic invoicing.
