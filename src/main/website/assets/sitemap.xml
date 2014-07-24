@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">       
+<url>
+   <loc>http://konik.io/</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>1.0000</priority>
+</url>
+<url>
+   <loc>http://konik.io/index.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/index.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/development.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/validation.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/blog.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/license.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/dev/ZUGFeRD-Invoice-schema.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/feed.xml</loc>
+   <lastmod>2014-07-24T11:24:09+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/index.html?overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/allclasses-noframe.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/index.html?overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/allclasses-noframe.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/index.html?overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/allclasses-noframe.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/index.html?overview-summary.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/allclasses-noframe.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.5120</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/index.html?overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/index.html?index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/overview-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.5.0/allclasses-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/index.html?overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/index.html?index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/overview-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.5.0/allclasses-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/index.html?overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/index.html?index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/overview-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/itext-carriage-0.6.0-SNAPSHOT/allclasses-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/index.html?overview-tree.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/index.html?index-all.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/overview-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+<url>
+   <loc>http://konik.io/docs/api/konik-0.6.0-SNAPSHOT/allclasses-frame.html</loc>
+   <lastmod>2014-07-23T14:34:03+00:00</lastmod>
+   <changefreq>weekly</changefreq>
+   <priority>0.4096</priority>
+</url>
+</urlset>
