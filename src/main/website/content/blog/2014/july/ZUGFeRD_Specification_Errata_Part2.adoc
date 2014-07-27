@@ -15,11 +15,11 @@ Vadim Bauer
 
 
 Last week I posted about <<{3},Errors in the ZUGFeRD Specification>>. 
-A reply to my questions came very quick from FeRD({4}) telling that 
-the documentation and the resulting XSD Schema are correct. 
+A reply to my questions came very quickly from FeRD({4}) stating 
+that the documentation and the resulting XSD Schema are correct.
 
-The explanation for the differences is based on the fact the 
-ZUGFeRD XSD schema is designed following the {1}[Venetian blind] 
+The explanation for the differences is based on the fact the ZUGFeRD XSD schema is designed following the 
+{1}[Venetian blind] 
 XML Schema design pattern. 
 
 ""
@@ -30,13 +30,13 @@ Eine Validierung erfolgt bei ZUGFeRD also immer in der Kombination aus XSD-Valid
 Die in der gedruckten Spezifikation enthaltenen Informationen haben somit also volle Richtigkeit.
 ""
 
-After reading about XML Schema design and the ZUGFeRD specification and the XSD file I came to the conclusion that:
+After reading about the XML Schema design and the ZUGFeRD specification and the XSD file I came to the conclusion that:
 
-- There is no explanation why the resulting cardinalities need to be +1..N+ instead of +1..1+ in the XSD Schema file.
+- There is no explanation why the resulting cardinalities need to be  +1..N+ instead of +1..1+ in the XSD Schema file.
 - {2}[Designing forward and backward compatible XML Schemas] is very difficult.
 - The XSD Schema alone is pretty useless for ZUGFeRD invoice validation.
 
-Finally we have to take into account all the four different documentations provided.
+Finally we have to take into account the four different documents provided.
 
 - ZUGFeRD Model (Chapter "3 Das semantische ZUGFeRD-Datenmodell" in "Das ZUGFeRD-Format_1p0_technische_Dokumentation.pdf")
 - ZUGFeRD Schema (Chapter "4 Das ZUGFeRD-Schema" in "Das ZUGFeRD-Format_1p0_technische_Dokumentation.pdf")
@@ -45,11 +45,11 @@ Finally we have to take into account all the four different documentations provi
 
 
 Only all four together provide us with a valid ZUGFeRD compliant invoice. 
-Validating your XML Invoice file only against the XSD Schema does not guarantee a ZUGFeRD compliant Invoice. 
+Validating your XML Invoice file  against only the XSD Schema does not guarantee a ZUGFeRD compliant Invoice. 
 Also a successful validation of an XML file against Schematron is not a guarantee.
 
-Now even CEFEG shutdown their validation service, because it is based on XSD 
-Schema validation and Schematron which can not guarantee a correct invoice 
+CEFEG shutdown their validation service, because it is based on XSD 
+Schema validation and Schematron which cannot guarantee a correct invoice 
 at the current state of development at least.
 
 .Error Message on the eInvoice Validation Portal din-zugferd-validation.org.
@@ -60,11 +60,11 @@ image::img/blog/july/din-zugferd-validation.org_error_message.png["Error Message
 
 This week I am going to publish {5}[corrected XML Invoice Example File]. 
 While working on the next release of the Konik library and adding 
-validation features to the library if noticed that some of the existent ZUGFeRD 
+validation features to the library, it was noticed that some of the existent ZUGFeRD 
 examples were marked as incorrect.
 
-Lets take a look at file +Beispielrechnung_1p0_COMFORT.xml+ which is part of the 
-ZUGFeRD specification package as an example to explain what is incorrect
+Let's take a look at file +Beispielrechnung_1p0_COMFORT.xml+ which is part of 
+the ZUGFeRD specification package as an example to explain what is incorrect 
 regarding the ZUGFeRD model.
 
 [source,xml,indent=0]
@@ -85,7 +85,7 @@ regarding the ZUGFeRD model.
  </ram:SpecifiedLogisticsServiceCharge>
 ----
 <1> The +ActualAmount+ contains only the value and no attribute with the currency like in +BasisAmount+ one line above.
-<2> +AppliedAmount+ is also defined as +udt:AmountType+ and hence should also required to contain a currency attribute.
+<2> +AppliedAmount+ is also defined as +udt:AmountType+ and hence should also contain a currency attribute.
 
 The ZUGFeRD model stated that all +udt:AmountType+ require an Currency Code. 
 .+udt:AmountType+ requiring a currency code in +ApplicableTradeTax+
@@ -96,14 +96,12 @@ The Model and the Schema declare +udt:AmountType+ as required but not the XSD Fi
 
 === Solution
 
-The first solution and probably the best is to use a library such as Konik which will
-assist you in creating a valid and ZUGFeRD compliant invoice. Konik will also make the 
-XSD Schema Validation and Schematron optional.
-
-
-Second solution would be to modify the XSD Schema file according the the model
-and ZUGFeRD schema definition to get at least an error when validation the 
-xml against the XSD Schema.
+The first and probably best solution is to use a library such as Konik which will assist 
+you in creating a valid and ZUGFeRD compliant invoice. Konik will also make the XSD 
+Schema Validation and Schematron optional.
+The second solution would be to modify the XSD Schema file 
+according to the model and ZUGFeRD schema definition to get at least an 
+error when validating the xml against the XSD Schema.
 
 [source,xml,indent=0]
 ----
@@ -116,11 +114,11 @@ xml against the XSD Schema.
 		</xs:simpleContent>
 	</xs:complexType>
 ----
-<1> Add +use="required"+ to mark the attribute as required so validation XML Files 
+<1> Add +use="required"+ to mark the attribute as required so the validation of the XML Files 
 against the XSD Schema will fail.
 
-Maybe due to Venetian blind schema design requirements or the automatic generation 
-of the XSD Schema File from the ZUGFeRD Schema definition this was not done.
+Maybe because of the Venetian blind schema design requirements or the automatic 
+generation of the XSD Schema File from the ZUGFeRD Schema definition, this was not done.
 
 
 
