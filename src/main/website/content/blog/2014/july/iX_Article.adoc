@@ -1,0 +1,21 @@
+= Artikel über ZUGFeRD und Konik im iX Magazin 8/2014
+Vadim Bauer
+2014-07-30
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Testimonial	
+:idprefix:
+:linkattrs:
+:0: http://www.heise.de/ix/inhalt/2014/8/98/
+:1: http://www.heise.de/ix/inhalt/thumbnails/2014/08/98.jpg
+
+
+Es gibt einen guten Grund für einen Gang zum Kiosk: für die gerade
+erschienene Ausgabe des iX Magazin 8/2014 habe ich einen
+{0}[Artikel über ZUGFeRD] und die Konik Bibliothek geschrieben.
+Es geht um das ZUGFeRD-Konzept und die Implementierung mit der Konik Bibliothek.
+Ich hoffe, dadurch das Thema ZUGFeRD Entwicklern und IT-Profis näherzubringen.
+  
+.ZUGFeRD Artikel auf Seite 98.
+image::{1}["Seite 98 iX Magazin mit ZUGFeRD Artikel"]
+
