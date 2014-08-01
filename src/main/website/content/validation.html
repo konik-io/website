@@ -15,9 +15,9 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
          <p>Version details</p>
          <dl class="dl-horizontal">
            <dt>Konik</dt>
-           <dd>Version 0.2.0 (only RC compliant)</dd>   
+           <dd>Version 0.6.0-SNAPSHOT</dd>   
            <dt>Validation Service</dt>
-           <dd>Version 0.2.2</dd>
+           <dd>Version 0.3.0</dd>
          </dl>
          <p><i class="fa fa-exclamation-triangle"></i> A successful validation result is not a guarantee for ZUGFeRD Compliant Invoice. Upcoming Konik release will provide more accurate results.</p>
       </div>
@@ -40,55 +40,107 @@ meta_description=Online Service for validating ZUGFeRD invoices in PDF or XML fo
 </div>
 <script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
 <script>
-	$(document).ready(function() {
-		var options = {
-			dataType : 		'json',
-			beforeSubmit:  	restResult,
-			error: 			errorHandling,
-			success : 		successResponse
-		};
-		$('#validate_form').ajaxForm(options);
-	});
-	function successResponse(data) {
-		console.log("repsonse received");
-		console.log(data.message);
-		var alarmType; 
-		switch(data.status){
-			case "VALID":
-				alarmType = "alert-success";
-				break;
-			case "INVALID": 
-			case "ERROR":
-				alarmType = "alert-danger";
-				break;
-		default:
-			alarmType = "alert-danger";
-		}
-		$("#server_result").append(
-				'<div class="alert '+alarmType+'"> <p>'+ data.statusMessage +'</p></div>');
+   $(document).ready(function() {
+      var options = {
+         dataType :     'json',
+         beforeSubmit:     restResult,
+         error:         errorHandling,
+         success :      successResponse
+      };
+      $('#validate_form').ajaxForm(options);
+   });
+   $('#validation-button').on('click', function() {
+       ga('send', 'event', 'button', 'click', 'validation-submit');
+     });
+   
+   function successResponse(data) {
+      console.log("repsonse received");
+      console.log(data.message);
+      displayStatus(data);
+      displayCompareResult(data);
+      displayValidationResult(data);
+   }
+   function displayStatus(data){
+	   var alarmType = findAlarmType(data.status);
+	   var element = '<div class="alert '+alarmType+'"> <p>' + data.statusMessage+ '</p></div>'
+	   $("#server_result").append(element);
 	}
-	
-	function restResult(formData, jqForm, options){
+   
+   function displayCompareResult(data){
+      var panelBlock = '<div class="panel panel-default">\
+        <div class="panel-heading">Result of the round trip xml->model->xml cycle. </div>\
+        <div class="panel-body">'+
+           data.compareResult +
+        '</div>\
+      </div>';
+      $("#server_result").append(panelBlock);
+   }
+   
+   function displayValidationResult(data){
+      var rows =""; 
+      for (var i=0 in data.validationResult) {
+           rows += 
+        	   '<tr>'+
+              		'<td>'+ data.validationResult[i]["Path"] +'</td>'+
+              		'<td>'+ data.validationResult[i]["Message"] +'</td>'+
+              		'<td>'+ data.validationResult[i]["Invalid value"] +'</td>'+
+              	'</tr>';
+      }
+      
+      var panelBlock = 
+    	  '<div class="panel panel-default">\
+            <div class="panel-heading">Model validation results</div>\
+               <table class="table">\
+               	<thead>\
+               		<tr>\
+                  		<th>Path</th>\
+                  		<th>Message</th>\
+                  		<th>Invalid value</th>\
+               		</tr>\
+               	</thead>\
+               	<tbody>'
+                  	+rows+
+               	'</tbody>\
+               </table>\
+        	  </div>\
+        	</div>';
+        
+      $("#server_result").append(panelBlock);
+   }
+   function restResult(formData, jqForm, options){
       if (!formData[0].value) { 
-      $("#server_result").append(
-      		'<div class="alert alert-info"><p>No file selected for validation</p></div>');
+      $("#server_result").append('<div class="alert alert-info"><p>No file selected for validation</p></div>');
          return false; 
       }else{
-    	  $("#server_result").empty();
+        $("#server_result").empty();
       } 
-	}
-	
-	function errorHandling(data, status, xhr){
-		if (data.responseJSON == null){
-			data.responseJSON = {};
-			data.responseJSON.message="Service currently unavailible";
-		}
-		$("#server_result").append(
-				'<div class="alert alert-danger"> <p class="bg-danger">'
-						+ data.responseJSON.message + '</p></div>');
-	}
-	
-	$('#validation-button').on('click', function() {
-		  ga('send', 'event', 'button', 'click', 'validation-submit');
-		});
+   }
+   
+   function errorHandling(data, status, xhr){
+      if (data.responseJSON == null){
+         data.responseJSON = {};
+         data.responseJSON.message="Service currently unavailible";
+      }
+      $("#server_result").append(
+            '<div class="alert alert-danger"> <p class="bg-danger">'
+                  + data.responseJSON.message + '</p></div>');
+   }
+   
+   
+   function findAlarmType(status) {
+      var alarmType;
+      switch (status) {
+      case "VALID":
+         alarmType = "alert-success";
+         break;
+      case "INVALID":
+      case "ERROR":
+         alarmType = "alert-danger";
+         break;
+      default:
+         alarmType = "alert-danger";
+      }
+      return alarmType;
+   }
+
 </script>
