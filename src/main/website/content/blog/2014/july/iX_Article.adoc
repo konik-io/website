@@ -6,7 +6,7 @@ Vadim Bauer
 :jbake-tags: Testimonial	
 :idprefix:
 :linkattrs:
-:0: http://www.heise.de/ix/inhalt/2014/8/98/
+:0: www.ix.de/ix1408098
 :1: img/blog/july/Artikel_iX_MagazinTitel.jpg 
 
 
