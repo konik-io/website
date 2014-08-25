@@ -6,7 +6,7 @@ Vadim Bauer
 :jbake-tags: Testimonial	
 :idprefix:
 :linkattrs:
-:0: http://www.ix.de/ix1408098
+:0: http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html
 :1: img/blog/july/Artikel_iX_MagazinTitel.jpg 
 
 
