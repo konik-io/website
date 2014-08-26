@@ -1,4 +1,4 @@
-= Neuer Release vom ZUGFeRD Validation Serive
+= Neuer Release vom ZUGFeRD Validation Service
 Vadim Bauer
 2014-08-01
 :jbake-type: post

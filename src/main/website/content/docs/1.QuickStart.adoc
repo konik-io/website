@@ -1,40 +1,38 @@
 :icons: font
-:allow-uri-read:
-:lnk_minimalInvoice: https://github.com/konik-io/barn/blob/master/konik/src/test/java/io/konik/examples/MinimalInvoice.java
+:lnk_minimalInvoiceWeb: https://github.com/konik-io/barn/blob/parent-0.7.1/konik/src/test/java/io/konik/examples/MinimalInvoice.java#L72
+:lnk_minimalInvoice: https://raw.githubusercontent.com/konik-io/barn/parent-0.7.1/konik/src/test/java/io/konik/examples/MinimalInvoice.java
+
 == Quick Start
 
 
-The following code from the test case {lnk_minimalInvoice}[+MinimalInvoice.java+] represents a valid invoice data according to the ZUGFeRD data model. 
+The following code from the test case {lnk_minimalInvoiceWeb}[+MinimalInvoice.java+] represents a valid invoice data according to the ZUGFeRD data model. 
 
 Let us step through the code and take a look at the interesting parts.
 
 === Creating the invoice model
-
 [source,java,indent=-3]
 ----
    private Invoice createMinimalInvoiceModel() {
       
-      Invoice invoice = new Invoice(new BasicProfile());//  # <1>
+      Invoice invoice = new Invoice(BASIC);    // <1>
       invoice.setHeader(new Header()
          .setInvoiceNumber("20131122-42")
          .setCode(_380)
-         .setIssued(now)
-         .addName("Rechnung"));
+         .setIssued(today)
+         .setName("Rechnung"));// <2>
       
       Trade trade = new Trade();
-      trade.setAgreement(new Agreement() // # <2>
-            .setSellerTradeParty(new TradeParty()
+      trade.setAgreement(new Agreement()     
+            .setSeller(new TradeParty()
                   .setName("Seller Inc.")
-                  .setAddress(new Address("80331", "Marienplatz 1", "München", "DE"))
-                  .addTaxRegistration(new TaxRegistration("DE122...", FC)))
-            .setBuyerTradeParty(new TradeParty()
+                  .setAddress(new Address("80331", "Marienplatz 1", "München", DE))
+                  .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
+            .setBuyer(new TradeParty()
                   .setName("Buyer Inc.")
-                  .setAddress(new Address("50667", "Domkloster 4", "Köln", "DE"))
-                  .addTaxRegistration(new TaxRegistration("DE123...", FC))));
+                  .setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
+                  .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
       
-      trade.setDelivery(new Delivery()
-            .setEvent(new Event(tomorrow))
-            .setBilledQuantity(new Quantity(1,UNIT)));
+      trade.setDelivery(new Delivery(nextMonth));
       
       trade.setSettlement(new Settlement()
             .setPaymentReference("20131122-42")
@@ -43,12 +41,13 @@ Let us step through the code and take a look at the interesting parts.
                .setPayerAccount(new FinancialAccount("DE01234.."))
                   .setPayerInstitution(new FinancialInstitution("GENO...")))
             .setMonetarySummation(new MonetarySummation()
-               .setNetTotal(new Amount(100, EUR))
+               .setLineTotal(new Amount(100, EUR))
                .setTaxTotal(new Amount(19, EUR))
                .setGrandTotal(new Amount(119, EUR))));
       
-      trade.addItem(new Item().setProduct(new Product().setName("Saddle")));
-      
+      trade.addItem(new Item()
+         .setProduct(new Product().setName("Saddle"))
+         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
       invoice.setTrade(trade);
       
       return invoice;
@@ -61,15 +60,10 @@ Let us step through the code and take a look at the interesting parts.
 
 [source,java,indent=-3]
 ----
-   @Test
-   public void creatMinimalInvoice() throws IOException {
-      //setup
-      Invoice invoice = createMinimalInvoiceModel();
-      InvoiceTransformer transformer = new InvoiceTransformer(); //  # <1>
-      FileOutputStream fileOutputStream = new FileOutputStream("target/minimal-invoice.xml");
-
-      //execute
-      transformer.from(invoice, fileOutputStream); //  # <2>
+   public void createXmlFromModel(Invoice invoice) throws IOException {
+      InvoiceTransformer transformer = new InvoiceTransformer();     // <1>
+      FileOutputStream outputStream = new FileOutputStream("target/minimal-invoice.xml");
+      transformer.fromModel(invoice, outputStream);      // <2>
    }
 ----
 <1> The +InvoiceTransformer+ is responsible for transforming XML to Model and vice versa.   
