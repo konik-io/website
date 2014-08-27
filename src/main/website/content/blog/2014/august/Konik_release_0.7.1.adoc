@@ -7,13 +7,14 @@ Vadim Bauer
 :idprefix:
 :linkattrs:
 
-Es gibt einen weiteren Release der Konik Bibliothek. Mit der jetzt 
-veröffentlichen Version 0.7.1 hat Konik einen Stand erreicht, der sich 
-Produktiv vollständig nutzen lässt. 
+Es gibt einen weiteren Release der Konik Bibliothek: Mit der jetzt 
+veröffentlichten Version 0.7.1 hat Konik einen Stand erreicht, der sich 
+vollständig produktiv nutzen lässt.
 
 Mit der Veröffentlichung von Konik 0.7.1 wurde auch der ZUGFeRD 
 Validierungs-Service auf die neueste Version gebracht und steht ebenfalls 
 zu Verfügung.
+
 
 [source,xml,indent=0]
 ----
@@ -34,22 +35,19 @@ zu Verfügung.
 ----
  
 == Neuerungen
-Es sind weitere Validierungen dazugekommen, so das man die in der Vergangenheit
-erstellen Rechnungen noch mal überprüfen sollte.
-- Zahlen werden nun korrekt gerundet auf 2 bzw. 4 Nachkommastellen
-- Profile werden bei der Validierung des Datenmodells mit einbezogen.  
-- Alle ZUGFeRD Felder sind vorhanden
+Es sind weitere Validierungen dazugekommen, so dass man die in der Vergangenheit 
+erstellten Rechnungen noch einmal überprüfen sollte.
+- Zahlen werden nun korrekt gerundet auf zwei bzw. vier Nachkommastellen.
+- Profile werden bei der Validierung des Datenmodells mit einbezogen.
+- Alle ZUGFeRD Felder sind vorhanden.
 - Nicht gültige Felder wurden so weit es geht entfernt.
 
 == Offene Punke
-- Es gibt zwar schon viele Validierungen aber es könnte noch die eine oder 
-	andere Lücke geben.
-- JavaDoc ist zwar schon Vollständig aber es fehlt oft die Fachliche Beschreibung 
-	so das man noch oft in der Dokumentation nachschlagen muss.
+- Es gibt zwar schon viele Validierungen, aber es könnte noch die eine oder andere Lücke geben.
+- JavaDoc ist zwar schon vollständig, aber es fehlt oft die fachliche Beschreibung, so dass man noch oft in der Dokumentation nachschlagen muss.
 
 == Ausblick
-- Im nächsten Schritt werden die Interfaces zu den PDF Carriages überarbeitet und 
-	ausgelagert, so dass neben iText noch weitere Anbieter an Konik andocken können. 
+- Im nächsten Schritt werden die Interfaces zu den PDF Carriages überarbeitet und ausgelagert, so dass neben iText noch 	weitere Anbieter an Konik andocken können.
 - Das Konik Model soll weiter verbessert werden.
 
  
