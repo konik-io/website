@@ -1,0 +1,55 @@
+= ZUGFeRD Weekly News #35
+Vadim Bauer
+2014-08-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: ZUGFeRD Weekly	
+:idprefix:
+:linkattrs:
+:0: img/blog/ZugpferdTage.jpg 
+:1: http://www.unitek.de/zugferd/
+:2: http://www.seeburger.de/e-invoicingpapierwende/zugferd.html
+:3: http://www.pdfmachine.com/genp/zugferd_en.html
+:4: http://www.pdfmachine.com/zugferd_example_invoice_en.html
+:5: http://www.pdfmachine.com/zugferd_example_invoice_en.pdf
+:6: http://ecosio.com/en/zugferd-smartclient/
+:7: http://z-rechnung.de
+:8: http://www.ferd-net.de/upload/ZUGFeRD-Unterstuetzerliste-8.pdf
+:9: http://www.datev.de/portal/ShowPage.do?pid=dpi&nid=165451
+:10: http://lobster.de/lobster_data-ab-september-mit-zugferd/
+:11: http://www.gnuaccounting.org/index.php?id=12&tx_ttnews%5Btt_news%5D=81&cHash=20f409ebe6a5bee7a857431d0ff204ba
+:12: http://zugferd-kostenlos.de/
+:13: http://www.ferd-net.de/front_content.php?idart=931
+
+
+Nachrichten und Neuigkeiten und rund um ZUGFeRD und elektronische Rechnungen im Zeitraum vom 20 Juli bis 31 August. 
+Die ZUGFeRD Weekly News haben eine kleine Pause eingelegt wegen der Sommerflaute und Urlaub.
+  
+
+== Artikel
+- Walter Steigauf von Unitek beschreibt in {1}[Rechnung 2.0] die Grundlagen, den Nutzen 
+	und die organisatorische Umsetzung von elektonischen Rechnungen im Hinblick auf ZUGFeRD. 
+
+== News
+- SEEBURGER präsentiert {2}[ZUGFeRD Cloud Services] für den elektronischen Rechnungsversand 
+	und -empfang von ZUGFeRD. Die Funktionalität umfasst das Einbetten von XML-Rechnungsdateien 
+	in PDF/A-3-Dateien und das Extrahieren der XML-Rechnungsdaten aus einer ZUGFeRD-konformen PDF/A-3-Datei.
+- Broadgun zeigt mit {3}[pdfMachine ZUGFeRD] einen virtuellen Drucker mit Besonderheit.  
+	Das ZUGFeRD Model und die visuelle Darstellung werden gemeinsam zum virtuellen Drucker gesendet.
+	Der virtuelle Drucker konvertiert die strukturierten Daten und fügt diese als Anhang zum finalen Dokument hinzu. 
+	Hier ein Beispiel mit einem {4}[HTML-Eingangsdokument]: mit ZUGFeRD Daten und visuellem Inhalt. 
+	Das Ergebnis, nachdem es zum virtuellen Drucker gesendet wurde, ist eine {5}[ZUGFeRD konforme PDF Datei]. 
+- Ecosio präsentiert mit {6}[ZUGFeRD Smart Client] eine webbasierte Lösung für ZUGFeRD, welche wahrscheinlich ähnlich der {7}[z-Rechnung] ist.
+- Firma d.velop AG, ist aus der {8}[ZUGFeRD-Unterstützerliste] entfernt worden.
+- Datev e.V integriert sukzessive den ZUGFeRD-Standard in die {9}[DATEV Produktpalette].
+- Lobster GmbH kündigt an das {10}[Lobster_data] ab September ZUGFeRD unterstützen wird.
+- {11}[Gnuaccounting 0.8.6] erschienen mit überarbeiteter Unterstützung für ZUGFeRD 1.0 
+- Die Webseite {12}[ZUGFeRD-Kostenlos] bietet eine Webapplikation an, welche ähnlich wie {7}[z-Rechnung] ist. 
+	Der Dienst steht aber derzeit noch nicht zur Verfügung.
+
+== Veranstaltungen
+- Am 10 und 11 September findet in Berlin die erste {13}[FeRD-Konferenz] statt und Konik wird dabei sein.
+
+image::{0}["ZUGFeRD oder Zugpferd, der Unterschied ist leicht zu erkennen."]
+ZUGFeRD oder Zugpferd, der Unterschied ist leicht zu erkennen.
+  
