@@ -2,7 +2,8 @@
 Vadim Bauer
 V1.2, 2014-08-26:
 :idprefix:
-:toc2:
+:toc:
+:toc-placement: preambe
 :jbake-type: documentation
 :jbake-status: published
 :meta_keywords: Konik User Guide, Konik manual, Konik HowTo, Konik API, Konik JavaDocs, Konik JavaDoc
@@ -12,12 +13,12 @@ V1.2, 2014-08-26:
 toc::[role="col-lg-12"]
 
 [.col-lg-12]
-include::docs/1.QuickStart.adoc[]
+include::1.QuickStart.adoc[]
 
 [.col-lg-12]
-include::docs/2.JavaDocs.adoc[]
+include::2.JavaDocs.adoc[]
 
 [.col-lg-12]
-include::docs/3.DataModel.adoc[]
+include::3.DataModel.adoc[]
 
 

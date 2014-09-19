@@ -1,305 +1,344 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-   <groupId>io.konik</groupId>
-   <artifactId>website</artifactId>
-   <version>1.3.0</version>
-   <packaging>pom</packaging>
+	<artifactId>website</artifactId>
+	<version>1.4.0</version>
+	<packaging>pom</packaging>
 
-   <name>konik.io website</name>
-   <description>The konik.io website source code.</description>
-   <url>http://konik.io</url>
+	<parent>
+		<groupId>io.konik</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.8.0</version>
+	</parent>
 
-   <organization>
-      <name>konik.io</name>
-      <url>konik.io</url>
-   </organization>
+	<name>konik.io website</name>
+	<description>The konik.io website source code.</description>
+	<url>http://konik.io</url>
 
-   <developers>
-      <developer>
-         <id>Vad1mo</id>
-         <name>Vadim Bauer</name>
-         <email>vb@konik.io</email>
-      </developer>
-   </developers>
+	<organization>
+		<name>konik.io</name>
+		<url>konik.io</url>
+	</organization>
 
-   <scm>
-      <url>https://github.com/konik-io/website</url>
-      <connection>scm:git:git://github.com/konik-io/website.git</connection>
-      <developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
-   </scm>
 
-   <issueManagement>
-      <system>GitHub Issues</system>
-      <url>https://github.com/konik-io/website/issues</url>
-   </issueManagement>
 
-   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <website.output.dir>${project.build.directory}/${project.artifactId}-${project.version}</website.output.dir>
-      <website.source.dir>${basedir}/src/main/website</website.source.dir>
-      <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
-      <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
-      <javadocs-latest-version>0.7.1</javadocs-latest-version>
-      <javadocs-snapshot-version>0.8.0-SNAPSHOT</javadocs-snapshot-version>
-      <!-- export for jbake -->
-      <asciidoctor.attribute.javadocs-latest-version>${javadocs-latest-version}</asciidoctor.attribute.javadocs-latest-version>
-      <asciidoctor.attribute.javadocs-snapshot-version>${javadocs-snapshot-version}</asciidoctor.attribute.javadocs-snapshot-version>
-      <asciidoctor.attribute.javadocs-dir>${website.javadoc.dir.relative}</asciidoctor.attribute.javadocs-dir>
-   </properties>
+	<developers>
+		<developer>
+			<id>Vad1mo</id>
+			<name>Vadim Bauer</name>
+			<email>vb@konik.io</email>
+		</developer>
+	</developers>
 
-   <build>
-      <plugins>
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>1.2.1</version>
-            <executions>
-               <execution>
-                  <id>jbake-build</id>
-                  <phase>package</phase>
-                  <goals>
-                     <goal>java</goal>
-                  </goals>
-                  <configuration>
-                     <mainClass>org.jbake.launcher.Main</mainClass>
-                     <arguments>
-                        <argument>${website.source.dir}</argument>
-                        <argument>${website.output.dir}</argument>
-                     </arguments>
-                  </configuration>
-               </execution>
-               <execution>
-                  <id>default-cli</id>
-                  <configuration>
-                     <mainClass>org.jbake.launcher.Main</mainClass>
-                     <arguments>
-                        <argument>${website.output.dir}</argument>
-                        <argument>--server</argument>
-                     </arguments>
-                  </configuration>
-               </execution>
-            </executions>
+	<scm>
+		<url>https://github.com/konik-io/website</url>
+		<connection>scm:git:git://github.com/konik-io/website.git</connection>
+		<developerConnection>scm:git:git@github.com:konik-io/website.git</developerConnection>
+	</scm>
 
-         </plugin>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/konik-io/website/issues</url>
+	</issueManagement>
 
-         <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <version>0.10-SNAPSHOT</version>
-            <configuration>
-               <message>Deploy baked website
-                  ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
-               <noJekyll>true</noJekyll>
-               <outputDirectory>${website.output.dir}</outputDirectory>
-               <excludes>
-                  <exclude>.DS_Store</exclude>
-               </excludes>
-               <oauth2Token>${env.GH_TOKEN}</oauth2Token>
-            </configuration>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>site</goal>
-                  </goals>
-                  <phase>site</phase>
-               </execution>
-            </executions>
-         </plugin>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<website.output.dir>${project.build.directory}/${project.artifactId}-${project.version}</website.output.dir>
+		<website.source.dir>${basedir}/src/main/website</website.source.dir>
+		<website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
+		<website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
+		<javadocs-latest-version>0.8.0</javadocs-latest-version>
+		<javadocs-snapshot-version>0.8.0</javadocs-snapshot-version>
+		<!-- export for jbake -->
+		<asciidoctor.attribute.javadocs-latest-version>${javadocs-latest-version}</asciidoctor.attribute.javadocs-latest-version>
+		<asciidoctor.attribute.javadocs-snapshot-version>${javadocs-snapshot-version}</asciidoctor.attribute.javadocs-snapshot-version>
+		<asciidoctor.attribute.javadocs-dir>${website.javadoc.dir.relative}</asciidoctor.attribute.javadocs-dir>
+	</properties>
 
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>2.4</version>
-            <configuration>
-               <appendAssemblyId>false</appendAssemblyId>
-               <descriptors>
-                  <descriptor>src/assembly/zip.xml</descriptor>
-               </descriptors>
-            </configuration>
-            <executions>
-               <execution>
-                  <id>make-website-zip</id>
-                  <phase>package</phase>
-                  <goals>
-                     <goal>single</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-release-plugin</artifactId>
-            <version>2.4.2</version>
-         </plugin>
+	<prerequisites>
+		<maven>3.0.0</maven>
+	</prerequisites>
 
-         <plugin>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <version>2.8.1</version>
-         </plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<id>jbake-build</id>
+						<phase>package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>org.jbake.launcher.Main</mainClass>
+							<arguments>
+								<argument>${website.source.dir}</argument>
+								<argument>${website.output.dir}</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-cli</id>
+						<configuration>
+							<mainClass>org.jbake.launcher.Main</mainClass>
+							<arguments>
+								<argument>${website.output.dir}</argument>
+								<argument>--server</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
-            <configuration>
-               <verbose>false</verbose>
-               <source>1.6</source>
-               <target>1.6</target>
-               <showDeprecation>true</showDeprecation>
-               <showWarnings>true</showWarnings>
-            </configuration>
-         </plugin>
+			</plugin>
 
-         <!--
-            Get JavaDocs
-         -->
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.8</version>
-            <executions>
-               <execution>
-                  <id>unpack-konik-latest-javadoc-version</id>
-                  <phase>prepare-package</phase>
-                  <goals>
-                     <goal>unpack</goal>
-                  </goals>
-                  <configuration>
-                     <artifactItems>
-                        <!-- LATEST RELEASE -->
-                        <artifactItem>
-                           <groupId>io.konik</groupId>
-                           <artifactId>konik</artifactId>
-                           <version>${javadocs-latest-version}</version>
-                           <classifier>javadoc</classifier>
-                           <outputDirectory>${website.javadoc.dir}/konik-${javadocs-latest-version}/</outputDirectory>
-                        </artifactItem>
-                        <artifactItem>
-                           <groupId>io.konik</groupId>
-                           <artifactId>itext-carriage</artifactId>
-                           <version>${javadocs-latest-version}</version>
-                           <classifier>javadoc</classifier>
-                           <outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-latest-version}/</outputDirectory>
-                        </artifactItem>
-                        <!-- LATEST SNAPSHOT -->
-                        <artifactItem>
-                           <groupId>io.konik</groupId>
-                           <artifactId>konik</artifactId>
-                           <version>${javadocs-snapshot-version}</version>
-                           <classifier>javadoc</classifier>
-                           <outputDirectory>${website.javadoc.dir}/konik-${javadocs-snapshot-version}/</outputDirectory>
-                        </artifactItem>
-                        <artifactItem>
-                           <groupId>io.konik</groupId>
-                           <artifactId>itext-carriage</artifactId>
-                           <version>${javadocs-snapshot-version}</version>
-                           <classifier>javadoc</classifier>
-                           <outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-snapshot-version}/</outputDirectory>
-                        </artifactItem>
-                     </artifactItems>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.10</version>
+				<configuration>
+					<message>Deploy baked website
+						${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${website.output.dir}</outputDirectory>
+					<excludes>
+						<exclude>.DS_Store</exclude>
+					</excludes>
+					<oauth2Token>${env.GH_TOKEN}</oauth2Token>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
 
-         <!--
-            Set Properties with latest versions
-            - javadocs-latest-version
-            - javadocs-snapshot-version
-         -->
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>versions-maven-plugin</artifactId>
-            <version>2.1</version>
-            <executions>
-               <execution>
-                  <id>find-javadocs-latest-version</id>
-                  <phase>initialize</phase>
-                  <goals>
-                     <goal>update-properties</goal>
-                  </goals>
-                  <configuration>
-                     <properties>
-                        <property>
-                           <name>javadocs-latest-version</name>
-                           <dependencies>
-                              <dependency>
-                                 <groupId>io.konik</groupId>
-                                 <artifactId>konik</artifactId>
-                              </dependency>
-                           </dependencies>
-                        </property>
-                     </properties>
-                  </configuration>
-               </execution>
-               <execution>
-                  <id>find-javadocs-snapshot-version</id>
-                  <phase>initialize</phase>
-                  <goals>
-                     <goal>update-properties</goal>
-                  </goals>
-                  <configuration>
-                     <allowSnapshots>true</allowSnapshots>
-                     <properties>
-                        <property>
-                           <name>javadocs-snapshot-version</name>
-                           <dependencies>
-                              <dependency>
-                                 <groupId>io.konik</groupId>
-                                 <artifactId>konik</artifactId>
-                              </dependency>
-                           </dependencies>
-                        </property>
-                     </properties>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-         <!-- 
-               Write Property file for jBake 
-          -->
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>properties-maven-plugin</artifactId>
-            <version>1.0-alpha-2</version>
-            <executions>
-               <execution>
-                  <phase>generate-resources</phase>
-                  <goals>
-                     <goal>write-project-properties</goal>
-                  </goals>
-                  <configuration>
-                     <outputFile>
-                        ${website.source.dir}/custom.properties
-                     </outputFile>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-      </plugins>
-   </build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+<!-- 				<version>2.4.1</version> -->
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>src/assembly/zip.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-website-zip</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-release-plugin</artifactId> -->
+<!-- 				<version>2.5</version> -->
+<!-- 			</plugin> -->
 
-   <dependencies>
-      <dependency>
-         <groupId>org.jbake</groupId>
-         <artifactId>jbake-core</artifactId>
-         <version>2.2.1-SNAPSHOT</version>
-      </dependency>
-   </dependencies>
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-deploy-plugin</artifactId> -->
+<!-- 				<version>2.8.1</version> -->
+<!-- 			</plugin> -->
 
-   <repositories>
-      <repository>
-         <id>oss.sonatype.snapshots</id>
-         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-         <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-         </snapshots>
-         <releases>
-            <enabled>false</enabled>
-         </releases>
-      </repository>
-   </repositories>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 				<version>3.1</version> -->
+<!-- 				<configuration> -->
+<!-- 					<verbose>false</verbose> -->
+<!-- 					<source>1.6</source> -->
+<!-- 					<target>1.6</target> -->
+<!-- 					<showDeprecation>true</showDeprecation> -->
+<!-- 					<showWarnings>true</showWarnings> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+
+			<!-- Get JavaDocs -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<id>unpack-konik-latest-javadoc-version</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<!-- LATEST RELEASE -->
+								<artifactItem>
+									<groupId>io.konik</groupId>
+									<artifactId>konik</artifactId>
+									<version>${javadocs-latest-version}</version>
+									<classifier>javadoc</classifier>
+									<outputDirectory>${website.javadoc.dir}/konik-${javadocs-latest-version}/</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.konik</groupId>
+									<artifactId>itext-carriage</artifactId>
+									<version>${javadocs-latest-version}</version>
+									<classifier>javadoc</classifier>
+									<outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-latest-version}/</outputDirectory>
+								</artifactItem>
+								<!-- LATEST SNAPSHOT -->
+								<artifactItem>
+									<groupId>io.konik</groupId>
+									<artifactId>konik</artifactId>
+									<version>${javadocs-snapshot-version}</version>
+									<classifier>javadoc</classifier>
+									<outputDirectory>${website.javadoc.dir}/konik-${javadocs-snapshot-version}/</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.konik</groupId>
+									<artifactId>itext-carriage</artifactId>
+									<version>${javadocs-snapshot-version}</version>
+									<classifier>javadoc</classifier>
+									<outputDirectory>${website.javadoc.dir}/itext-carriage-${javadocs-snapshot-version}/</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Set Properties with latest versions - javadocs-latest-version - javadocs-snapshot-version -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>find-javadocs-latest-version</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>update-properties</goal>
+						</goals>
+						<configuration>
+							<properties>
+								<property>
+									<name>javadocs-latest-version</name>
+									<dependencies>
+										<dependency>
+											<groupId>io.konik</groupId>
+											<artifactId>konik</artifactId>
+										</dependency>
+									</dependencies>
+								</property>
+							</properties>
+						</configuration>
+					</execution>
+					<execution>
+						<id>find-javadocs-snapshot-version</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>update-properties</goal>
+						</goals>
+						<configuration>
+							<allowSnapshots>true</allowSnapshots>
+							<properties>
+								<property>
+									<name>javadocs-snapshot-version</name>
+									<dependencies>
+										<dependency>
+											<groupId>io.konik</groupId>
+											<artifactId>konik</artifactId>
+										</dependency>
+									</dependencies>
+								</property>
+							</properties>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Write Property file for jBake -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>write-project-properties</goal>
+						</goals>
+						<configuration>
+							<outputFile>
+								${website.source.dir}/custom.properties
+							</outputFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jbake</groupId>
+			<artifactId>jbake-core</artifactId>
+			<version>2.3.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>8.1.12.v20130726</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.20</version>
+		</dependency>
+		<dependency>
+			<groupId>org.pegdown</groupId>
+			<artifactId>pegdown</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.asciidoctor</groupId>
+			<artifactId>asciidoctorj</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf</artifactId>
+			<version>2.1.3.RELEASE</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>oss.sonatype.snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
 </project>
