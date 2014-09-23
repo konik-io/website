@@ -6,7 +6,7 @@ Vadim Bauer
 :idprefix:
 :meta_keywords: Konik contributor, Konik Source Code
 :meta_description: Documentation for Konik contributors and how to build the Code from sources.
-
+:language: en
 
 == Source Code
 The konik.io source code is hosted on github. 

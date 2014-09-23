@@ -1,0 +1,152 @@
+== Setup
+
+or how to integrate the Konik library into my Project.
+
+Broadly there are two different ways on how to integrate the Konik library into a project. 
+Both ways mostly depend upon the type of the environment of the application and the Invoice Validator implementation.
+
+Friends of .NET have only one options to choose from. 
+
+=== Java Projects
+:lnk_spi: http://docs.oracle.com/javase/tutorial/ext/basics/spi.html
+The minimal requirement for Konik is Java 6 although we recommend to use Java 7 and above because of newer JaxB libraries. The 
+<<Working with Java 6>> section contains instructions on how Java 6 users can overcome this issues.
+
+The Konik Library supports Bean Injections also known as JSR330 or CDI. 
+This means that Konik fits nicely in environments with Dependency Injection support. 
+The default option forKonik is to use Java {lnk_spi}[Service provider interface (SPI)].
+
+==== JEE Environment
+If you environment is JEE6 and above include just 
+
+[source,xml,indent=-3,subs="verbatim,attributes"]
+----
+    <dependency>
+        <groupId>io.konik</groupId>
+        <artifactId>konik</artifactId>
+        <version>{konik-latest-release}</version>
+    </dependency>
+----
+
+[source,xml,indent=-3,subs="verbatim,attributes"]
+----
+    <dependency>
+        <groupId>io.konik</groupId>
+        <artifactId>pdfbox-carriage</artifactId> <!--1-->
+        <version>{pdfbox-carriage-latest-release}</version>
+    </dependency>
+----
+<1> Alternatively a different PDF carriage can be selected. Make sure there is only one PDF carriage on the classpath.
+
+==== Spring
+:lnk_spring_docs_jsr330: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-standard-annotations
+:lnk_spring_docs_scanning: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-scanning-autodetection
+
+Select the dependencies according to the <<JEE Environment>> description.
+As Konik has an optional dependency to +javax.inject+ also known as +JRS330+ which no part of Spring by default 
+see {lnk_spring_docs_jsr330}[use of JSR 330 Standard Annotations] in Spring Documentation.
+
+When using Spring you have to add +javax.inject+ dependency to your project, so Spring can use JSR330 annotated components.
+
+[source,xml,indent=-3]
+----
+    <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+    </dependency>
+----
+
+In the next step instruct Spring to also scan for the Konik Library components based on the package name preifix +io.konik+.
+
+[source,java,indent=1]
+----
+@Configuration
+@ComponentScan(basePackages = "com.acme.app.xyz , io.konik")	// <1>
+public class SpringApplicationConfig  {
+    ...
+}
+----
+<1> Declaring with Spring Annotation to scan for injectable components in package +io.konik+. For alternative XML Configuration refer to {lnk_spring_docs_scanning}[Spring Documentation].   
+
+==== Java standalone
+Working in a standalone Java project or any other environment which is not JEE6+ or JSR330 compatible.
+
+Followind dependecy is required 
+[source,xml,indent=-3,subs="verbatim,attributes"]
+----
+    <dependency>
+        <groupId>io.konik</groupId>
+        <artifactId>konik</artifactId>
+        <version>{konik-latest-release}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>io.konik</groupId>
+        <artifactId>pdfbox-carriage</artifactId> <!--1-->
+        <version>{pdfbox-carriage-latest-release}</version>
+    </dependency>
+----
+<1> Different PDF carriage can be selected. Make sure there is only one PDF carriage on the classpath.
+
+Recommended for Invoice validation
+
+[source,xml,indent=-3,subs="verbatim,attributes"]
+----
+    <dependency>
+		<groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr303</artifactId>
+        <version>0.5</version>
+    </dependency>
+----
+
+
+==== Working with Java 6
+We recommend Java 7 and above because of newer JaxB library that do not contain namespace prefix issues. 
+If you still need to work with Java 6 we recommend to use the latest JaxB libraries. 
+While from the XML point of view this not a problem, other XML implementations who will receive your invoice might still complain about it. 
+
+For Java 6 add the latest JaxB files to your project.
+
+[source,xml,indent=-8]
+----
+include::https://raw.githubusercontent.com/konik-io/konik/konik-0.8.0/pom.xml[lines=137..153]
+----
+
+=== Invoice Validator Option
+The second option to choose from is the {http://beanvalidation.org/}[Java Bean Validation] Provider. 
+With the support of Bean Validation you can verify the correctness of your invoice prior transforming it to xml.
+Currently there two Open Source Bean Validation Provider http://hibernate.org/validator[+Hibernate Validator+] and http://bval.apache.org[+Apache BVal+].
+
+While Hibernate Validator is superior regarding features BVal has less dependencies and is more compact, which makes it a perfect companion for a standalone Application.
+
+See http://hibernate.org/validator/documentation/getting-started/ on what dependencies you might need in your environment.
+
+For BVal just this dependency to your project.
+[source,xml,indent=-3,subs="verbatim,attributes"]
+----
+    <dependency>
+		<groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr303</artifactId>
+        <version>0.5</version>
+    </dependency>
+----
+
+==== References
+
+A Blog on Konik.io deals with the topic of http://localhost:8820/blog.html#Dependency%20Injection%20with%20the%20Konik%20library[Konik and dependeny injection]. 
+
+
+=== .NET projects
+The .NET package consists of +Konik+, +PDFBox-carriage+ & +BVal+ for Invoice Validation. 
+Everything bundled together in one package available via NuGet.
+
+[source,bash,indent=0]
+----
+ PM> Install-Package konik-zugferd
+----
+
+You can also browse the https://www.nuget.org/packages/konik-zugferd/[NuGet Konik package] for details.
+
+
+

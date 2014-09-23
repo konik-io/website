@@ -1,71 +1,46 @@
 :icons: font
-:lnk_minimalInvoiceWeb: https://github.com/konik-io/barn/blob/parent-0.7.1/konik/src/test/java/io/konik/examples/MinimalInvoice.java#L72
-:lnk_minimalInvoice: https://raw.githubusercontent.com/konik-io/barn/parent-0.7.1/konik/src/test/java/io/konik/examples/MinimalInvoice.java
+:lnk_minimalInvoiceWeb: https://github.com/konik-io/konik/blob/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java#L72
+:lnk_minimal_latest: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java
 
 == Quick Start
 
 
-The following code from the test case {lnk_minimalInvoiceWeb}[+MinimalInvoice.java+] represents a valid invoice data according to the ZUGFeRD data model. 
+The example code from {lnk_minimalInvoiceWeb}[+MinimalInvoice.java+] represents a valid basic invoice and the steps on how to convert and attach an invoice to a PDF. 
 
 Let us step through the code and take a look at the interesting parts.
 
 === Creating the invoice model
 [source,java,indent=-3]
 ----
-   private Invoice createMinimalInvoiceModel() {
-      
-      Invoice invoice = new Invoice(BASIC);    // <1>
-      invoice.setHeader(new Header()
-         .setInvoiceNumber("20131122-42")
-         .setCode(_380)
-         .setIssued(today)
-         .setName("Rechnung"));// <2>
-      
-      Trade trade = new Trade();
-      trade.setAgreement(new Agreement()     
-            .setSeller(new TradeParty()
-                  .setName("Seller Inc.")
-                  .setAddress(new Address("80331", "Marienplatz 1", "München", DE))
-                  .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
-            .setBuyer(new TradeParty()
-                  .setName("Buyer Inc.")
-                  .setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
-                  .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
-      
-      trade.setDelivery(new Delivery(nextMonth));
-      
-      trade.setSettlement(new Settlement()
-            .setPaymentReference("20131122-42")
-            .setCurrency(EUR)
-            .addPaymentMeans(new PaymentMeans()
-               .setPayerAccount(new FinancialAccount("DE01234.."))
-                  .setPayerInstitution(new FinancialInstitution("GENO...")))
-            .setMonetarySummation(new MonetarySummation()
-               .setLineTotal(new Amount(100, EUR))
-               .setTaxTotal(new Amount(19, EUR))
-               .setGrandTotal(new Amount(119, EUR))));
-      
-      trade.addItem(new Item()
-         .setProduct(new Product().setName("Saddle"))
-         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
-      invoice.setTrade(trade);
-      
-      return invoice;
-   }
+include::{lnk_minimal_latest}[lines=72..111]
 ----
 <1> A new invoice instance is created with one of the three allowed profiles. BASIC, COMPFORT or EXTENDED
 <2> The implementation of the model as a fluent interface makes the creation of the invoice self-explanatory.
 
-=== Transforming the model to XML.
+=== Transforming invoice model to XML
 
 [source,java,indent=-3]
 ----
-   public void createXmlFromModel(Invoice invoice) throws IOException {
-      InvoiceTransformer transformer = new InvoiceTransformer();     // <1>
-      FileOutputStream outputStream = new FileOutputStream("target/minimal-invoice.xml");
-      transformer.fromModel(invoice, outputStream);      // <2>
-   }
+include::{lnk_minimal_latest}[lines=114..118]
 ----
 <1> The +InvoiceTransformer+ is responsible for transforming XML to Model and vice versa.   
 <2> Transform from invoice to an +OutputStream+.
+ 
+=== Attaching invoice model to PDF
+This alternative step performs a model conversation. So you don't have to do it yourself.
+
+[source,java,indent=-3]
+----
+   public void creatInvoiceAndAttachToPDF() throws IOException {
+      Invoice invoice = createMinimalInvoiceModel();
+      PdfHandler handler = new PdfHandler();    // <1>
+      InputStream inputPdf = getClass().getResourceAsStream("/acme_invoice-42.pdf");
+      OutputStream resultingPdf = new FileOutputStream("target/acme_invoice-42_ZUGFeRD.pdf");
+      handler.appendInvoice(invoice, inputPdf, resultingPdf);     // <2>
+   }
+----
+<1> Create a new +PdfHandler+ or reuse existing.  
+<2> Append Invoice to existing PDF defined in +inputPdf+ the result will be written to +resultingPdf+.
+ 
+ 
  

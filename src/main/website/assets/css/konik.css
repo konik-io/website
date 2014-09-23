@@ -17,12 +17,14 @@ code, kbd, pre, samp {
 }
 
 pre.highlight {
-	/*
+	
 	padding: 0px;
 	border: 0px;
-	*/	
+	margin: 0px;
+		
 	background-color:inherit;
 	border:none;
+	margin-bottom: 1em;
 }
 
 .conum {
@@ -130,3 +132,12 @@ pre.highlight {
 .headroom--unpinned {top: -100px;}
 .headroom--pinned {top: 0;}
 /* headroom end */
+
+
+.hljs {
+/* 	padding: 0px; */
+}
+
+.no-margin {
+    margin: 0px;
+}

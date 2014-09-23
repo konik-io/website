@@ -7,6 +7,7 @@ Vadim Bauer
 :meta_keywords: Konik Library license
 :meta_description:  Konik Library license, FOSS License Exception
 :meta_robots: nofollow
+:language: en
 :1: http://opensource.org/licenses
 
 Konik library for ZUGFeRD compliant invoicing

@@ -1,4 +1,4 @@
-= Legal Notice
+= Impressum
 Vadim Bauer
 2014-5-25
 :jbake-type: page
