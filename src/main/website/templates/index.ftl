@@ -10,10 +10,10 @@
       <div class="row">
 
          <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1>Konik - Open Source Bibliothek für ZUGFeRD konforme Rechnungen</h1>
-            <h2>enthält alles was man benötigt zum ZUFeRD Rechnungen lesen, schreiben und validieren.</h2>
+            <h1>Konik, die Open Source ZUGFeRD Bibliothek</h1>
+            <h1><small>enthält alles zum lesen, schreiben und validieren von ZUGFeRD Rechnungen.</small></h1>
 
-            <div class="well-lg">
+            <div class="">
                <a href="#Quickstart" class="btn btn-lg btn-primary">Schnellstart!</a>
             </div>
          </div>
@@ -28,7 +28,6 @@
 
 </div>
 
-
 <div class="section-colored">
 
    <div class="container">
@@ -41,32 +40,48 @@
       <!-- /.row -->
 
       <div class="row">
+      
          <div class="col-lg-4 col-md-4">
             <h3>
                <i class="fa fa-heart"></i> Open Source
             </h3>
             <p>
-               Konik ist die erste Bibliothek die <a href="http://www.ferd-net.de">ZUGFeRD</a> Konforme Rechnungen
-               erstellen, lesen und validieren kann. Verfügbar als Open Source für Java und .NET. Siehe <a
+               Konik ist die erste Bibliothek, welche <a href="http://www.ferd-net.de">ZUGFeRD</a> konforme Rechnungen 
+               erstellen, lesen und validieren kann. Verfügbar als Open Source für Java und .NET. Details zu <a
                   href="/license.html">Lizenzbestimmungen.</a>
             </p>
          </div>
          <div class="col-lg-4 col-md-4">
-            <h3>
-               <i class="fa fa-bullhorn"></i> Über das offensichtliche hinaus
-            </h3>
-            <p>Einfach und verständliche APIs komplett dokumentiert machen es möglich ZUGFeRD konforme Rechnungen in
-               kürzester Zeit in bestehend Systeme zu integrieren ohne sich mit XML Interna oder ZUGFeRD Spezifikation
-               beschäftigen zu müssen. Professionelle Unterstützung und support hilft, wenn Sie nicht mehr weiter
-               wissen.</p>
+            <h3><i class="fa fa-truck"></i> Alles drin</h3>
+            <p>Einfache und verständliche API komplett dokumentiert machen eien integration in kürzester Zeit möglich 
+               ohne sich mit XML Interna oder ZUGFeRD Spezifikation beschäftigen zu müssen.</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-trophy"></i> Support</h3>
+            <p>Die Konik Bibliothek kommt mit Professioneller Unterstützung und Sopport. Wir unterstützen Sie oder übnehmen für Sie die 
+            Realisierung ganzer Projekten mit ZUGFeRD Integration sowie der Gestalltung und optimierung von Rechnungsprozessen.</p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-gears"></i> Funktionen</h3>
+            <p>Eins zu eins Abbildung des ZUGFeRD Models</p>
+            <p>Validierung des Models und <abbr title="ge­ge­be­nen­falls">ggf.</abbr> Korrektur</p>
+            <p>XML Unabhängig</p>
          </div>
          <div class="col-lg-4 col-md-4">
             <h3>
-               <i class="fa fa-road"></i> Optionen zur PDF Verarbeitung
+               <i class="fa fa-gear"></i> Mehr
             </h3>
-            <p></p>
-            <p>Konik wird mit unterschiedliche PDF Modulen von verschiedenen Anbietern ausgeliefert, die es erlauben
-               den PDF Teil der ZUGFeRD Rechnung mit der PDF Bibliothek zu integrieren, die Ihnen am besten passt.</p>
+            <p>Konvertierung des ZUGFeRD Models in XML oder eines anderen Formats</p>
+            <p>Anhängen von XML Dateien an PDFs und PDF nach PDF/A3 konvertierung</p>
+            <p>Extrahieren vom ZUGFeRD XML Dateien aus PDFs</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-rocket"></i> PDF an Board</h3>
+            <p>Konik unterstützt verschiedene PDF Bibliotheken von verschiedenen Anbietern, die es erlauben
+               den PDF Teil der ZUGFeRD Rechnung mit der PDF Bibliothek zu integrieren.</p>
          </div>
       </div>
       <!-- /.row -->
