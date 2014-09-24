@@ -149,12 +149,14 @@
 
          <div class="col-lg-6 col-md-6 col-sm-6">
             <p>
-               Der schnellste Weg die Konik Bibliothek in Ihr Projekt einzubindne ist mit Hilfe eines Dependency
-               Management Systems welches auf das <a href="http://search.maven.org/#search|ga|1|g%3A%22io.konik%22">Maven
-                  Central Repository</a> für JVM oder <a href="https://www.nuget.org/packages/konik-zugferd/">NuGet</a> für
-               .NET zugreifen kann.
+               Der schnellste Weg die Konik Bibliothek in ein Projekt einzubinden ist mit Hilfe eines Dependency
+               Management Systems mit zugriff auf <a href="http://search.maven.org/#search|ga|1|g%3A%22io.konik%22">Maven
+                  Central Repository</a> oder <a href="https://www.nuget.org/packages/konik-zugferd/">NuGet</a> für
+               .NET.
             </p>
             <p>Das linke Fenster enthält Anweisungen für die Verschiedenen Pakete.</p>
+            <p>Das <a href="/docs/index.html#_setup">Setup Kapitel</a> der Dokumentation enthält weitere details und vorgehensweisen für die verschiedene Umgebungen.</p>
+            
             <h3>Alternative</h3>
             <p>Auch ohne eine Dependency Management System steht die gesamte Konik Bibliothek mit allen
                Abhängigkeiten, Plug-Ins und Dokumentation als eigenständige ZIP distribution zur verfügung.</p>
