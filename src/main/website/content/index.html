@@ -2,8 +2,8 @@ title=Open Source Bibliothek für ZUGFeRD konforme Rechnungen.
 date=2014-09-26 
 type=index
 status=published
-meta_keywords=ZUGFeRD, ZUGFeRD Bibliothek, ZUGFeRD Library, Open Source ZUGFeRD, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD Validierung, ZUGFeRD Anbieter
-meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
+meta_keywords=ZUGFeRD SDK, ZUGFeRD Bibliothek, ZUGFeRD Library, Open Source ZUGFeRD, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD Validierung, ZUGFeRD Anbieter
+meta_description=Konik ist die Open Source ZUGFeRD Referenzimplementierung für Java und .NET
 ~~~~~~
 <a href="https://github.com/konik-io"><img align="right"
    src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -12,8 +12,8 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
    <div class="container">
       <div class="row">
          <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1>Konik, die Open Source ZUGFeRD Bibliothek</h1>
-            <h1><small>enthält alles zum lesen, schreiben und validieren von ZUGFeRD Rechnungen.</small></h1>
+            <h1>Konik, die Open Source <a id="zf_definition" href="/ZUGFeRD.html" data-toggle="tooltip" data-placement="bottom" title="Was genau bedeutet ZUGFeRD?">ZUGFeRD</a> Bibliothek</h1>
+            <h1><small>enthält alles zum erstellen, lesen und validieren von ZUGFeRD Rechnungen.</small></h1>
             <a href="#Quickstart" class="btn btn-lg btn-primary">Schnellstart!</a>
          </div>
          <div class="col-lg-6 col-md-6 col-sm-6">
@@ -27,7 +27,7 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
    <div class="container">
       <div class="row">
          <div class="col-lg-12 col-md-12">
-            <h1>Argumente für die Konik Bibliothek</h1>
+            <h1>Argumente für die Konik ZUGFeRD Bibliothek</h1>
          </div>
       </div>
 
@@ -37,9 +37,8 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
                <i class="fa fa-heart"></i> Open Source
             </h3>
             <p>
-               Konik ist die erste Bibliothek, welche <a href="http://www.ferd-net.de">ZUGFeRD</a> konforme Rechnungen 
-               erstellen, lesen und validieren kann. Verfügbar als Open Source für Java und .NET. Details zu <a
-                  href="/license.html">Lizenzbestimmungen.</a>
+               Konik ist die Open Source Referenz zum erstellen, lesen und validieren von <a href="http://www.ferd-net.de">ZUGFeRD</a> Rechnungen.
+               Verfügbar für Java und .NET unter <a href="/license.html">AGPL und weiteren Lizenzen</a>.
             </p>
          </div>
          <div class="col-lg-4 col-md-4">
@@ -49,36 +48,33 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
          </div>
          <div class="col-lg-4 col-md-4">
             <h3><i class="fa fa-trophy"></i> Support</h3>
-            <p>Die Konik Bibliothek kommt mit Professioneller Unterstützung und Sopport. Wir unterstützen Sie oder übnehmen für Sie die 
-            Realisierung ganzer Projekten mit ZUGFeRD Integration sowie der Gestalltung und optimierung von Rechnungsprozessen.</p>
+            <p>Die Konik Bibliothek kommt mit Professioneller Unterstützung und Support. Wir unterstützen Sie bei der Entwicklung oder übnehmen die 
+            Realisierung ganzer Projekte.</p>
          </div>
       </div>
       
       <div class="row">
          <div class="col-lg-4 col-md-4">
             <h3><i class="fa fa-gears"></i> Funktionen</h3>
-            <p>Eins zu eins Abbildung des ZUGFeRD Models</p>
+            <p>Eins zu eins Abbildung des ZUGFeRD Models mit allen Auflagen und Bedingungen</p>
             <p>Validierung des Models und <abbr title="ge­ge­be­nen­falls">ggf.</abbr> Korrektur</p>
-            <p>XML Unabhängig</p>
-         </div>
-         <div class="col-lg-4 col-md-4">
-            <h3>
-               <i class="fa fa-gear"></i> Mehr
-            </h3>
-            <p>Konvertierung des ZUGFeRD Models in XML oder eines anderen Formats</p>
-            <p>Anhängen von XML Dateien an PDFs und PDF nach PDF/A3 konvertierung</p>
-            <p>Extrahieren vom ZUGFeRD XML Dateien aus PDFs</p>
+            <p>Konvertierung des ZUGFeRD Models nach XML oder eines anderen Formats</p>
          </div>
          <div class="col-lg-4 col-md-4">
             <h3><i class="fa fa-rocket"></i> PDF an Board</h3>
-            <p>Konik unterstützt verschiedene PDF Bibliotheken von verschiedenen Anbietern, die es erlauben
-               den PDF Teil der ZUGFeRD Rechnung mit der PDF Bibliothek zu integrieren.</p>
+            <p>Konik unterstützt zahlreiche PDF Bibliotheken von unterschiedlichen Anbietern. Damit lässt sich der
+               PDF Teil der ZUGFeRD Rechnung mit einer beliebigen PDF Bibliothek realisieren.</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-gear"></i> PDF Funktionen</h3>
+            <p>Optionale Konvertierung der PDF in das Format PDF/A3 </p>
+            <p>Anhängen von ZUGFeRD Daten an PDFs</p>
+            <p>Extrahieren vom ZUGFeRD Daten aus PDFs.</p>
          </div>
       </div>
    </div>
 </div>
 <!-- /.section -->
-
 
 <div id="Quickstart" class="section">
    <div class="container">
@@ -89,53 +85,33 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
          <div class="col-lg-6 col-md-6 col-sm-6">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-               <li class="active"><a href="#konik-maven-dependecy" role="tab" data-toggle="tab">Konik</a></li>
-               <li><a href="#pdfbox-carriage" role="tab" data-toggle="tab">PDFBox-Carriage</a></li>
-               <li><a href="#itext-carriage" role="tab" data-toggle="tab">iText-Carriage</a></li>
-               <li><a href="#dotNet" role="tab" data-toggle="tab">.NET</a></li>
+               <li class="active"><a href="#konik-maven-dependecy" role="tab" data-toggle="tab">Java und JVM</a></li>
+               <li><a href="#konik-dotNet" role="tab" data-toggle="tab">.NET</a></li>
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                <div class="tab-pane active no-margin" id="konik-maven-dependecy">
-                  <pre class="highlight">
-<code class="xml">
+                  <pre class="highlight"><code class="xml">
     &lt;dependency&gt;
         &lt;groupId&gt;io.konik&lt;/groupId&gt;
         &lt;artifactId&gt;konik&lt;/artifactId&gt;
         &lt;version&gt;0.8.0&lt;/version&gt;
     &lt;/dependency&gt;
-   </code>
-                 </pre>
-               </div>
-               <div class="tab-pane no-margin" id="pdfbox-carriage">
-                  <pre class="highlight">
-<code class="xml">
-    &lt;!-- plugin to invoice attach or extract with pdfBox --&gt;
+    
+    &lt;!-- pdf plugin to attach/extract invoice data --&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;io.konik&lt;/groupId&gt;
         &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt;
-        &lt;version&gt;0.8.0&lt;/version&gt;
+        &lt;!-- see <a href="/docs/index.html#_setup">manual</a> for other pdf carriages --&gt;
+        &lt;version&gt;0.8.1&lt;/version&gt;
     &lt;/dependency&gt;
    </code>
                  </pre>
                </div>
-               <div class="tab-pane no-margin" id="itext-carriage">
-                  <pre class="highlight">
-<code class="xml">
-    &lt;!-- plugin to invoice attach or extract with iText --&gt;
-    &lt;dependency&gt;
-        &lt;groupId&gt;io.konik&lt;/groupId&gt;
-        &lt;artifactId&gt;itext-carriage&lt;/artifactId&gt;
-        &lt;version&gt;0.8.0&lt;/version&gt;
-    &lt;/dependency&gt;
-   </code>
-                 </pre>
-               </div>
-               <div class="tab-pane no-margin" id="dotNet">
-                  <pre class="highlight">
-<code class="bash">
+               <div class="tab-pane no-margin" id="konik-dotNet">
+                  <pre class="highlight"><code class="bash">
    # with <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">Package Manager Console</a> 
-   PM> Install-Package https://www.nuget.org/packages/konik-zugferd[konik-zugferd]
+   PM> Install-Package <a href="https://www.nuget.org/packages/konik-zugferd">konik-zugferd</a>
    </code>
                  </pre>
                </div>
@@ -249,6 +225,7 @@ meta_description=Open Source ZUGFeRD Bibliothek für Java und .NET
             <div class="modal-content jumbotron">
                <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
                <span>
+                  <i class="fa fa-envelope fa-3"></i>
                   hello<span style="display: none">_wronghere_</span>@<span style="display: none">_wronghere_</span>konik.io
                </span>
             </div>

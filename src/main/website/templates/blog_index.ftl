@@ -1,4 +1,5 @@
 <#include "header.ftl">
+<#include "navbar.ftl">
 
 <div id="Blog" class="section">
 	<div class="container">

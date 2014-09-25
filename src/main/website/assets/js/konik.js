@@ -12,3 +12,5 @@ $('.download-zip-package').on('click', function() {
 $(".navbar-fixed-top").headroom({
 	  "tolerance": 5,
 	  "offset": 100});
+
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
