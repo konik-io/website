@@ -40,4 +40,3 @@
   </head>
 
   <body>
-	<#include "navbar.ftl">

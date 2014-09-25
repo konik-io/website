@@ -4,10 +4,10 @@ jdk:
   - oraclejdk7
 
 #install: 
-#    - echo -e "building jbake snapshot from repository\n"
-#    - git clone https://github.com/Vad1mo/JBake.git jbake
-#    - mvn -q -f ./jbake/pom.xml install -DskipTests
-#    - rm -rf jbake
+   - echo -e "building jbake snapshot from repository\n"
+    - git clone -b feature/newEngines https://github.com/Vad1mo/JBake.git
+    - mvn -q -f ./jbake/pom.xml install -DskipTests
+    - rm -rf jbake
 
 #before_script: mvn versions:set -DnewVersion=1.0.1
 

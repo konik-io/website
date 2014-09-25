@@ -43,9 +43,9 @@
 
 
 			<#list posts as post>
-				<div id="${post.doctitle}" class="col-lg-12 col-md-12 col-sm-12">
+				<div id="${post.title}" class="col-lg-12 col-md-12 col-sm-12">
 			  		<#if (post.status == "published")>
-			          	<h2>${post.doctitle}</h2>
+			          	<h2>${post.title}</h2>
 			          	<p><i class="fa fa-clock-o"></i> Posted on ${post.date?string("dd MMMM yyyy")}</p>
 			          		${post.body}
 			          		<hr>
