@@ -4,6 +4,7 @@
 
 	<artifactId>website</artifactId>
 	<version>1.4.0</version>
+    <packaging>pom</packaging>
 
 	<parent>
 		<groupId>io.konik</groupId>
@@ -43,7 +44,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<website.output.dir>${project.build.directory}/${project.artifactId}-${project.version}</website.output.dir>
+		<website.output.dir>${project.build.directory}/${project.artifactId}</website.output.dir>
 		<website.source.dir>${basedir}/src/main/website</website.source.dir>
 		<website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
 		<website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
@@ -351,4 +352,5 @@
 		</repository>
 	</repositories>
 
+	
 </project>
