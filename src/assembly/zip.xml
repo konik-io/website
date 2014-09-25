@@ -14,7 +14,7 @@
 	<fileSets>
 		<fileSet>
 			<outputDirectory>/</outputDirectory>
-			<directory>${project.build.directory}/${project.artifactId}-${project.version}</directory>
+			<directory>${website.output.dir}</directory>
 		</fileSet>
 	</fileSets>
 </assembly>
