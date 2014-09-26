@@ -23,8 +23,8 @@
 <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/java.min.js"></script>
 <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/xml.min.js"></script>
 <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/bash.min.js"></script>
-<script src="//cdn.jsdelivr.net/headroomjs/0.6.0/headroom.min.js"></script>
-<script src="//cdn.jsdelivr.net/headroomjs/0.6.0/jQuery.headroom.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
 <script src="/js/konik.js"></script>
 </body>
 

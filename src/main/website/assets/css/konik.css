@@ -141,3 +141,10 @@ pre.highlight {
 .no-margin {
     margin: 0px;
 }
+
+@media (min-width: 768px) { 
+    .vertical-align {
+        display: flex;
+        align-items: center;
+    }
+}
