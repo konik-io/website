@@ -5,7 +5,7 @@ v1.4, {docdate}
 :jbake-type: page
 :jbake-status: published
 :meta_keywords: Konik User Guide, Konik manual, Konik HowTo, Konik API, Konik JavaDocs, Konik JavaDoc
-:meta_description: Konik User Documentation and how to integrate the Konik Library into projects.
+:meta_description: Konik User Documentation describing how to integrate the Konik Library into a sofware project.
 :language: en
 
 [no-bullet]
