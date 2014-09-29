@@ -13,4 +13,7 @@ $(".navbar-fixed-top").headroom({
 	  "tolerance": 5,
 	  "offset": 100});
 
-$(function () { $("[data-toggle='tooltip']").tooltip(); });
+$(function () { 
+	$("[data-toggle='tooltip']").tooltip('toggle');
+	}
+);

@@ -5,7 +5,7 @@
          <div class="col-lg-12">
             <p class="pull-right">
                Copyright &copy; Konik.io 2014
-               | <a href="/en/index.html">English</a>
+<!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal_notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
                | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="

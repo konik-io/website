@@ -20,7 +20,3 @@ include::2.Setup.adoc[]
 [.col-lg-12]
 include::3.JavaDocs.adoc[]
 
-[.col-lg-12]
-include::4.DataModel.adoc[]
-
-

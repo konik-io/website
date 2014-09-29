@@ -8,53 +8,77 @@ Vadim Bauer
 
 
 
-ZUGFeRD ist eine Abkürzung für Zentraler User Guide Forum elektronische Rechnung Deutschland 
-ist eine technische Spezifikation für das gleichnamige Format zum Austausch elektronischer Rechnungen. 
-Das Format wurde vom Forum elektronische Rechnung Deutschland (FeRD) in Zusammenarbeit mit Verbänden, 
-Ministerien und Unternehmen entwickelt. Am 25 Juni 2014 wurde die Version 1.0 der Spezifikation veröffentlicht.
+ZUGFeRD ist eine Abkürzung für Zentraler User Guide Forum 
+elektronische Rechnung Deutschland,eine technische Spezifikation 
+für das das gleichnamige Format zum Austausch 
+elektronischer Rechnungen. 
+Das Format wurde vom Forum elektronische Rechnung Deutschland (FeRD) 
+in Zusammenarbeit mit Verbänden, Ministerien und Unternehmen entwickelt. 
+Am 25 Juni 2014 wurde die Version 1.0 der Spezifikation veröffentlicht.
 
-Das ZUGFeRD-Format wird nach Maßgabe des Forums elektronische Rechnung Deutschland sowohl Unternehmen als auch 
-der öffentlichen Verwaltung frei zugänglich gemacht und zu fairen, sachgerechten und nicht diskriminierenden 
-Bedingungen angeboten.
+Das ZUGFeRD-Format wird nach Maßgabe des Forums elektronische Rechnung 
+Deutschland sowohl Unternehmen als auch der öffentlichen Verwaltung 
+frei zugänglich gemacht und zu fairen, sachgerechten und nicht 
+diskriminierenden Bedingungen angeboten.
 
 == Ziel
-ZUGFeRD konforme Rechnungen sollen zwischen Unternehmen sowie zwischen Unternehmen und der öffentlichen 
-Verwaltung schnell, komfortabel und einfach elektronisch ausgetauscht werden. Die Zielgruppe und Nutznießer 
-von ZUGFeRD sind neben großen und mittleren Unternehmen sowie der öffentlichen Verwaltung insbesondere auch 
-kleine und kleinste Unternehmen die wenige Rechnungen pro Jahr an einen Partner stellen oder sogar mit Partnern 
-zutun haben, mit denen keine regelmäßigen Geschäftskontakte bestehen.
+ZUGFeRD konforme Rechnungen sollen zwischen Unternehmen sowie 
+zwischen Unternehmen und der öffentlichen Verwaltung schnell, 
+komfortabel und einfach elektronisch ausgetauscht werden. 
+Die Zielgruppe von ZUGFeRD sind neben großen und mittleren 
+Unternehmen sowie der öffentlichen Verwaltung insbesondere auch 
+kleine und kleinste Unternehmen die wenige Rechnungen pro Jahr 
+an einen Partner stellen oder sogar mit Partnern zutun haben, 
+mit denen keine regelmäßigen Geschäftskontakte bestehen.
 
-Dabei wird erwartet, dass durch das neue ZUGFeRD-Format nicht nur die Kosten der Rechnungsstellung aufgrund des 
-Wegfalls von Material und Portokosten sowie einer automatischen Verarbeitung stark reduziert bis komplett 
-eliminiert werden, sondern auch das Rechnungswesen in Zukunft durch optimierte Prozesse wesentlich effizienter wird.
+Dabei wird erwartet, dass durch das neue ZUGFeRD-Format nicht 
+nur die Kosten der Rechnungsstellung aufgrund des 
+Wegfalls von Material und Portokosten sowie einer automatischen 
+Verarbeitung stark reduziert bis komplett eliminiert werden, 
+sondern auch das Rechnungswesen in Zukunft durch optimierte 
+Prozesse wesentlich effizienter wird.
 
 == Entstehung
-Das Forum elektronische Rechnung Deutschland wurde unter dem Dach der vom Bundesministerium für Wirtschaft und Energie (BMWi) 
-auf Beschluss des Deutschen Bundestages geförderten Arbeitsgemeinschaft für wirtschaftliche Verwaltung e.V. gegründet.
-In der gegenwärtigen Form dient das Forum elektronische Rechnung Deutschland (FeRD) als nationale Plattform von Verbänden, 
-Ministerien und Unternehmen zur Förderung der elektronischen Rechnung in Deutschland.
+Das Forum elektronische Rechnung Deutschland wurde unter 
+dem Dach der vom Bundesministerium für Wirtschaft und Energie (BMWi) 
+auf Beschluss des Deutschen Bundestages geförderten 
+Arbeitsgemeinschaft für wirtschaftliche Verwaltung e.V. gegründet.
+In der gegenwärtigen Form dient das Forum elektronische 
+Rechnung Deutschland (FeRD) als nationale Plattform von Verbänden, 
+Ministerien und Unternehmen zur Förderung der elektronischen Rechnung 
+in Deutschland.
 
 == Voraussetzungen für ZUGFeRD
-Die Entstehung von  ZUGFeRD wurde durch das Steuervereinfachungsgesetz 2011 begünstigt. 
-Darin wurde die elektronischen Rechnung der klassische Papierrechnungen gleichgestellt. Zuvor musste der Empfänger musste 
-die Echtheit und Unversehrtheit des Dokuments gegenüber dem Finanzamt durch Nachweis eines qualifizierten digitalen Zertifikates belegen können.
-Als Alternative zur qualifizierten Signatur sind nun Sogenannte „innerbetriebliche Kontrollverfahren“ die einen 
-„verlässlichen Prüfpfad“ zwischen der Rechnung und der Lieferung gewährleisten zulässig. 
-Hinter dieser Definition verbirgt sich im Grunde eine klassische Rechnungseingangsprüfung, 
-die in jedem Unternehmen ohnehin praktiziert werden muss.
+Die Entstehung von  ZUGFeRD wurde durch das 
+Steuervereinfachungsgesetz 2011 begünstigt. 
+Darin wurde die elektronischen Rechnung der klassische Papierrechnungen 
+gleichgestellt. Zuvor musste der Empfänger musste 
+die Echtheit und Unversehrtheit des Dokuments gegenüber dem Finanzamt 
+durch Nachweis eines qualifizierten digitalen Zertifikates belegen können.
+Als Alternative zur qualifizierten Signatur sind nun Sogenannte 
+„innerbetriebliche Kontrollverfahren“ die einen „verlässlichen Prüfpfad“ 
+zwischen der Rechnung und der Lieferung gewährleisten zulässig. 
+Hinter dieser Definition verbirgt sich im Grunde eine 
+klassische Rechnungseingangsprüfung, die in jedem Unternehmen ohnehin 
+praktiziert werden muss.
 
 == ZUGFeRD Konzept
-Ein ZUGFeRD Rechnung besteht im Wesentlichen aus zwei Teilen. Aus einer visuellen Darstellung der Rechnung 
-für den Menschen und aus maschinenlesbaren strukturierten Daten.  Die visuelle Darstellung der Rechnung 
-erfolgt in Form von PDF/A-3. Die maschinenlesbaren strukturierten Daten im XML-Format werden dem PDF/A-3 
-als Anhang angefügt. Somit dient das PDF als Container sowohl für die visuelle Darstellung als auch für 
-die strukturieren Daten im XML-Format.
+Eine ZUGFeRD-Rechnung besteht im Wesentlichen aus zwei Teilen: 
+Aus einer visuellen Darstellung der Rechnung für den Kunden und aus 
+maschinenlesbaren strukturierten Daten. Die visuelle Darstellung der 
+Rechnung erfolgt in Form von PDF/A-3. Die maschinenlesbaren strukturierten 
+Daten im XML-Format werden dem PDF/A-3 als Anhang beigefügt. 
+Somit dient das PDF als Container sowohl für die visuelle 
+Darstellung als auch für die strukturieren Daten im XML-Format.
 
 == Vorteile und Abgrenzung zu bestehenden Verfahren 
-Im Gegensatz zu anderen verfahren wie EDIFACT stellt die ZUGFeRD Spezifikation an die  Übertragung der 
-Rechnungen keinerlei Anforderungen. Die ZUGFeRD Rechnungen können so ausgetauscht werden wie es für die 
-beiden Vertragspartner am sinnvollsten ist.  
-Anders als bei EDI verfahren nötig ist muss bei ZUGFeRD zwischen den beiden Parteien keine Vereinbarungen 
-im Vorfeld des Rechnungsaustauschs getroffen werden. Aufgrund der Änderungen im Steuervereinfachungsgesetz 2011 
-darf ein Rechnungssender bis auf wiederruf elektronische Rechnungen versenden.
+Im Gegensatz zu anderen Verfahren wie EDIFACT stellt die 
+ZUGFeRD Spezifikation an die  Übertragung der Rechnungen 
+keinerlei Anforderungen. Die ZUGFeRD Rechnungen können 
+so ausgetauscht werden wie es für die beiden Vertragspartner 
+am sinnvollsten ist. Anders als bei EDI Verfahren nötig ist, 
+muss bei ZUGFeRD zwischen den beiden Parteien keine Vereinbarungen 
+im Vorfeld des Rechnungsaustauschs getroffen werden. 
+Aufgrund der Änderungen im Steuervereinfachungsgesetz 2011 darf ein 
+Rechnungssender bis auf Wiederruf elektronische Rechnungen versenden.
 
