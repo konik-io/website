@@ -14,6 +14,6 @@ $(".navbar-fixed-top").headroom({
 	  "offset": 100});
 
 $(function () { 
-	$("[data-toggle='tooltip']").tooltip('toggle');
+	$("[data-toggle='tooltip']").tooltip(); 
 	}
 );
