@@ -1,29 +1,29 @@
 == Setup
 
-or how to integrate the Konik library into my Project.
+or how to integrate the Konik library into my project.
 
 Broadly there are two different ways on how to 
 integrate the Konik library into a project. 
 Both ways mostly depend upon the type of the environment 
 of the application and the Invoice Validator implementation.
 
-Friends of .NET have only one options to choose from. 
+Friends of .NET have only one option to choose from. 
 
 === Java Projects
 :lnk_spi: http://docs.oracle.com/javase/tutorial/ext/basics/spi.html
 The minimal requirement for Konik is Java 6 although we recommend 
 Java 7 and above because of newer JaxB libraries. 
 The <<Working with Java 6>> section contains instructions 
-on how Java 6 users can overcome this issues.
+on how Java 6 users can overcome these issues.
 
-The Konik Library supports Bean Injections also 
+The Konik Library supports Bean Injections, also 
 known as JSR330 or CDI. This means that Konik fits nicely 
 in environments with Dependency Injection support. 
-The default option forKonik is to use Java 
+The default option for Konik is to use Java 
 {lnk_spi}[Service provider interface (SPI)].
 
 ==== JEE Environment
-If you environment is JEE6 and above include just 
+If your environment is JEE6 and above include just 
 
 [source,xml,indent=-3,subs="verbatim,attributes"]
 ----
@@ -52,7 +52,7 @@ Make sure there is only one PDF carriage on the classpath.
 Select the dependencies according to the 
 <<JEE Environment>> description.
 As Konik has an optional dependency to +javax.inject+ also known as 
-+JRS330+ which no part of Spring by default see 
++JRS330+ which takes not part of Spring by default see 
 {lnk_spring_docs_jsr330}[use of JSR 330 Standard Annotations] 
 in Spring Documentation.
 
@@ -105,7 +105,7 @@ Followind dependecy is required
 <1> Different PDF carriage can be selected. 
 	Make sure there is only one PDF carriage on the classpath.
 
-Recommended for Invoice validation
+Recommended for invoice validation
 
 [source,xml,indent=-3,subs="verbatim,attributes"]
 ----
@@ -119,7 +119,7 @@ Recommended for Invoice validation
 
 ==== Working with Java 6
 We recommend Java 7 and above because of newer JaxB library 
-that do not contain namespace prefix issues. If you still need to 
+which does not contain namespace prefix issues. If you still need to 
 work with Java 6 we recommend to use the latest JaxB libraries. 
 While from the XML point of view this not a problem, other 
 XML implementations who will receive your invoice might still complain about it. 
@@ -134,13 +134,13 @@ include::https://raw.githubusercontent.com/konik-io/konik/konik-0.8.0/pom.xml[li
 === Invoice Validator Option
 The second option to choose from is the {http://beanvalidation.org/}[Java Bean Validation] Provider. 
 With the support of Bean Validation you can verify the correctness 
-of your invoice prior transforming it to xml.Currently there two 
-Open Source Bean Validation Provider http://hibernate.org/validator[+Hibernate Validator+] 
+of your invoice prior transforming it to xml. Currently there two 
+Open Source Bean Validation Providers http://hibernate.org/validator[+Hibernate Validator+] 
 and http://bval.apache.org[+Apache BVal+].
 
 While Hibernate Validator is superior regarding features BVal has 
 less dependencies and is more compact, which makes it a perfect 
-companion for a standalone Application.
+companion for a standalone application.
 
 See http://hibernate.org/validator/documentation/getting-started/ 
 on what dependencies you might need in your environment.
