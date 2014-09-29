@@ -4,10 +4,10 @@ jdk:
   - oraclejdk7
 
 #install: 
-   - echo -e "building jbake snapshot from repository\n"
-    - git clone -b feature/newEngines https://github.com/Vad1mo/JBake.git
-    - mvn -q -f ./jbake/pom.xml install -DskipTests
-    - rm -rf jbake
+#   - echo -e "building jbake snapshot from repository\n"
+#    - git clone -b feature/newEngines https://github.com/Vad1mo/JBake.git
+#    - mvn -q -f ./jbake/pom.xml install -DskipTests
+#    - rm -rf jbake
 
 #before_script: mvn versions:set -DnewVersion=1.0.1
 
@@ -15,9 +15,9 @@ script:
   - mvn -q clean
   - mvn -q initialize
   - mvn -q package
-#  - mvn -q site
+  - mvn -q site
 
-#after_success: mvn versions:set -DnewVersion=1.0.2-SNAPSHOT
+# after_success: mvn versions:set -DnewVersion=1.0.2-SNAPSHOT
 
 env:
   global:
