@@ -148,3 +148,16 @@ pre.highlight {
         align-items: center;
     }
 }
+
+
+/* asciidoctor */
+
+
+/* no bullets in toc */
+ul.sectlevel1, ul.sectlevel2, ul.sectlevel3{
+	list-style-type: none;
+}
+
+#toctitle.title{
+	font-size: 26px;
+}

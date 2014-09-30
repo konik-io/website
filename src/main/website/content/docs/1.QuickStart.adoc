@@ -1,11 +1,12 @@
 :icons: font
-:lnk_minimalInvoiceWeb: https://github.com/konik-io/konik/blob/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java#L72
 :lnk_minimal_latest: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java
 
 == Quick Start
 
 
-The example code from {lnk_minimalInvoiceWeb}[+MinimalInvoice.java+] represents a valid basic invoice and the steps on how to convert and attach an invoice to a PDF. 
+The example code from 
+https://github.com/konik-io/konik/blob/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java#L72[+MinimalInvoice.java+] 
+represents a valid basic invoice and the steps on how to convert and attach an invoice to a PDF. 
 
 Let us step through the code and take a look at the interesting parts.
 

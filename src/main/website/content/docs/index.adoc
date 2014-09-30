@@ -2,13 +2,13 @@
 Vadim Bauer <vb@konik.io>
 v1.4, {docdate}
 :toc:
+:toc-placement!:
 :jbake-type: page
 :jbake-status: published
 :meta_keywords: Konik User Guide, Konik manual, Konik HowTo, Konik API, Konik JavaDocs, Konik JavaDoc
-:meta_description: Konik User Documentation describing how to integrate the Konik Library into a sofware project.
+:meta_description: Konik User Documentation describing how to integrate the Konik Library into a software project.
 :language: en
 
-[no-bullet]
 toc::[role="col-lg-12"]
 
 [.col-lg-12]
