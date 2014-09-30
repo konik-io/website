@@ -2,16 +2,16 @@
   
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Site Navigation</span>
-<!--         <span class="icon-bar"></span> -->
-<!--         <span class="icon-bar"></span> -->
-<!--         <span class="icon-bar"></span> -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand logo" href="/">Konik</a>
     </div>
 
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <div id="navbar-main" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/index.html#Quickstart">Schnellstart</a></li>
         <li><a href="/ZUGFeRD.html">ZUGFeRD</a></li>
