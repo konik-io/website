@@ -33,7 +33,7 @@
 						  <button class="btn btn-default btn-sm dropdown-toggle margin" type="button" data-toggle="dropdown">${key} <span class="caret"></span></button>
 						  <ul class="dropdown-menu">
 						    <#list tag_posts[key] as p>
-						    	  <li><a href="#${p.doctitle}">${p.doctitle}</a></li>
+						    	  <li><a href="#${p.title}">${p.doctitle}</a></li>
 						    </#list>
 						  </ul>
 					  </div><!--btn-group -->
