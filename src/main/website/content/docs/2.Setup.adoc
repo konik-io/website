@@ -157,8 +157,8 @@ For BVal just this dependency to your project.
 
 ==== References
 
-A Blog on Konik.io deals with the topic of 
-http://localhost:8820/blog.html#Dependency%20Injection%20with%20the%20Konik%20library[Konik and dependeny injection]. 
+A Blog entry deals with the topic of 
+link:/blog.html#Dependency-Injection-with-the-Konik-library[Konik and dependeny injection]. 
 
 
 === .NET projects
