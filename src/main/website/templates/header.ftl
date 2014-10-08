@@ -5,15 +5,15 @@
     <meta charset="utf-8"/>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="<#if (content.meta_description)??>${content.meta_description}<#else>ZUGFeRD Open Source Bibliothek für Java und .NET</#if>"/>
+    <meta name="description" content="${content.meta_description}"/>
     <meta name="author" content="Vadim Bauer"/>
     <meta content="/img/logo.png" property="og:image"/>
-    <meta name="keywords" content="<#if (content.meta_keywords)??>${content.meta_keywords}<#else>ZUGFeRD, ZUGFeRD Bibliothek, ZUGFeRD Library, Open Source ZUGFeRD, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD Validierung</#if>"/>
-    <meta name="date" content="<#if (content.published_date)??>${content.published_date?string("yyyy-MM-dd")}}<#else>.now?string("yyyy-MM-dd")</#if>" scheme="YYYY-MM-DD">
+    <meta name="keywords" content="${content.meta_keywords}"/>
+    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD">
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"/></#if>
 	
-    <title><#if (content.title)??><#escape x as x?xml>${content.title}</#escape><#else>ZUGFeRD Open Source Bibliothek für Java und .NET</#if></title>
+    <title>${content.title}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>
