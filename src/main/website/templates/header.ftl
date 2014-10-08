@@ -9,7 +9,7 @@
     <meta name="author" content="Vadim Bauer"/>
     <meta content="/img/logo.png" property="og:image"/>
     <meta name="keywords" content="${content.meta_keywords}"/>
-    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD">
+    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD"/>
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"/></#if>
 	
@@ -27,7 +27,7 @@
     <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
 
     <!-- icon -->
-    <link href="/favicon.ico"  rel="konik.io icon"  type="image/x-icon"/>
+    <link href="/favicon.ico"  rel="icon"  type="image/x-icon" />
 
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
