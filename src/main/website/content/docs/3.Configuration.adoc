@@ -11,10 +11,14 @@ List of default Konik configuration options.
 ----
 #default
 io.konik.stripTrailingZeros=true
-io.konik.jaxb.adapter.AmountLowRoundingAdapter=2
-io.konik.jaxb.adapter.AmountHighRoundingAdapter=4
-io.konik.jaxb.adapter.MeasureRoundingAdapter=2
-io.konik.jaxb.adapter.QuantityRoundingAdapter=4
+io.konik.jaxb.adapter.AmountLowRoundingAdapter.scale=2
+io.konik.jaxb.adapter.AmountLowRoundingAdapter.roundingMode=HALF_UP
+io.konik.jaxb.adapter.AmountHighRoundingAdapter.scale=4
+io.konik.jaxb.adapter.AmountHighRoundingAdapter.roundingMode=HALF_UP
+io.konik.jaxb.adapter.MeasureRoundingAdapter.scale=2
+io.konik.jaxb.adapter.MeasureRoundingAdapter.roundingMode=HALF_UP
+io.konik.jaxb.adapter.QuantityRoundingAdapter.scale=4
+io.konik.jaxb.adapter.QuantityRoundingAdapter.roundingMode=HALF_UP
 ----
 
 There are two possible ways how Konik can be configured.

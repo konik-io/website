@@ -9,3 +9,13 @@ API Documentation for latest release of Konik, PDFBox-carriage and iText-carriag
 * link:api/itext-carriage/[iText-Carriage {itext-carriage-latest-release}]
 
 
+== ZUGFeRD Specification
+
+Collection of links to the original ZUGFeRD Specification by AWV e.V.
+
+* link:/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0.pdf[Das ZUGFeRD-Format], Spezifikation und Umsetzungsregeln zum branchen- übergreifenden Kern-Rechnungsformat des Forums elektronische Rechnung Deutschland (FeRD)
+* link:/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_technische_Dokumentation.pdf[Technische Dokumentation], Betriebswirtschaftliche Begriffe, Datenmodell und Schema
+* link:/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_c1p0_Codelisten.pdf[Codelisten], ZUGFeRD Version 1.0, Codelisten Version 1.0
+* link:/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_Aenderungshistorie_zu_RC.pdf[Änderungshistorie ZU RC], Hinweise zu Änderungen von Version ZUGFeRD Release Candidate (RC) zu ZUGFeRD 1.0
+
+
