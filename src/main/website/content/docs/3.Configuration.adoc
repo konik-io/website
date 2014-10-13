@@ -5,6 +5,18 @@
 Konik is delivered with a sensible default configuration out of the box.
 In most cases you should not need to change the default settings. 
 
+List of default Konik configuration options.
+
+[source,bash]
+----
+#default
+io.konik.stripTrailingZeros=true
+io.konik.jaxb.adapter.AmountLowRoundingAdapter=2
+io.konik.jaxb.adapter.AmountHighRoundingAdapter=4
+io.konik.jaxb.adapter.MeasureRoundingAdapter=2
+io.konik.jaxb.adapter.QuantityRoundingAdapter=4
+----
+
 There are two possible ways how Konik can be configured.
 
 === Property file 
@@ -22,16 +34,6 @@ When using the later method make sure that the property needed are set before Ko
 System Properties override file properties. 
 This is can be useful in cases where you define a default configuration in the property file but want to have different configuration in a particular application instance.
 
-List of default Konik configuration options.
 
-[source,bash]
-----
-#default
-io.konik.stripTrailingZeros=true
-io.konik.jaxb.adapter.AmountLowRoundingAdapter=2
-io.konik.jaxb.adapter.AmountHighRoundingAdapter=4
-io.konik.jaxb.adapter.MeasureRoundingAdapter=2
-io.konik.jaxb.adapter.QuantityRoundingAdapter=4
-----
 
 
