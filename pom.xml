@@ -48,7 +48,7 @@
       <website.source.dir>${basedir}/src/main/website</website.source.dir>
       <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
       <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
-      <konik-latest-release>0.8.1</konik-latest-release>
+      <konik-latest-release>0.8.2</konik-latest-release>
       <itext-carriage-latest-release>0.8.0</itext-carriage-latest-release>
       <pdfbox-carriage-latest-release>0.8.2</pdfbox-carriage-latest-release>
    </properties>

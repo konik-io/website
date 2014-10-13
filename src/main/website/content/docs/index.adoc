@@ -8,6 +8,7 @@ v1.4, {docdate}
 :meta_keywords: Konik User Guide, Konik manual, Konik HowTo, Konik API, Konik JavaDocs, Konik JavaDoc
 :meta_description: Konik User Documentation describing how to integrate the Konik Library into a software project.
 :language: en
+:icons: font
 
 toc::[role="col-lg-12"]
 
@@ -18,5 +19,8 @@ include::1.QuickStart.adoc[]
 include::2.Setup.adoc[]
 
 [.col-lg-12]
-include::3.JavaDocs.adoc[]
+include::3.Configuration.adoc[]
+
+[.col-lg-12]
+include::4.JavaDocs.adoc[]
 
