@@ -18,6 +18,6 @@ Further development of this highly useful library will be influenced by increase
 
 https://plus.google.com/+VadimBauer?rel=author[Vadim Bauer]
 
-image::/img/konik-logo-on-white-bg.png["Konik library logo",400,alt="Konik library logo",role="text-center"]
+image::/img/blog/konik-logo-on-white-bg.jpg["Konik library logo",400,alt="Konik library logo",role="text-center"]
 [role="text-center"]
 Uma (Horse). Ink drawing on paper by unnamed artist. Year ca. 1890.

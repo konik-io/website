@@ -1,0 +1,55 @@
+= Konik 1.0 Roadmap
+Vadim Bauer
+2014-10-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release, Feature
+:idprefix:
+:linkattrs:
+:lnk_minimal_latest: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java
+:10: https://de.wikipedia.org/wiki/Fluent_Interface
+ 
+Nachdem nun Konik 0.8.2 veröffentlicht wurde und die Bibliothek schon seit einiger Zeit im Einsatz ist, stellt sich die Frage: 
+was steht noch alles auf der TODO-Liste für den 1.0 Release?
+ 
+=== Änderung am Fluent Interface. 
+So ziemlich mit dem ersten Release wurden {10}[Fluent Interfaces] eingeführt. 
+
+[source,java,indent=-3]
+----
+  Invoice invoice = new Invoice(BASIC);
+      invoice.setHeader(new Header()
+         .setInvoiceNumber("20131122-42")
+         .setCode(_380)
+         .setIssued(today)
+         .setName("Rechnung"));
+----
+ 
+Heute ist das Fluent Interface ein Teil des Datenmodells. 
+Dies ist zwar recht praktisch, bringt aber auch einige Probleme mit sich wie ein komplexeres Datenmodel und Inflexibilität.
+ 
+Ziel ist es daher, das Fluent Interface vom Datenmodell zu trennen. 
+Zu jeder Klasse wird es einen Builder geben, der dann auch einige weitere Funktionen mitbringen wird.  
+
+[source,java]
+----
+Invoice invoice = new InvoiceBuilder(BASIC).header(
+new HeaderBuilder()
+  .invoiceNumber("20131122-42")
+  .code(_380)
+  .issued(today)
+  .name("Rechnung")).build();
+---- 
+ 
+=== Unterscheidung der Profile
+Momentan muss der Benutzer das Profil selber setzen. Vor allem muss er wissen, welches Profil erlaubt ist. 
+Diese Entscheidung sollte dem Benutzer abgenommen werden und das Profil sollte anhand des Inhalts ermittelt werden.
+ 
+=== Mehr Validierungen
+Ein Großteil der Validierungen existiert bereits schon, es gibt aber noch einige Stellen die ergänzt werden sollten.
+ 
+=== Verbesserte Dokumentation
+Die Dokumentation und die JavaDoc Kommentare sollten korrigiert und ergänzt werden.
+ 
+Nachdem diese Punkte abgearbeitet wurden, steht dem Release 1.0 nichts im Weg. 
+Ziel ist, bis Dezember 2014 Konik Release 1.0 zu veröffentlichen.
