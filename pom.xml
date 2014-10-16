@@ -50,7 +50,7 @@
       <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
       <konik-latest-release>0.8.2</konik-latest-release>
       <itext-carriage-latest-release>0.8.0</itext-carriage-latest-release>
-      <pdfbox-carriage-latest-release>0.8.2</pdfbox-carriage-latest-release>
+      <pdfbox-carriage-latest-release>0.8.3</pdfbox-carriage-latest-release>
    </properties>
 
    <prerequisites>

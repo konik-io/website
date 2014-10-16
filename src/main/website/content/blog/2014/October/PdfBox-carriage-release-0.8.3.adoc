@@ -1,0 +1,26 @@
+= PdfBox-Carriage Release-0.8.3
+Vadim Bauer
+2014-10-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release	
+:idprefix:
+:linkattrs:
+
+Es gibt einen bug fix release für Konik PDFBox-carriage.
+
+== Bugfix
+* Fix im JSR-330 setup. In einer JSR-330 Umgebung hat das Dependency Injection für PDFBox-Carriage nicht richtig funktioniert.
+
+[source,xml,indent=0]
+----
+<dependency>
+    <groupId>io.konik</groupId>
+    <artifactId>pdfbox-carriage</artifactId>
+    <version>0.8.3</version>
+</dependency>
+----
+ 
+
+ 
+
