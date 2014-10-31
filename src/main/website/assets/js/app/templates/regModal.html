@@ -1,0 +1,41 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1 signup-form">
+        <form role="form" ng-submit="register()">
+            <h2>Sign Up</h2>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="firstName" ng-model="form.firstName" id="firstName" class="form-control input-lg" required placeholder="First Name" tabindex="1">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="lastName" ng-model="form.lastName" id="lastName" class="form-control input-lg" required placeholder="Last Name" tabindex="2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" id="email" ng-model="form.email" class="form-control input-lg" required placeholder="Email Address" tabindex="4">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" ng-model="form.password" class="form-control input-lg" min="8" required placeholder="Enter password" tabindex="5">
+            </div>
+            <div class="form-group">
+                <input type="text" name="companyName" ng-model="form.company" id="companyName" class="form-control input-lg" placeholder="Company Name" tabindex="6">
+            </div>
+            <div class="row">
+
+                <div class="col-xs-8 col-sm-9 col-md-9 signup-prop">
+                    If you already have account please <a href="#/login">Sign In</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="7" ng-disabled="form.$invalid">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
