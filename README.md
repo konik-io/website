@@ -22,7 +22,7 @@ or
 
 Open new Terminal window and start webserver.
 ```
-> mvn java:exec
+> mvn exec:java
 ```
 
 Open http://localhost:8820/
