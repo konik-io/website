@@ -82,7 +82,19 @@
     userService.reset = function (email) {
         //"id":0,"email":"email","firstName":"first name","lastName":"last name","company":"Company Name"
 
-        return Restangular.one('reset').customPOST(email, null, null, { 'Content-Type': 'application/json' });
+        return Restangular.one('resetPassword').customPOST(email, null, null, { 'Content-Type': 'plain/text' });
+
+    };
+
+
+    userService.changePass = function (email, token, password) {
+
+        var sObject = {
+            "user": { "email": email, "password": password },
+            "token": token
+        };
+
+        return Restangular.one('changePassword').customPOST(sObject, null, null, { 'Content-Type': 'application/json' });
 
     };
 

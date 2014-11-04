@@ -1,5 +1,5 @@
 ﻿angular.module('app.public', ['ui.router', 'app.user', 'ui.bootstrap', 'ngRoute'])
-.config(['$stateProvider', function ($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', function ($stateProvider) {
     //ignore url case sensativity
     //$urlRouterProvider.rule(function ($injector, $location) {
     //    //what this function returns will be set as the $location.url
@@ -11,10 +11,15 @@
     //    // because we've returned nothing, no state change occurs
     //});
 
-    $urlRouterProvider.otherwise('/');
+    //$urlRouterProvider.otherwise('/');
     $stateProvider.state('val', {
         url: "/",
-        templateUrl: "/js/validation/validation.html",
+        templateUrl: "/js/app/validation/validation.html",
         controller: "valdCtrl"
+    })
+    .state('resetPass', {
+        url: "/reset",
+        templateUrl: "/js/app/templates/resetPage.html",
+        controller: "resetPassCtrl"
     })
 }])

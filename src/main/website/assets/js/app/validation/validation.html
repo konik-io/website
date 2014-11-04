@@ -1,100 +1,95 @@
-﻿<div class="section">
-    <div class="container">
-        <div class="page-header">
-            <h1>ZUGFeRD Online Validation Services</h1>
+﻿
+
+<div class="container">
+    <div class="row well">
+        <div class="col-lg-6 col-md-6">
+            <h4>Validity test for ZUGFeRD compliant invoices</h4>
+            <p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p>
+            <p>If you would like to see a detailed validation report with a semantic validation <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal the Email address">contact</a> us for more details.</p>
+            <p>Version details</p>
+            <dl class="dl-horizontal">
+                <dt>Konik</dt>
+                <dd>Version 0.7.1</dd>
+                <dt>Validation Service</dt>
+                <dd>Version 0.4.1</dd>
+            </dl>
         </div>
 
-
-        <div class="container">
-            <div class="row well">
-                <div class="col-lg-6 col-md-6">
-                    <h4>Validity test for ZUGFeRD compliant invoices</h4>
-                    <p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p>
-                    <p>If you would like to see a detailed validation report with a semantic validation <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal the Email address">contact</a> us for more details.</p>
-                    <p>Version details</p>
-                    <dl class="dl-horizontal">
-                        <dt>Konik</dt>
-                        <dd>Version 0.7.1</dd>
-                        <dt>Validation Service</dt>
-                        <dd>Version 0.4.1</dd>
-                    </dl>
+        <div class="col-lg-6 col-md-6">
+            <form id="validate_form">
+                <!--          <form id = "validate_form" method="post" action="//localhost:8882/validate" enctype="multipart/form-data" onsubmit=""> -->
+                <div class="form-group">
+                    <label for="upload_file">PDF or XML</label>
+                    <input type="file" name="file" id="upload_file">
+                    <p id="upload_file_help_block" class="help-block">Create validation report</p>
                 </div>
-
-                <div class="col-lg-6 col-md-6">
-                    <form id="validate_form">
-                        <!--          <form id = "validate_form" method="post" action="//localhost:8882/validate" enctype="multipart/form-data" onsubmit=""> -->
-                        <div class="form-group">
-                            <label for="upload_file">PDF or XML</label>
-                            <input type="file" name="file" id="upload_file">
-                            <p id="upload_file_help_block" class="help-block">Create validation report</p>
-                        </div>
-                        <div ng-if="currentUser">
-                            <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
-                        </div>
-                        <div ng-if="currentUser == null">
-                            <button id="registration-button" class="btn btn-primary btn-large clearfix register" ng-click="showRegModal()">Register</button>
-                            <button id="login-button" class="btn btn-primary btn-large clearfix login" ng-click="showLoginModal()">Login</button>
-                        </div>
-</form>
-                    <div class="message">{{notification}}</div>
+                <div ng-if="currentUser">
+                    <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
                 </div>
-            </div>
-            <div id="server_result" class="row">
-
-            </div>
+                <div ng-if="currentUser == null">
+                    <button id="registration-button" class="btn btn-primary btn-large clearfix register" ng-click="showRegModal()">Register</button>
+                    <button id="login-button" class="btn btn-primary btn-large clearfix login" ng-click="showLoginModal()">Login</button>
+                </div>
+            </form>
+            <div class="message">{{notification}}</div>
         </div>
-        <script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
-        <script>
-   //$(document).ready(function() {
-   //   var options = {
-   //      dataType :     'json',
-   //      beforeSubmit:     restResult,
-   //      error:         errorHandling,
-   //      success :      successResponse
-   //   };
-   //   $('#validate_form').ajaxForm(options);
-   //});
-   //$('#validation-button').on('click', function() {
-   //    ga('send', 'event', 'button', 'click', 'validation-submit');
-   //  });
+    </div>
+    <div id="server_result" class="row">
 
-   //function successResponse(data) {
-   //   console.log("repsonse received");
-   //   console.log(data.message);
-   //   displayStatus(data);
-   //   displayCompareResult(data);
-   //   displayValidationResult(data);
-   //}
-   //function displayStatus(data){
-   //    var alarmType = findAlarmType(data.status);
-   //    var element = '<div class="alert '+alarmType+'"> <p>' + data.statusMessage+ '</p></div>'
-   //    $("#server_result").append(element);
-   // }
+    </div>
+</div>
+<script src="http://cdn.jsdelivr.net/jquery.form/3.50/jquery.form.min.js"></script>
+<script>
+    //$(document).ready(function() {
+    //   var options = {
+    //      dataType :     'json',
+    //      beforeSubmit:     restResult,
+    //      error:         errorHandling,
+    //      success :      successResponse
+    //   };
+    //   $('#validate_form').ajaxForm(options);
+    //});
+    //$('#validation-button').on('click', function() {
+    //    ga('send', 'event', 'button', 'click', 'validation-submit');
+    //  });
 
-   function displayCompareResult(data){
-      var panelBlock = '<div class="panel panel-default">\
+    //function successResponse(data) {
+    //   console.log("repsonse received");
+    //   console.log(data.message);
+    //   displayStatus(data);
+    //   displayCompareResult(data);
+    //   displayValidationResult(data);
+    //}
+    //function displayStatus(data){
+    //    var alarmType = findAlarmType(data.status);
+    //    var element = '<div class="alert '+alarmType+'"> <p>' + data.statusMessage+ '</p></div>'
+    //    $("#server_result").append(element);
+    // }
+
+    function displayCompareResult(data) {
+        var panelBlock = '<div class="panel panel-default">\
         <div class="panel-heading">Result of the round trip xml->model->xml cycle. </div>\
         <div class="panel-body">'+
-           data.compareResult +
-        '</div>\
+             data.compareResult +
+          '</div>\
       </div>';
-      $("#server_result").append(panelBlock);
-   }
+        $("#server_result").append(panelBlock);
+    }
 
-   function displayValidationResult(data){
-	  if(data.validationResult.length<1){return;}
-      var rows ="";
-      for (var i=0 in data.validationResult) {
-           rows +=
-        	   '<tr>'+
-              		'<td>'+ data.validationResult[i]["Path"] +'</td>'+
-              		'<td>'+ data.validationResult[i]["Message"] +'</td>'+
-              		'<td>'+ data.validationResult[i]["Invalid value"] +'</td>'+
-              	'</tr>';
-      }
+    function displayValidationResult(data) {
+        if (data.validationResult.length < 1) { return; }
+        var rows = "";
+        for (var i = 0 in data.validationResult) {
+            rows +=
+                '<tr>' +
+                     '<td>' + data.validationResult[i]["Path"] + '</td>' +
+                     '<td>' + data.validationResult[i]["Message"] + '</td>' +
+                     '<td>' + data.validationResult[i]["Invalid value"] + '</td>' +
+                 '</tr>';
+        }
 
-      var panelBlock =
-    	  '<div class="panel panel-default">\
+        var panelBlock =
+            '<div class="panel panel-default">\
             <div class="panel-heading">Model validation results</div>\
                <table class="table">\
                	<thead>\
@@ -105,52 +100,48 @@
                		</tr>\
                	</thead>\
                	<tbody>'
-                  	+rows+
-               	'</tbody>\
+                      + rows +
+                  '</tbody>\
                </table>\
         	  </div>\
         	</div>';
 
-      $("#server_result").append(panelBlock);
-   }
-   function restResult(formData, jqForm, options){
-      if (!formData[0].value) {
-      $("#server_result").append('<div class="alert alert-info"><p>No file selected for validation</p></div>');
-         return false;
-      }else{
-        $("#server_result").empty();
-      }
-   }
+        $("#server_result").append(panelBlock);
+    }
+    function restResult(formData, jqForm, options) {
+        if (!formData[0].value) {
+            $("#server_result").append('<div class="alert alert-info"><p>No file selected for validation</p></div>');
+            return false;
+        } else {
+            $("#server_result").empty();
+        }
+    }
 
-   function errorHandling(data, status, xhr){
-      if (data.responseJSON == null){
-         data.responseJSON = {};
-         data.responseJSON.message="Service currently unavailible";
-      }
-      $("#server_result").append(
-            '<div class="alert alert-danger"> <p class="bg-danger">'
-                  + data.responseJSON.message + '</p></div>');
-   }
-
-
-   function findAlarmType(status) {
-      var alarmType;
-      switch (status) {
-      case "VALID":
-         alarmType = "alert-success";
-         break;
-      case "INVALID":
-      case "ERROR":
-         alarmType = "alert-danger";
-         break;
-      default:
-         alarmType = "alert-danger";
-      }
-      return alarmType;
-   }
-
-        </script>
+    function errorHandling(data, status, xhr) {
+        if (data.responseJSON == null) {
+            data.responseJSON = {};
+            data.responseJSON.message = "Service currently unavailible";
+        }
+        $("#server_result").append(
+              '<div class="alert alert-danger"> <p class="bg-danger">'
+                    + data.responseJSON.message + '</p></div>');
+    }
 
 
-    </div>
-</div>
+    function findAlarmType(status) {
+        var alarmType;
+        switch (status) {
+            case "VALID":
+                alarmType = "alert-success";
+                break;
+            case "INVALID":
+            case "ERROR":
+                alarmType = "alert-danger";
+                break;
+            default:
+                alarmType = "alert-danger";
+        }
+        return alarmType;
+    }
+
+</script>

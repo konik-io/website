@@ -13,7 +13,7 @@
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"/></#if>
 	
-    <title>${content.title}</title>
+   
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>

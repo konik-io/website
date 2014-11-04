@@ -217,3 +217,16 @@ border-color: #121212;
 .signup-form{
     margin-bottom:50px;
 }
+
+.panel-reset{
+    border: 0px;
+}
+
+.error{
+    color:red;
+}
+
+.message{
+    margin-top:10px;
+    color: brown;
+}
