@@ -9,6 +9,10 @@ v1.4, {docdate}
 :meta_description: Konik User Documentation describing how to integrate the Konik Library into a software project.
 :language: en
 :icons: font
+:idprefix:
+:sectanchors:
+:sectlinks:
+:numbered:
 
 toc::[role="col-lg-12"]
 

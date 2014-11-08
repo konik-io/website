@@ -1,19 +1,21 @@
 :icons: font
-:lnk_minimal_latest: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java
+:lnk_minimal_release_raw: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java
+:lnk_minimal_latest_raw: https://raw.githubusercontent.com/konik-io/konik/master/src/test/java/io/konik/examples/MinimalInvoice.java
+:lnk_minimal_latest: https://github.com/konik-io/konik/blob/master/src/test/java/io/konik/examples/MinimalInvoice.java
+
 
 == Quick Start
 
 
 The example code from 
-https://github.com/konik-io/konik/blob/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java#L72[+MinimalInvoice.java+] 
-represents a valid basic invoice and the steps on how to convert and attach an invoice to a PDF. 
+{lnk_minimal_latest}[+MinimalInvoice.java+] represents a valid basic invoice and the steps on how to convert and attach an invoice to a PDF. 
 
 Let us step through the code and take a look at the interesting parts.
 
 === Creating the invoice model
 [source,java,indent=-3]
 ----
-include::{lnk_minimal_latest}[lines=72..111]
+include::{lnk_minimal_latest_raw}[tags=createInvoice]
 ----
 <1> A new invoice instance is created with one of the three allowed profiles. BASIC, COMPFORT or EXTENDED
 <2> The implementation of the model as a fluent interface makes the creation of the invoice self-explanatory.
@@ -22,26 +24,41 @@ include::{lnk_minimal_latest}[lines=72..111]
 
 [source,java,indent=-3]
 ----
-include::{lnk_minimal_latest}[lines=114..118]
+include::{lnk_minimal_latest_raw}[tags=transformInvoiceToXml]
 ----
 <1> The +InvoiceTransformer+ is responsible for transforming XML to Model and vice versa.   
 <2> Transform from invoice to an +OutputStream+.
  
-=== Attaching invoice model to PDF
+=== Append a ZUGFeRD invoice to an existing PDF
 This alternative step performs a model conversation. So you don't have to do it yourself.
 
 [source,java,indent=-3]
 ----
-   public void creatInvoiceAndAttachToPDF() throws IOException {
-      Invoice invoice = createMinimalInvoiceModel();
-      PdfHandler handler = new PdfHandler();    // <1>
-      InputStream inputPdf = getClass().getResourceAsStream("/acme_invoice-42.pdf");
-      OutputStream resultingPdf = new FileOutputStream("target/acme_invoice-42_ZUGFeRD.pdf");
-      handler.appendInvoice(invoice, inputPdf, resultingPdf);     // <2>
-   }
+include::{lnk_minimal_latest_raw}[tags=appendInvoiceToPdf]
 ----
 <1> Create a new +PdfHandler+ or reuse existing.  
 <2> Append Invoice to existing PDF defined in +inputPdf+ the result will be written to +resultingPdf+.
  
  
+=== Extract ZUGFeRD invoice from PDF
+This step internally also performs a model conversation.
+
+[source,java,indent=-3]
+----
+include::{lnk_minimal_latest_raw}[tags=extracInvoiceFromPdf]
+----
+<1> Create a new +PdfHandler+ or reuse existing.  
+<2> Append Invoice to existing PDF defined in +inputPdf+ the result will be written to +resultingPdf+.
  
+
+=== Validate correctness of a ZUGFeRD Invoice 
+This example shows how one can validates the correction of an invoice.
+
+[source,java,indent=-3]
+----
+include::{lnk_minimal_latest_raw}[tags=validateInvoice]
+----
+<1> Create a new default +InvoiceValidator+. See the link:#invoice_validator_option[setup section] on how to integrate a Validation Framework into your project.    
+<2> Performs the validation by calling the +validate(...)+ method assigning the result to a http://docs.oracle.com/javaee/7/api/javax/validation/ConstraintViolation.html[ConstraintViolation] set.
+<3> If there aren't any error the resulting Set should't have any elements. 
+

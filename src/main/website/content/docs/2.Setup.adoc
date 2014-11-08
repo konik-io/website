@@ -1,6 +1,6 @@
 == Setup
 
-or how to integrate the Konik library into my project.
+Or how to integrate the Konik library into a project.
 
 Broadly there are two different ways on how to 
 integrate the Konik library into a project. 
