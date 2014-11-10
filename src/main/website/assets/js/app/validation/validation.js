@@ -17,7 +17,14 @@
     //    controller: "valdCtrl"
     //})
 }])
-.controller('valdCtrl', function ($scope, $modal, $state, UserService) {
+.controller('valdCtrl', function ($scope, $modal, $state, UserService, $cookieStore) {
+
+    var authUser = $cookieStore.get('kionikAuth');
+    if (authUser != undefined) {
+        $scope.$parent.setCurrentUser(authUser);
+        var s = UserService.getSession();
+        $scope.$parent.currentSession = s;
+    }
 
     $scope.userLoggedInName = '';
 
@@ -46,8 +53,6 @@
 
         })
     }
-
-   
 
     $scope.showRegModal = function () {
 

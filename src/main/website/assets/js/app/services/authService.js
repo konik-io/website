@@ -1,4 +1,4 @@
-﻿angular.module('app.user', ['restangular']).factory('UserService', function ($http, Restangular, Session, $q) {
+﻿angular.module('app.user', ['restangular', 'ngCookies']).factory('UserService', function ($http, Restangular, Session, $q, $cookieStore) {
     var userService = {};
 
     function getToken(authData) {
@@ -106,11 +106,21 @@
         return !!Session.userName;
     };
 
+    userService.createSession = function (token, email) {
+        Session.create(token, email, 'guest');
+    }
+
+    userService.fillAuthData = function(){
+        var user = $cookieStore.get('kionikAuth');
+        if (user)
+            Session.create(user.token, user.email, 'guest');
+
+    }
 
     return userService;
 })
 
-.service('Session', function () {
+.service('Session', function ($cookieStore) {
     this.create = function (sessionId, userName, userRole) {
         this.id = sessionId;
         this.userName = userName;
@@ -121,12 +131,16 @@
         var dUtc = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours() + 2, d.getUTCMinutes(), d.getUTCSeconds());
 
         this.expiresIn = dUtc;
+
+        $cookieStore.put('kionikAuth', {token:sessionId, email: userName});
     };
     this.destroy = function () {
         this.id = null;
         this.userName = null;
         this.userRole = null;
         this.expiresIn = null;
+
+        $cookieStore.remove('kionikAuth');
     };
     return this;
 });

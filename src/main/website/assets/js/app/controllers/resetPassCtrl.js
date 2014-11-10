@@ -10,10 +10,18 @@
         var email = s.email;
         var token = s.token;
         if (email != undefined && email != "" && token != undefined && token != "") {
+
+
             UserService.changePass(email, token, password).then(function (resp) {
                 $scope.error.message = '';
                 $scope.notification = "Password has been reset successfully. You can go to validation page now";
-                //$state.go('val')
+
+                var user = { 'userName': email, 'token': resp };
+                $scope.$parent.setCurrentUser(user);
+                var s = UserService.getSession();
+                $scope.$parent.currentSession = s;
+
+                $state.transitionTo("val", { needAuth: false }, { reload: true, notify: true });
 
             }, function (failedReason) {
                 var status = parseInt(failedReason.status);

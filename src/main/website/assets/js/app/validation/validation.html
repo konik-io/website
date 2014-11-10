@@ -25,6 +25,7 @@
                 </div>
                 <div ng-if="currentUser">
                     <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
+                    <button id="login-button" class="btn btn-primary btn-large clearfix login" ng-click="LogOut()">LogOut</button>
                 </div>
                 <div ng-if="currentUser == null">
                     <button id="registration-button" class="btn btn-primary btn-large clearfix register" ng-click="showRegModal()">Register</button>

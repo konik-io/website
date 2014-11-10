@@ -2,6 +2,7 @@
 var app_dependencies = [
 'restangular'
 , 'ngRoute'
+, 'ngCookies'
 //, 'ui.select2'
 
 //, 'app.custom-ui'
@@ -75,9 +76,9 @@ var app = angular.module('app', app_dependencies)
     });
 })
 
-//.run(['authService', function (authService) {
-//    authService.fillAuthData(); // if user is loggedIn, get from the cache
-//}])
+.run(['UserService', function (UserService) {
+    UserService.fillAuthData(); // if user is loggedIn, get from the cache
+}])
 
 
 

@@ -1,4 +1,4 @@
-﻿angular.module('app.public', ['ui.router', 'app.user', 'ui.bootstrap', 'ngRoute'])
+﻿angular.module('app.public', ['ui.router', 'app.user', 'ui.bootstrap', 'ngRoute', 'ngCookies'])
 .config(['$stateProvider', function ($stateProvider) {
     //ignore url case sensativity
     //$urlRouterProvider.rule(function ($injector, $location) {

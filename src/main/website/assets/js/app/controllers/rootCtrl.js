@@ -21,6 +21,6 @@
             $scope.currentUser = null;
             $scope.currentSession = null;
 
-            $state.transitionTo("home", { needAuth: false }, { reload: true, notify: true });
+            $state.transitionTo("val", { needAuth: false }, { reload: true, notify: true });
         }
     })
