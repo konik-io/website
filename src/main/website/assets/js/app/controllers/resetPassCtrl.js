@@ -26,7 +26,9 @@
             }, function (failedReason) {
                 var status = parseInt(failedReason.status);
                 if (status != 200 && status != 201)
-                    $scope.error.message = failedReason.data[0].defaultMessage;
+                    if (failedReason.data[0] != undefined)
+                        $scope.error.message = failedReason.data[0].defaultMessage;
+                    else $scope.error.message = failedReason.data.message;
             });
         }
         else $state.go('val')

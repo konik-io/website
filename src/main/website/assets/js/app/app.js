@@ -47,9 +47,9 @@ var app = angular.module('app', app_dependencies)
     }
 
     var _responseError = function (rejection) {
-        if (rejection.status === 401) {
-            $location.path('/');
-        }
+        //if (rejection.status === 401) {
+        //    $location.path('/');
+        //}
         return $q.reject(rejection);
     }
 

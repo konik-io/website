@@ -106,7 +106,7 @@
 
     $scope.register = function () {
         var formData = $scope.form;
-        $scope.errorMessage = '';
+        $scope.errorMessages = [];
         UserService.register(formData).then(function (resp) {
             //var d = resp;
             $modalInstance.close(formData);
@@ -115,8 +115,14 @@
         }, function (failedReason) {
             var status = parseInt(failedReason.status);
             if (status != 200 && status != 201)
-               
-                $scope.errorMessages = failedReason.data;
+                if (failedReason.data instanceof Array)
+                    $scope.errorMessages = failedReason.data;
+                else {
+                    $scope.errorMessages.push({ field: 'email', defaultMessage: failedReason.data.message })
+                    var dm = $scope.errorMessages[0].defaultMessage;
+                    //$scope.errorMessages.field = 'email';
+                    //$scope.errorMessages.defaultMessage = failedReason.data.message;
+                }
 
             
         });
