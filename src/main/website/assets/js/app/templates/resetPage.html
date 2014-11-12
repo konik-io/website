@@ -1,0 +1,54 @@
+﻿
+<div class="container">
+    <div class="row well">
+        <div class="col-lg-6 col-md-6 col-md-offset-3 col-lg-offset-3">
+            <div id="loginbox" style="margin-top:50px;">
+                <div class="panel panel-reset">
+
+
+                    <div class="panel-body">
+                        <div class="message" ng-if="notification != ''">
+                            {{notification}}
+                        </div>
+                        <div class="errorArea" ng-if="error.message != ''">
+                            <div class="error">
+                                Error. {{error.message}}
+                            </div>
+                        </div>
+
+                        <form id="loginform" class="form-horizontal" ng-submit="resetPass()" role="form">
+                            <h2>Enter your new password</h2>
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="login-password" type="password" class="form-control" ng-model="form.password" name="password" placeholder="password">
+                            </div>
+
+                            <div style="margin-top:10px" class="form-group">
+                                <div class="col-sm-12 col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="7" ng-disabled="form.$invalid">Reset</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                        Have account already?
+                                        <a ng-href="/validation/#/">
+                                            Back to validation page
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="server_result" class="row">
+
+    </div>
+</div>
