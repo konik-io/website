@@ -2,7 +2,12 @@ language: java
 
 jdk:
   - oraclejdk7
-
+  
+# whitelist
+branches:
+  only:
+    - master
+    
 #install: 
 #   - echo -e "building jbake snapshot from repository\n"
 #    - git clone -b feature/newEngines https://github.com/Vad1mo/JBake.git
