@@ -20,7 +20,9 @@ function browserSyncInit(baseDir, files, browser) {
       baseDir: baseDir,
       middleware: [proxy(proxyOptions)],
       routes: {
-        '/main': '../main'
+        '/css': '../main/website/assets/css',
+        '/img': '../main/website/assets/img',
+        '/content': '../main/website/content'
       }
     },
     browser: browser
@@ -34,6 +36,8 @@ gulp.task('serve', ['watch'], function () {
   ], [
     '../main/website/content/*.html',
 	  '../main/website/assets/css/*.css',
-    'app/partials/**/*.html'
+    '../main/website/assets/img/*',
+    'app/partials/**/*.html',
+    'app/*.html'
   ]);
 });
