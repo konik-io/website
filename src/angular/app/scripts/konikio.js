@@ -10,6 +10,7 @@
 (function() {
   angular.module('konikio', [
     'ui.bootstrap',
-    'ui.bootstrap.demo'
+    'konikio.users',
+    'konikio.validation'
   ]);
 })();
