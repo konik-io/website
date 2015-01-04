@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h3 class="modal-title">Register</h3>
+</div>
+
+<form name="loginForm" ng-submit="register(registerUser)">
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-5">
+      <input type="text" id="first-name" ng-model="registerUser.firstName" placeholder="First Name">
+    </div>
+    <div class="col-md-5">
+      <input type="text" id="last-name" ng-model="registerUser.lastName" placeholder="Last Name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <input type="text" id="company" ng-model="registerUser.company" placeholder="Company">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <input type="email" id="email" ng-model="registerUser.email" placeholder="E-Mail">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <input type="password" id="password" ng-model="registerUser.password" placeholder="Password">
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-primary">Register</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+</form>

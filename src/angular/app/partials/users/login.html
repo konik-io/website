@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h3 class="modal-title">Register</h3>
+</div>
+
+<form name="loginForm" ng-submit="login(credentials)">
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <input type="email" id="email" ng-model="credentials.email" placeholder="E-Mail">
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <input type="password" id="password" ng-model="credentials.password" placeholder="Password">
+      </div>
+    </div>
+</div>
+<div class="modal-footer">
+  <button type="submit"  class="btn btn-primary">Login</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+</form>

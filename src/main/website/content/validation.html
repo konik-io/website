@@ -9,57 +9,33 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
 ~~~~~~
 </span>
 <div class="container">
-   <div class="row well">
-      <div class="col-lg-6 col-md-6">
-         <h4>Validity test for ZUGFeRD compliant invoices</h4>
-         <p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p>
-         <p>If you would like to see a detailed validation report with a semantic validation <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal the Email address">contact</a> us for more details.</p>
-         <p>Version details</p>
-         <dl class="dl-horizontal">
-           <dt>Konik</dt>
-           <dd>Version 0.7.1</dd>   
-           <dt>Validation Service</dt>
-           <dd>Version 0.4.1</dd>
-         </dl>
-      </div>
+  <div class="row well">
+    <div class="col-lg-6 col-md-6">
+      <h4>Validity test for ZUGFeRD compliant invoices</h4>
+      <p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p>
+      <p>If you would like to see a detailed validation report with a semantic validation <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Reveal the Email address">contact</a> us for more details.</p>
+      <p>Version details</p>
+      <dl class="dl-horizontal">
+        <dt>Konik</dt>
+        <dd>Version 0.7.1</dd>
+        <dt>Validation Service</dt>
+        <dd>Version 0.4.1</dd>
+      </dl>
+    </div>
+    <div class="col-lg-6 col-md-6"  ng-controller="ValidationCtrl">
+      <form id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
+        <div class="form-group">
+          <label for="upload_file">PDF or XML</label>
+          <input type="file" name="file" id="upload_file">
+          <p id="upload_file_help_block" class="help-block">Create validation report</p>
+        </div>
+        <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
+      </form>
+      <button id="login-button" class="btn btn-default" ng-click="openLogin()">Login</button>
+      <button id="register-button" class="btn btn-default" ng-click="openRegister()">Register</button>
+    </div>
+  </div>
+  <div id="server_result" class="row">
 
-      <div class="col-lg-6 col-md-6">
-         <form id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
-<!--          <form id = "validate_form" method="post" action="//localhost:8882/validate" enctype="multipart/form-data" onsubmit=""> -->
-            <div class="form-group">
-               <label for="upload_file">PDF or XML</label> 
-               <input type="file" name="file" id="upload_file">
-               <p id="upload_file_help_block" class="help-block">Create validation report</p>
-            </div>
-            <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
-         </form>
-      </div>
-
-      <div ng-controller="ValidationCtrl">
-         <script type="text/ng-template" id="myModalContent.html">
-            <div class="modal-header">
-               <h3 class="modal-title">I'm a modal!</h3>
-            </div>
-            <div class="modal-body">
-               <ul>
-                  <li ng-repeat="item in items">
-                     <a ng-click="selected.item = item">{{ item }}</a>
-                  </li>
-               </ul>
-               Selected: <b>{{ selected.item }}</b>
-            </div>
-            <div class="modal-footer">
-               <button class="btn btn-primary" ng-click="ok()">OK</button>
-               <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-            </div>
-         </script>
-
-         <button class="btn btn-default" ng-click="open()">Open me!</button>
-         <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-      </div>
-
-   </div>
-   <div id="server_result" class="row">
-     
-   </div>
+  </div>
 </div>

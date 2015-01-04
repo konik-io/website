@@ -2,28 +2,29 @@
 
 (function(){
   angular.module('konikio.validation.controller',[])
-    .controller('ValidationCtrl', function ($scope, $modal, $log) {
+    .controller('ValidationCtrl', function ($scope, $modal) {
+      $scope.openLogin = function() {
+        var modalLoginInstance = $modal.open({
+          templateUrl: 'partials/users/login.html',
+          controller: 'LoginCtrl'
+        });
 
-    $scope.items = ['item1', 'item2', 'item3'];
+        modalLoginInstance.result.then(function () {
+        }, function () {
+        });
+      };
 
-    $scope.open = function (size) {
+      $scope.openRegister = function() {
+        var modalRegisterInstance = $modal.open({
+          templateUrl: 'partials/users/register.html',
+          controller: 'RegisterCtrl'
+        });
 
-      var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
-        controller: 'RegisterCtrl',
-        size: size,
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
-      });
-
-      modalInstance.result.then(function () {
-      }, function () {
-      });
-    };
-  });
+        modalRegisterInstance.result.then(function () {
+        }, function () {
+        });
+      };
+    });
 })();
 
 

@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-  angular.module('konikio.users.register', [])
-    .controller('RegisterCtrl', function ($scope, $modalInstance) {
+  angular.module('konikio.users.login', [])
+    .controller('LoginCtrl', function ($scope, $modalInstance) {
 
-    $scope.register = function () {
+    $scope.login = function () {
       $modalInstance.close();
     };
 

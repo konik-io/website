@@ -56,7 +56,6 @@ pre.highlight {
 }
 
 /* tree */
-/
 .tree p {
     margin-bottom: 0;
 }    
@@ -160,4 +159,14 @@ ul.sectlevel1, ul.sectlevel2, ul.sectlevel3{
 
 #toctitle.title{
 	font-size: 26px;
+}
+
+/* user management popups */
+
+.modal-body input {
+  width: 100%;
+}
+
+.modal-body .row {
+    margin: 10px 0;
 }
