@@ -8,3 +8,4 @@ node
 .idea/*
 app/app.iml
 *.orig
+npm-debug.log

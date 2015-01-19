@@ -23,7 +23,7 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
       </dl>
     </div>
     <div class="col-lg-6 col-md-6"  ng-controller="ValidationCtrl">
-      <form id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
+      <form ng-show="isAuthenticated()" id = "validate_form" method="post" action="//onlinevalidation.konik.io/validate" enctype="multipart/form-data" onsubmit="">
         <div class="form-group">
           <label for="upload_file">PDF or XML</label>
           <input type="file" name="file" id="upload_file">
@@ -31,8 +31,8 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
         </div>
         <button id="validation-button" type="submit" class="btn btn-primary btn-large clearfix">Submit</button>
       </form>
-      <button id="login-button" class="btn btn-default" ng-click="openLogin()">Login</button>
-      <button id="register-button" class="btn btn-default" ng-click="openRegister()">Register</button>
+      <button ng-hide="isAuthenticated()" id="login-button" class="btn btn-default" ng-click="openLogin()">Login</button>
+      <button ng-hide="isAuthenticated()" id="register-button" class="btn btn-default" ng-click="openRegister()">Register</button>
     </div>
   </div>
   <div id="server_result" class="row">

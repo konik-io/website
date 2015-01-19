@@ -2,14 +2,32 @@
 
 (function() {
   angular.module('konikio.users.register', [])
-    .controller('RegisterCtrl', function ($scope, $modalInstance) {
+    .controller('RegisterCtrl', function ($scope, $modalInstance, AuthService) {
 
-    $scope.register = function () {
-      $modalInstance.close();
-    };
+      var clear = function() {
+        $scope.error = '';
+      };
 
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
+      $scope.registerUser = {
+        firstName: '',
+        lastName: '',
+        company: '',
+        email: '',
+        password: ''
+      };
+
+      $scope.register = function (registerUser) {
+        clear();
+        AuthService.register(registerUser)
+          .then(function(){
+          $modalInstance.close();
+        }, function(){
+            $scope.error = 'Registration failed';
+          });
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
   });
 }());

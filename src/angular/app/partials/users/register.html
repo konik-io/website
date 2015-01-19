@@ -4,6 +4,11 @@
 
 <form name="loginForm" ng-submit="register(registerUser)">
 <div class="modal-body">
+  <div class="row" ng-show="error">
+    <div class="col-md-offset-1 col-md-10">
+      {{error}}
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-offset-1 col-md-5">
       <input type="text" id="first-name" ng-model="registerUser.firstName" placeholder="First Name">

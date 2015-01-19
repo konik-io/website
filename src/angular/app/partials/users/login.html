@@ -4,6 +4,11 @@
 
 <form name="loginForm" ng-submit="login(credentials)">
 <div class="modal-body">
+  <div class="row" ng-show="error">
+    <div class="col-md-offset-1 col-md-10">
+      {{error}}
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <input type="email" id="email" ng-model="credentials.email" placeholder="E-Mail">

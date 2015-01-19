@@ -2,7 +2,7 @@
 
 (function(){
   angular.module('konikio.validation.controller',[])
-    .controller('ValidationCtrl', function ($scope, $modal) {
+    .controller('ValidationCtrl', function ($scope, $modal, AuthService) {
       $scope.openLogin = function() {
         var modalLoginInstance = $modal.open({
           templateUrl: 'partials/users/login.html',
@@ -24,6 +24,8 @@
         }, function () {
         });
       };
+
+      $scope.isAuthenticated  = AuthService.isAuthenticated;
     });
 })();
 
