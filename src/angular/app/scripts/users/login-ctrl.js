@@ -19,9 +19,9 @@
           .then(function(user){
             $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
             $modalInstance.close();
-          }, function(){
+          }, function(errorMessage){
             $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-            $scope.error = 'Login failed';
+            $scope.error = errorMessage;
           });
       };
 

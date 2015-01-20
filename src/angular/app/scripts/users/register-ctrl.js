@@ -21,8 +21,8 @@
         AuthService.register(registerUser)
           .then(function(){
           $modalInstance.close();
-        }, function(){
-            $scope.error = 'Registration failed';
+        }, function(errorMessage){
+            $scope.error = errorMessage;
           });
       };
 

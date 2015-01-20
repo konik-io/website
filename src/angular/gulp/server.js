@@ -6,7 +6,7 @@ var browserSync = require('browser-sync');
 var url = require('url');
 var proxy = require('proxy-middleware');
 
-var proxyTarget = 'http://petstore.swagger.wordnik.com:80/api'; // The location of the backend
+var proxyTarget = 'http://te1.onlinevalidation.konik.io/'; // The location of the backend
 
 function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
