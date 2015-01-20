@@ -1,40 +1,56 @@
 <div class="modal-header">
-  <h3 class="modal-title">Register</h3>
+  <h2 class="modal-title">Register</h2>
 </div>
 
-<form name="loginForm" ng-submit="register(registerUser)">
 <div class="modal-body">
-  <div class="row" ng-show="error">
-    <div class="col-md-offset-1 col-md-10">
-      {{error}}
+  <form name="registerForm" role="form" ng-submit="register(registerUser)">
+    <div class="row" ng-show="error">
+      <div class="col-sm-12 col-md-12">
+        {{error}}
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-5">
-      <input type="text" id="first-name" ng-model="registerUser.firstName" placeholder="First Name">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="form-group">
+          <input type="text" name="firstName" ng-model="registerUser.firstName" id="firstName" class="form-control" required placeholder="First Name" tabindex="1">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="form-group">
+          <input type="text" name="lastName" ng-model="registerUser.lastName" id="lastName" class="form-control" required placeholder="Last Name" tabindex="2">
+        </div>
+      </div>
     </div>
-    <div class="col-md-5">
-      <input type="text" id="last-name" ng-model="registerUser.lastName" placeholder="Last Name">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <input type="email" name="email" id="email" ng-model="registerUser.email" class="form-control" required placeholder="Email address" tabindex="3">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <input type="text" id="company" ng-model="registerUser.company" placeholder="Company">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <input type="password" name="password" id="password" ng-model="registerUser.password" class="form-control" required min="8" required placeholder="Enter password" tabindex="4">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <input type="email" id="email" ng-model="registerUser.email" placeholder="E-Mail" required>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <input type="text" name="companyName" ng-model="registerUser.company" id="companyName" class="form-control" placeholder="Company Name" tabindex="5">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <input type="password" id="password" ng-model="registerUser.password" placeholder="Password" required ng-minlength="8" ng-maxlength="16">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="6" ng-disabled="registerForm.$invalid">Register</button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
+
 <div class="modal-footer">
-  <button type="submit" class="btn btn-primary">Register</button>
-  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  <div class="form-group">
+    <div class="col-md-12 control">
+      If you already have account please <a href="#/login">Log in</a>
+    </div>
+  </div>
 </div>
-</form>

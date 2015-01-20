@@ -9,8 +9,44 @@
  */
 (function() {
   angular.module('konikio', [
+    'restangular',
     'ui.bootstrap',
     'konikio.users',
     'konikio.validation'
-  ]);
+  ])
+    .config(function (RestangularProvider) {
+      RestangularProvider.setBaseUrl('http://te1.onlinevalidation.konik.io');
+    })
+    .config(function ($httpProvider) {
+      $httpProvider.interceptors.push([
+        '$injector',
+        function ($injector) {
+          return $injector.get('AuthInterceptor');
+        }
+      ]);
+    })
+    .factory('AuthInterceptor', function ($rootScope, $q) {
+      var authInterceptorServiceFactory = {};
+
+      var _request = function (config) {
+
+        config.headers = config.headers || {};
+        var session = $rootScope.currentSession;
+
+        if (angular.isObject(session)) {
+          //include token into each request header
+          config.headers.Authorization = session.id;
+        }
+        return config;
+      };
+
+      var _responseError = function (rejection) {
+        return $q.reject(rejection);
+      };
+
+      authInterceptorServiceFactory.request = _request;
+      authInterceptorServiceFactory.responseError = _responseError;
+
+      return authInterceptorServiceFactory;
+    });
 })();

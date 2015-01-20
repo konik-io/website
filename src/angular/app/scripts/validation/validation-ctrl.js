@@ -3,6 +3,11 @@
 (function(){
   angular.module('konikio.validation.controller',[])
     .controller('ValidationCtrl', function ($scope, $modal, AuthService) {
+      var updateSession = function() {
+        $scope.isAuthenticated  = AuthService.isAuthenticated();
+        $scope.currentSession = AuthService.getCurrentSession();
+      };
+
       $scope.openLogin = function() {
         var modalLoginInstance = $modal.open({
           templateUrl: 'partials/users/login.html',
@@ -10,6 +15,7 @@
         });
 
         modalLoginInstance.result.then(function () {
+          updateSession();
         }, function () {
         });
       };
@@ -25,7 +31,8 @@
         });
       };
 
-      $scope.isAuthenticated  = AuthService.isAuthenticated;
+      // Initialize scope
+      updateSession();
     });
 })();
 

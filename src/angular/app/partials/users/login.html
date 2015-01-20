@@ -1,27 +1,42 @@
 <div class="modal-header">
-  <h3 class="modal-title">Login</h3>
+  <h2 class="modal-title">Login</h2>
 </div>
 
-<form name="loginForm" ng-submit="login(credentials)">
 <div class="modal-body">
-  <div class="row" ng-show="error">
-    <div class="col-md-offset-1 col-md-10">
-      {{error}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-offset-2 col-md-8">
-      <input type="email" id="email" ng-model="credentials.email" placeholder="E-Mail">
-    </div>
-    </div>
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <input type="password" id="password" ng-model="credentials.password" placeholder="Password">
+  <form name="loginForm" class="form-horizontal" ng-submit="login(credentials)" role="form">
+    <div class="row" ng-show="error">
+      <div class="col-sm-12 col-md-12">
+        {{error}}
       </div>
     </div>
+
+    <div class="row">
+      <div class="input-group col-sm-12 col-md-12">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="login-username" type="email" class="form-control" tabindex="1" ng-model="credentials.email" name="email" placeholder="Email address" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group col-sm-12 col-md-12">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="login-password" type="password" class="form-control" tabindex="2" ng-model="credentials.password" name="password" placeholder="Enter password" required min="8">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="3" ng-disabled="loginForm.$invalid">Login</button>
+      </div>
+    </div>
+  </form>
 </div>
+
 <div class="modal-footer">
-  <button type="submit"  class="btn btn-primary">Login</button>
-  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  <div class="form-group">
+    <div class="col-md-12 control">
+      Forgot password? <a ng-click="showResetModal()">Get new one</a>
+    </div>
+  </div>
 </div>
-</form>
+

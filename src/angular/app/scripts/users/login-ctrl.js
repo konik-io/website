@@ -2,7 +2,7 @@
 
 (function() {
   angular.module('konikio.users.login', [])
-    .controller('LoginCtrl', function ($scope, $rootScope, $modalInstance, AuthService, AUTH_EVENTS) {
+    .controller('LoginCtrl', function ($scope, $rootScope, $modalInstance, AuthService) {
 
       var clear = function() {
         $scope.error = '';
@@ -16,11 +16,9 @@
       $scope.login = function (credentials) {
         clear();
         AuthService.login(credentials)
-          .then(function(user){
-            $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+          .then(function(){
             $modalInstance.close();
           }, function(errorMessage){
-            $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
             $scope.error = errorMessage;
           });
       };
