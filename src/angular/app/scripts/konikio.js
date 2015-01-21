@@ -25,17 +25,16 @@
         }
       ]);
     })
-    .factory('AuthInterceptor', function ($rootScope, $q) {
+    .factory('AuthInterceptor', function ($q, Session) {
       var authInterceptorServiceFactory = {};
 
       var _request = function (config) {
 
         config.headers = config.headers || {};
-        var session = $rootScope.currentSession;
 
-        if (angular.isObject(session)) {
+        if (angular.isDefined(Session.id)) {
           //include token into each request header
-          config.headers.Authorization = session.id;
+          config.headers.Authorization = Session.id;
         }
         return config;
       };

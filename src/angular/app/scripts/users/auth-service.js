@@ -67,12 +67,12 @@
         return request.promise;
       };
 
-      AuthService.isAuthenticated = function () {
-        return !!Session.userId;
+      AuthService.logout = function () {
+        Session.destroy();
       };
 
-      AuthService.getCurrentSession = function() {
-        return Session;
+      AuthService.isAuthenticated = function () {
+        return !!Session.userId;
       };
 
       return AuthService;

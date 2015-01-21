@@ -5,7 +5,6 @@
     .controller('ValidationCtrl', function ($scope, $modal, AuthService) {
       var updateSession = function() {
         $scope.isAuthenticated  = AuthService.isAuthenticated();
-        $scope.currentSession = AuthService.getCurrentSession();
       };
 
       var modalInstance;
@@ -44,6 +43,11 @@
           controller: 'ResetCtrl',
           scope: $scope
         });
+      };
+
+      $scope.logout = function () {
+        AuthService.logout();
+        updateSession();
       };
 
 
