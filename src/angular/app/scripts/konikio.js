@@ -21,7 +21,7 @@
         .when('/', {
           templateUrl: 'partials/validation.html',
           controller: 'ValidationCtrl'
-        })
+        });
     })
     .config(function (RestangularProvider) {
       RestangularProvider.setBaseUrl('http://te1.onlinevalidation.konik.io');
