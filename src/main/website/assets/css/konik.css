@@ -161,6 +161,87 @@ ul.sectlevel1, ul.sectlevel2, ul.sectlevel3{
 	font-size: 26px;
 }
 
+
+.input-lg {
+height: 40px;
+padding: 10px 16px;
+font-size: 15px;
+line-height: 1.33;
+border-radius: 2px;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;    
+  justify-content: center;
+}
+
+/* .btn-lg { */
+/* padding: 10px 16px; */
+/* font-size: 15px; */
+/* line-height: 1.33; */
+/* border-radius: 2px; */
+/* background-color: darkgray; */
+/* } */
+
+.signup-prop{
+
+    margin-bottom:4px;
+
+}
+
+.panel-info {
+border-color: #121212;
+}
+
+    .panel-info > .panel-heading {
+        color: #fff;
+        background-color: #808080;
+        border-color: #121212;
+    }
+
+    .panel-heading a{
+        color:white
+    }
+
+.panel-body{
+    padding-top:0px;
+}
+
+.login-btn{
+    background-color: #999;
+    padding: 6px 10px;
+    color:white;
+}
+
+/* .register, .login{ */
+/*     background-color: #999; */
+/*     color:black; */
+/* } */
+
+.signup-form{
+    margin-bottom:50px;
+}
+
+.panel-reset{
+    border: 0px;
+}
+
+.error{
+    color:red;
+}
+
+.message{
+    margin-top:10px;
+    color: brown;
+}}
+
 /* user management popups */
 
 .modal-body input {
