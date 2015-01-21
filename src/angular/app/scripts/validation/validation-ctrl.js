@@ -13,7 +13,7 @@
         if (angular.isObject(modalInstance)){
           modalInstance.dismiss('close');
         }
-      }
+      };
 
       $scope.openLogin = function() {
         dismissModal();
