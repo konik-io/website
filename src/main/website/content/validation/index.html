@@ -20,7 +20,7 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
         <dd>Version 0.4.1</dd>
       </dl>
     </div>
-    <div class="col-lg-6 col-md-6" ng-controller="ValidationCtrl">
+    <div class="col-lg-6 col-md-6" ng-app="konikio" ng-controller="ValidationCtrl">
       <form ng-if="isAuthenticated" id="validate_form" method="post" enctype="multipart/form-data" onsubmit="">
         <div class="form-group">
           <label for="upload_file">PDF or XML</label>
@@ -39,8 +39,3 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
 </div>
 <script src="/js/scripts/vendor.js"></script>
 <script src="/js/scripts/validation.js"></script>
-<script>
-  angular.element(document).ready(function() {
-    angular.bootstrap(document, ['konikio']);
-  });
-</script>
