@@ -370,6 +370,18 @@ try {
   module = angular.module('konikio', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/validation.html',
+    '<div class="container"><div class="row well"><div class="col-lg-6 col-md-6"><h4>Validity test for ZUGFeRD compliant invoices</h4><p>This online service validates ZUGFeRD compliant PDF or XML files using the Konik library.</p><p>If you would like to see a detailed validation report with a semantic validation <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA==" onclick="window.open(\'http://www.google.com/recaptcha/mailhide/d?k\\07501q8vnbfNmxk0T5DM_GteAAg\\75\\75\\46c\\75zwuGbJbE2eqJvqdTIykGHA\\75\\075\', \'\', \'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300\'); return false;" title="Reveal the Email address">contact</a> us for more details.</p><p>Version details</p><dl class="dl-horizontal"><dt>Konik</dt><dd>Version 0.7.1</dd><dt>Validation Service</dt><dd>Version 0.4.1</dd></dl></div><div class="col-lg-6 col-md-6" ng-controller="ValidationCtrl"><form ng-if="isAuthenticated" id="validate_form" method="post" enctype="multipart/form-data" onsubmit=""><div class="form-group"><label for="upload_file">PDF or XML</label> <input type="file" name="file" id="upload_file"><p id="upload_file_help_block" class="help-block">Create validation report</p></div><button id="validation-button" type="submit" class="btn btn-primary btn-large">Submit</button> <button id="logout-button" ng-click="logout()" class="btn btn-default btn-large">Logout</button></form><button ng-if="!isAuthenticated" id="login-button" class="btn btn-primary" ng-click="openLogin()">Login</button> <button ng-if="!isAuthenticated" id="register-button" class="btn btn-primary" ng-click="openRegister()">Register</button></div></div><div id="server_result" class="row"></div></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('konikio');
+} catch (e) {
+  module = angular.module('konikio', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('partials/users/login.html',
     '<div class="modal-header"><h2 class="modal-title">Login</h2></div><div class="modal-body"><form name="loginForm" class="form-horizontal" ng-submit="login(credentials)" role="form"><div class="row" ng-show="error"><div class="col-sm-12 col-md-12">{{error}}</div></div><div class="row"><div class="input-group col-sm-12 col-md-12"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input id="login-username" type="email" class="form-control" tabindex="1" ng-model="credentials.email" name="email" placeholder="Email address" required=""></div></div><div class="row"><div class="input-group col-sm-12 col-md-12"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input id="login-password" type="password" class="form-control" tabindex="2" ng-model="credentials.password" name="password" placeholder="Enter password" required="" min="8"></div></div><div class="row"><div class="col-sm-12 col-md-12"><button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="3" ng-disabled="loginForm.$invalid">Login</button></div></div></form></div><div class="modal-footer"><div class="form-group"><div class="col-md-12 control">Forgot password? <a ng-click="$parent.openReset()">Get new one</a></div></div></div>');
 }]);

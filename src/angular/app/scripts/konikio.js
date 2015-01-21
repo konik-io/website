@@ -10,11 +10,19 @@
 (function() {
   angular.module('konikio', [
     'ipCookie',
+    'ngRoute',
     'restangular',
     'ui.bootstrap',
     'konikio.users',
     'konikio.validation'
   ])
+    .config(function ($routeProvider) {
+      $routeProvider
+        .when('/', {
+          templateUrl: 'partials/validation.html',
+          controller: 'ValidationCtrl'
+        })
+    })
     .config(function (RestangularProvider) {
       RestangularProvider.setBaseUrl('http://te1.onlinevalidation.konik.io');
     })
