@@ -52,7 +52,7 @@
       AuthService.reset = function (email) {
         var request = $q.defer();
 
-        Restangular.one('reset').customPOST(email, null, null, { 'Content-Type': 'application/json' })
+        Restangular.one('resetPassword').customPOST(email, null, null, { 'Content-Type': 'application/json' })
           .then(function(){
             request.resolve();
           })
