@@ -11,6 +11,7 @@ angular.module('konikio.users', [
   'konikio.users.login',
   'konikio.users.register',
   'konikio.users.reset',
+  'konikio.users.auth-interceptor',
   'konikio.users.auth-service',
   'konikio.users.session'
 ]);
