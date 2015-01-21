@@ -8,28 +8,44 @@
         $scope.currentSession = AuthService.getCurrentSession();
       };
 
+      var modalInstance;
+      var dismissModal = function(){
+        if (angular.isObject(modalInstance)){
+          modalInstance.dismiss('close');
+        }
+      }
+
       $scope.openLogin = function() {
-        var modalLoginInstance = $modal.open({
+        dismissModal();
+        modalInstance = $modal.open({
           templateUrl: 'partials/users/login.html',
-          controller: 'LoginCtrl'
+          controller: 'LoginCtrl',
+          scope: $scope
         });
 
-        modalLoginInstance.result.then(function () {
+        modalInstance.result.then(function () {
           updateSession();
-        }, function () {
         });
       };
 
       $scope.openRegister = function() {
-        var modalRegisterInstance = $modal.open({
+        dismissModal();
+        modalInstance = $modal.open({
           templateUrl: 'partials/users/register.html',
-          controller: 'RegisterCtrl'
-        });
-
-        modalRegisterInstance.result.then(function () {
-        }, function () {
+          controller: 'RegisterCtrl',
+          scope: $scope
         });
       };
+
+      $scope.openReset = function() {
+        dismissModal();
+        modalInstance = $modal.open({
+          templateUrl: 'partials/users/reset.html',
+          controller: 'ResetCtrl',
+          scope: $scope
+        });
+      };
+
 
       // Initialize scope
       updateSession();

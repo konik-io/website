@@ -2,7 +2,7 @@
 
 (function() {
   angular.module('konikio.users.login', [])
-    .controller('LoginCtrl', function ($scope, $rootScope, $modalInstance, AuthService) {
+    .controller('LoginCtrl', function ($scope, $modalInstance, AuthService) {
 
       var clear = function() {
         $scope.error = '';
