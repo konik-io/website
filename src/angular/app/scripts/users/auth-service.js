@@ -71,6 +71,10 @@
         Session.destroy();
       };
 
+      AuthService.restoreSession = function() {
+        Session.createFromStore();
+      }
+
       AuthService.isAuthenticated = function () {
         return !!Session.userId;
       };

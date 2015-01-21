@@ -9,6 +9,7 @@
  */
 (function() {
   angular.module('konikio', [
+    'ipCookie',
     'restangular',
     'ui.bootstrap',
     'konikio.users',
@@ -25,4 +26,7 @@
         }
       ]);
     })
+    .run(['AuthService', function (AuthService) {
+      AuthService.restoreSession(); // if user is loggedIn, get from the cookie
+    }])
 })();
