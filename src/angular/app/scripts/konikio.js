@@ -28,5 +28,5 @@
     })
     .run(['AuthService', function (AuthService) {
       AuthService.restoreSession(); // if user is loggedIn, get from the cookie
-    }])
+    }]);
 })();

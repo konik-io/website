@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
   angular.module('konikio.users.auth-interceptor', [])
     .factory('AuthInterceptor', function ($q, Session) {

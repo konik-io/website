@@ -26,14 +26,14 @@ gulp.task('partials', function () {
       quotes: true
     }))
     .pipe($.ngHtml2js({
-      moduleName: 'zwebapp',
+      moduleName: 'konikio',
       prefix: 'partials/'
     }))
     .pipe(gulp.dest('.tmp/partials'))
     .pipe($.size());
 });
 
-gulp.task('html', ['scripts', 'partials', 'themes'], function () {
+gulp.task('html', ['scripts', 'partials'], function () {
   var jsFilter = $.filter('**/*.js');
   var assets;
 
@@ -45,15 +45,10 @@ gulp.task('html', ['scripts', 'partials', 'themes'], function () {
       addPrefix: '../'
     }))
     .pipe(assets = $.useref.assets())
-    .pipe($.rev())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
-    .pipe(jsFilter.restore())
-    .pipe(assets.restore())
-    .pipe($.useref())
-    .pipe($.revReplace())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('../main/website/assets/js'))
     .pipe($.size());
 });
 
@@ -61,4 +56,4 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.rimraf());
 });
 
-gulp.task('build', ['test', 'html', 'partials', 'ngdocs-distribute']);
+gulp.task('build', ['html', 'partials']);
