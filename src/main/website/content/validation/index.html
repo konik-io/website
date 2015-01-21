@@ -1,4 +1,3 @@
-<span ng-hide="true">
 title=ZUGFeRD Online Validation
 title=ZUGFeRD Online Validation Services
 date=2014-03-10 
@@ -7,7 +6,6 @@ status=published
 meta_keywords=ZUGFeRD Online Service,ZUGFeRD Online Validation, ZUGFeRD Invoice Validation, ZUGFeRD Online, Invoice Validation, ZUGFeRD PDF validation, ZUGFeRD XML validation
 meta_description=Validate ZUGFeRD invoices online to identify any error in PDF or XML content.
 ~~~~~~
-</span>
 <div class="container">
   <div class="row well">
     <div class="col-lg-6 col-md-6">
@@ -22,7 +20,7 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
         <dd>Version 0.4.1</dd>
       </dl>
     </div>
-    <div class="col-lg-6 col-md-6"  ng-controller="ValidationCtrl">
+    <div class="col-lg-6 col-md-6" ng-controller="ValidationCtrl">
       <form ng-if="isAuthenticated" id="validate_form" method="post" enctype="multipart/form-data" onsubmit="">
         <div class="form-group">
           <label for="upload_file">PDF or XML</label>
@@ -37,7 +35,12 @@ meta_description=Validate ZUGFeRD invoices online to identify any error in PDF o
     </div>
   </div>
   <div id="server_result" class="row">
-    <script src="js/scripts/validation.js"></script>
-    <script src="js/scripts/vendor.js"></script>
   </div>
 </div>
+<script src="/js/scripts/vendor.js"></script>
+<script src="/js/scripts/validation.js"></script>
+<script>
+  angular.element(document).ready(function() {
+    angular.bootstrap(document, ['konikio']);
+  });
+</script>

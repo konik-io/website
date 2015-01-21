@@ -17,7 +17,7 @@
         <li><a href="/ZUGFeRD.html">ZUGFeRD</a></li>
         <li><a href="/docs/index.html">Dokumentation</a></li>
         <li><a href="/development.html">Entwicklung</a></li>
-        <li><a href="/validation.html">Validation Service</a></li>
+        <li><a href="/validation/">Validation Service</a></li>
         <li><a href="/blog.html">Blog</a></li>
          <li><a href="/index.html#Support">Hilfe</a></li>
       </ul>
