@@ -13,6 +13,11 @@
       </dl>
     </div>
     <div class="col-lg-6 col-md-6">
+      <div class="errorArea" ng-if="error.message">
+        <div class="error">
+          {{error.message}}
+        </div>
+      </div>
       <form ng-if="isAuthenticated" name="validateForm" ng-submit="validate(fileToValidate)">
         <div class="form-group">
           <label for="upload-file">PDF or XML</label>

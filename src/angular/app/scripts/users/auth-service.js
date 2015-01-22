@@ -2,34 +2,8 @@
 
 (function(){
   angular.module('konikio.users.auth-service', [])
-    .factory('AuthService', function ($http, $q, Restangular, Session) {
+    .factory('AuthService', function ($q, Restangular, Session, ResponseParser) {
       var AuthService = {};
-
-      var getErrorMessageFromResponse = function(response, defaultMessage) {
-        var errorMessage = '';
-
-        if (angular.isObject(response) && angular.isDefined(response.error)) {
-          errorMessage = response.error;
-
-          if (angular.isDefined(response.message)) {
-            errorMessage += ' ' + response.message;
-          }
-        } else if (angular.isArray(response)) {
-          angular.forEach(response, function (error) {
-            errorMessage += errorMessage ? ', ' : '';
-
-            if (angular.isDefined(error.field)) {
-              errorMessage += error.field + ': ' + error.defaultMessage;
-            } else {
-              errorMessage += error.defaultMessage;
-            }
-          });
-        } else {
-          errorMessage = defaultMessage;
-        }
-
-        return errorMessage;
-      };
 
       AuthService.register = function (registerUser){
         var request = $q.defer();
@@ -39,7 +13,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = getErrorMessageFromResponse(response, 'Error during registration!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error during registration!');
             request.reject(errorMessage);
           });
 
@@ -55,7 +29,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = getErrorMessageFromResponse(response, 'Error during log in!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error during log in!');
             request.reject(errorMessage);
           });
 
@@ -70,7 +44,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = getErrorMessageFromResponse(response, 'Error while resetting password!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error while resetting password!');
             request.reject(errorMessage);
           });
 
@@ -91,7 +65,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = getErrorMessageFromResponse(response, 'Error while setting new password!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error while setting new password!');
             request.reject(errorMessage);
           });
 

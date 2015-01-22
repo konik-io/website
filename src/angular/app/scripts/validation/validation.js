@@ -9,6 +9,6 @@
  */
 angular.module('konikio.validation', [
   'konikio.validation.controller',
-  'konikio.validation.file-model'
+  'konikio.validation.validation-service'
 ]);
 

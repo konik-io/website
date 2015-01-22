@@ -14,7 +14,8 @@
     'restangular',
     'ui.bootstrap',
     'konikio.users',
-    'konikio.validation'
+    'konikio.validation',
+    'konikio.utils'
   ])
     .config(function ($routeProvider) {
       $routeProvider

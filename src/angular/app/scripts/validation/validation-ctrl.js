@@ -2,12 +2,13 @@
 
 (function(){
   angular.module('konikio.validation.controller',[])
-    .controller('ValidationCtrl', function ($scope, $modal, AuthService) {
+    .controller('ValidationCtrl', function ($scope, $modal, AuthService, ValidationService) {
       var updateSession = function() {
         $scope.isAuthenticated  = AuthService.isAuthenticated();
       };
 
       var modalInstance;
+
       var dismissModal = function(){
         if (angular.isObject(modalInstance)){
           modalInstance.dismiss('close');
@@ -50,8 +51,25 @@
         updateSession();
       };
 
+      $scope.error = {};
+
+      var clear = function() {
+        $scope.error.message = '';
+      };
+
       $scope.validate = function (fileToValidate) {
-        console.log(fileToValidate);
+        clear();
+        if (angular.isObject(fileToValidate)) {
+          ValidationService.validate(fileToValidate)
+            .then(function(){
+
+            })
+            .catch(function(errorMessage){
+              $scope.error.message = errorMessage;
+            });
+        } else {
+          $scope.error.message = 'Please provide file to validate';
+        }
       };
 
       // Initialize scope

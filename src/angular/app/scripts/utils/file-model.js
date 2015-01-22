@@ -1,7 +1,7 @@
 'use strict';
 
 (function(){
-  angular.module('konikio.validation.file-model',[])
+  angular.module('konikio.utils.file-model',[])
     .directive('fileModel', function ($parse) {
       return {
         restrict: 'A',
