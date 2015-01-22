@@ -55,21 +55,38 @@
 
       var clear = function() {
         $scope.error.message = '';
+        $scope.validationResponse = undefined;
       };
 
       $scope.validate = function (fileToValidate) {
         clear();
         if (angular.isObject(fileToValidate)) {
           ValidationService.validate(fileToValidate)
-            .then(function(){
-
+            .then(function(validationResponse){
+              $scope.validationResponse = validationResponse;
             })
             .catch(function(errorMessage){
               $scope.error.message = errorMessage;
             });
         } else {
-          $scope.error.message = 'Please provide file to validate';
+          $scope.error.message = 'Please provide file to validate.';
         }
+      };
+
+      $scope.findAlarmType = function (status) {
+        var alarmType;
+        switch (status) {
+          case 'VALID':
+            alarmType = 'alert-success';
+            break;
+          case 'INVALID':
+          case 'ERROR':
+            alarmType = 'alert-danger';
+            break;
+          default:
+            alarmType = 'alert-danger';
+        }
+        return alarmType;
       };
 
       // Initialize scope

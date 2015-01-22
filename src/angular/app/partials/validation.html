@@ -13,11 +13,6 @@
       </dl>
     </div>
     <div class="col-lg-6 col-md-6">
-      <div class="errorArea" ng-if="error.message">
-        <div class="error">
-          {{error.message}}
-        </div>
-      </div>
       <form ng-if="isAuthenticated" name="validateForm" ng-submit="validate(fileToValidate)">
         <div class="form-group">
           <label for="upload-file">PDF or XML</label>
@@ -31,16 +26,21 @@
       <button ng-if="!isAuthenticated" id="register-button" class="btn btn-primary" ng-click="openRegister()">Register</button>
     </div>
   </div>
-  <div id="server_result" class="row">
-    <div class="alert alert-success">
-      <p>Konik could read content of the file.</p>
+  <div class="row" ng-if="error.message">
+    <div class="alert alert-danger">
+      {{error.message}}
+    </div>
+  </div>
+  <div id="server_result" class="row" ng-if="validationResponse">
+    <div class="alert {{findAlarmType(validationResponse.status)}}">
+      <p>{{validationResponse.statusMessage}}</p>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         Result of the round trip xml-&gt;model-&gt;xml cycle.
       </div>
       <div class="panel-body">
-        [different] Expected text value 'urn:ferd:CrossIndustryDocument:invoice1p0:basic' but was 'urn:ferd:CrossIndustryDocument:invoice:1p0:basic' - comparing <ram:id ...="">urn:ferd:CrossIndustryDocument:invoice1p0:basic</ram:id> at /CrossIndustryDocument[1]/SpecifiedExchangedDocumentContext[1]/GuidelineSpecifiedDocumentContextParameter[1]/ID[1]/text()[1] to <ram:id ...="">urn:ferd:CrossIndustryDocument:invoice:1p0:basic</ram:id> at /CrossIndustryDocument[1]/SpecifiedExchangedDocumentContext[1]/GuidelineSpecifiedDocumentContextParameter[1]/ID[1]/text()[1]
+        {{validationResponse.compareResult}}
       </div>
     </div>
     <div class="panel panel-default">
@@ -56,10 +56,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>trade.settlement.monetarySummation.taxBasisTotal</td>
-            <td>may not be null</td>
-            <td>null</td>
+          <tr ng-repeat="validationResult in validationResponse.validationResult">
+            <td>{{validationResult.Path}}</td>
+            <td>{{validationResult.Message}}</td>
+            <td>{{validationResult['Invalid value']}}</td>
           </tr>
         </tbody>
       </table>

@@ -21,7 +21,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Validation failed');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Validation failed.');
             request.reject(errorMessage);
           });
 
