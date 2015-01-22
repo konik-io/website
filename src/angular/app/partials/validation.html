@@ -13,13 +13,13 @@
       </dl>
     </div>
     <div class="col-lg-6 col-md-6">
-      <form ng-if="isAuthenticated" id="validate_form" method="post" enctype="multipart/form-data" onsubmit="">
+      <form ng-if="isAuthenticated" name="validateForm" ng-submit="validate(fileToValidate)">
         <div class="form-group">
-          <label for="upload_file">PDF or XML</label>
-          <input type="file" name="file" id="upload_file">
+          <label for="upload-file">PDF or XML</label>
+          <input type="file" name="file" id="upload-file" file-model="fileToValidate">
           <p id="upload_file_help_block" class="help-block">Create validation report</p>
         </div>
-        <button id="validation-button" type="submit" class="btn btn-primary btn-large">Submit</button>
+        <button id="validation-button" type="submit" class="btn btn-primary btn-large" ng-disabled="validateForm.$invalid">Submit</button>
         <button id="logout-button" ng-click="logout()" class="btn btn-default btn-large">Logout</button>
       </form>
       <button ng-if="!isAuthenticated" id="login-button" class="btn btn-primary" ng-click="openLogin()">Login</button>
@@ -27,5 +27,37 @@
     </div>
   </div>
   <div id="server_result" class="row">
+    <div class="alert alert-success">
+      <p>Konik could read content of the file.</p>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Result of the round trip xml-&gt;model-&gt;xml cycle.
+      </div>
+      <div class="panel-body">
+        [different] Expected text value 'urn:ferd:CrossIndustryDocument:invoice1p0:basic' but was 'urn:ferd:CrossIndustryDocument:invoice:1p0:basic' - comparing <ram:id ...="">urn:ferd:CrossIndustryDocument:invoice1p0:basic</ram:id> at /CrossIndustryDocument[1]/SpecifiedExchangedDocumentContext[1]/GuidelineSpecifiedDocumentContextParameter[1]/ID[1]/text()[1] to <ram:id ...="">urn:ferd:CrossIndustryDocument:invoice:1p0:basic</ram:id> at /CrossIndustryDocument[1]/SpecifiedExchangedDocumentContext[1]/GuidelineSpecifiedDocumentContextParameter[1]/ID[1]/text()[1]
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Model validation results
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th>Message</th>
+            <th>Invalid value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>trade.settlement.monetarySummation.taxBasisTotal</td>
+            <td>may not be null</td>
+            <td>null</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

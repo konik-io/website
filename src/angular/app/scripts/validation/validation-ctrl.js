@@ -50,6 +50,9 @@
         updateSession();
       };
 
+      $scope.validate = function (fileToValidate) {
+        console.log(fileToValidate);
+      };
 
       // Initialize scope
       updateSession();
