@@ -17,8 +17,8 @@
         //  headers: {'Content-Type': undefined}
         //})
         RestangularData.one('validate').customPOST(formData, null, null, { 'Content-Type': undefined })
-          .then(function () {
-            request.resolve();
+          .then(function (response) {
+            request.resolve(response);
           })
           .catch(function(response){
             var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Validation failed.');
