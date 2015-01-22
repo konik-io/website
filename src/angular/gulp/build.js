@@ -47,7 +47,7 @@ gulp.task('html', ['scripts', 'partials'], function () {
     .pipe(assets = $.useref.assets())
     .pipe(jsFilter)
     .pipe($.ngAnnotate())
-    //.pipe($.uglify({preserveComments: $.uglifySaveLicense}))
+    .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(gulp.dest('../main/website/assets/js'))
     .pipe($.size());
 });
