@@ -4,9 +4,9 @@
 
 <div class="modal-body">
   <form name="loginForm" class="form-horizontal" ng-submit="login(credentials)" role="form">
-    <div class="row" ng-show="error">
-      <div class="col-sm-12 col-md-12">
-        {{error}}
+    <div class="row" ng-if="error.message">
+      <div class="col-sm-12 col-md-12 error">
+        {{error.message}}
       </div>
     </div>
 

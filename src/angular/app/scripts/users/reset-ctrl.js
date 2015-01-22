@@ -4,8 +4,10 @@
   angular.module('konikio.users.reset', [])
     .controller('ResetCtrl', function ($scope, $modalInstance, AuthService) {
 
+      $scope.error = {};
+
       var clear = function() {
-        $scope.error = '';
+        $scope.error.message = '';
       };
 
       $scope.credentials = {
@@ -18,7 +20,7 @@
           .then(function(){
             $modalInstance.close();
           }, function(errorMessage){
-            $scope.error = errorMessage;
+            $scope.error.message = errorMessage;
           });
       };
 

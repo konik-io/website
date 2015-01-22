@@ -21,6 +21,10 @@
         .when('/', {
           templateUrl: 'partials/validation.html',
           controller: 'ValidationCtrl'
+        })
+        .when('/reset', {
+          templateUrl: 'partials/users/new-password.html',
+          controller: 'NewPasswordCtrl'
         });
     })
     .config(function (RestangularProvider) {
