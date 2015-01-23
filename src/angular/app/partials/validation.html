@@ -35,7 +35,7 @@
     <div class="alert {{findAlarmType(validationResponse.status)}}">
       <p>{{validationResponse.statusMessage}}</p>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-if="validationResponse.compareResult">
       <div class="panel-heading">
         Result of the round trip xml-&gt;model-&gt;xml cycle.
       </div>
@@ -43,7 +43,7 @@
         {{validationResponse.compareResult}}
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-if="validationResponse.validationResult.length > 0">
       <div class="panel-heading">
         Model validation results
       </div>
