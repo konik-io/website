@@ -237,10 +237,14 @@ border-color: #121212;
     color:red;
 }
 
+.input-error {
+    font-size: 70%;
+}
+
 .message{
     margin-top:10px;
     color: brown;
-}}
+}
 
 /* user management popups */
 
@@ -250,4 +254,8 @@ border-color: #121212;
 
 .modal-body .row {
     margin: 10px 0;
+}
+
+.ng-touched.ng-invalid {
+    border: 1px solid red;
 }

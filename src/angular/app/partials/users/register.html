@@ -13,29 +13,44 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="text" name="firstName" ng-model="registerUser.firstName" id="firstName" class="form-control" required placeholder="First Name" tabindex="1">
+          <input type="text" name="firstName" ng-model="registerUser.firstName" id="firstName" class="form-control" placeholder="First Name" tabindex="1" required ng-minlength="3" ng-maxlength="32">
+          <span class="error input-error" ng-show="registerForm.firstName.$touched && (registerForm.firstName.$error.required || registerForm.firstName.$error.minLength || registerForm.firstName.$error.maxLength)">
+            The first name should be between 3 and 32 characters long.
+          </span>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="text" name="lastName" ng-model="registerUser.lastName" id="lastName" class="form-control" required placeholder="Last Name" tabindex="2">
+          <input type="text" name="lastName" ng-model="registerUser.lastName" id="lastName" class="form-control" placeholder="Last Name" tabindex="2" required ng-minlength="3" ng-maxlength="32">
+          <span class="error input-error" ng-show="registerForm.lastName.$touched && (registerForm.lastName.$error.required || registerForm.lastName.$error.minLength || registerForm.lastName.$error.maxLength)">
+            The last name should be between 3 and 32 characters long.
+          </span>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <input type="email" name="email" id="email" ng-model="registerUser.email" class="form-control" required placeholder="Email address" tabindex="3">
+        <input type="email" name="email" id="email" ng-model="registerUser.email" class="form-control" placeholder="Email" tabindex="3" required>
+        <span class="error input-error" ng-show="registerForm.email.$touched && (registerForm.email.$error.required || registerForm.email.$error.email)">
+          Please provide valid email.
+        </span>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <input type="password" name="password" id="password" ng-model="registerUser.password" class="form-control" required min="8" required placeholder="Enter password" tabindex="4">
+        <input type="password" name="password" id="password" ng-model="registerUser.password" class="form-control" placeholder="Password" tabindex="4" required ng-minlength="8" ng-maxlength="16">
+        <span class="error input-error" ng-show="registerForm.password.$touched && (registerForm.password.$error.required || registerForm.password.$error.minLength || registerForm.password.$error.maxLength)">
+          The password should be between 8 and 16 characters long.
+        </span>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <input type="text" name="companyName" ng-model="registerUser.company" id="companyName" class="form-control" placeholder="Company Name" tabindex="5">
+        <input type="text" name="companyName" ng-model="registerUser.company" id="companyName" class="form-control" placeholder="Company Name" tabindex="5" required ng-minlength="3" ng-maxlength="32">
+        <span class="error input-error" ng-show="registerForm.companyName.$touched && (registerForm.companyName.$error.required || registerForm.companyName.$error.minLength || registerForm.companyName.$error.maxLength)">
+          The first name should be between 3 and 32 characters long.
+        </span>
       </div>
     </div>
 
@@ -49,7 +64,7 @@
 
 <div class="modal-footer">
   <div class="form-group">
-    <div class="col-md-12 control">
+    <div class="col-md-12 control ">
       If you already have account please <a ng-click="$parent.openLogin()">Log in</a>
     </div>
   </div>

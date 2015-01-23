@@ -13,7 +13,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error during registration!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response.data, 'Error during registration!');
             request.reject(errorMessage);
           });
 
@@ -29,7 +29,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error during log in!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response.data, 'Error during log in!');
             request.reject(errorMessage);
           });
 
@@ -44,7 +44,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error while resetting password!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response.data, 'Error while resetting password!');
             request.reject(errorMessage);
           });
 
@@ -65,7 +65,7 @@
             request.resolve();
           })
           .catch(function(response){
-            var errorMessage = ResponseParser.getErrorMessageFromResponse(response, 'Error while setting new password!');
+            var errorMessage = ResponseParser.getErrorMessageFromResponse(response.data, 'Error while setting new password!');
             request.reject(errorMessage);
           });
 
