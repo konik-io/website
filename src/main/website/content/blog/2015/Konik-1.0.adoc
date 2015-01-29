@@ -1,0 +1,20 @@
+= Konik 1.0 Release und Update ZUGFeRD Validatioin Service 
+Vadim Bauer
+2015-01-28
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release,Konik 1.0.0, Changelog
+:idprefix:
+:linkattrs:
+ 
+ 
+Konik 1.0 steht zu Benutzung bereit.
+
+== Changelog
+Es sind noch weitere Validierungen hinzugekommen. 
+Zusätzlich wurden die Texte für die Fehlermeldungen hinzugefügt sowohl auf Englisch als auch auf Deutsch. 
+Zahlreiche Änderungen  wurden vorgenommen, welche die Stabilität der Bibliothek verbessern.
+
+ 
+=== ZUGFeRD Validation Service. 
+Der ZUGFeRD Validation Service basiert nun auch auf Konik 1.0.
