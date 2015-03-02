@@ -35,6 +35,11 @@
     <div class="alert {{findAlarmType(validationResponse.status)}}">
       <p>{{validationResponse.statusMessage}}</p>
     </div>
+    <div class="panel panel-default" ng-if="validationResponse.viewUrl">
+      <div class="panel-body">
+        Display the content of the invoice in Browser <a ng-href="validationResponse.viewUrl" target="_blank">{{validationResponse.viewUrl}}</a>
+      </div>
+    </div>
     <div class="panel panel-default" ng-if="validationResponse.compareResult">
       <div class="panel-heading">
         Result of the round trip xml-&gt;model-&gt;xml cycle.
