@@ -29,7 +29,7 @@
         });
     })
     .config(function (RestangularProvider) {
-      RestangularProvider.setBaseUrl('http://te1.onlinevalidation.konik.io');
+      RestangularProvider.setBaseUrl('http://onlinevalidation.konik.io');
     })
     .config(function ($httpProvider) {
       $httpProvider.interceptors.push([

@@ -14,7 +14,7 @@
     <div id="navbar-main" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/index.html#Quickstart">Schnellstart</a></li>
-        <li><a href="/ZUGFeRD.html">ZUGFeRD</a></li>
+        <li><a href="/order/Bestellung.html">Shop</a></li>
         <li><a href="/docs/index.html">Dokumentation</a></li>
         <li><a href="/development.html">Entwicklung</a></li>
         <li><a href="/validation/#/">Validation Service</a></li>
