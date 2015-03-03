@@ -35,9 +35,9 @@
     <div class="alert {{findAlarmType(validationResponse.status)}}">
       <p>{{validationResponse.statusMessage}}</p>
     </div>
-    <div class="panel panel-default" ng-if="validationResponse.viewUrl">
+    <div class="panel panel-default" ng-if="validationResponse.zinvoiceLocation">
       <div class="panel-body">
-        Display the content of the invoice in Browser <a ng-href="validationResponse.viewUrl" target="_blank">{{validationResponse.viewUrl}}</a>
+        Display the content of the invoice in Browser <a ng-href="validationResponse.zinvoiceLocation" target="_blank">{{validationResponse.zinvoiceLocation}}</a>
       </div>
     </div>
     <div class="panel panel-default" ng-if="validationResponse.compareResult">
