@@ -12,10 +12,6 @@
         var formData = new FormData();
         formData.append('file', fileToValidate);
 
-        //$http.post('http://te1.onlinevalidation.konik.io/validate', formData, {
-          //transformRequest: angular.identity,
-        //  headers: {'Content-Type': undefined}
-        //})
         RestangularData.one('validate').customPOST(formData, null, null, { 'Content-Type': undefined })
           .then(function (response) {
             request.resolve(response);
