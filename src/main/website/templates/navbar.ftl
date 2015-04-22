@@ -15,8 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/index.html#Quickstart">Schnellstart</a></li>
         <li><a href="/order/Bestellung.html">Shop</a></li>
-        <li><a href="/docs/index.html">Dokumentation</a></li>
-        <li><a href="/development.html">Entwicklung</a></li>
+        <li><a href="/docs/index.html">Dokumentation</a></li>        
         <li><a href="/validation/#/">Validation Service</a></li>
         <li><a href="/blog.html">Blog</a></li>
          <li><a href="/index.html#Support">Hilfe</a></li>

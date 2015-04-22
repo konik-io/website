@@ -1,4 +1,4 @@
-= Konik 1.0 Release und Update ZUGFeRD Validatioin Service 
+= Konik 1.0 Release und Update ZUGFeRD Validation Service 
 Vadim Bauer
 2015-01-28
 :jbake-type: post

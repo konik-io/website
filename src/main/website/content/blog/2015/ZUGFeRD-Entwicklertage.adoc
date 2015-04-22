@@ -1,0 +1,19 @@
+= Konik auf den ZUGFeRD Entwicklertagen
+Vadim Bauer
+2015-04-19
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Conference
+:idprefix:
+:linkattrs:
+:1: http://www.zugferd-entwicklertage.de/programm/ 
+
+Am 21. und 22. Mai finden das erste Mal die ZUGFeRD Entwicklertage satt. 
+Leider ist der Event schon komplett ausgebucht, aber es findet am 10. und 11. 
+September ein zweiter Termin statt.
+
+
+Auch wenn sich das {1}[Programm] auf den ersten Blick nicht ganz auf Entwickler augerichtet 
+anhört, ist es eine gute Mischung aus Grundlageninformation und Hands On. 
+
+Konik wird auch vor Ort mit einem eigenen Programmpunkt vertreten sein. Also nicht den Laptop vergessen. 
