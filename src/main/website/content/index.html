@@ -1,8 +1,8 @@
-title=Open Source Bibliothek für ZUGFeRD konforme Rechnungen für Java und .NET.
+title=ZUGFeRD Open Source Bibliothek für Java und .NET.
 date=2014-09-26 
 type=index
 status=published
-meta_keywords=ZUGFeRD SDK, ZUGFeRD Bibliothek, ZUGFeRD Library, Open Source ZUGFeRD, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD C#, ZUGFeRD Validierung, ZUGFeRD Anbieter, ZUGFeRD Implementierung
+meta_keywords=Open Source ZUGFeRD, ZUGFeRD SDK, ZUGFeRD Bibliothek, ZUGFeRD Navision, ZUGFeRD Library, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD Validierung, ZUGFeRD Anbieter, ZUGFeRD Implementierung
 meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man einfach ZUGFeRD-konforme Rechnungen und bindet sie inklusive Konvertierung in PDF/A3 ein.
 ~~~~~~
 <a href="https://github.com/konik-io" class="hidden-xs hidden-sm">
@@ -14,7 +14,7 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
    <div class="container">
       <div class="row">
          <div class="col-lg-7 col-md-7 col-sm-7">
-            <h1>Bibliothek zum Erstellen, Lesen und Validieren von 
+            <h1>Die Bibliothek zum Erstellen, Lesen und Validieren von 
                 <a title="Was genau bedeutet ZUGFeRD?" data-placement="bottom" data-toggle="tooltip" href="/ZUGFeRD.html" id="zf_definition">ZUGFeRD</a> 
                 konformen Rechnungen
             </h1>
@@ -29,12 +29,50 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
 </div>
 
 
+<div id="info_zugferd" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1>Was ist ZUGFeRD?</h1>
+            <p>
+            Der ZUGFeRD-Standard ermöglicht es, elektronische Rechnungen einfach zwischen Unternehmen und Behörden auszutauschen, 
+            per E-Mail, REST und diversen weiteren Verfahren.<br/>
+            Im Gegensatz zu bisherigen Verfahren können ZUGFeRD Rechnungen ad-hoc versendet und empfangen werden.
+            Da für den Versand oder Empfang keine Registrierungen, Zertifizierungen, elektronische Signaturen oder die Anbindung an e-invoicing Netzwerke nötig sind, ist der Aufwand für Integration und damit auch die Kosten minimal. 
+           </p><p>
+            Eine ZUGFeRD-Rechnung besteht zum Einen aus einem PDF für die manuelle Verarbeitung oder Kontrolle, zum Anderen ist 
+            innerhalb des PDFs eine XML Datei eingebettet, die automatisiert verarbeitet werden kann.<br/>
+            
+            Duch den Einsatz von ZUGFeRD werden die bestehenden Prozesse vereinfacht - und zwar ohne die Prozesse grundlegend zu verändern. <br/>            
+           
+            Mehr zum Thema ZUGFeRD erfahren Sie in unserem <a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel</a>.
+            
+            </p>                  
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1>ZUGFeRD Vorteile</h1>
+            <h3>Für Empfänger</h3>
+            <ul>
+                <li>Kostenreduktion von durchschnittlichen 9-12€ pro Rechnung auf wenige Cents.</li>
+                <li>Duchgehende Automatisierung und vereinfachte Prozesse.</li>
+                <li>PDF/A ist direkt für die Langzeitarchivierung geeignet.</li>
+            </ul>                  
+            <h3>Für Versender</h3>
+            <ul>
+                <li>Kostenreduktion von durchschnittlichen 5-7€ pro Rechnung auf wenige Cents.</li>
+                <li>Ein Prozess für alle Ausgangsrechnungen.</li>
+                <li>Auch Empfänger ohne ZUGFeRD können Ihre Rechnung verarbeiten.</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
 
-<div class="section-colored">
+<div class="section">
    <div class="container">
       <div class="row">
          <div class="col-lg-12 col-md-12">
-            <h1>Argumente für die Konik ZUGFeRD Bibliothek</h1>
+            <h1>Eigenschaften der Konik Bibliothek</h1>
          </div>
       </div>
 
@@ -76,15 +114,15 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
          <div class="col-lg-4 col-md-4">
             <h3><i class="fa fa-gear"></i> PDF Funktionen</h3>
             <p>Konvertierung von PDFs ins PDF/A3 Format.</p>
-            <p>Anhängen von ZUGFeRD Daten an PDFs.</p>
-            <p>Extrahieren vom ZUGFeRD Daten aus PDFs.</p>
+            <p>Anhängen von ZUGFeRD-Daten an PDFs.</p>
+            <p>Extrahieren von ZUGFeRD-Daten aus PDFs.</p>
          </div>
       </div>
    </div>
 </div>
 <!-- /.section -->
 
-<div id="Quickstart" class="section">
+<div id="Quickstart" class="section-colored">
    <div class="container">
       <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
@@ -127,7 +165,7 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
          </div>
          <div class="col-lg-6 col-md-6 col-sm-6">
             <p>
-               Der schnellste Weg die Konik Bibliothek in ein Projekt einzubinden ist mit Hilfe eines Dependency
+               Der schnellste Weg, die Konik Bibliothek in ein Projekt einzubinden ist das Dependency
                Management Systems mit Anbindung an <a href="http://search.maven.org/#search|ga|1|g%3A%22io.konik%22" >Maven
                   Central Repository</a> oder <a href="https://www.nuget.org/packages/zugferd.net/" >NuGet</a> für
                .NET Welt.
@@ -135,7 +173,7 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
             <p>Das <a href="/docs/index.html#_setup">Setup Kapitel</a> enthält mehr Details und Vorgehensweisen für die unterschiedlichen Umgebungen.</p>
             
             <h3>Alternative</h3>
-            <p>Auch ohne eine Dependency Management System steht die gesamte Konik Bibliothek mit allen
+            <p>Auch ohne ein Dependency Management System steht die gesamte Konik Bibliothek mit allen
                Abhängigkeiten, Plug-Ins und der Dokumentation als eine eigenständige ZIP Distribution zur Verfügung.</p>
             <div>
                <a id="download-zip-package"
@@ -147,7 +185,7 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
    </div>
 </div>
 
-<div id="Support" class="section-colored">
+<div id="Support" class="section">
    <div class="container">
       <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
@@ -210,9 +248,8 @@ meta_description=Mit Konik für Java und .NET erstellt, liest und validiert man 
 
    <div class="container">
       <div class="row well vertical-align">
-         <div class="col-lg-8 col-md-8">
-            <h4>Direkter Kontakt</h4>
-            <p>Wenn Sie glauben, dass GitHub und Stack Overflow nicht die richtigen Orte für Ihr Anliegen sind sind, freuen wir uns über Ihre E-Mail.</p>
+         <div class="col-lg-8 col-md-8">           
+            <p>Wenn GitHub und Stack Overflow nicht die richtigen Orte für Ihr Anliegen sind, freuen wir uns über Ihre E-Mail.</p>
          </div>
          <div class="col-lg-4 col-md-4">
             <button class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target=".bs-contact-modal">E-Mail

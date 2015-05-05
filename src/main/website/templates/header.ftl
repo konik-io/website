@@ -3,15 +3,15 @@
   <head>
 
     <meta charset="utf-8"/>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="${content.meta_description}"/>
-    <meta name="author" content="Vadim Bauer"/>
-    <meta content="/img/logo.png" property="og:image"/>
-    <meta name="keywords" content="${content.meta_keywords}"/>
-    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD"/>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="description" content="${content.meta_description}">
+    <meta name="author" content="Vadim Bauer">
+    <meta content="/img/logo.png" property="og:image">
+    <meta name="keywords" content="${content.meta_keywords}">
+    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD">
 	<meta name="author" content="Vadim Bauer">
-    <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"/></#if>
+    <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"></#if>
 	
     <title>${content.title}</title>
 

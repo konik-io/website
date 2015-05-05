@@ -20,14 +20,14 @@ include::{lnk_minimal_latest_raw}[tags=createInvoice]
 <1> A new invoice instance is created with one of the three allowed profiles. BASIC, COMPFORT or EXTENDED
 <2> The implementation of the model as a fluent interface makes the creation of the invoice self-explanatory.
 
-=== Transforming invoice model to XML
+=== Transforming the invoice model to XML and vice versa.
 
 [source,java,indent=-3]
 ----
 include::{lnk_minimal_latest_raw}[tags=transformInvoiceToXml]
 ----
 <1> The +InvoiceTransformer+ is responsible for transforming XML to Model and vice versa.   
-<2> Transform from invoice to an +OutputStream+.
+<2> Transform the given invoice to an OutputStream.
  
 === Append a ZUGFeRD invoice to an existing PDF
 This alternative step performs a model conversation. So you don't have to do it yourself.
@@ -36,8 +36,8 @@ This alternative step performs a model conversation. So you don't have to do it 
 ----
 include::{lnk_minimal_latest_raw}[tags=appendInvoiceToPdf]
 ----
-<1> Create a new +PdfHandler+ or reuse existing.  
-<2> Append Invoice to existing PDF defined in +inputPdf+ the result will be written to +resultingPdf+.
+<1> The PdfHandler bridges together the invoice with PDFs. 
+<2> Here we append an invoice to an PDF defined as inputPdf. The is written to the resultingPdf output stream.
  
  
 === Extract ZUGFeRD invoice from PDF
@@ -47,8 +47,8 @@ This step internally also performs a model conversation.
 ----
 include::{lnk_minimal_latest_raw}[tags=extracInvoiceFromPdf]
 ----
-<1> Create a new +PdfHandler+ or reuse existing.  
-<2> Append Invoice to existing PDF defined in +inputPdf+ the result will be written to +resultingPdf+.
+<1> The PdfHandler also extracts the invoice from a ZUGFeRD PDF. 
+<2> Extracts the invoice from an existing PDF provided by the inputZugferdPdfStream. The result is the invoice.
  
 
 === Validate correctness of a ZUGFeRD Invoice 

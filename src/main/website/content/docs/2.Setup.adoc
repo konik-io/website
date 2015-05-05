@@ -163,14 +163,18 @@ link:/blog.html#Dependency-Injection-with-the-Konik-library[Konik and dependeny 
 
 === .NET projects
 The .NET package consists of +Konik+, +PDFBox-carriage+ & +BVal+ for Invoice Validation. 
-Everything bundled together in one package available via NuGet.
+Everything is bundled together in one single dll. You can install the Konik library directly via NuGet.
 
 [source,bash,indent=0]
 ----
- PM> Install-Package konik-zugferd
+ PM> Install-Package ZUGFeRD-NET
 ----
 
-You can also browse the https://www.nuget.org/packages/konik-zugferd/[NuGet Konik package] for details.
+You can also browse the https://www.nuget.org/packages/ZUGFeRD.NET/[NuGet Konik package] for details.
+
+=== .NET Example
+
+To help you get started there is also an https://github.com/konik-io/ZUGFeRD.NET-Example[.NET example] available on GitHub. 
 
 
 
