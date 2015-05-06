@@ -8,8 +8,7 @@
     <meta name="description" content="${content.meta_description}">
     <meta name="author" content="Vadim Bauer">
     <meta content="/img/logo.png" property="og:image">
-    <meta name="keywords" content="${content.meta_keywords}">
-    <meta name="date" content='${published_date?string("yyyy-MM-dd")}' scheme="YYYY-MM-DD">
+    <meta name="keywords" content="${content.meta_keywords}">    
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"></#if>
 	
