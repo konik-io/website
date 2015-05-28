@@ -1,0 +1,77 @@
+= Der Rückblick auf die ZUGFeRD Entwicklertage  
+Vadim Bauer
+2015-05-28
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Conference
+:idprefix:
+:linkattrs:
+:1: http://www.zugferd-entwicklertage.de/programm/ 
+
+Letzte Woche war ich auf den ersten ZUGFeRD Entwicklertagen in Bielefeld. 
+Dies ist ein kleiner Rückblick über die Vorträge, Diskussionen und Meinungen der Teilnehmer.
+
+image::/img/blog/ZUGFeRD_Community.jpg[ZUGFeRD Community]
+
+Das Hauptziel der zwei Tage dauernden Veranstaltung war, Sofware Entwickler 
+zu vernetzen, damit sich diese untereinander über ZUGFeRD austauschen können.
+
+Das Ganze wurde in drei unterschiedliche Panels aufgeteilt, welche im Grunde ineinander übergingen. 
+Es gab drei Panels: ZUGFeRD Integration, ZUGFeRD Tools und ZUGFeRD Praxisanwendungen.
+
+
+ Im Panel "ZUGFeRD Integration" steht insbesondere das Zusammenspiel 
+ bereits entwickelter Lösungen verschiedener Anbieter im Fokus. 
+ Neben einer Live-Validierung von ZUGFeRD-Rechnungen, 
+ die durch Eure Systeme erzeugt werden, steht hauptsächlich die Verarbeitbarkeit 
+ der erstellten Lösungen durch die Lösungen der anderen Teilnehmer im Vordergrund. 
+ Dieser Plug-Test soll zeigen, ob das ZUGFeRD-Versprechen "ohne vorherige bilaterale 
+ Absprache" mit den bereits vorhandenen Lösungen eingehalten werden kann 
+ und wo eventuell noch Nachbesserungsbedarf besteht 
+
+Beim folgenden Panel war ich anwesend:
+
+ Bei diesem Panel soll der Fokus nicht nur auf Planung und Konzeption liegen, 
+ sondern vor allem auf den verfügbaren Tools zur Umsetzung einer entsprechenden ZUGFeRD-Integration. 
+ Es gibt genügend Zeit zur Vorstellung verschiedener Werkzeuge und zur Diskussion über deren Integration. 
+ Auch hier stehen die konkreten Anwendungsbeispiele im Fokus. 
+
+
+ Das Panel "ZUGFeRD Anwendungen" beleuchtet die konkrete Umsetzung von ZUGFeRD Integrationen 
+ und bietet so Anreize für die eigene Konzeption. Hier sind vor allem Praxiserfahrungen gefragt
+ und sollen ausgetauscht werden. Die Teilnehmer sollen dieses Forum vor allem auch dann nutzen, 
+ wenn nicht nur Lösungen, sondern auch die Schwierigkeiten, 
+ Herausforderungen und Anforderungen aus der Praxis interessieren. 
+
+
+Es waren überwiegend kleine und mittlere Unternehmen vertreten, aber es gab auch einige wenige grosse Unternehmen die vor Ort waren wie SAP Consulting & DATEV.
+Auf Produktseite waren einige Anbieter von DMS Lösungen da, 
+der andere Teil bestand aus Beratungsunternehmen und Vertreter von Unternehmen, welche ZF selbst in die Hand nehmen wollten.
+
+Die Einstellung zu ZF war überwiegen positiv und aufgeschlossen. Zweifel gab es wie immer bezüglich der allgemeinen 
+ZF Akzeptanz und Unsicherheit vor der Politik. 
+Es wurde auch wieder die Forderung laut, dass für eine grössere Akzeptanz die öffentliche Verwaltung ZUGFeRD zur Pflicht machen sollte.
+ 
+    
+Ein kurzes Thema war ZUGFeRD 2.0. Dieses werde EU-Konform sein und deshalb spätestens ab 2018 kommen. 
+Drei weitere Länder befänden sich auf dem Weg zu einer hybriden Rechnungen, 
+darunter Frankreich und Portugal. 
+Mittlerweile gibt es mehr als 100 ZUGFeRD Anbieter aus sieben Ländern.
+
+image::/img/blog/ZUGFeRD_2.0.jpg[ZUGFeRD 2.0]
+
+
+Aus einigen Diskussionen habe ich heraushören können, 
+dass viele Unternehmen die bereits EDI einsetzen auch mit ZUGFeRD Prozesse steuern wollen.
+ZUGFeRD wird es Out of the Box so nicht anbieten, es gibt aber Bemühungen und 
+Gremien die sich mit dem Thema von branchenspezifischen Lösungen beschäftigen.
+
+Meiner Meinung nach sollte ZUGFeRD nicht dazu missbraucht werden, bilaterale oder branchenspezifische 
+Prozesse in ZUGFeRD zu integrieren. Stattdessen sollte man den PDF/A Container nutzen, um neben der ZUGFeRD XML 
+auch Prozessinformationen mitzuliefern. 
+Ein Beispiel dazu wird es demnächst in http://z-rechnung.de[Z-RECHNUNG] geben. 
+In Z-RECHNUNG lassen sich die Zeiterfassungsbögen mit an die Rechnung anhängen und können so im Zielsystem für Prozesse genutzt werden.
+    
+    
+    
+    
