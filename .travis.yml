@@ -26,4 +26,4 @@ script:
 
 env:
   global:
-    secure: bQkAdCXe8nFe/btTAjcCRgCg+9QOmO/nUc7GmCjltKinLnx7azFg4vWTeUEvUiSeMw3lAXp0WlVuxSG35ZSUIjnFNgMMcue3YceTIxOikKaFeQL9C/aJLe+EY0DUuK4cHMO1EvV4TJwOUNsk4IZxEYSXhsxHTIIyyWhL2+HtZYo=
+    secure: "fT/ISX36d1O3JjlxftkckC1T2IQcz6BfV/hX+S+0seZY+J3HOtzXVGtjcXAdCdqhfkywin4KCZahW9Wya3CUdM+WdMTJWXXPKRpFr02iXMUp+aMF1USfEHZdubOK68wJkpJKdBiWE4x2dbyCiRJxYFb4Mr7o61O3XBpJcZkQ19E="
