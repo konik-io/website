@@ -48,7 +48,7 @@
       <website.source.dir>${basedir}/src/main/website</website.source.dir>
       <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
       <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
-      <konik-latest-release>1.0.2</konik-latest-release>
+      <konik-latest-release>1.0.3</konik-latest-release>
       <itext-carriage-latest-release>0.8.0</itext-carriage-latest-release>
       <pdfbox-carriage-latest-release>0.8.3</pdfbox-carriage-latest-release>
    </properties>
@@ -95,7 +95,7 @@
          <plugin>
             <groupId>com.github.github</groupId>
             <artifactId>site-maven-plugin</artifactId>
-            <version>0.11</version>
+            <version>0.12</version>
             <configuration>
                <message>Deploy baked website
                   ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
@@ -104,6 +104,8 @@
                <excludes>
                   <exclude>.DS_Store</exclude>
                </excludes>
+               <repositoryName>website</repositoryName>
+               <repositoryOwner>konik-io</repositoryOwner>
                <oauth2Token>${env.GH_TOKEN}</oauth2Token>
             </configuration>
             <executions>
@@ -284,7 +286,7 @@
       <dependency>
          <groupId>org.jbake</groupId>
          <artifactId>jbake-core</artifactId>
-         <version>2.3.2</version>
+         <version>2.4.0</version>
       </dependency>
       <dependency>
          <groupId>ch.qos.logback</groupId>

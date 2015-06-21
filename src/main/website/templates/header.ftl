@@ -5,14 +5,14 @@
     <meta charset="utf-8"/>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <meta name="description" content="${content.meta_description}">
+    <#if (content.meta_description)??><meta name="description" content="${content.meta_description}"></#if>
     <meta name="author" content="Vadim Bauer">
     <meta content="/img/logo.png" property="og:image">
-    <meta name="keywords" content="${content.meta_keywords}">    
+    <#if (content.meta_keywords)??><meta name="keywords" content="${content.meta_keywords}"></#if>    
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"></#if>
 	
-    <title>${content.title}</title>
+    <#if (content.title)??> <title>${content.title}</title></#if>    
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>

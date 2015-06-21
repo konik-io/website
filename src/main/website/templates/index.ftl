@@ -4,3 +4,4 @@
 ${content.body}
 
 <#include "footer.ftl">
+<#include "socket.ftl">

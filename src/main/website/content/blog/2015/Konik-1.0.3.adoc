@@ -1,0 +1,14 @@
+= Konik 1.0.3 Bugfix Release 
+Vadim Bauer
+2015-06-02
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release,Changelog
+:idprefix:
+:linkattrs:
+ 
+ 
+Konik Bugfix release 1.0.3.
+
+== Changelog
+- Fehlerkorrektur: +header.notes+ ist keine Pflichtangabe mehr. Dankeschön an https://twitter.com/jstaerk[Jochen] für den Hinweis.

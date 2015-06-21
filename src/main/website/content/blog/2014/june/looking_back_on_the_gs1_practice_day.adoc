@@ -3,7 +3,7 @@ Vadim Bauer
 2014-06-014
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Conference	
+:jbake-tags: Konferenz
 :idprefix:
 :linkattrs:
 :1: http://www.gs1-germany.de/no_cache/gs1-academy/veranstaltungen/detail/seminar/GS1-Praxistag-Elektr-1658/seminar-termin/2014-06-12_GS1-Germany-Knowledg_ID_1924/

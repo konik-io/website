@@ -3,7 +3,7 @@ Vadim Bauer
 2014-07-17
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Specification errors	
+:jbake-tags: ZUGFeRD Spezifikation Fehler	
 :idprefix:
 :linkattrs:
 :icons: font

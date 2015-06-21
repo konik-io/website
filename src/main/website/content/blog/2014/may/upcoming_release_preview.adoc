@@ -3,7 +3,7 @@ Vadim Bauer
 2014-05-23
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release, Feature
+:jbake-tags: Release,Features
 :idprefix:
 :linkattrs:
 

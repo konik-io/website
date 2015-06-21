@@ -3,7 +3,7 @@ Vadim Bauer
 2015-04-19
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Conference
+:jbake-tags: Konferenz
 :idprefix:
 :linkattrs:
 :1: http://www.zugferd-entwicklertage.de/programm/ 

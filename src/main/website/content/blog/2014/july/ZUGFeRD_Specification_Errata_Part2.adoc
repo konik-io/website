@@ -3,7 +3,7 @@ Vadim Bauer
 2014-07-24
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Specification errors	
+:jbake-tags: ZUGFeRD Spezifikation Fehler
 :idprefix:
 :linkattrs:
 :icons: font
@@ -45,12 +45,12 @@ Finally we have to take into account the four different documents provided.
 
 
 Only all four together provide us with a valid ZUGFeRD compliant invoice. 
-Validating your XML Invoice file  against only the XSD Schema does not guarantee a ZUGFeRD compliant Invoice. 
+Validating your XML Invoice file against the XSD Schema does not guarantee a ZUGFeRD compliant Invoice. 
 Also a successful validation of an XML file against Schematron is not a guarantee.
 
 CEFEG shutdown their validation service, because it is based on XSD 
 Schema validation and Schematron which cannot guarantee a correct invoice 
-at the current state of development at least.
+at the current state of development.
 
 .Error Message on the eInvoice Validation Portal din-zugferd-validation.org.
 image::img/blog/july/din-zugferd-validation.org_error_message.png["Error Message on din-zugferd-validation.org telling that they can't validate correctly ZUGFeRD Invoices"]

@@ -3,7 +3,7 @@ Vadim Bauer
 2014-03-20
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: How-to, Dependency Injection, Feature
+:jbake-tags: How-to,Features
 :idprefix:
 :linkattrs:
 :icons: font

@@ -3,7 +3,7 @@ Vadim Bauer
 2014-10-14
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release, Feature
+:jbake-tags: Release,Features
 :idprefix:
 :linkattrs:
 :lnk_minimal_latest: https://raw.githubusercontent.com/konik-io/konik/konik-{konik-latest-release}/src/test/java/io/konik/examples/MinimalInvoice.java

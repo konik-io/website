@@ -3,7 +3,7 @@ Vadim Bauer
 2014-06-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release, Changelog	
+:jbake-tags: Release,ZUGFeRD Validation Service	
 :idprefix:
 :linkattrs:
 

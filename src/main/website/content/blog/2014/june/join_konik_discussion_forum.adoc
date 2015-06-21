@@ -3,7 +3,7 @@ Vadim Bauer
 2014-06-21
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Discussion	
+:jbake-tags: Diskussion	
 :idprefix:
 :linkattrs:
 :1: https://groups.google.com/forum/#!forum/konik-io

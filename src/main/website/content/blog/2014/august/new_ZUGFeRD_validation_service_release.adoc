@@ -3,7 +3,7 @@ Vadim Bauer
 2014-08-01
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release	
+:jbake-tags: Release, ZUGFeRD Validation Service	
 :idprefix:
 :linkattrs:
 :1: <<Errors in the ZUGFeRD Specification Part 1, Errata 1>>

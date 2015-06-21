@@ -3,7 +3,7 @@ Vadim Bauer
 2014-03-02
 :jbake-type: post
 :jbake-status: published
-:jbake-tags: Release, Konik 0.1.0, Changelog, Feature
+:jbake-tags: Release,Changelog,Features
 :idprefix:
 :linkattrs:
 
