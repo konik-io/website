@@ -21,7 +21,7 @@
                <div>
                   <header><h3>Artikel</h3></header> 
                   <p><a href="/ZUGFeRD.html">Über ZUGFeRD</a></p>
-                  <p><a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artike über ZUGFeRD</a></<p> 
+                  <p><a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel über ZUGFeRD</a></<p> 
                   <p><a href="http://www.bitkom.org/files/documents/140916_Broschuere_ZUGFeRD.pdf">ZUGFeRD Leitfaden</a></p>                                   
                </div>
             </article>

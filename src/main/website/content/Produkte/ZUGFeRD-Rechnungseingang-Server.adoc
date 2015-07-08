@@ -1,0 +1,12 @@
+= Impressum
+Vadim Bauer
+2014-5-25
+:jbake-type: page
+:jbake-status: published
+:idprefix:
+:meta_keywords: Konik Bibliothek Impressum 
+:meta_description:  Information disclosure about the publisher.
+:meta_robots: noindex, nofollow
+
+== Contact
+

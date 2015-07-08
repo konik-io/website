@@ -1,0 +1,495 @@
+= ZUGFeRD Umfrage bei ERP Anbietern  
+Vadim Bauer
+2015-06-29
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Umfrage,Diskussion
+:idprefix:
+:linkattrs:
+:1: http://www.computerwoche.de/a/wie-der-zugferd-standard-den-rechnungsaustausch-vereinfacht,3211062
+:2: https://www.xing.com/communities/groups/erp-netzwerk-0790-1000395
+
+
+Diese Woche wurde seit langer Zeit mal wieder ein {1}[auführlicher Artikel] über ZUGFeRD in der Computerwoche veröffentlicht.
+Der Artikel in der Computerwoche war auch der Auslöser für mich, sich bei den ERP-Anbietern zum Thema ZUGFeRD umzuhören.
+Was gibt es also Besseres, als eine kleine Umfrage zu machen? 
+Dazu wurde in der XING {2}[ERP Netzwerk] Gruppe eine Umfrage gestartet.
+
+Ziel war es, zum Einen herauszufinden, wie viele ERP-Anbieter ZUGFeRD bereits kennen und zum Anderen, wieviele
+Anbieter planen, ZUGFeRD zu integrieren.
+   
+Demnach können 40% der Befragten ZUGFeRD-Rechnungen entweder empfangen oder versenden.
+16,7% planen eine Integration in den nächsten sechs Monaten und weitere 16,7% in den nächsten 12 Monaten.
+Wenn man das Ganze zusammenzählt, kommt man zur Schlussfolgerung, 
+dass in den nächsten 12 Monaten 73% der befragten ERP-Anbieter das ZUGFeRD-Format verarbeiten können.  
+
+Interessant war auch die Meinung der Teilnehmer, dass ZUGFeRD einen Wettbewerbsvorteil darstellt.
+
+
+Abschliessend sollte nicht unerwähnt bleiben, dass die zugrundeliegenden 12 Antworten begrenzte 
+Aussagekraft für die gesamte ERP Branche haben.
+    
+    
+++++
+<div class="ss-all-analytics" dir="auto">
+<div class="ss-summary">
+   <h1>Zusammenfassung</h1>
+   <div class="container" id=":0.cc">
+      <h3 class="ss-indiv-chart-title">Bietet oder vertreibt Ihre Firma ERP-Software?</h3>
+      <div class="row" id=":1.sc">
+         <div class="col-md-6 col-sm-12" id=":1.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L231.02370205355737,42.49999999999997A67,67,0,0,1,240,76L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path>
+                        </g>
+                        <g>
+                           <path d="M173,76L139.49999999999997,17.976297946442628A67,67,0,0,1,231.0237020535574,42.50000000000001L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                           <text text-anchor="start" x="175.6730784528227" y="32.20342732575922" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">25%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,1,1,139.49999999999997,17.976297946442628L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="136.57426529071648" y="118.34251191354002" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">66.7%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Ja</td>
+                                 <td>8</td>
+                              </tr>
+                              <tr>
+                                 <td>Nein</td>
+                                 <td>3</td>
+                              </tr>
+                              <tr>
+                                 <td>Other</td>
+                                 <td>1</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px; font-weight: bold;">8 (66.7%)</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":1.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">Ja</td>
+                     <td class="ss-table-number">8</td>
+                     <td class="ss-table-percentage">66.7%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Nein</td>
+                     <td class="ss-table-number">3</td>
+                     <td class="ss-table-percentage">25%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Other</td>
+                     <td class="ss-table-number">1</td>
+                     <td class="ss-table-percentage">8.3%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":1.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":1.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Haben Sie schon von ZUGFeRD gehört?</h3>
+      <div class="row" id=":2.sc">
+         <div class="col-md-6 col-sm-12" id=":2.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L231.02370205355737,42.49999999999997A67,67,0,0,1,240,76L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                        </g>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,1,1,231.0237020535574,42.50000000000001L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="118.26673391451283" y="90.41444575268832" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">91.7%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Ja</td>
+                                 <td>11</td>
+                              </tr>
+                              <tr>
+                                 <td>Nein</td>
+                                 <td>1</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px; font-weight: bold;">1 (8.3%)</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":2.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">Ja</td>
+                     <td class="ss-table-number">11</td>
+                     <td class="ss-table-percentage">91.7%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Nein</td>
+                     <td class="ss-table-number">1</td>
+                     <td class="ss-table-percentage">8.3%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":2.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":2.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Unterstützt Ihre Software bereits ZUGFeRD? </h3>
+      <div class="row" id=":3.sc">
+         <div class="col-md-6 col-sm-12" id=":3.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,0,1,206.5,134.02370205355737L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="195.6442037097816" y="100.65654087608188" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">16.7%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L206.5,134.02370205355737A67,67,0,0,1,206.5,134.02370205355737L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                        </g>
+                        <g>
+                           <path d="M173,76L139.5,134.0237020535574A67,67,0,1,1,240,76L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#109618"></path>
+                           <text text-anchor="start" x="136.57426529071643" y="40.65748808646003" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">66.7%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L206.5,134.02370205355737A67,67,0,0,1,139.5,134.0237020535574L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path>
+                           <text text-anchor="start" x="159" y="129.7539591341652" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">16.7%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Ja, sowohl Rechnungseingang und -ausgang</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>Ja, Rechnungseingang</td>
+                                 <td>0</td>
+                              </tr>
+                              <tr>
+                                 <td>Ja, Rechnungsausgang</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>Nein</td>
+                                 <td>8</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px;">66.7%</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":3.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">Ja, sowohl Rechnungseingang und -ausgang</td>
+                     <td class="ss-table-number">2</td>
+                     <td class="ss-table-percentage">16.7%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Ja, Rechnungseingang</td>
+                     <td class="ss-table-number">0</td>
+                     <td class="ss-table-percentage">0%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Ja, Rechnungsausgang</td>
+                     <td class="ss-table-number">2</td>
+                     <td class="ss-table-percentage">16.7%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Nein</td>
+                     <td class="ss-table-number">8</td>
+                     <td class="ss-table-percentage">66.7%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":3.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":3.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Planen Sie, das ZUGFeRD Format in Ihre Software zu integrieren?</h3>
+      <div class="row" id=":4.sc">
+         <div class="col-md-6 col-sm-12" id=":4.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,0,1,193.70413862312148,139.7207865917753L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="200.16739837565655" y="106.50369557523183" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">20%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L240,75.99999999999999A67,67,0,0,1,240,76L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#109618"></path>
+                        </g>
+                        <g>
+                           <path d="M173,76L118.79586137687852,115.38161190359571A67,67,0,1,1,240,76L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path>
+                           <text text-anchor="start" x="147.98324676655645" y="33.28318579160754" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">60%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L193.70413862312148,139.7207865917753A67,67,0,0,1,118.79586137687852,115.38161190359571L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                           <text text-anchor="start" x="147.98324676655645" y="125.71681420839246" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">20%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>in ca. 1 bis 6 Monaten</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>in ca. 6 bis 12 Monaten</td>
+                                 <td>2</td>
+                              </tr>
+                              <tr>
+                                 <td>bei Kundennachfrage</td>
+                                 <td>6</td>
+                              </tr>
+                              <tr>
+                                 <td>Other</td>
+                                 <td>0</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px; font-weight: bold;">6 (60%)</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":4.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">in ca. 1 bis 6 Monaten</td>
+                     <td class="ss-table-number">2</td>
+                     <td class="ss-table-percentage">20%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">in ca. 6 bis 12 Monaten</td>
+                     <td class="ss-table-number">2</td>
+                     <td class="ss-table-percentage">20%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">bei Kundennachfrage</td>
+                     <td class="ss-table-number">6</td>
+                     <td class="ss-table-percentage">60%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Other</td>
+                     <td class="ss-table-number">0</td>
+                     <td class="ss-table-percentage">0%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":4.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":4.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Kann Ihre Software elektronische Rechnungen versenden?</h3>
+      <small>In einem anderen Format als ZUGFeRD</small>
+      <div class="row" id=":5.sc">
+         <div class="col-md-6 col-sm-12" id=":5.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L139.49999999999997,17.976297946442628A67,67,0,0,1,240,76L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                           <text text-anchor="start" x="181.42573470928352" y="40.657488086459985" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">33.3%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,1,1,139.49999999999997,17.976297946442628L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="136.57426529071648" y="118.34251191354002" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">66.7%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Ja</td>
+                                 <td>8</td>
+                              </tr>
+                              <tr>
+                                 <td>Nein</td>
+                                 <td>4</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px; font-weight: bold;">8 (66.7%)</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":5.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">Ja</td>
+                     <td class="ss-table-number">8</td>
+                     <td class="ss-table-percentage">66.7%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Nein</td>
+                     <td class="ss-table-number">4</td>
+                     <td class="ss-table-percentage">33.3%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":5.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":5.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Glauben Sie, dass ZUGFeRD ein Wettbewerbsvorteil gegenüber Ihrer Konkurrenz sein kann?</h3>
+      <div class="row" id=":6.sc">
+         <div class="col-md-6 col-sm-12" id=":6.cc" aria-hidden="true">
+            <div>
+               <div dir="ltr" style="position: relative; width: 345px; height: 150px;">
+                  <div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+                     <svg width="345" height="150" aria-label="A chart." style="overflow: hidden;">
+                        <defs id="defs"></defs>
+                        <rect x="0" y="0" width="345" height="150" stroke="none" stroke-width="0" fill="#ffffff"></rect>
+                        <g>
+                           <path d="M173,76L114.97629794644261,42.49999999999999A67,67,0,0,1,240,76L173,76A0,0,0,0,0,173,76" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path>
+                           <text text-anchor="start" x="171.22134520470055" y="33.889318759219144" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">41.7%</text>
+                        </g>
+                        <g>
+                           <path d="M173,76L240,76A67,67,0,1,1,114.97629794644261,42.49999999999999L173,76A0,0,0,1,0,173,76" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path>
+                           <text text-anchor="start" x="146.77865479529945" y="125.11068124078085" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#ffffff">58.3%</text>
+                        </g>
+                        <g></g>
+                     </svg>
+                     <div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th></th>
+                                 <th></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Ja</td>
+                                 <td>7</td>
+                              </tr>
+                              <tr>
+                                 <td>Nein</td>
+                                 <td>5</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div aria-hidden="true" style="display: none; position: absolute; top: 160px; left: 355px; white-space: nowrap; font-family: Arial; font-size: 10px;">41.7%</div>
+               <div></div>
+            </div>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":6.rt">
+            <table class="table table-hover">
+               <tbody>
+                  <tr>
+                     <td class="ss-table-label">Ja</td>
+                     <td class="ss-table-number">7</td>
+                     <td class="ss-table-percentage">58.3%</td>
+                  </tr>
+                  <tr>
+                     <td class="ss-table-label">Nein</td>
+                     <td class="ss-table-number">5</td>
+                     <td class="ss-table-percentage">41.7%</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" id=":6.cc" aria-hidden="true"></div>
+         <div class="col-md-6 col-sm-12" id=":6.rt"></div>
+      </div>
+      <h3 class="ss-indiv-chart-title">Was sind Ihrer Meinung nach die Hürden bei der Umsetzung von ZUGFeRD?</h3>
+      <div class="row" id=":7.sc">
+         <div class="col-md-12">
+            <div class="col-md-12 top7">Akzeptanz</div>
+            <div class="col-md-12 top7">Nationaler Standards sollten in der EU abgeschafft werden. Siehe PEPPOL</div>
+            <div class="col-md-12 top7">Zu geringe Nachfrage aus dem Markt. Dadurch kein Druck auf die Entwicklungsroadmap.</div>
+            <div class="col-md-12 top7">Der Verbreitungsgrad </div>
+         </div>
+      </div>
+   </div>
+</div>
+++++

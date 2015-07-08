@@ -12,7 +12,8 @@
 	<meta name="author" content="Vadim Bauer">
     <#if (content.meta_robots)??><meta name="ROBOTS" content="${content.meta_robots}"></#if>
 	
-    <#if (content.title)??> <title>${content.title}</title></#if>    
+    <#if (content.title)??><title>${content.title}</title></#if>
+    <#if (tag)??><title>Konik Blog Tag: ${tag}</title></#if>    
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>

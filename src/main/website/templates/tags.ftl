@@ -24,5 +24,5 @@
         <#assign last_month = post.date?string("MMMM yyyy")>
         </#list>     
     </div>
-    
+</div>    
 <#include "footer.ftl">
