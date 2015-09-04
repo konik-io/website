@@ -10,9 +10,11 @@ Vadim Bauer
 
 == Contact
 
-Bauer Engineering +
+8gears AG  +
 Kleindorf 18 + 
 CH-8702 Zollikon +
+
+CHE-367.953.314
 +++<p>hello<span style="display:none">.hello</span>@<span style="display:none">xy</span>z-rechnung.de</p>+++
 
 

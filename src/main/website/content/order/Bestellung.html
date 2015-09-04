@@ -121,7 +121,7 @@ meta_description=Bestellformular für die Konik Bibliothek zu verwendung in Clos
 
                   <h3>Lizenzvarianten</h3>
                   <div class="form-group">
-                     <label class="col-md-4" for="serverlizenz">Konik Bibliothek Serverlizenz, 1000€</label>
+                     <label class="col-md-4" for="serverlizenz">Konik Bibliothek Serverlizenz, 2500€</label>
                      <div class="col-md-1">
                         <input id="serverlizenz" name="serverlizenz" type="number" placeholder="1 Server"
                            class="form-control input-sm">
@@ -135,15 +135,6 @@ meta_description=Bestellformular für die Konik Bibliothek zu verwendung in Clos
                            class=" form-control input-sm">
                      </div>
                   </div>
-
-                  <div class="form-group">
-                     <label class="col-md-4" for="navplugin">ZUGFeRD Dynamics Navision Modul, 2000€</label>
-                     <div class="col-md-1">
-                        <input id="navplugin" name="navplugin" type="number" placeholder="1 Server"
-                           class=" form-control input-sm">
-                     </div>
-                  </div>
-
 
                   <h3>Supportverträge</h3>
                   <div class="form-group">
@@ -174,7 +165,7 @@ meta_description=Bestellformular für die Konik Bibliothek zu verwendung in Clos
                   </div>
                   <div class="form-group">
                      <div class="col-md-5">
-                        <button id="submit" name="submit" class="btn btn-primary">Bestellen</button>
+                        <button id="btn_bestellung_submit" name="submit" class="btn btn-primary">Bestellen</button>
                      </div>
                   </div>
                   <small>Alle genannten Preise sind Netto-Preise.</small>
@@ -189,6 +180,67 @@ meta_description=Bestellformular für die Konik Bibliothek zu verwendung in Clos
       </div>
    </div>
 </div>
+
+<script type="text/javascript">
+    $('#bestellung')
+            .one(
+                    'submit',
+                    function() {
+                        var baseURL = 'https://docs.google.com/forms/d/1kP-AiuZjGk2U6rmYKVMQSCkY05bCon1PdvmWa2O3PAc/formResponse';
+
+                        var vorname = '?entry.1504644482='
+                                + encodeURIComponent($('#vorname').val());
+                        var nachnahme = '&entry.1076747169='
+                                + encodeURIComponent($('#nachnahme').val());
+                        var email = '&entry.2026447521='
+                                + encodeURIComponent($('#email').val());
+                        var firma = '&entry.1878183990='
+                                + encodeURIComponent($('#firma').val());
+                        var adresse = '&entry.476611704='
+                                + encodeURIComponent($('#adresse').val());
+                        var plz = '&entry.1229916916='
+                                + encodeURIComponent($('#plz').val());
+                        var stadt = '&entry.1978760587='
+                                + encodeURIComponent($('#stadt').val());
+                        var serverlizenz = '&entry.513499636='
+                                + encodeURIComponent($('#serverlizenz').val());
+                        var firmenlizenz = '&entry.1164458851='
+                                + encodeURIComponent($('#firmenlizenz').val());
+                        var navplugin = '&entry.227903236='
+                                + encodeURIComponent($('#navplugin').val());
+                        var support = '&entry.1294211879='
+                                + $('input:radio[name=support]:checked').val();
+                        var nachricht = '&entry.2045156876='
+                                + encodeURIComponent($('#nachricht').val());
+
+                        var submitRef = '&submit=submit';
+                        var submitURL = (baseURL + vorname + nachnahme + email
+                                + firma + adresse + plz + stadt + serverlizenz
+                                + firmenlizenz + navplugin + support
+                                + nachricht + submitRef);
+                        $(this)[0].action = submitURL;
+
+                        $("#form_result")
+                                .append(
+                                        '<div class="alert alert-success alert-dismissable">'
+                                                + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
+                                                + 'Danke für Ihre Bestellung. In Kürze erhalten Sie weitere Informationen sowie Lizenz und Software.'
+                                                + '</div>');
+
+                        setTimeout(function() {
+                            $('#form-container').hide();
+                            $('#update-form').animate({
+                                'width' : '0px'
+                            }, 300, function() {
+                                $('#get-updates-link').hide();
+                            });
+                        }, 1000);
+                        
+                        ga('send', 'event', 'button', 'click', 'bestellung erfolgt');
+                    });
+  
+</script>
+   <iframe src="/" id="no-target" name="no-target" width="0" height="0"></iframe>
 
 
 <div id="contact" class="section-colored">
@@ -227,62 +279,6 @@ meta_description=Bestellformular für die Konik Bibliothek zu verwendung in Clos
 
 
 
-<script type="text/javascript">
-	$('#bestellung')
-			.one(
-					'submit',
-					function() {
-						var baseURL = 'https://docs.google.com/forms/d/1kP-AiuZjGk2U6rmYKVMQSCkY05bCon1PdvmWa2O3PAc/formResponse';
 
-						var vorname = '?entry.1504644482='
-								+ encodeURIComponent($('#vorname').val());
-						var nachnahme = '&entry.1076747169='
-								+ encodeURIComponent($('#nachnahme').val());
-						var email = '&entry.2026447521='
-								+ encodeURIComponent($('#email').val());
-						var firma = '&entry.1878183990='
-								+ encodeURIComponent($('#firma').val());
-						var adresse = '&entry.476611704='
-								+ encodeURIComponent($('#adresse').val());
-						var plz = '&entry.1229916916='
-								+ encodeURIComponent($('#plz').val());
-						var stadt = '&entry.1978760587='
-								+ encodeURIComponent($('#stadt').val());
-						var serverlizenz = '&entry.513499636='
-								+ encodeURIComponent($('#serverlizenz').val());
-						var firmenlizenz = '&entry.1164458851='
-								+ encodeURIComponent($('#firmenlizenz').val());
-						var navplugin = '&entry.227903236='
-								+ encodeURIComponent($('#navplugin').val());
-						var support = '&entry.1294211879='
-								+ $('input:radio[name=support]:checked').val();
-						var nachricht = '&entry.2045156876='
-								+ encodeURIComponent($('#nachricht').val());
-
-						var submitRef = '&submit=submit';
-						var submitURL = (baseURL + vorname + nachnahme + email
-								+ firma + adresse + plz + stadt + serverlizenz
-								+ firmenlizenz + navplugin + support
-								+ nachricht + submitRef);
-						$(this)[0].action = submitURL;
-
-						$("#form_result")
-								.append(
-										'<div class="alert alert-success alert-dismissable">'
-												+ '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
-												+ 'Danke für Ihre Bestellung. In Kürze erhalten Sie weitere Informationen sowie Lizenz und Software.'
-												+ '</div>');
-
-						setTimeout(function() {
-							$('#form-container').hide();
-							$('#update-form').animate({
-								'width' : '0px'
-							}, 300, function() {
-								$('#get-updates-link').hide();
-							});
-						}, 1000);
-					});
-</script>
-   <iframe src="/" id="no-target" name="no-target" width="0" height="0"></iframe>
 
    
