@@ -28,3 +28,6 @@ include::3.Configuration.adoc[]
 [.col-lg-12]
 include::4.JavaDocs.adoc[]
 
+[.col-lg-12]
+include::5.KonikSDK.adoc[]
+

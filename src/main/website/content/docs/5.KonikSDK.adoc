@@ -1,0 +1,138 @@
+:icons: font
+:z-rechnung-url: https://z-rechnung.com/
+:api-key-url: https://app.z-rechnung.com/#/settings-application
+:zinvoice-api-config-class: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/ZinvoiceApiConfig.java
+:zinvoice-http-client-class: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/http/ZinvoiceHttpClient.java
+:lnk_sdk_example: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
+:lnk_sdk_example_raw: https://raw.githubusercontent.com/wololock/konik/sdk/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
+:invoices_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoices/InvoicesApi.java
+:invoice_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoice/InvoiceApi.java
+:rest_invoices_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoices/RestInvoicesApi.java
+:rest_invoice_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoice/RestInvoiceApi.java
+
+== Konik SDK
+
+Konik library integrates with {z-rechnung-url}[+Z-Rechnung+] using SDK components. It allows using all Z-Rechnung features directly from your
+project that uses Konik. This documentation describes how to start using Konik SDK and makes use of Z-Rechnung features.
+
+=== Before you start
+
+Before you start, go to {api-key-url}[+Z-Rechnung Application Settings+] page and get your API key.
+
+Exemplary API key may look like this: `7c8f89cd-e1d9-44f1-ba3c-62f3ccde1909`
+
+
+=== Setup SDK config class
+
+Now you can instantiate SDK main configuration class - {zinvoice-api-config-class}[+ZinvoiceApiConfig.java+]. It's recommended to instantiate this
+class as a commonly shared object e.g. Spring Framework bean component. Thanks that you can create it only once and use as a dependency everywhere
+this object is required. Here is the code sample of the method that creates API config class instance:
+
+[source,java,indent=-3]
+----
+include::{lnk_sdk_example_raw}[tags=zinvoiceApiConfig]
+----
+<1> Your API key
+<2> Absolute URL to Z-Rechnung online service, without trailing slash.
+
+
+=== Setup HTTP client class
+
+Each SDK component uses {zinvoice-http-client-class}[+ZinvoiceHttpClient.java+] class for establishing Z-Rechnung connection. It uses `ZinvoiceApiConfig` instance
+to get API key and Z-Rechnung absolute URL. Each request contains header `API-KEY: {your API key here}` to authenticate the user.
+
+[source,java,indent=-3]
+----
+include::{lnk_sdk_example_raw}[tags=zinvoiceHttpClient]
+----
+<3> `ZinvoiceApiConfig` instance (previously defined method in this example)
+
+
+=== Access Z-Rechnung services
+
+Currently SDK provides components:
+
+* {invoices_api}[+InvoicesApi+]
+* {invoice_api}[+InvoiceApi+]
+
+==== InvoicesApi
+
+`InvoicesApi` implementation class {rest_invoices_api}[+RestInvoicesApi.java+] allows you to access your Z-Rechnung's invoices outbox
+and inbox.
+
+[source,java,indent=-3]
+----
+include::{lnk_sdk_example_raw}[tags=invoicesApi]
+----
+<6> `ZinvoiceHttpClient` instance
+
+==== InvoiceApi
+
+`InvoiceApi` implementation class {rest_invoice_api}[+RestInvoiceApi.java+] allows you to manage all aspects of the invoice object, including:
+creating, loading, updating, deleting, downloading, sending to email and uploading ZUGFeRD compatible invoice.
+
+[[admonition]]
+[role="alert alert-info"]
++++<i class="fa fa-info-circle fa-3x col-lg-1"></i>+++
+Keep in mind that some features (like downloading PDF invoice for the first time) cost credits. If you don't have sufficient credits amount,
+ `InsufficientCreditsAmountException` will be thrown.
+
+[source,java,indent=-3]
+----
+include::{lnk_sdk_example_raw}[tags=invoiceApi]
+----
+<7> `ZinvoiceHttpClient` instance
+
+=== Examples
+
+==== Loading all created invoices
+
+[source,java,indent=-3]
+----
+InvoicesApi invoicesApi = new RestInvoicesApi(zinvoiceHttpClient);
+List<InvoicesListElement> outbox = invoicesApi.outbox();
+for (InvoiceListElement invoice : outbox) {
+    System.out.println(invoice.getId());
+}
+----
+
+==== Loading invoice via ID
+[source,java,indent=-3]
+----
+InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
+InvoiceDocument invoiceDocument = invoiceApi.getInvoice(invoiceId);
+Invoice invoice = invoiceDocument.getInvoice();
+----
+
+==== Downloading PDF invoice
+[source,java,indent=-3]
+----
+InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
+InputStream pdf = invoiceApi.downloadInvoiceAsPDF(invoiceId);
+
+FileOutputStream fos = new FileOutputStream("/tmp/invoice.pdf");
+ByteStreams.copy(pdf,fos);
+fos.close();
+----
+
+==== Sending invoice via e-mail
+[source,java,indent=-3]
+----
+InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
+invoiceApi.sendInvoice(invoiceId, "joe.doe@example.com", "You can put a message here");
+----
+
+
+=== Test classes
+:test_case_1: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/invoices/RestInvoicesApiTest.java
+:test_case_2: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/invoice/RestInvoiceApiTest.java
+:test_case_3: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/http/ZinvoiceHttpClientTest.java
+
+If you want to see in details how the Konik SDK works, take look at the unit test cases provided with the SDK:
+
+* {test_case_1}
+* {test_case_2}
+* {test_case_3}
