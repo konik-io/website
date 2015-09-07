@@ -35,6 +35,19 @@ include::{lnk_sdk_example_raw}[tags=zinvoiceApiConfig]
 <1> Your API key
 <2> Absolute URL to Z-Rechnung online service, without trailing slash.
 
+==== Setup SDK config class with properties file
+
+You can also instantiate `ZinvoiceApiConfig` class using default constructor. In that case values from properties file or passed as
+a system property will be loaded. You can define them in a property file stored in `src/main/resources` or pass them as a system property with `-D` option.
+
+[source,bash]
+----
+io.konik.zinvoice.api-key=1234-1234-1234-1234
+io.konik.zinvoice.url=https://app.z-rechnung.com
+----
+
+More information about overriding default values with properties can be found here - xref:konik_configuration[Konik Configuration]
+
 
 === Setup HTTP client class
 
