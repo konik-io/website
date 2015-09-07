@@ -10,22 +10,23 @@
 :rest_invoices_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoices/RestInvoicesApi.java
 :rest_invoice_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoice/RestInvoiceApi.java
 
-== Konik SDK
+== Z-RECHNUNG SDK
 
-Konik library integrates with {z-rechnung-url}[+Z-Rechnung+] using SDK components. It allows using all Z-Rechnung features directly from your
-project that uses Konik. This documentation describes how to start using Konik SDK and makes use of Z-Rechnung features.
+The Konik library integrates with {z-rechnung-url}[+Z-RECHNUNG+] using SDK components. 
+It allows using all Z-RECHNUNG features directly from your project that uses Konik. 
+This documentation describes how to start using Konik Z-RECHNUNG SDK and use all the Z-RECHNUNG features in your project.
 
 === Before you start
 
-Before you start, go to {api-key-url}[+Z-Rechnung Application Settings+] page and get your API key.
+Before you start, Register on Z-RECHNUNG and then go to the {api-key-url}[+Z-RECHNUNG Application Settings+] page and claim your API key.
 
-Exemplary API key may look like this: `7c8f89cd-e1d9-44f1-ba3c-62f3ccde1909`
+One exemplary API key may look like this: `7c8f89cd-e1d9-44f1-ba3c-62f3ccde1909`
 
 
-=== Setup SDK config class
+=== Setup config class
 
 Now you can instantiate SDK main configuration class - {zinvoice-api-config-class}[+ZinvoiceApiConfig.java+]. It's recommended to instantiate this
-class as a commonly shared object e.g. Spring Framework bean component. Thanks that you can create it only once and use as a dependency everywhere
+class as a commonly shared object e.g. Spring Framework bean component. You only need to create one instance and use it as a dependency everywhere
 this object is required. Here is the code sample of the method that creates API config class instance:
 
 [source,java,indent=-3]
@@ -33,7 +34,7 @@ this object is required. Here is the code sample of the method that creates API 
 include::{lnk_sdk_example_raw}[tags=zinvoiceApiConfig]
 ----
 <1> Your API key
-<2> Absolute URL to Z-Rechnung online service, without trailing slash.
+<2> Absolute URL to Z-RECHNUNG online service, without trailing slash.
 
 ==== Setup SDK config class with properties file
 
@@ -43,7 +44,7 @@ a system property will be loaded. You can define them in a property file stored 
 [source,bash]
 ----
 io.konik.zinvoice.api-key=1234-1234-1234-1234
-io.konik.zinvoice.url=https://app.z-rechnung.com
+io.konik.zinvoice.url=https://app.Z-RECHNUNG.com
 ----
 
 More information about overriding default values with properties can be found here - xref:konik_configuration[Konik Configuration]
@@ -51,8 +52,8 @@ More information about overriding default values with properties can be found he
 
 === Setup HTTP client class
 
-Each SDK component uses {zinvoice-http-client-class}[+ZinvoiceHttpClient.java+] class for establishing Z-Rechnung connection. It uses `ZinvoiceApiConfig` instance
-to get API key and Z-Rechnung absolute URL. Each request contains header `API-KEY: {your API key here}` to authenticate the user.
+Each SDK component uses {zinvoice-http-client-class}[+ZinvoiceHttpClient.java+] class for establishing Z-RECHNUNG connection. It uses `ZinvoiceApiConfig` instance
+to get API key and Z-RECHNUNG absolute URL. Each request contains header `API-KEY: {your API key here}` to authenticate the user.
 
 [source,java,indent=-3]
 ----
@@ -61,7 +62,7 @@ include::{lnk_sdk_example_raw}[tags=zinvoiceHttpClient]
 <3> `ZinvoiceApiConfig` instance (previously defined method in this example)
 
 
-=== Access Z-Rechnung services
+=== Access Z-RECHNUNG services
 
 Currently SDK provides components:
 
@@ -70,7 +71,7 @@ Currently SDK provides components:
 
 ==== InvoicesApi
 
-`InvoicesApi` implementation class {rest_invoices_api}[+RestInvoicesApi.java+] allows you to access your Z-Rechnung's invoices outbox
+`InvoicesApi` implementation class {rest_invoices_api}[+RestInvoicesApi.java+] allows you to access your Z-RECHNUNG's invoices outbox
 and inbox.
 
 [source,java,indent=-3]
