@@ -1,0 +1,19 @@
+= Konik auf den zweiten ZUGFeRD Entwicklertagen
+Vadim Bauer
+2015-09-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Konferenz
+:idprefix:
+:linkattrs:
+:1: http://www.zugferd-entwicklertage.de 
+
+Wir erwarten wieder spannende Tage und Vorträge in Bielefeld bei den {1}[ZUGFeRD Entwicklertagen]
+Bereits zum zweiten Mal finden am 9. und 10. September 2015 die ZUGFeRD Entwicklertage statt.
+
+Auch dieses Mal ist Konik wieder mit dabei. Am Freitag gibt es neu eine Live Coding-Session mit Jochen und mir. 
+Wir werden den Teilnehmern LIVE demonstrieren wie einfach es ist, ZUGFeRD konforme Rechnungen zu erstellen und zu verarbeiten.
+     
+Leider ist der Event schon wieder komplett ausgebucht, 
+aber aufgrund der weiterhin hohen Nachfrage ist für den 5. und 6. November ein weiterer Termin geplant, 
+für den man sich bereits anmelden kann.
