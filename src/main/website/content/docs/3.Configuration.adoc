@@ -9,8 +9,8 @@ List of default Konik configuration options.
 
 [source,bash]
 ----
-#default
-io.konik.stripTrailingZeros=true
+#konik library default settings
+io.konik.stripTrailingZeros=false
 io.konik.jaxb.adapter.TwoDigitRoundingAdapter.scale=2
 io.konik.jaxb.adapter.TwoDigitRoundingAdapter.roundingMode=HALF_UP
 io.konik.jaxb.adapter.FourDigitRoundingAdapter.scale=4

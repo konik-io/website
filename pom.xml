@@ -106,7 +106,9 @@
                </excludes>
                <repositoryName>website</repositoryName>
                <repositoryOwner>konik-io</repositoryOwner>
-               <oauth2Token>${env.GH_TOKEN}</oauth2Token>
+<!--                <oauth2Token>${env.GH_TOKEN}</oauth2Token> -->
+               <userName>vad1mo</userName>
+               <password>3edc4rfv5tgb</password>
             </configuration>
             <executions>
                <execution>

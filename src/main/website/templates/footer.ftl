@@ -7,7 +7,7 @@
          <div class="col-lg-4 col-md-6 col-sm-12">
             <article class="full">
                <div>
-                  <header><h3>Links</h3></header>                  
+                  <header><h3>ZUGFeRD Dokumentation</h3></header>                  
                   <p><a href="http://zugferd.de">Forum Elektronische Rechnung Deutschland</a></p>
                   <p><a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0.pdf">ZUGFeRD Format</a> 
                      <a href="/ZUGFeRD-Spezifikation/ZUGFeRD-Format_1p0_Specification-english.pdf"> [English Version]</a></p> 
@@ -29,10 +29,10 @@
          <div class="col-lg-4 col-md-6 col-sm-12">
             <article class="full">
                <div>
-                  <header><h3>Produkte</h3></header>
-                  <p><a href="/validation/#/">ZUGFeRD Validation Service</a></p>   
+                  <header><h3>Unsere Produkte</h3></header>
+                  <p><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validierung Service</a></p>   
                   <p><a href="https://z-rechnung.com">Z-RECHNUNG</a></p>   
-                  <p><a href="/order/Bestellung.html">Konik Closed Source Lizenzen</a></p>                
+                  <p><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
                </div>
             </article>
          </div>

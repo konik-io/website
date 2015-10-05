@@ -33,7 +33,7 @@
                           <button class="btn btn-default btn-sm dropdown-toggle margin" type="button" data-toggle="dropdown">${key} <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                             <#list tag_posts[key] as p>
-                                  <li><a href="#${p.title?replace(" ", "-")}">${p.doctitle}</a></li>
+                                  <li><a href="/${p.uri}">${p.doctitle}</a></li>
                             </#list>
                           </ul>
                       </div><!--btn-group -->
@@ -51,16 +51,13 @@
                      <p>Tags: 
                      <#if ((post.tags)??)>
                             <#list post.tags as tag>
-                                <a href='/tags/${tag?trim?replace(" ", "-")}.html'>${tag}</a>
+                                <a href='/tags/${tag}.html'>${tag}</a>
                             </#list>
                       </#if>
                      </p>			          					          	
 					</#if>			    
 			</#list>
             </div><!-- col-lg-8 -->
-         
-
-            
 		</div><!-- /.row -->
 	</div> <!-- /.container -->
 </div> <!-- /.section -->
