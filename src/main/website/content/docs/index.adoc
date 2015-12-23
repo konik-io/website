@@ -29,5 +29,8 @@ include::3.Configuration.adoc[]
 include::4.JavaDocs.adoc[]
 
 [.col-lg-12]
-include::5.Z-RECHNUNG_SDK.adoc[]
+include::5.CSV_import.adoc[]
+
+[.col-lg-12]
+include::6.Z-RECHNUNG_SDK.adoc[]
 

@@ -1,0 +1,144 @@
+== Importing documents with CSV file
+
+Konik 1.1.0 introduces CSV import/export feature - now you can create multiple documents from single CSV file. Below you can find exemplary CSV file that contains 3 documents and one CSV with description of each column.
+
+* Exemplary CSV file - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example.csv
+* Exemplary CSV file with fields description - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example_format_description.csv
+
+Keep in mind that Konik allows you to import multiple:
+
+* items
+* tax information
+
+in a single file. Columns that hold these information are indexed which means that you can define more than one item or tax information and these values will be mapped to a list of objects. For example, if you would like to define 3 items, the header of the CSV file should contain:
+
+----
+items[0].name,items[0].quantity,items[0].unit,items[0].unitPrice,items[0].taxPercent,items[1].name,items[1].quantity,items[1].unit,items[1].unitPrice,items[1].taxPercent,items[2].name,items[2].quantity,items[2].unit,items[2].unitPrice,items[2].taxPercent
+----
+
+As you can see indexes start from 0 to n-1 when you add n elements.
+
+=== CSV file fields description
+
+[cols="2m,5e", options="header"]
+|===
+|Field name
+|Description
+
+|header.invoiceNumber
+|Invoice number
+
+|header.type
+|Document type (supported types: rechnung, gutschriftsanzeige, angebot,bestellung, proformarechnung, teilrechnung, korrigierte rechnung, konsolidierte rechnung, vorauszahlungsrechnung, invoice, credit note, offer, order, proforma invoice, partial invoice, corrected invoice, consolidated invoice, prepayment invoice)
+
+|header.issued
+|Date with format yyyyMMdd
+
+|header.dueDate
+|Date with format yyyyMMdd
+
+|header.reference
+|Payment reference
+
+|header.customerNumber
+|Optional customer number (if exists)
+
+|header.currency
+|Currency code (e.g. EUR, USD, CHF, GBP)
+
+|header.note
+|Optional note
+
+|recipient.name
+|Recipient name
+
+|recipient.contactName
+|Recipient contact person
+
+|recipient.addressLine1
+|Address line 1
+
+|recipient.addressLine2
+|Address line 2
+
+|recipient.city
+|City name
+
+|recipient.postcode
+|Postcode
+
+|recipient.countryCode
+|Country code e.g. DE, UK, US, CH, FR, SE
+
+|recipient.email
+|Recipient email address
+
+|recipient.taxes[n].number
+|Tax number
+
+|recipient.taxes[n].type
+|Check https://github.com/wololock/konik/tree/master/src/main/resources/csv/reference_codes.csv for all available codes
+
+|recipient.bankInfo.bankName
+|Recipient's bank name (if present)
+
+|recipient.bankInfo.bic
+|Recipient's bank BIC
+
+|recipient.bankInfo.iban
+|Recipient's bank account IBAN
+
+|issuer.name
+|Issuer name
+
+|issuer.contactName
+|Issuer contact person
+
+|issuer.addressLine1
+|Address line 1
+
+|issuer.addressLine2
+|Address line 2
+
+|issuer.city
+|City name
+
+|issuer.postcode
+|Postcode
+
+|issuer.countryCode
+|Country code (e.g. DE, UK, US, CH, FR, SE)
+
+|issuer.email
+|Issuer's e-mail address
+
+|issuer.taxes[n].number
+|Similar to recipient.taxes[n].number
+
+|issuer.taxes[n].type
+|Similar to recipient.taxes[n].type
+
+|issuer.bankInfo.bankName
+|Similar to recipient.bankInfo.bankName
+
+|issuer.bankInfo.bic
+|Similar to recipient.bankInfo.bic
+
+|issuer.bankInfo.iban
+|Similar to recipient.bankInfo.iban
+
+|items[n].name
+|Item name
+
+|items[n].quantity
+|Quantity (decimal number)
+
+|items[n].unit
+|Check https://github.com/wololock/konik/tree/master/src/main/resources/csv/unit_codes.csv for available codes
+
+|items[n].unitPrice
+|Unit price (decimal number)
+
+|items[n].taxPercent
+|Tax percent (decimal number)
+|===
