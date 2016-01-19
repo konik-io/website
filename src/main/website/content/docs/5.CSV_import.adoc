@@ -1,11 +1,11 @@
-== Importing documents with CSV file
+== CSV file import and export
 
-Konik 1.1.0 introduces CSV import/export feature - now you can create multiple documents from single CSV file. Below you can find exemplary CSV file that contains 3 documents and one CSV with description of each column.
+Konik >1.1.0 introduces the feature to import and export CSV files. This makes it possible to create create multiple ZUGFeRD invoices from a CSV file. Below you can find exemplary CSV file that contains 3 documents and one CSV with description of each column.
 
 * Exemplary CSV file - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example.csv
 * Exemplary CSV file with fields description - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example_format_description.csv
 
-Keep in mind that Konik allows you to import multiple:
+Keep in mind that Konik allows you to import/export multiple:
 
 * items
 * tax information
