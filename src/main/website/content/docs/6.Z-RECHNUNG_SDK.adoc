@@ -1,14 +1,14 @@
 :icons: font
 :z-rechnung-url: https://z-rechnung.com/
 :api-key-url: https://app.z-rechnung.com/#/settings-application
-:zinvoice-api-config-class: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/ZinvoiceApiConfig.java
-:zinvoice-http-client-class: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/http/ZinvoiceHttpClient.java
-:lnk_sdk_example: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
-:lnk_sdk_example_raw: https://raw.githubusercontent.com/wololock/konik/sdk/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
-:invoices_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoices/InvoicesApi.java
-:invoice_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoice/InvoiceApi.java
-:rest_invoices_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoices/RestInvoicesApi.java
-:rest_invoice_api: https://github.com/wololock/konik/blob/sdk/src/main/java/io/konik/sdk/invoice/RestInvoiceApi.java
+:zinvoice-api-config-class: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/ZinvoiceApiConfig.java
+:zinvoice-http-client-class: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/http/ZinvoiceHttpClient.java
+:lnk_sdk_example: https://github.com/konik-io/konik/blob/develop/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
+:lnk_sdk_example_raw: https://raw.githubusercontent.com/konik-io/konik/develop/src/test/java/io/konik/sdk/examples/BootstrapExampleTest.java
+:invoices_api: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoices/InvoicesApi.java
+:invoice_api: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoice/InvoiceApi.java
+:rest_invoices_api: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoices/RestInvoicesApi.java
+:rest_invoice_api: https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoice/RestInvoiceApi.java
 
 == Z-RECHNUNG SDK
 
@@ -141,9 +141,9 @@ invoiceApi.sendInvoice(invoiceId, "joe.doe@example.com", "You can put a message 
 
 
 === Test classes
-:test_case_1: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/invoices/RestInvoicesApiTest.java
-:test_case_2: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/invoice/RestInvoiceApiTest.java
-:test_case_3: https://github.com/wololock/konik/blob/sdk/src/test/java/io/konik/sdk/http/ZinvoiceHttpClientTest.java
+:test_case_1: https://github.com/konik-io/konik/blob/develop/src/test/java/io/konik/sdk/invoices/RestInvoicesApiTest.java
+:test_case_2: https://github.com/konik-io/konik/blob/develop/src/test/java/io/konik/sdk/invoice/RestInvoiceApiTest.java
+:test_case_3: https://github.com/konik-io/konik/blob/develop/src/test/java/io/konik/sdk/http/ZinvoiceHttpClientTest.java
 
 If you want to see in details how the Konik SDK works, take look at the unit test cases provided with the SDK:
 
