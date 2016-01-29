@@ -142,3 +142,162 @@ As you can see indexes start from 0 to n-1 when you add n elements.
 |items[n].taxPercent
 |Tax percent (decimal number)
 |===
+
+=== Convert PDF file to ZUGFeRD compliant invoice
+
+Konik CSV feature allows you to convert plain PDF invoice to ZUGFeRD compliant one, using model created from your CSV file. All you have to do
+is add two optional columns to your CSV file (e.g. in the beginning of the file)
+
+[cols="2m,5e", options="header"]
+|===
+|Field name
+|Description
+
+|file.input
+|Path to plain PDF invoice file
+
+|file.output
+|(Optional) Target ZUGFeRD compliant PDF file. If missing, Konik will create output file next to the input path with `_zugferd.pdf` postfix.
+|===
+
+==== Example: convert 2 PDF files to ZUGFeRD compliant invoice
+
+Let's start with downloading the latest Konik distribution (>1.0.0) and other dependencies. Here is the list of all required dependencies:
+
+----
+commons-beanutils-1.9.2.jar
+commons-io-2.4.jar
+commons-lang3-3.3.2.jar
+commons-logging-1.2.jar
+dozer-5.4.0.jar
+guava-18.0.jar
+harness-1.0.0.jar
+konik-1.1.0-SNAPSHOT.jar
+log4j-1.2.17.jar
+nv-i18n-1.13.jar
+pdfbox-2.0.0-RC2.jar
+pdfbox-carriage-1.0.0-SNAPSHOT.jar
+pdfconverter-1.0.21.jar
+slf4j-api-1.7.12.jar
+slf4j-log4j12-1.7.7.jar
+super-csv-2.4.0.jar
+super-csv-dozer-2.4.0.jar
+validation-api-1.1.0.Final.jar
+xmpbox-2.0.0-RC2.jar
+----
+
+[[admonition]]
+[role="alert alert-info"]
++++<i class="fa fa-info-circle fa-3x col-lg-1"></i>+++
+ATTENTION: Keep in mind that it uses `pdfconverter-1.0.21.jar` library, which is not open source. **PDFConverter** handles PDF to PDF/A-3b
+format conversion - without it you wont be able to attach ZUGFeRD attachment to your invoice. If you want to use **PDFConverter**
+contact us via http://konik.io Otherwise you will be able to use only PDF/A compatible files as an input.
+
+
+Create a new directory:
+
+----
+mkdir -p konik-csv/lib
+cd konik-csv
+----
+
+and download all dependencies to the newly created `lib` subdirectory. In next step create separate directories for input and output files:
+
+----
+# You are in konik-csv/ directory
+mkdir input
+mkdir output
+----
+
+You can also create a configuration file for Log4j to see all logs in your console (this is optional):
+
+----
+# You are still in konik-csv/ directory
+touch log4j.properties
+----
+
+Here is exemplary Log4j configuration you may use (just paste it to `log4j.properties` using your favorite text editor):
+
+----
+# Root logger option
+log4j.rootLogger=INFO, stdout
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+----
+
+In this example I will use following CSV file:
+
+----
+file.input,file.output,header.invoiceNumber,header.type,header.issued,header.dueDate,header.reference,header.customerNumber,header.currency,header.note,recipient.name,recipient.contactName,recipient.addressLine1,recipient.addressLine2,recipient.city,recipient.postcode,recipient.countryCode,recipient.email,recipient.taxes[0].number,recipient.taxes[0].type,recipient.taxes[1].number,recipient.taxes[1].type,recipient.bankInfo.bankName,recipient.bankInfo.bic,recipient.bankInfo.iban,issuer.name,issuer.contactName,issuer.addressLine1,issuer.addressLine2,issuer.city,issuer.postcode,issuer.countryCode,issuer.email,issuer.taxes[0].number,issuer.taxes[0].type,issuer.bankInfo.bankName,issuer.bankInfo.bic,issuer.bankInfo.iban,items[0].name,items[0].quantity,items[0].unit,items[0].unitPrice,items[0].taxPercent,items[1].name,items[1].quantity,items[1].unit,items[1].unitPrice,items[1].taxPercent
+invoice.pdf,,INVOICE/2015/11/22,Rechnung,20151214,20151231,lorem@ipsum.com,123123123123,EUR,This is simple note in two separate lines,Lorem Ipsum LTD,Joe Doe,Baker Street 21,,London,8231233,DE,joedoe@loremipsumltd.com,UK2123432123,FC,UK1231232322,VA,,,,Microsoft,Bill Gates,Silicon Valley 21,,"Los Angeles, California",8323443,US,contact@billgatesmicrosoft.com,US123123345345,FC,Test Bank Account,TESTBNK,PL123123123123132,Computer mouse,1,UNIT,79,19,Transport service,1,UNIT,9.99,19
+invoice2.pdf,,INVOICE/2015/11/23,Rechnung,20151215,20151229,lorem@ipsum.com,123123123123,EUR,email: qweqwe@test.com,Lorem Ipsum LTD,Joe Doe,Baker Street 21,,London,8231233,DE,joedoe@loremipsumltd.com,UK2123432123,FC,UK1231232322,VA,,,,Test Company LTD,,Test Street 2,,Berlin,34234,DE,,DE123123123,FC,Test Bank Account,TESTBNK,PL123123123123132,Beer,8,LITRE,17,8,,,,,
+----
+
+It contains 2 input files: `invoice.pdf` and `invoice2.pdf` with no output file specified - we are going to use `_zugferd.pdf` prefixed files
+created in the output directory specified via command line. Now, let's put those 2 input PDF files to the `konik-csv/input` directory. CSV file
+is stored in `konik-csv/example.csv` path.
+
+Now let's run `io.konik.csv.pdf.CsvToZUGFeRDConverter` to process CSV file and create ZUGFeRD compliant using data from CSV file
+and put those newly created PDF/A-3b files to our `output` subdirectory. Here is what the command looks like:
+
+----
+java -cp "`pwd`/lib/*" -Dlog4j.configuration="file:`pwd`/log4j.properties" -DinputPath="`pwd`/input" -DoutputPath="`pwd`/output" io.konik.csv.pdf.CsvToZUGFeRDConverter example.csv
+----
+
+Keep in mind that in this example we are using Log4j properties file, you can remove `-Dlog4j.configuration="file:`pwd`/log4j.properties"` from the
+command line if you don't want to log any events to your console or any logger appender.
+
+Here is what the output of given command looks like:
+
+----
+2016-01-26 15:16:37 INFO  CsvToZUGFeRDConverter:128 - ----------------------------------------------------------
+2016-01-26 15:16:37 INFO  CsvToZUGFeRDConverter:129 - CSV file:		/tmp/konik-csv/example.csv
+2016-01-26 15:16:37 INFO  CsvToZUGFeRDConverter:130 - Input path:	/tmp/konik-csv/input
+2016-01-26 15:16:37 INFO  CsvToZUGFeRDConverter:131 - Output path:	/tmp/konik-csv/output
+2016-01-26 15:16:37 INFO  CsvToZUGFeRDConverter:132 - ----------------------------------------------------------
+2016-01-26 15:16:37 INFO  GlobalSettings:113 - Trying to find Dozer configuration file: dozer.properties
+2016-01-26 15:16:37 WARN  GlobalSettings:118 - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+2016-01-26 15:16:37 INFO  DozerInitializer:70 - Initializing Dozer. Version: 5.4.0, Thread Name: main
+2016-01-26 15:16:38 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+2016-01-26 15:16:38 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+2016-01-26 15:16:38 INFO  DozerBeanMapper:175 - Initializing a new instance of dozer bean mapper.
+2016-01-26 15:16:38 INFO  DozerBeanMapper:175 - Initializing a new instance of dozer bean mapper.
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:36 - CSV file contains 2 rows, 0 errors
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:42 - Processing row 1
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:48 - Input file for given row present...
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:52 - Input file: /tmp/konik-csv/input/invoice.pdf
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:60 - Output file: /tmp/konik-csv/output/invoice_zugferd.pdf
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:62 - Starting append invoice process...
+2016-01-26 15:16:38 INFO  ConverterBox:34 - Document conversation process started.
+2016-01-26 15:16:38 INFO  ConverterBox:63 - Document conversation process finished in 36 ms.
+2016-01-26 15:16:38 INFO  ConverterBox:96 - Document conversation process started.
+2016-01-26 15:16:38 INFO  ConverterBox:106 - Document conversation process finished in 0 ms.
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:64 - Invoice appended to the output file
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:42 - Processing row 2
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:48 - Input file for given row present...
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:52 - Input file: /tmp/konik-csv/input/invoice2.pdf
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:60 - Output file: /tmp/konik-csv/output/invoice2_zugferd.pdf
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:62 - Starting append invoice process...
+2016-01-26 15:16:38 INFO  ConverterBox:34 - Document conversation process started.
+2016-01-26 15:16:38 INFO  ConverterBox:63 - Document conversation process finished in 2 ms.
+2016-01-26 15:16:38 INFO  ConverterBox:96 - Document conversation process started.
+2016-01-26 15:16:38 INFO  ConverterBox:106 - Document conversation process finished in 0 ms.
+2016-01-26 15:16:38 INFO  CsvToZUGFeRDConverter:64 - Invoice appended to the output file
+----
+
+In the result we should find 2 new files in `konik-csv/output` directory:
+
+----
+konik-csv % ls -la output
+razem 48
+drwxrwxr-x. 2 konik konik    80 01-26 15:16 .
+drwxrwxr-x. 5 konik konik   140 01-26 15:15 ..
+-rw-rw-r--. 1 konik konik 22367 01-26 15:16 invoice2_zugferd.pdf
+-rw-rw-r--. 1 konik konik 22505 01-26 15:16 invoice_zugferd.pdf
+----
+
+
