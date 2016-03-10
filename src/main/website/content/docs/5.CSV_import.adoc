@@ -2,8 +2,8 @@
 
 Konik >1.1.0 introduces the feature to import and export CSV files. This makes it possible to create create multiple ZUGFeRD invoices from a CSV file. Below you can find exemplary CSV file that contains 3 documents and one CSV with description of each column.
 
-* Exemplary CSV file - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example.csv
-* Exemplary CSV file with fields description - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example_format_description.csv
+* Exemplary CSV file - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example.csv[example.csv]
+* Exemplary CSV file with fields description - https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/example_format_description.csv[example_format_description.csv]
 
 Keep in mind that Konik allows you to import/export multiple:
 
@@ -77,7 +77,7 @@ As you can see indexes start from 0 to n-1 when you add n elements.
 |Tax number
 
 |recipient.taxes[n].type
-|Check https://github.com/wololock/konik/tree/master/src/main/resources/csv/reference_codes.csv for all available codes
+|Check  https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/reference_codes.csv[reference_codes.csv] for all available codes
 
 |recipient.bankInfo.bankName
 |Recipient's bank name (if present)
@@ -134,7 +134,7 @@ As you can see indexes start from 0 to n-1 when you add n elements.
 |Quantity (decimal number)
 
 |items[n].unit
-|Check https://github.com/wololock/konik/tree/master/src/main/resources/csv/unit_codes.csv for available codes
+|Check https://github.com/konik-io/konik/blob/develop/src/main/resources/csv/unit_codes.csv[unit_codes.csv] for available codes
 
 |items[n].unitPrice
 |Unit price (decimal number)
