@@ -1,0 +1,30 @@
+= Konik 1.1.0 Release und PDFBox-Carriage 1.0 
+Vadim Bauer
+2016-03-10
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release,Changelog
+:idprefix:
+:linkattrs:
+:1: http://konik.io/docs/index.html#csv_file_import_and_export
+ 
+Konik Release 1.1.0 und PDFBox-Carriage 1.0
+
+== Neue Funktion
+
+- Es können nun ZUGFeRD Rechnungen aus CSV Dateien zu erzeugt werden. 
+Das Kapitel {1}[CSV file import and export] beschreibt die Details.
+
+
+== Changelog
+
+- Verbessertes Logging 
+- Einige Checks sind nicht mehr zwingend notwendig.
+- Korrektur Maßeinheit "KTM" auf "KMT" für Kilometer.
+- NPE Fehlerkorrektur
+   
+
+=== PDFBox-Carriage 
+
+- Update auf PDFBox 2.0.0
+- NPE Fehlerkorrektur  

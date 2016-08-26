@@ -1,0 +1,41 @@
+= Konik 1.2.9 Release und PDFBox-Carriage 1.0.1 
+Vadim Bauer
+2016-08-25
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release,Changelog
+:idprefix:
+:linkattrs:
+:lnk_minimal_calculated_latest_raw: https://raw.githubusercontent.com/konik-io/konik/master/src/test/java/io/konik/examples/MinimalInvoiceWithCalculation.java
+
+ 
+Konik Release 1.2.9 und PDFBox-Carriage 1.0.1
+
+== Neue Funktion
+
+- Automatische Berechnung und Vervollständigung fehleder Beträge. 
+
+Der `Invoice Calculator` berechnet und vervolständing auf wunsch fehlende Beträge für die Gesamtrechnung. 
+
+Beispiel:
+
+[source,java,indent=-3]
+----
+include::{lnk_minimal_calculated_latest_raw}[tags=createInvoice]
+----
+<1> EXTENDED ist für die Berechnung Pflicht.
+<2> Gross Price wird anhand des Net Prices berechnet.
+<3> Monetary Summation wird berechnet.
+<4> Der Invoice Calculator nimmt eine Rechnung entgegen und liefert eine neue und berechnete Rechnung zurück.
+<5> Dies ist das Ergebniss der berechneten Ausgabe der Gesamtbeträge.
+
+
+== Changelog
+
+- Verbessere Überprüfung und Validierung der Rechnungen und der Summatischen Berechnung. 
+- Korregierte Verifikation der Abschläge/Zuschläge auf Positionseben und auf Gesamtrechnung
+   
+
+=== PDFBox-Carriage 
+
+- Update auf PDFBox 2.0.1
