@@ -13,9 +13,9 @@ Konik Release 1.2.9 und PDFBox-Carriage 1.0.1
 
 == Neue Funktion
 
-- Automatische Berechnung und Vervollständigung fehleder Beträge. 
+- Automatische Berechnung und Vervollständigung fehlender Beträge. 
 
-Der `Invoice Calculator` berechnet und vervolständing auf wunsch fehlende Beträge für die Gesamtrechnung. 
+Der `Invoice Calculator berechnet und vervollständingt auf Wunsch fehlende Beträge für die Gesamtrechnung.
 
 Beispiel:
 
@@ -28,7 +28,6 @@ include::{lnk_minimal_calculated_latest_raw}[tags=createInvoice]
 <3> Monetary Summation wird berechnet.
 <4> Der Invoice Calculator nimmt eine Rechnung entgegen und liefert eine neue und berechnete Rechnung zurück.
 <5> Dies ist das Ergebniss der berechneten Ausgabe der Gesamtbeträge.
-
 
 == Changelog
 
