@@ -11,11 +11,11 @@ Vadim Bauer
  
 Konik Release 1.2.9 und PDFBox-Carriage 1.0.1
 
-== Neue Funktion
+== Neue Funktionen
 
 - Automatische Berechnung und Vervollständigung fehlender Beträge. 
 
-Der `Invoice Calculator berechnet und vervollständingt auf Wunsch fehlende Beträge für die Gesamtrechnung.
+Der `Invoice Calculator` berechnet und vervollständingt auf Wunsch fehlende Beträge für die Gesamtrechnung.
 
 Beispiel:
 
