@@ -4,8 +4,8 @@ Or how to integrate the Konik library into a project.
 
 Broadly there are two different ways on how to 
 integrate the Konik library into a project. 
-Both ways mostly depend upon the type of the environment 
-of the application and the Invoice Validator implementation.
+Both ways mostly depend upon the type of the target environment 
+of the application and the invoice validator implementation.
 
 Friends of .NET have only one option to choose from. 
 
@@ -14,11 +14,11 @@ Friends of .NET have only one option to choose from.
 The minimal requirement for Konik is Java 6 although we recommend 
 Java 7 and above because of newer JaxB libraries. 
 The <<Working with Java 6>> section contains instructions 
-on how Java 6 users can overcome these issues.
+on how Java 6 users can overcome some of the issues with Java 6.
 
-The Konik Library supports Bean Injections, also 
+The Konik Library optionally supports Bean Injections, also 
 known as JSR330 or CDI. This means that Konik fits nicely 
-in environments with Dependency Injection support. 
+in environments with Dependency Injection frameworks such as Spring or JEE. 
 The default option for Konik is to use Java 
 {lnk_spi}[Service provider interface (SPI)].
 
@@ -85,7 +85,7 @@ public class SpringApplicationConfig  {
 
 ==== Java standalone
 Working in a standalone Java project or any other environment 
-which is not JEE6+ or JSR330 compatible.
+which is not JEE5+ or JSR330 compatible.
 
 Followind dependecy is required 
 [source,xml,indent=-3,subs="verbatim,attributes"]
@@ -105,14 +105,15 @@ Followind dependecy is required
 <1> Different PDF carriage can be selected. 
 	Make sure there is only one PDF carriage on the classpath.
 
-Recommended for invoice validation
+Recommended for invoice validation is this additional dependency. 
+If the stack you are using contains any other validation framework such as Hibernate Validator you can use this instead.   
 
 [source,xml,indent=-3,subs="verbatim,attributes"]
 ----
     <dependency>
-		<groupId>org.apache.bval</groupId>
-        <artifactId>bval-jsr303</artifactId>
-        <version>0.5</version>
+        <groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr</artifactId>
+        <version>1.1.1</version>
     </dependency>
 ----
 

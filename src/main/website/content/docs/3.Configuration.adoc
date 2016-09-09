@@ -2,8 +2,8 @@
 
 == Konik Configuration
 
-Konik is delivered with a sensible default configuration out of the box.
-In most cases you should not need to change the default settings. 
+Konik has sensible default configuration settings out of the box.
+In most cases you should not need to change this default settings. 
 
 List of default Konik configuration options.
 
