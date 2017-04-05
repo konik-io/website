@@ -107,9 +107,9 @@
                </excludes>
                <repositoryName>website</repositoryName>
                <repositoryOwner>konik-io</repositoryOwner>
-               <oauth2Token>${env.GH_TOKEN}</oauth2Token>
-<!--                <userName>${env.github_username}</userName> -->
-<!--                <password>${env.github_pwd}</password> -->
+<!--                <oauth2Token>${env.GH_TOKEN}</oauth2Token> -->
+               <userName>${env.github_username}</userName>
+               <password>${env.github_pwd}</password>
             </configuration>
             <executions>
                <execution>
