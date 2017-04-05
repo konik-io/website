@@ -100,15 +100,16 @@
                <message>Deploy baked website
                   ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
                <noJekyll>true</noJekyll>
-               <outputDirectory>${website.output.dir}</outputDirectory>
+               <merge>true</merge>
+               <outputDirectory>${website.output.dir}</outputDirectory>               
                <excludes>
                   <exclude>.DS_Store</exclude>
                </excludes>
                <repositoryName>website</repositoryName>
                <repositoryOwner>konik-io</repositoryOwner>
-<!--                <oauth2Token>${env.GH_TOKEN}</oauth2Token> -->
-               <userName>${env.github_username}</userName>
-               <password>${env.github_pwd}</password>
+               <oauth2Token>${env.GH_TOKEN}</oauth2Token>
+<!--                <userName>${env.github_username}</userName> -->
+<!--                <password>${env.github_pwd}</password> -->
             </configuration>
             <executions>
                <execution>
