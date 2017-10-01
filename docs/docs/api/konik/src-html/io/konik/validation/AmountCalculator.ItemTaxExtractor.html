@@ -89,7 +89,7 @@
 <span class="sourceLineNo">081</span><a name="line.81"></a>
 <span class="sourceLineNo">082</span>                for (Item item : items) {<a name="line.82"></a>
 <span class="sourceLineNo">083</span>                        log.debug("==&gt; {}:", ++itemsCounter);<a name="line.83"></a>
-<span class="sourceLineNo">084</span>                        log.debug("Recalculating item: [{}]", item.getProduct().getName());<a name="line.84"></a>
+<span class="sourceLineNo">084</span>                        log.debug("Recalculating item: [{}]", item.getProduct() != null ? item.getProduct().getName() : "N/A");<a name="line.84"></a>
 <span class="sourceLineNo">085</span><a name="line.85"></a>
 <span class="sourceLineNo">086</span>                        Amount lineTotal = new ItemLineTotalCalculator().apply(item);<a name="line.86"></a>
 <span class="sourceLineNo">087</span>                        ItemTax itemTax = new ItemTaxExtractor().apply(item);<a name="line.87"></a>
@@ -150,7 +150,7 @@
 <span class="sourceLineNo">142</span>         * @return<a name="line.142"></a>
 <span class="sourceLineNo">143</span>         */<a name="line.143"></a>
 <span class="sourceLineNo">144</span>        public static SpecifiedMonetarySummation calculateSpecifiedMonetarySummation(final Item item) {<a name="line.144"></a>
-<span class="sourceLineNo">145</span>                log.debug("Recalculating specified monetary summation for [{}]", item.getProduct().getName());<a name="line.145"></a>
+<span class="sourceLineNo">145</span>                log.debug("Recalculating specified monetary summation for [{}]", item.getProduct() != null ? item.getProduct().getName() : "N/A");<a name="line.145"></a>
 <span class="sourceLineNo">146</span><a name="line.146"></a>
 <span class="sourceLineNo">147</span>                CurrencyCode currencyCode = getCurrency(item);<a name="line.147"></a>
 <span class="sourceLineNo">148</span><a name="line.148"></a>

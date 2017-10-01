@@ -244,15 +244,15 @@
 
     <url>
         <loc>http://konik.io/docs/api/konik/</loc>
-        <lastmod>2017-10-01</lastmod>
+        <lastmod>2017-10-02</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/pdfbox-carriage/</loc>
-        <lastmod>2017-10-01</lastmod>
+        <lastmod>2017-10-02</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/itext-carriage/</loc>
-        <lastmod>2017-10-01</lastmod>
+        <lastmod>2017-10-02</lastmod>
     </url>
 
 </urlset>
