@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Disallow: /legal-notice.html
+Sitemap: http://www.konik.io/sitemap.xml

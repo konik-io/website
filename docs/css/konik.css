@@ -1,0 +1,268 @@
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
+
+.btn-sm.margin{
+	margin-right: 5px; 
+	margin-bottom: 5px;
+}
+
+a.logo {
+	display: block;
+	background: url(/img/logo.png) center left no-repeat;
+	text-align: right;
+	width:130px;
+}
+
+code, kbd, pre, samp {
+    font-family: 'Source Code Pro',Monaco,Menlo,Consolas,'Courier New',monospace;
+}
+
+pre.highlight {
+	
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+		
+	background-color:inherit;
+	border:none;
+	margin-bottom: 1em;
+}
+
+.conum {
+    background-color:#F39C12;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    color: #FFFFFF !important;
+    display: inline-block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    height: 20px;
+    
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    
+    width: 20px;
+}
+
+.conum:after {
+    content: attr(data-value);
+}
+
+.conum + b {
+    display: none;
+}
+
+/* tree */
+.tree p {
+    margin-bottom: 0;
+}    
+
+.tree {
+    min-height:20px;
+    padding:19px;
+    margin-bottom:20px;
+    /* 
+    background-color:#fbfbfb;
+    border:1px solid #999;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
+    */
+}
+.tree li {
+    list-style-type:none;
+    margin:0;
+    padding:10px 5px 0 5px;
+    position:relative
+}
+.tree li::before, .tree li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto
+}
+.tree li::before {
+    border-left:1px solid #999;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px
+}
+.tree li::after {
+    border-top:1px solid #999;
+    height:20px;
+    top:25px;
+    width:25px
+}
+.tree li p {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:1px solid #999;
+    border-radius:5px;
+    display:inline-block;
+    padding:3px 8px;
+    text-decoration:none
+}
+.tree li.parent_li>p {
+    cursor:pointer
+}
+.tree>ul>li::before, .tree>ul>li::after {
+    border:0
+}
+.tree li:last-child::before {
+    height:25px
+}
+.tree li.parent_li>p:hover, .tree li.p_li>p:hover+ul li p {
+    background:#eee;
+    border:1px solid #94a0b4;
+    color:#000
+}
+
+/* end tree */
+
+/* headroom start */
+.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
+.headroom--unpinned {top: -100px;}
+.headroom--pinned {top: 0;}
+/* headroom end */
+
+
+.hljs {
+/* 	padding: 0px; */
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+@media (min-width: 768px) { 
+    .vertical-align {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+/* asciidoctor */
+
+
+/* no bullets in toc */
+ul.sectlevel1, ul.sectlevel2, ul.sectlevel3{
+	list-style-type: none;
+}
+
+#toctitle.title{
+	font-size: 26px;
+}
+
+
+.input-lg {
+height: 40px;
+padding: 10px 16px;
+font-size: 15px;
+line-height: 1.33;
+border-radius: 2px;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;    
+  justify-content: center;
+}
+
+/* .btn-lg { */
+/* padding: 10px 16px; */
+/* font-size: 15px; */
+/* line-height: 1.33; */
+/* border-radius: 2px; */
+/* background-color: darkgray; */
+/* } */
+
+.signup-prop{
+
+    margin-bottom:4px;
+
+}
+
+.panel-info {
+border-color: #121212;
+}
+
+    .panel-info > .panel-heading {
+        color: #fff;
+        background-color: #808080;
+        border-color: #121212;
+    }
+
+    .panel-heading a{
+        color:white
+    }
+
+.panel-body{
+    padding-top:0px;
+}
+
+.login-btn{
+    background-color: #999;
+    padding: 6px 10px;
+    color:white;
+}
+
+/* .register, .login{ */
+/*     background-color: #999; */
+/*     color:black; */
+/* } */
+
+.signup-form{
+    margin-bottom:50px;
+}
+
+.panel-reset{
+    border: 0px;
+}
+
+.error{
+    color:red;
+}
+
+.input-error {
+    font-size: 70%;
+}
+
+.message{
+    margin-top:10px;
+    color: brown;
+}
+
+/* user management popups */
+
+.modal-body input {
+  width: 100%;
+}
+
+.modal-body .row {
+    margin: 10px 0;
+}
+
+.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }

@@ -44,13 +44,13 @@
 
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <website.output.dir>${project.build.directory}/${project.artifactId}</website.output.dir>
+      <website.output.dir>${basedir}/docs</website.output.dir>
       <website.source.dir>${basedir}/src/main/website</website.source.dir>
       <website.javadoc.dir.relative>docs/api</website.javadoc.dir.relative>
       <website.javadoc.dir>${website.output.dir}/${website.javadoc.dir.relative}</website.javadoc.dir>
-      <konik-latest-release>1.2.9</konik-latest-release>
+      <konik-latest-release>1.3.0</konik-latest-release>
       <itext-carriage-latest-release>0.8.0</itext-carriage-latest-release>
-      <pdfbox-carriage-latest-release>1.0.1</pdfbox-carriage-latest-release>
+      <pdfbox-carriage-latest-release>1.1.0</pdfbox-carriage-latest-release>
    </properties>
 
    <prerequisites>
@@ -91,36 +91,6 @@
             </executions>
 
          </plugin>
-
-         <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <version>0.12</version>
-            <configuration>
-               <message>Deploy baked website
-                  ${project.artifactId}:${project.version}~${maven.build.timestamp}</message>
-               <noJekyll>true</noJekyll>
-               <merge>true</merge>
-               <outputDirectory>${website.output.dir}</outputDirectory>               
-               <excludes>
-                  <exclude>.DS_Store</exclude>
-               </excludes>
-               <repositoryName>website</repositoryName>
-               <repositoryOwner>konik-io</repositoryOwner>
-<!--                <oauth2Token>${env.GH_TOKEN}</oauth2Token> -->
-               <userName>${env.github_username}</userName>
-               <password>${env.github_pwd}</password>
-            </configuration>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>site</goal>
-                  </goals>
-                  <phase>site</phase>
-               </execution>
-            </executions>
-         </plugin>
-
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
@@ -264,24 +234,6 @@
                </replacements>
             </configuration>
          </plugin>
-         <!-- <plugin> -->
-         <!-- <groupId>org.codehaus.mojo</groupId> -->
-         <!-- <artifactId>properties-maven-plugin</artifactId> -->
-         <!-- <version>1.0-alpha-2</version> -->
-         <!-- <executions> -->
-         <!-- <execution> -->
-         <!-- <phase>generate-resources</phase> -->
-         <!-- <goals> -->
-         <!-- <goal>write-project-properties</goal> -->
-         <!-- </goals> -->
-         <!-- <configuration> -->
-         <!-- <outputFile> -->
-         <!-- ${website.source.dir}/custom.properties -->
-         <!-- </outputFile> -->
-         <!-- </configuration> -->
-         <!-- </execution> -->
-         <!-- </executions> -->
-         <!-- </plugin> -->
       </plugins>
    </build>
 

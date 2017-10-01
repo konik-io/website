@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="description" content="Mit Konik für Java und .NET erstellt, liest und validiert man einfach ZUGFeRD-konforme Rechnungen und bindet sie inklusive Konvertierung in PDF/A3 ein.">
+    <meta name="author" content="Vadim Bauer">
+    <meta content="/img/logo.png" property="og:image">
+    <meta name="keywords" content="Open Source ZUGFeRD, ZUGFeRD SDK, ZUGFeRD Bibliothek, ZUGFeRD Navision, ZUGFeRD Library, ZUGFeRD Java, ZUGFeRD .NET, ZUGFeRD Validierung, ZUGFeRD Anbieter, ZUGFeRD Implementierung">    
+	<meta name="author" content="Vadim Bauer">
+    
+	
+    <title>ZUGFeRD Open Source Bibliothek für Java und .NET.</title>
+        
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/obsidian.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/obsidian.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/mb.css"  type="text/css"/>
+	<link rel="stylesheet" href="/css/konik.css" type="text/css"/>
+
+    <!-- JQuery at the top to use it in our code -->
+    <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+
+    <!-- icon -->
+    <link href="/favicon.ico"  rel="icon"  type="image/x-icon" />
+
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-45977479-1', 'auto');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+	</script>
+
+  </head>
+
+  <body><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="/">Konik</a>
+    </div>
+
+    <div id="navbar-main" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/order/Bestellung.html">Lizenzen</a></li>
+        <li><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
+        <li><a href="/docs/index.html">Dokumentation</a></li>        
+        <li><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validation</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+         <li><a href="/index.html#Support">Support</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    
+  </div><!-- /.container -->
+</nav>
+<a href="https://github.com/konik-io" class="hidden-xs hidden-sm">
+   <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" 
+      style="position: absolute; right: 0; border: 0; z-index: 1; ">
+</a>
+
+<div id="Intro" class="section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-7 col-md-7 col-sm-7">
+            <h1>Die <a title="Was ist ZUGFeRD?" data-placement="bottom" data-toggle="tooltip" href="/ZUGFeRD.html" id="zf_definition">ZUGFeRD</a> Open Source Bibliothek für Java und .NET                  
+            </h1>
+         <h1><small>Zum Erstellen, Verarbeiten und Validieren von ZUGFeRD konformen elektronischen Rechnungen.</small></h1>
+         <a class="btn btn-lg btn-primary" href="#Quickstart">Schnellstart</a>
+         </div>
+         <div class="col-lg-5 col-md-5 col-sm-12">
+            <img src="img/logo-konik-zugferd-library.jpg" class="img-responsive img-customer" alt="Logo of the Konik ZUGFeRD Library">
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<div id="info_zugferd" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1>Was ist ZUGFeRD?</h1>
+            <p>
+            Der ZUGFeRD-Standard ermöglicht es, elektronische Rechnungen einfach zwischen Unternehmen und Behörden auszutauschen, 
+            per E-Mail, REST und diversen weiteren Verfahren.<br/>
+            Im Gegensatz zu bisherigen Verfahren können ZUGFeRD Rechnungen ad-hoc versendet und empfangen werden.
+            Da für den Versand oder Empfang keine Registrierungen, Zertifizierungen, elektronische Signaturen oder die Anbindung an e-invoicing Netzwerke nötig sind, ist der Aufwand für Integration und damit auch die Kosten minimal. 
+           </p><p>
+            Eine ZUGFeRD-Rechnung besteht zum Einen aus einem PDF für die manuelle Verarbeitung oder Kontrolle, zum Anderen ist 
+            innerhalb des PDFs eine XML Datei eingebettet, die automatisiert verarbeitet werden kann.<br/>
+            
+            Duch den Einsatz von ZUGFeRD werden die bestehenden Prozesse vereinfacht - und zwar ohne die Prozesse grundlegend zu verändern. <br/>            
+           
+            Mehr zum Thema ZUGFeRD erfahren Sie in unserem <a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel</a>.
+            
+            </p>                  
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1>ZUGFeRD Vorteile</h1>
+            <h3>Für Empfänger</h3>
+            <ul>
+                <li>Kostenreduktion - wenige Cents anstatt 9-12€ pro Rechnung.</li>
+                <li>Duchgehende Automatisierung und vereinfachte Prozesse.</li>
+                <li>PDF/A ist direkt für die Langzeitarchivierung geeignet.</li>
+            </ul>                  
+            <h3>Für Versender</h3>
+            <ul>
+                <li>Kostenreduktion - wenige Cents anstatt 5-7€ pro Rechnung.</li>
+                <li>Ein Prozess für alle Ausgangsrechnungen.</li>
+                <li>Auch Empfänger die ZUGFeRD nicht unterstützen können Rechnungen verarbeiten.</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12">
+            <h1>Eigenschaften der Konik Bibliothek</h1>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-lg-4 col-md-4">
+            <h3>
+               <i class="fa fa-heart"></i> Open Source
+            </h3>
+            <p>
+               Konik ist die Open Source Referenz zum Erstellen, Lesen und Validieren von <a href="http://www.ferd-net.de">ZUGFeRD</a> Rechnungen.
+               Verfügbar für Java und .NET unter <a href="/license.html">AGPL und weiteren Lizenzen</a>.
+            </p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-truck"></i> Alles drin</h3>
+            <p>Einfache und verständliche API komplett dokumentiert machen eine Integration in kürzester Zeit möglich, 
+               ohne sich mit XML Interna oder ZUGFeRD Spezifikation beschäftigen zu müssen.</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-trophy"></i> Support</h3>
+            <p>Die Konik Bibliothek kommt mit professioneller Unterstützung: 
+               Wir helfen und betreuen Sie bei der Entwicklung oder übernehmen 
+               die Realisierung kompletter Projekte.</p>
+         </div>
+      </div>
+      
+      <div class="row">
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-gears"></i> Funktionen</h3>
+            <p>Eins zu eins Abbildung des ZUGFeRD Models mit allen Auflagen und Bedingungen.</p>
+            <p>Validierung des ZUGFeRD Models und gegebenenfalls Korrektur</p>
+            <p>Konvertierung des ZUGFeRD Models nach XML oder in ein anderes Format.</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-rocket"></i> PDF an Bord</h3>
+            <p>Konik unterstützt zahlreiche PDF Bibliotheken von unterschiedlichen Anbietern. Damit lässt sich der
+               PDF Teil der ZUGFeRD Rechnung mit einer beliebigen PDF Bibliothek realisieren.</p>
+         </div>
+         <div class="col-lg-4 col-md-4">
+            <h3><i class="fa fa-gear"></i> PDF Funktionen</h3>
+            <p>Konvertierung von PDFs ins PDF/A3 Format.</p>
+            <p>Anhängen von ZUGFeRD-Daten an PDFs.</p>
+            <p>Extrahieren von ZUGFeRD-Daten aus PDFs.</p>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- /.section -->
+
+<div id="Quickstart" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>Schnellstart</h2>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-6">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+               <li class="active"><a href="#konik-maven-dependecy" role="tab" data-toggle="tab">Java und JVM</a></li>
+               <li><a href="#konik-dotNet" role="tab" data-toggle="tab">.NET</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+               <div class="tab-pane active no-margin" id="konik-maven-dependecy">
+                  <pre class="highlight"><code class="xml">
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;konik&lt;/artifactId&gt;
+        &lt;version&gt;1.2.9&lt;/version&gt;
+    &lt;/dependency&gt;
+    
+    &lt;!-- pdf plugin to attach/extract invoice data --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt;
+        &lt;!-- see <a href="/docs/index.html#setup">manual</a> for other pdf carriages --&gt;
+        &lt;version&gt;1.0.1&lt;/version&gt;
+    &lt;/dependency&gt;
+   </code>
+                 </pre>
+               </div>
+               <div class="tab-pane no-margin" id="konik-dotNet">
+                  <pre class="highlight"><code class="bash">
+   # with <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">Package Manager Console</a> 
+   PM> Install-Package <a href="https://www.nuget.org/packages/zugferd.net">zugferd.net</a>
+   </code>
+                 </pre>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-6">
+            <p>
+               Der schnellste Weg, die Konik Bibliothek in ein Projekt einzubinden ist das Dependency
+               Management Systems mit Anbindung an <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.konik%22" >Maven
+                  Central Repository</a> oder <a href="https://www.nuget.org/packages/zugferd.net/" >NuGet</a> für
+               .NET Welt.
+            </p>
+            <p>Das <a href="/docs/index.html#_setup">Setup Kapitel</a> enthält mehr Details und Vorgehensweisen für die unterschiedlichen Umgebungen.</p>
+            
+            <h3>Alternative</h3>
+            <p>Auch ohne ein Dependency Management System steht die gesamte Konik Bibliothek mit allen
+               Abhängigkeiten, Plug-Ins und der Dokumentation als eine eigenständige ZIP Distribution zur Verfügung.</p>
+            <div>
+               <a id="download-zip-package"
+                  href="https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/1.2.9/distribution-1.2.9.zip"
+                  class="btn btn-lg btn-primary download-zip-package">Download Zip</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="Support" class="section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+            <h2>Hilfe und Kontakt</h2>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header>
+                     <h3>
+                        <i class="fa fa-stack-overflow fa-2x"></i> Stack Overflow
+                     </h3>
+                  </header>
+                  <p>Sie haben technische Fragen zur Implementierung Ihrer Lösung mit der Konik-Bibliothek? 
+                     Dann ist Stack Overflow der richtige Ort für Sie. <a href="//stackoverflow.com/questions/tagged/konik+or+konik.io" target="_blank">
+                     Überprüfen</a> Sie, ob eine ähnliche Frage schon zuvor gestellt wurde und erstellen Sie gegebenenfalls eine <a
+                        href="//stackoverflow.com/questions/ask" target="_blank">neue Frage.</a> Wir <a
+                        href="//stackoverflow.com/questions/tagged/konik+or+konik.io">beobachten</a> alle Fragen in
+                     Verbindung mit der Konik Bibliothek und antworten so schnell wie möglich.
+                  </p>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header>
+                     <h3>
+                        <i class="fa fa-bug fa-2x"></i> Bugs und neue Funktionalitäten
+                     </h3>
+                  </header>
+                  <p>Bug gefunden? Der schnellste Lösungsweg ist, zu <a href="https://github.com/organizations/konik-io/dashboard/issues" target="_blank">schauen</a>, ob auf GitHub bereits ein Ticket zu dem 
+                  		Thema erstellt worden ist und dieses zu kommentieren - oder bei einem neuen Bug selbst ein 
+                  		<a href="https://github.com/konik-io/konik/issues/new" target="_blank">Ticket zu eröffnen</a>. Wir versuchen immer, die Bugs im nächsten Release zu fixen.
+                  </p>
+                  <p>Das <a href="https://github.com/konik-io/konik/issues" target="_blank">Ticketsystem von Konik</a> ist auch der perfekte Ort für Ihre Erweiterungswünsche.</p>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header>
+                     <h3>
+                        <i class="fa fa-comments-o  fa-2x"></i> Diskussionsforum
+                     </h3>
+                  </header>
+                  <p>Sind Sie interessiert an der Bibliotheksentwicklung oder möchten Sie mehr über die ZUGFeRD
+                     Spezifikation und deren Details erfahren oder wie Sie die elektronische Rechnungsstellung in Ihr
+                     Produkt integrieren können?</p>
+                  <p>Treten Sie dem  <a href="https://groups.google.com/forum/#!forum/konik-io" target="_blank">Konik
+                        Diskussionsforum</a> bei, diskutieren Sie mit und verfolgen Sie die Weiterentwicklung von Konik.
+                  </p>
+               </div>
+            </article>
+         </div>
+      </div>
+      <div class="row well vertical-align">
+            <div class="col-lg-8 col-md-8">
+               <p>Wir freuen uns über Ihre E-Mail oder Ihren Anruf!</p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+               <button class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target=".bs-contact-modal">Kontaktinformation</button>
+            </div>
+      </div>
+      <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+         aria-hidden="true">
+         <div class="modal-dialog modal-sm">
+            <div class="modal-content jumbotron">
+               <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+               <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                  style="display: none">_no_</span>konik.io
+               </span>
+               <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+               <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 6838023
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<div id="footer" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+            <header><h3>Weitere Themen rund um ZUGFeRD</h3></header>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>ZUGFeRD Dokumentation</h3></header>                  
+                  <p><a href="http://zugferd.de">Forum Elektronische Rechnung Deutschland</a></p>
+                  <p><a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0.pdf">ZUGFeRD Format</a> 
+                     <a href="/ZUGFeRD-Spezifikation/ZUGFeRD-Format_1p0_Specification-english.pdf"> [English Version]</a></p> 
+                     <a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_technische_Dokumentation.pdf">ZUGFeRD Technische Dokumentation</a></p>                     
+                  <p><a href="/ZUGFeRD-Spezifikation/ZUGFeRD_1p0_Technical_Documentation.pdf"> [English Version]</a>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Artikel</h3></header> 
+                  <p><a href="/ZUGFeRD.html">Über ZUGFeRD</a></p>
+                  <p><a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel über ZUGFeRD</a></<p> 
+                  <p><a href="https://www.bitkom.org/Publikationen/2014/Leitfaden/ZUGFeRD-Standard-fuer-elektronische-Rechnungen/140916_Broschuere_Zugferd.pdf">ZUGFeRD Leitfaden</a></p>                                   
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Unsere Produkte</h3></header>
+                  <p><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validierung Service</a></p>   
+                  <p><a href="https://z-rechnung.com">Z-RECHNUNG</a></p>   
+                  <p><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
+               </div>
+            </article>
+         </div>
+      </div>
+   </div>
+ </div>
+<footer>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <p class="pull-right">
+               Copyright &copy; 8gears AG 2015-2017
+<!--                | <a href="/en/index.html">English</a> -->
+               | <a href="/legal-notice.html">Impressum</a> 
+               | <a href="/license.html">Lizenz</a>
+               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
+                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
+                  title="Reveal the Email address">Kontakt</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/java.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
+<script src="/js/konik.js"></script>
+</body>
+
+</html>

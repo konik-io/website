@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package io.konik.sdk.http;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>public class BadRequestException extends RuntimeException {<a name="line.3"></a>
+<span class="sourceLineNo">004</span><a name="line.4"></a>
+<span class="sourceLineNo">005</span>        private final ErrorResponse errorResponse;<a name="line.5"></a>
+<span class="sourceLineNo">006</span><a name="line.6"></a>
+<span class="sourceLineNo">007</span>        public BadRequestException(ErrorResponse errorResponse) {<a name="line.7"></a>
+<span class="sourceLineNo">008</span>                this.errorResponse = errorResponse;<a name="line.8"></a>
+<span class="sourceLineNo">009</span>        }<a name="line.9"></a>
+<span class="sourceLineNo">010</span><a name="line.10"></a>
+<span class="sourceLineNo">011</span>        public ErrorResponse getErrorResponse() {<a name="line.11"></a>
+<span class="sourceLineNo">012</span>                return errorResponse;<a name="line.12"></a>
+<span class="sourceLineNo">013</span>        }<a name="line.13"></a>
+<span class="sourceLineNo">014</span><a name="line.14"></a>
+<span class="sourceLineNo">015</span>        @Override<a name="line.15"></a>
+<span class="sourceLineNo">016</span>        public String toString() {<a name="line.16"></a>
+<span class="sourceLineNo">017</span>                StringBuilder stringBuilder = new StringBuilder("BadRequestException: " + errorResponse.getMessage());<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>                System.out.println(errorResponse);<a name="line.19"></a>
+<span class="sourceLineNo">020</span><a name="line.20"></a>
+<span class="sourceLineNo">021</span>                if (errorResponse.getErrors() != null &amp;&amp; !errorResponse.getErrors().isEmpty()) {<a name="line.21"></a>
+<span class="sourceLineNo">022</span>                        stringBuilder.append("\nReason:\n|");<a name="line.22"></a>
+<span class="sourceLineNo">023</span>                        for (String key : errorResponse.getErrors().keySet()) {<a name="line.23"></a>
+<span class="sourceLineNo">024</span>                                String message = errorResponse.getErrors().get(key);<a name="line.24"></a>
+<span class="sourceLineNo">025</span>                                stringBuilder.append("\n");<a name="line.25"></a>
+<span class="sourceLineNo">026</span>                                stringBuilder.append("|-- " + key + ": " + message);<a name="line.26"></a>
+<span class="sourceLineNo">027</span>                        }<a name="line.27"></a>
+<span class="sourceLineNo">028</span>                        stringBuilder.append("\n|_");<a name="line.28"></a>
+<span class="sourceLineNo">029</span>                }<a name="line.29"></a>
+<span class="sourceLineNo">030</span>                return stringBuilder.toString();<a name="line.30"></a>
+<span class="sourceLineNo">031</span>        }<a name="line.31"></a>
+<span class="sourceLineNo">032</span>}<a name="line.32"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

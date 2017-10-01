@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Konik</title>
+    <link>http://konik.io</link>
+    <atom:link href="http://konik.io/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Konik Blog Feed</description>
+    <language>de-de</language>
+    <pubDate>So, 1 Okt 2017 23:22:53 +0200</pubDate>
+    <lastBuildDate>So, 1 Okt 2017 23:22:53 +0200</lastBuildDate>
+
+    <item>
+      <title>Konik 1.2.9 Release und PDFBox-Carriage 1.0.1</title>
+      <link>http://konik.io/blog/2016/Konik-1.2.9.html</link>
+      <pubDate>Do, 25 Aug 2016 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.2.9-Release-und-PDFBox-Carriage-1.0.1</guid>
+      	<description>Konik 1.2.9 Release und PDFBox-Carriage 1.0.1</description>
+    </item>
+    <item>
+      <title>Konik 1.1.0 Release und PDFBox-Carriage 1.0</title>
+      <link>http://konik.io/blog/2015/Konik-1.1.0.html</link>
+      <pubDate>Do, 10 Mär 2016 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.1.0-Release-und-PDFBox-Carriage-1.0</guid>
+      	<description>Konik 1.1.0 Release und PDFBox-Carriage 1.0</description>
+    </item>
+    <item>
+      <title>Konik auf den zweiten ZUGFeRD Entwicklertagen</title>
+      <link>http://konik.io/blog/2015/Konik-auf-den-zweiten-ZUGFeRD-Entwicklertagen.html</link>
+      <pubDate>Mi, 9 Sep 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-auf-den-zweiten-ZUGFeRD-Entwicklertagen</guid>
+      	<description>Konik auf den zweiten ZUGFeRD Entwicklertagen</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Umfrage bei ERP Anbietern</title>
+      <link>http://konik.io/blog/2015/june/ZUGFeRD_Umfrage_bei_ERP_Anbietern.html</link>
+      <pubDate>Mo, 29 Jun 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Umfrage-bei-ERP-Anbietern</guid>
+      	<description>ZUGFeRD Umfrage bei ERP Anbietern</description>
+    </item>
+    <item>
+      <title>Konik 1.0.3 Bugfix Release</title>
+      <link>http://konik.io/blog/2015/Konik-1.0.3.html</link>
+      <pubDate>Di, 2 Jun 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.0.3-Bugfix-Release</guid>
+      	<description>Konik 1.0.3 Bugfix Release</description>
+    </item>
+    <item>
+      <title>Der Rückblick auf die ZUGFeRD Entwicklertage</title>
+      <link>http://konik.io/blog/2015/ZUGFeRD_Entwicklertage_Rückblick.html</link>
+      <pubDate>Do, 28 Mai 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Der-R%C3%BCckblick-auf-die-ZUGFeRD-Entwicklertage</guid>
+      	<description>Der Rückblick auf die ZUGFeRD Entwicklertage</description>
+    </item>
+    <item>
+      <title>Konik 1.0.2 Bugfix Release</title>
+      <link>http://konik.io/blog/2015/Konik-1.0.2.html</link>
+      <pubDate>Mo, 4 Mai 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.0.2-Bugfix-Release</guid>
+      	<description>Konik 1.0.2 Bugfix Release</description>
+    </item>
+    <item>
+      <title>Konik auf den ZUGFeRD Entwicklertagen</title>
+      <link>http://konik.io/blog/2015/ZUGFeRD-Entwicklertage.html</link>
+      <pubDate>So, 19 Apr 2015 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-auf-den-ZUGFeRD-Entwicklertagen</guid>
+      	<description>Konik auf den ZUGFeRD Entwicklertagen</description>
+    </item>
+    <item>
+      <title>Konik 1.0 Release und Update ZUGFeRD Validation Service</title>
+      <link>http://konik.io/blog/2015/Konik-1.0.html</link>
+      <pubDate>Mi, 28 Jan 2015 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.0-Release-und-Update-ZUGFeRD-Validation-Service</guid>
+      	<description>Konik 1.0 Release und Update ZUGFeRD Validation Service</description>
+    </item>
+    <item>
+      <title>PdfBox-Carriage Release-0.8.3</title>
+      <link>http://konik.io/blog/2014/October/PdfBox-carriage-release-0.8.3.html</link>
+      <pubDate>Fr, 17 Okt 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#PdfBox-Carriage-Release-0.8.3</guid>
+      	<description>PdfBox-Carriage Release-0.8.3</description>
+    </item>
+    <item>
+      <title>Konik 1.0 Roadmap</title>
+      <link>http://konik.io/blog/2014/October/Konik-1.0-roadmap.html</link>
+      <pubDate>Di, 14 Okt 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-1.0-Roadmap</guid>
+      	<description>Konik 1.0 Roadmap</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #35</title>
+      <link>http://konik.io/blog/2014/august/zugferd_weekly_news_35.html</link>
+      <pubDate>So, 31 Aug 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2335</guid>
+      	<description>ZUGFeRD Weekly News #35</description>
+    </item>
+    <item>
+      <title>Release Konik 0.7.1 und Validation Service 0.4.1</title>
+      <link>http://konik.io/blog/2014/august/Konik_release_0.7.1.html</link>
+      <pubDate>Di, 26 Aug 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Release-Konik-0.7.1-und-Validation-Service-0.4.1</guid>
+      	<description>Release Konik 0.7.1 und Validation Service 0.4.1</description>
+    </item>
+    <item>
+      <title>Neuer Release vom ZUGFeRD Validation Service</title>
+      <link>http://konik.io/blog/2014/august/new_ZUGFeRD_validation_service_release.html</link>
+      <pubDate>Fr, 1 Aug 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Neuer-Release-vom-ZUGFeRD-Validation-Service</guid>
+      	<description>Neuer Release vom ZUGFeRD Validation Service</description>
+    </item>
+    <item>
+      <title>Artikel über ZUGFeRD und Konik im iX Magazin 8/2014</title>
+      <link>http://konik.io/blog/2014/july/iX_Article.html</link>
+      <pubDate>Mi, 30 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Artikel-%C3%BCber-ZUGFeRD-und-Konik-im-iX-Magazin-8%2F2014</guid>
+      	<description>Artikel über ZUGFeRD und Konik im iX Magazin 8/2014</description>
+    </item>
+    <item>
+      <title>Errors in the ZUGFeRD Specification Part 2</title>
+      <link>http://konik.io/blog/2014/july/ZUGFeRD_Specification_Errata_Part2.html</link>
+      <pubDate>Do, 24 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Errors-in-the-ZUGFeRD-Specification-Part-2</guid>
+      	<description>Errors in the ZUGFeRD Specification Part 2</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #29</title>
+      <link>http://konik.io/blog/2014/july/zugferd_weekly_news_29.html</link>
+      <pubDate>So, 20 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2329</guid>
+      	<description>ZUGFeRD Weekly News #29</description>
+    </item>
+    <item>
+      <title>Errors in the ZUGFeRD Specification Part 1</title>
+      <link>http://konik.io/blog/2014/july/ZUGFeRD_Specification_Errata.html</link>
+      <pubDate>Do, 17 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Errors-in-the-ZUGFeRD-Specification-Part-1</guid>
+      	<description>Errors in the ZUGFeRD Specification Part 1</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #28</title>
+      <link>http://konik.io/blog/2014/july/zugferd_weekly_news_28.html</link>
+      <pubDate>So, 13 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2328</guid>
+      	<description>ZUGFeRD Weekly News #28</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #27</title>
+      <link>http://konik.io/blog/2014/july/zugferd_weekly_news_27.html</link>
+      <pubDate>So, 6 Jul 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2327</guid>
+      	<description>ZUGFeRD Weekly News #27</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #26</title>
+      <link>http://konik.io/blog/2014/june/zugferd_weekly_news_26.html</link>
+      <pubDate>So, 29 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2326</guid>
+      	<description>ZUGFeRD Weekly News #26</description>
+    </item>
+    <item>
+      <title>Konik library 0.5.0 release</title>
+      <link>http://konik.io/blog/2014/june/release-0.5.0.html</link>
+      <pubDate>Mi, 25 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-library-0.5.0-release</guid>
+      	<description>Konik library 0.5.0 release</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #25</title>
+      <link>http://konik.io/blog/2014/june/zugferd_weekly_news_25.html</link>
+      <pubDate>So, 22 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2325</guid>
+      	<description>ZUGFeRD Weekly News #25</description>
+    </item>
+    <item>
+      <title>Join Konik Discussion Forum</title>
+      <link>http://konik.io/blog/2014/june/join_konik_discussion_forum.html</link>
+      <pubDate>Sa, 21 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Join-Konik-Discussion-Forum</guid>
+      	<description>Join Konik Discussion Forum</description>
+    </item>
+    <item>
+      <title>Looking back on the GS1 electronic invoice practice day</title>
+      <link>http://konik.io/blog/2014/june/looking_back_on_the_gs1_practice_day.html</link>
+      <pubDate>Sa, 14 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Looking-back-on-the-GS1-electronic-invoice-practice-day</guid>
+      	<description>Looking back on the GS1 electronic invoice practice day</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #24</title>
+      <link>http://konik.io/blog/2014/june/zugferd_weekly_news_24.html</link>
+      <pubDate>Sa, 14 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2324</guid>
+      	<description>ZUGFeRD Weekly News #24</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #23</title>
+      <link>http://konik.io/blog/2014/june/zugferd_weekly_news_23.html</link>
+      <pubDate>So, 8 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2323</guid>
+      	<description>ZUGFeRD Weekly News #23</description>
+    </item>
+    <item>
+      <title>New Version ZUGFeRD Validation Service</title>
+      <link>http://konik.io/blog/2014/june/New Version ZUGFeRD Validation Service.html</link>
+      <pubDate>Mo, 2 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#New-Version-ZUGFeRD-Validation-Service</guid>
+      	<description>New Version ZUGFeRD Validation Service</description>
+    </item>
+    <item>
+      <title>Konik Blog as RSS Feed</title>
+      <link>http://konik.io/blog/2014/june/RSS_feed.html</link>
+      <pubDate>Mo, 2 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-Blog-as-RSS-Feed</guid>
+      	<description>Konik Blog as RSS Feed</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #22</title>
+      <link>http://konik.io/blog/2014/june/zugferd_weekly_news_22.html</link>
+      <pubDate>So, 1 Jun 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2322</guid>
+      	<description>ZUGFeRD Weekly News #22</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #21</title>
+      <link>http://konik.io/blog/2014/may/zugferd_weekly_news_21.html</link>
+      <pubDate>So, 25 Mai 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2321</guid>
+      	<description>ZUGFeRD Weekly News #21</description>
+    </item>
+    <item>
+      <title>Konik upcoming release preview</title>
+      <link>http://konik.io/blog/2014/may/upcoming_release_preview.html</link>
+      <pubDate>Fr, 23 Mai 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-upcoming-release-preview</guid>
+      	<description>Konik upcoming release preview</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #20</title>
+      <link>http://konik.io/blog/2014/may/zugferd_weekly_news_20.html</link>
+      <pubDate>So, 18 Mai 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2320</guid>
+      	<description>ZUGFeRD Weekly News #20</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #19</title>
+      <link>http://konik.io/blog/2014/may/zugferd_weekly_news_19.html</link>
+      <pubDate>Mo, 12 Mai 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2319</guid>
+      	<description>ZUGFeRD Weekly News #19</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #18</title>
+      <link>http://konik.io/blog/2014/april/zugferd_weekly_news_18.html</link>
+      <pubDate>So, 4 Mai 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2318</guid>
+      	<description>ZUGFeRD Weekly News #18</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #17</title>
+      <link>http://konik.io/blog/2014/april/zugferd_weekly_news_17.html</link>
+      <pubDate>So, 27 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2317</guid>
+      	<description>ZUGFeRD Weekly News #17</description>
+    </item>
+    <item>
+      <title>Konik performance measurements</title>
+      <link>http://konik.io/blog/2014/april/benchmarks.html</link>
+      <pubDate>Mi, 23 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-performance-measurements</guid>
+      	<description>Konik performance measurements</description>
+    </item>
+    <item>
+      <title>Konik library and iText-Carriage version 0.2.0 released</title>
+      <link>http://konik.io/blog/2014/april/release-0.2.0.html</link>
+      <pubDate>Di, 22 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Konik-library-and-iText-Carriage-version-0.2.0-released</guid>
+      	<description>Konik library and iText-Carriage version 0.2.0 released</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #16</title>
+      <link>http://konik.io/blog/2014/april/zugferd_weekly_news_16.html</link>
+      <pubDate>Mo, 21 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2316</guid>
+      	<description>ZUGFeRD Weekly News #16</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #15</title>
+      <link>http://konik.io/blog/2014/april/zugferd_weekly_news_15.html</link>
+      <pubDate>So, 13 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2315</guid>
+      	<description>ZUGFeRD Weekly News #15</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #14</title>
+      <link>http://konik.io/blog/2014/april/zugferd_weekly_news_14.html</link>
+      <pubDate>So, 6 Apr 2014 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2314</guid>
+      	<description>ZUGFeRD Weekly News #14</description>
+    </item>
+    <item>
+      <title>ZUGFeRD Weekly News #13</title>
+      <link>http://konik.io/blog/2014/march/zugferd_weekly_news_13.html</link>
+      <pubDate>So, 30 Mär 2014 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-Weekly-News-%2313</guid>
+      	<description>ZUGFeRD Weekly News #13</description>
+    </item>
+    <item>
+      <title>Dependency Injection with the Konik library</title>
+      <link>http://konik.io/blog/2014/march/feature_dependency_injection.html</link>
+      <pubDate>Do, 20 Mär 2014 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Dependency-Injection-with-the-Konik-library</guid>
+      	<description>Dependency Injection with the Konik library</description>
+    </item>
+    <item>
+      <title>Konik library and iText-Carriage version 0.1.0 released</title>
+      <link>http://konik.io/blog/2014/february/release-0.1.0.html</link>
+      <pubDate>So, 2 Mär 2014 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Konik-library-and-iText-Carriage-version-0.1.0-released</guid>
+      	<description>Konik library and iText-Carriage version 0.1.0 released</description>
+    </item>
+    <item>
+      <title>Konik project Start</title>
+      <link>http://konik.io/blog/2013/project_start.html</link>
+      <pubDate>So, 1 Dez 2013 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Konik-project-Start</guid>
+      	<description>Konik project Start</description>
+    </item>
+  </channel> 
+</rss>

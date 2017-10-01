@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="description" content="Konik ZUGFeRD Erweiterung für Microsoft Dynamics NAV zum Erstellen und Versenden von ZUGFeRD konformen elektronischen Rechnungen.">
+    <meta name="author" content="Vadim Bauer">
+    <meta content="/img/logo.png" property="og:image">
+    <meta name="keywords" content="ZUGFeRD, ZUGFeRD Navision, ZUGFeRD NAV, ZUGFeRD Nav 2013">    
+	<meta name="author" content="Vadim Bauer">
+    
+	
+    <title>ZUGFeRD für Microsoft Dynamics NAV 2009, 2013, 2013R2, und 2015 </title>
+        
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/obsidian.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/obsidian.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/mb.css"  type="text/css"/>
+	<link rel="stylesheet" href="/css/konik.css" type="text/css"/>
+
+    <!-- JQuery at the top to use it in our code -->
+    <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+
+    <!-- icon -->
+    <link href="/favicon.ico"  rel="icon"  type="image/x-icon" />
+
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-45977479-1', 'auto');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+	</script>
+
+  </head>
+
+  <body><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="/">Konik</a>
+    </div>
+
+    <div id="navbar-main" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/order/Bestellung.html">Lizenzen</a></li>
+        <li><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
+        <li><a href="/docs/index.html">Dokumentation</a></li>        
+        <li><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validation</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+         <li><a href="/index.html#Support">Support</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    
+  </div><!-- /.container -->
+</nav>
+<a href="https://github.com/konik-io" class="hidden-xs hidden-sm">
+   <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" 
+      style="position: absolute; right: 0; border: 0; z-index: 1; ">
+</a>
+
+<div id="Intro" class="section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-7 col-md-7 col-sm-7">
+            <h1>ZUGFeRD für Microsoft Dynamics NAV</h1>
+         <h1><small>ZUGFeRD Erweiterung mit nahtloser Integration in NAV Navision 2009, 2013, 2013R2, 2015 und AX</small></h1>
+         <a class="btn btn-lg btn-primary" href="#Support">Termin vereinbaren</a>
+         </div>
+         <div class="col-lg-5 col-md-5 col-sm-12">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LePbxOcYIxU?rel=0" frameborder="0" allowfullscreen></iframe>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12">
+            <h1>Funktionsumfang ZUGFeRD für Microsoft Dynamics NAV</h1>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-lg-6 col-md-6">
+            <h3><i class="fa fa-paper-plane-o"></i> Rechnungsausgang</h3>
+            <p>ZUGFeRD für NAV ermöglicht es, aus einer gebuchten Rechnung ZUGFeRD-konforme Rechnungen zu erzeugen und per E-Mail zu versenden.
+            Durch einen Klick auf den 'ZUGFeRD Button'
+            wird im Hintergrund die ZUGFeRD-konforme Rechnung erstellt und an den Standard-E-Mail-Client übergeben. 
+            In der neu erstellten E-Mail wird die ZUGFeRD Rechnung mit einem Text an den Empfänger als Anhang hinzugefügt.
+            Die verwendete E-Mail Textvorlage lässt sich zudem für jeden Nutzer in NAV individualisieren.</p>
+         </div>
+         
+         <div class="col-lg-6 col-md-6">
+            <h3><i class="fa fa-plug"></i> Integration </h3>
+            <p>Die gesamte Verarbeitung von ZUGFeRD und PDF ist in .NET Bibliotheken gekapselt. 
+                Dadurch wird die Abhängigkeit zu Navision interna auf ein Minimum reduziert. 
+                Für Sie bedeutet das zum Einen eine einfache und schnelle Integration und zum Anderen 
+                keinen Update Lockin an eine ganz bestimmte NAV Version. 
+            </p>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-6 col-md-6">
+            <h3><i class="fa fa-inbox"></i> Rechnungseingang </h3>
+            <p>ZUGFeRD Eingangsrechnungen werden einer automatischen Rechnungsprüfung und -freigabe unterzogen,
+            welche eine Dunkelverbuchung ohne menschliche Eingriffe ermöglicht.
+            Je nach Vorfall kann die Eingangsrechnung einem Lieferanten und einer Bestellung zugeordnet werden oder 
+            bei einem Sofortkauf kann im Hintergrund eine Bestellung oder ein neuer Lieferant angelegt werden.  
+            </p>
+         </div>
+         <div class="col-lg-6 col-md-6">
+            <h3><i class="fa fa-life-ring"></i> Beratung und Integration</h3>
+            <p>Gemeinsam mit unseren Microsoft Dynamics Partnern automatisieren wir Ihren Rechnungseingang und -ausgang 
+            und passen unsere Lösung ZUGFeRD-NAV an Ihre individuellen Bedürfnisse an.</p>
+         </div>
+     </div>
+   </div>
+</div>
+
+<div id="Support" class="section">
+   <div class="container">
+      <div class="row well vertical-align">
+            <div class="col-lg-8 col-md-8">
+               <p>Vereinbaren Sie einen Termin mit uns - wir freuen uns auf Ihre E-Mail oder Ihren Anruf!</p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+               <button class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target=".bs-contact-modal">Kontaktinformation</button>
+            </div>
+      </div>
+      <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+         aria-hidden="true">
+         <div class="modal-dialog modal-sm">
+            <div class="modal-content jumbotron">
+               <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+               <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                  style="display: none">_no_</span>konik.io
+               </span>
+               <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+               <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)43 542 17 86
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<div id="footer" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+            <header><h3>Weitere Themen rund um ZUGFeRD</h3></header>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>ZUGFeRD Dokumentation</h3></header>                  
+                  <p><a href="http://zugferd.de">Forum Elektronische Rechnung Deutschland</a></p>
+                  <p><a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0.pdf">ZUGFeRD Format</a> 
+                     <a href="/ZUGFeRD-Spezifikation/ZUGFeRD-Format_1p0_Specification-english.pdf"> [English Version]</a></p> 
+                     <a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_technische_Dokumentation.pdf">ZUGFeRD Technische Dokumentation</a></p>                     
+                  <p><a href="/ZUGFeRD-Spezifikation/ZUGFeRD_1p0_Technical_Documentation.pdf"> [English Version]</a>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Artikel</h3></header> 
+                  <p><a href="/ZUGFeRD.html">Über ZUGFeRD</a></p>
+                  <p><a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel über ZUGFeRD</a></<p> 
+                  <p><a href="https://www.bitkom.org/Publikationen/2014/Leitfaden/ZUGFeRD-Standard-fuer-elektronische-Rechnungen/140916_Broschuere_Zugferd.pdf">ZUGFeRD Leitfaden</a></p>                                   
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Unsere Produkte</h3></header>
+                  <p><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validierung Service</a></p>   
+                  <p><a href="https://z-rechnung.com">Z-RECHNUNG</a></p>   
+                  <p><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
+               </div>
+            </article>
+         </div>
+      </div>
+   </div>
+ </div>
+<footer>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <p class="pull-right">
+               Copyright &copy; 8gears AG 2015-2017
+<!--                | <a href="/en/index.html">English</a> -->
+               | <a href="/legal-notice.html">Impressum</a> 
+               | <a href="/license.html">Lizenz</a>
+               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
+                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
+                  title="Reveal the Email address">Kontakt</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/java.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
+<script src="/js/konik.js"></script>
+</body>
+
+</html>
