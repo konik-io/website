@@ -6,8 +6,8 @@
     <atom:link href="http://konik.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Konik Blog Feed</description>
     <language>de-de</language>
-    <pubDate>Mi, 15 Nov 2017 10:25:15 +0100</pubDate>
-    <lastBuildDate>Mi, 15 Nov 2017 10:25:15 +0100</lastBuildDate>
+    <pubDate>Mi, 15 Nov 2017 10:33:41 +0100</pubDate>
+    <lastBuildDate>Mi, 15 Nov 2017 10:33:41 +0100</lastBuildDate>
 
     <item>
       <title>Konik 1.2.9 Release und PDFBox-Carriage 1.0.1</title>
