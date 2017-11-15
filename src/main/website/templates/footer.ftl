@@ -32,7 +32,7 @@
                   <header><h3>Unsere Produkte</h3></header>
                   <p><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validierung Service</a></p>   
                   <p><a href="https://z-rechnung.com">Z-RECHNUNG</a></p>   
-                  <p><a href="/ZUGFeRD-für-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
+                  <p><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
                </div>
             </article>
          </div>
