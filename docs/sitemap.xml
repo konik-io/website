@@ -38,6 +38,10 @@
         <lastmod>2013-11-14</lastmod>
     </url>
     <url>
+        <loc>http://konik.io/blog.html#Happy-Birthday-Konik-%F0%9F%8E%81</loc>
+        <lastmod>2017-12-18</lastmod>
+    </url>
+    <url>
         <loc>http://konik.io/blog.html#Konik-1.2.9-Release-und-PDFBox-Carriage-1.0.1</loc>
         <lastmod>2016-08-25</lastmod>
     </url>
@@ -240,15 +244,15 @@
 
     <url>
         <loc>http://konik.io/docs/api/konik/</loc>
-        <lastmod>2017-11-15</lastmod>
+        <lastmod>2017-12-18</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/pdfbox-carriage/</loc>
-        <lastmod>2017-11-15</lastmod>
+        <lastmod>2017-12-18</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/itext-carriage/</loc>
-        <lastmod>2017-11-15</lastmod>
+        <lastmod>2017-12-18</lastmod>
     </url>
 
 </urlset>

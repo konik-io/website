@@ -6,9 +6,16 @@
     <atom:link href="http://konik.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Konik Blog Feed</description>
     <language>de-de</language>
-    <pubDate>Mi, 15 Nov 2017 10:33:41 +0100</pubDate>
-    <lastBuildDate>Mi, 15 Nov 2017 10:33:41 +0100</lastBuildDate>
+    <pubDate>Mo, 18 Dez 2017 18:19:59 +0100</pubDate>
+    <lastBuildDate>Mo, 18 Dez 2017 18:19:59 +0100</lastBuildDate>
 
+    <item>
+      <title>Happy Birthday Konik 🎁</title>
+      <link>http://konik.io/blog/2017/Happy-Birthday-Konik.html</link>
+      <pubDate>Mo, 18 Dez 2017 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#Happy-Birthday-Konik-%F0%9F%8E%81</guid>
+      	<description>Happy Birthday Konik 🎁</description>
+    </item>
     <item>
       <title>Konik 1.2.9 Release und PDFBox-Carriage 1.0.1</title>
       <link>http://konik.io/blog/2016/Konik-1.2.9.html</link>
