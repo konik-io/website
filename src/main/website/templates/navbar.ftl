@@ -13,7 +13,7 @@
 
     <div id="navbar-main" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/order/Bestellung.html">Lizenzen</a></li>
+        <#--<li><a href="/order/Bestellung.html">Lizenzen</a></li>-->
         <li><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
         <li><a href="/docs/index.html">Dokumentation</a></li>        
         <li><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validation</a></li>
