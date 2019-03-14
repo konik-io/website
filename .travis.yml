@@ -1,29 +1,12 @@
 language: java
 
 jdk:
-  - oraclejdk7
+  - openjdk8
   
 # whitelist
 branches:
   only:
     - master
-    
-#install: 
-#   - echo -e "building jbake snapshot from repository\n"
-#    - git clone -b feature/newEngines https://github.com/Vad1mo/JBake.git
-#    - mvn -q -f ./jbake/pom.xml install -DskipTests
-#    - rm -rf jbake
-
-#before_script: mvn versions:set -DnewVersion=1.0.1
 
 script:
-  - mvn -q clean
-  - mvn -q initialize
-  - mvn -q package
-  - mvn -q site
-
-# after_success: mvn versions:set -DnewVersion=1.0.2-SNAPSHOT
-
-env:
-  global:
-    secure: "fT/ISX36d1O3JjlxftkckC1T2IQcz6BfV/hX+S+0seZY+J3HOtzXVGtjcXAdCdqhfkywin4KCZahW9Wya3CUdM+WdMTJWXXPKRpFr02iXMUp+aMF1USfEHZdubOK68wJkpJKdBiWE4x2dbyCiRJxYFb4Mr7o61O3XBpJcZkQ19E="
+  - mvn -q clean package
