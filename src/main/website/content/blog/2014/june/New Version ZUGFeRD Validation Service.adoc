@@ -7,7 +7,7 @@ Vadim Bauer
 :idprefix:
 :linkattrs:
 
-A new Version of the link:/validation.html[ZUGFeRD Validation Service] is now available. 
+A new Version of the link:/ZUGFeRD-Validierung/[ZUGFeRD Validation Service] is now available.
 
 === Changelog 
 

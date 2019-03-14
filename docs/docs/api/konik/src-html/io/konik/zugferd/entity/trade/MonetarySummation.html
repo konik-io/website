@@ -25,15 +25,15 @@
 <span class="sourceLineNo">017</span> */<a name="line.17"></a>
 <span class="sourceLineNo">018</span>package io.konik.zugferd.entity.trade;<a name="line.18"></a>
 <span class="sourceLineNo">019</span><a name="line.19"></a>
-<span class="sourceLineNo">020</span>import io.konik.validator.annotation.Basic;<a name="line.20"></a>
-<span class="sourceLineNo">021</span>import io.konik.validator.annotation.Comfort;<a name="line.21"></a>
-<span class="sourceLineNo">022</span>import io.konik.zugferd.entity.CommonMonetarySummation;<a name="line.22"></a>
-<span class="sourceLineNo">023</span>import io.konik.zugferd.unqualified.Amount;<a name="line.23"></a>
+<span class="sourceLineNo">020</span>import javax.validation.Valid;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import javax.validation.constraints.NotNull;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import javax.xml.bind.annotation.XmlElement;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import javax.xml.bind.annotation.XmlType;<a name="line.23"></a>
 <span class="sourceLineNo">024</span><a name="line.24"></a>
-<span class="sourceLineNo">025</span>import javax.validation.Valid;<a name="line.25"></a>
-<span class="sourceLineNo">026</span>import javax.validation.constraints.NotNull;<a name="line.26"></a>
-<span class="sourceLineNo">027</span>import javax.xml.bind.annotation.XmlElement;<a name="line.27"></a>
-<span class="sourceLineNo">028</span>import javax.xml.bind.annotation.XmlType;<a name="line.28"></a>
+<span class="sourceLineNo">025</span>import io.konik.validator.annotation.Basic;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import io.konik.validator.annotation.Comfort;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import io.konik.zugferd.entity.CommonMonetarySummation;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import io.konik.zugferd.unqualified.Amount;<a name="line.28"></a>
 <span class="sourceLineNo">029</span><a name="line.29"></a>
 <span class="sourceLineNo">030</span>/**<a name="line.30"></a>
 <span class="sourceLineNo">031</span> * = The Monetary Summation of a trade settlement<a name="line.31"></a>
@@ -46,7 +46,7 @@
 <span class="sourceLineNo">038</span>   @Valid<a name="line.38"></a>
 <span class="sourceLineNo">039</span>   @XmlElement(name = "LineTotalAmount")<a name="line.39"></a>
 <span class="sourceLineNo">040</span>   private Amount lineTotal;<a name="line.40"></a>
-<span class="sourceLineNo">041</span>   <a name="line.41"></a>
+<span class="sourceLineNo">041</span><a name="line.41"></a>
 <span class="sourceLineNo">042</span>   @XmlElement(name = "ChargeTotalAmount")<a name="line.42"></a>
 <span class="sourceLineNo">043</span>   private Amount chargeTotal;<a name="line.43"></a>
 <span class="sourceLineNo">044</span><a name="line.44"></a>
@@ -75,8 +75,8 @@
 <span class="sourceLineNo">067</span><a name="line.67"></a>
 <span class="sourceLineNo">068</span>   @Override<a name="line.68"></a>
 <span class="sourceLineNo">069</span>   public MonetarySummation setLineTotal(Amount lineTotal) {<a name="line.69"></a>
-<span class="sourceLineNo">070</span>      this.lineTotal =  lineTotal; <a name="line.70"></a>
-<span class="sourceLineNo">071</span>      return this;      <a name="line.71"></a>
+<span class="sourceLineNo">070</span>      this.lineTotal = lineTotal;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>      return this;<a name="line.71"></a>
 <span class="sourceLineNo">072</span>   }<a name="line.72"></a>
 <span class="sourceLineNo">073</span><a name="line.73"></a>
 <span class="sourceLineNo">074</span>   /**<a name="line.74"></a>
@@ -243,25 +243,24 @@
 <span class="sourceLineNo">235</span>      this.duePayable = duePayable;<a name="line.235"></a>
 <span class="sourceLineNo">236</span>      return this;<a name="line.236"></a>
 <span class="sourceLineNo">237</span>   }<a name="line.237"></a>
-<span class="sourceLineNo">238</span>   <a name="line.238"></a>
-<span class="sourceLineNo">239</span><a name="line.239"></a>
-<span class="sourceLineNo">240</span>   @Override<a name="line.240"></a>
-<span class="sourceLineNo">241</span>   public String toString() {<a name="line.241"></a>
-<span class="sourceLineNo">242</span>      StringBuilder builder = new StringBuilder();<a name="line.242"></a>
-<span class="sourceLineNo">243</span>      builder.append("MonetarySummation [");<a name="line.243"></a>
-<span class="sourceLineNo">244</span>      if (lineTotal != null) builder.append("lineTotal=").append(lineTotal).append(", ");<a name="line.244"></a>
-<span class="sourceLineNo">245</span>      if (chargeTotal != null) builder.append("chargeTotal=").append(chargeTotal).append(", ");<a name="line.245"></a>
-<span class="sourceLineNo">246</span>      if (allowanceTotal != null) builder.append("allowanceTotal=").append(allowanceTotal).append(", ");<a name="line.246"></a>
-<span class="sourceLineNo">247</span>      if (taxBasisTotal != null) builder.append("taxBasisTotal=").append(taxBasisTotal).append(", ");<a name="line.247"></a>
-<span class="sourceLineNo">248</span>      if (taxTotal != null) builder.append("taxTotal=").append(taxTotal).append(", ");<a name="line.248"></a>
-<span class="sourceLineNo">249</span>      if (grandTotal != null) builder.append("grandTotal=").append(grandTotal).append(", ");<a name="line.249"></a>
-<span class="sourceLineNo">250</span>      if (totalPrepaid != null) builder.append("totalPrepaid=").append(totalPrepaid).append(", ");<a name="line.250"></a>
-<span class="sourceLineNo">251</span>      if (duePayable != null) builder.append("duePayable=").append(duePayable);<a name="line.251"></a>
-<span class="sourceLineNo">252</span>      builder.append("]");<a name="line.252"></a>
-<span class="sourceLineNo">253</span>      return builder.toString();<a name="line.253"></a>
-<span class="sourceLineNo">254</span>   }<a name="line.254"></a>
-<span class="sourceLineNo">255</span><a name="line.255"></a>
-<span class="sourceLineNo">256</span>}<a name="line.256"></a>
+<span class="sourceLineNo">238</span><a name="line.238"></a>
+<span class="sourceLineNo">239</span>   @Override<a name="line.239"></a>
+<span class="sourceLineNo">240</span>   public String toString() {<a name="line.240"></a>
+<span class="sourceLineNo">241</span>      StringBuilder builder = new StringBuilder();<a name="line.241"></a>
+<span class="sourceLineNo">242</span>      builder.append("MonetarySummation [");<a name="line.242"></a>
+<span class="sourceLineNo">243</span>      if (lineTotal != null) builder.append("lineTotal=").append(lineTotal).append(", ");<a name="line.243"></a>
+<span class="sourceLineNo">244</span>      if (chargeTotal != null) builder.append("chargeTotal=").append(chargeTotal).append(", ");<a name="line.244"></a>
+<span class="sourceLineNo">245</span>      if (allowanceTotal != null) builder.append("allowanceTotal=").append(allowanceTotal).append(", ");<a name="line.245"></a>
+<span class="sourceLineNo">246</span>      if (taxBasisTotal != null) builder.append("taxBasisTotal=").append(taxBasisTotal).append(", ");<a name="line.246"></a>
+<span class="sourceLineNo">247</span>      if (taxTotal != null) builder.append("taxTotal=").append(taxTotal).append(", ");<a name="line.247"></a>
+<span class="sourceLineNo">248</span>      if (grandTotal != null) builder.append("grandTotal=").append(grandTotal).append(", ");<a name="line.248"></a>
+<span class="sourceLineNo">249</span>      if (totalPrepaid != null) builder.append("totalPrepaid=").append(totalPrepaid).append(", ");<a name="line.249"></a>
+<span class="sourceLineNo">250</span>      if (duePayable != null) builder.append("duePayable=").append(duePayable);<a name="line.250"></a>
+<span class="sourceLineNo">251</span>      builder.append("]");<a name="line.251"></a>
+<span class="sourceLineNo">252</span>      return builder.toString();<a name="line.252"></a>
+<span class="sourceLineNo">253</span>   }<a name="line.253"></a>
+<span class="sourceLineNo">254</span><a name="line.254"></a>
+<span class="sourceLineNo">255</span>}<a name="line.255"></a>
 
 
 

@@ -6,9 +6,23 @@
     <atom:link href="http://konik.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Konik Blog Feed</description>
     <language>de-de</language>
-    <pubDate>Mi, 18 Apr 2018 23:08:58 +0200</pubDate>
-    <lastBuildDate>Mi, 18 Apr 2018 23:08:58 +0200</lastBuildDate>
+    <pubDate>Fr, 15 Mär 2019 00:11:32 +0100</pubDate>
+    <lastBuildDate>Fr, 15 Mär 2019 00:11:32 +0100</lastBuildDate>
 
+    <item>
+      <title>ZUGFeRD 2.0 und Konik 2.0</title>
+      <link>http://konik.io/blog/2019/ZUGFeRD-2.0.html</link>
+      <pubDate>Do, 14 Mär 2019 00:00:00 +0100</pubDate>
+      <guid>http://konik.io/blog.html#ZUGFeRD-2.0-und-Konik-2.0</guid>
+      	<description>ZUGFeRD 2.0 und Konik 2.0</description>
+    </item>
+    <item>
+      <title>Release Konik 1.3.1 und PDFBox-Carriage 1.1.0</title>
+      <link>http://konik.io/blog/2018/Konik-1.2.9.html</link>
+      <pubDate>Fr, 27 Apr 2018 00:00:00 +0200</pubDate>
+      <guid>http://konik.io/blog.html#Release-Konik-1.3.1-und-PDFBox-Carriage-1.1.0</guid>
+      	<description>Release Konik 1.3.1 und PDFBox-Carriage 1.1.0</description>
+    </item>
     <item>
       <title>Happy Birthday Konik 🎁</title>
       <link>http://konik.io/blog/2017/Happy-Birthday-Konik.html</link>

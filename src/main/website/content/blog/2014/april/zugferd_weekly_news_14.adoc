@@ -12,7 +12,7 @@ Vadim Bauer
 :lnk_nv: http://www.neue-verwaltung.de/fachforen/
 :lnk_tng: http://www.tangens-akademie.de/seminardatenbank_die_elektronische_rechnung_2014_04_06_2014_nuernberg.html
 :lnk_bva: http://www.bva.bund.de/SharedDocs/Kurzmeldungen/DE/BVA/2014/eRechnung_oeffentliche_Verwaltung.html
-:lnk_VeR: http://www.verband-e-rechnung.org/de/presse/pressemitteilungen-mitglieder/282-eu-richtlinie-bringt-neuen-rueckenwind-fuer-e-invoicing
+:lnk_VeR: https://web.archive.org/web/20140831235720/http://www.verband-e-rechnung.org/de/presse/pressemitteilungen-mitglieder/282-eu-richtlinie-bringt-neuen-rueckenwind-fuer-e-invoicing
 :lnk_gisa: http://www.gisa.de/aktuelles/gisa-bietet-basisloesung-fuer-elektronische-rechnungen-mit-zugferd-3060.html
 :lnk_y1: https://www.youtube.com/watch?v=gsN-O-1NJJk
 :lnk_y2: https://www.youtube.com/watch?v=cRTd_hDbCQg

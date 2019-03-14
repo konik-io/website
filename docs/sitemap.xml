@@ -38,6 +38,14 @@
         <lastmod>2013-11-14</lastmod>
     </url>
     <url>
+        <loc>http://konik.io/blog.html#ZUGFeRD-2.0-und-Konik-2.0</loc>
+        <lastmod>2019-03-14</lastmod>
+    </url>
+    <url>
+        <loc>http://konik.io/blog.html#Release-Konik-1.3.1-und-PDFBox-Carriage-1.1.0</loc>
+        <lastmod>2018-04-27</lastmod>
+    </url>
+    <url>
         <loc>http://konik.io/blog.html#Happy-Birthday-Konik-%F0%9F%8E%81</loc>
         <lastmod>2017-12-18</lastmod>
     </url>
@@ -244,15 +252,15 @@
 
     <url>
         <loc>http://konik.io/docs/api/konik/</loc>
-        <lastmod>2018-04-18</lastmod>
+        <lastmod>2019-03-15</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/pdfbox-carriage/</loc>
-        <lastmod>2018-04-18</lastmod>
+        <lastmod>2019-03-15</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/itext-carriage/</loc>
-        <lastmod>2018-04-18</lastmod>
+        <lastmod>2019-03-15</lastmod>
     </url>
 
 </urlset>

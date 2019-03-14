@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    
+    <meta name="author" content="Vadim Bauer">
+    <meta content="/img/logo.png" property="og:image">
+        
+	<meta name="author" content="Vadim Bauer">
+    
+	
+    <title>Unterschiede zwischen ZUGFeRD 1.0 und ZUGFeRD 2.0</title>
+        
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.2/cosmo/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/obsidian.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/obsidian.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/mb.css"  type="text/css"/>
+	<link rel="stylesheet" href="/css/konik.css" type="text/css"/>
+
+    <!-- JQuery at the top to use it in our code -->
+    <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+
+    <!-- icon -->
+    <link href="/favicon.ico"  rel="icon"  type="image/x-icon" />
+
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-45977479-1', 'auto');
+	  ga('require', 'displayfeatures');
+	  ga('send', 'pageview');
+	</script>
+
+  </head>
+
+  <body><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="/">Konik</a>
+    </div>
+
+    <div id="navbar-main" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/order/Bestellung.html">Lizenzen</a></li>
+        <li><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
+        <li><a href="/docs/index.html">Dokumentation</a></li>        
+        <li><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validation</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+         <li><a href="/index.html#Support">Support</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    
+  </div><!-- /.container -->
+</nav>
+<div class="section">	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+		 		<h1 class="page-header">Unterschiede zwischen ZUGFeRD 1.0 und ZUGFeRD 2.0</h1>
+			</div>
+		</div>
+		  
+		<p><em>15 März 2019</em></p>
+		<div>
+			<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unterschiede zwischen ZUGFeRD 1.0 und ZUGFeRD 2.0</p>
+</div>
+<div class="paragraph">
+<p>Folgende Änderungen sind in der ZUGFeRD 2.0-Spezifikation im Hinblick auf die Version 1.0 zu beachten:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design_prinzipien_der_en_16931_1">Design-Prinzipien der EN 16931-1</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Bis zum Profil EN 16931 (COMFORT) gelten die Design-Prinzipien der Norm, dass sich
+eine Rechnung immer nur auf genau eine Bestellung und genau eine Lieferung beziehen darf. Dies führt ggf. zu einem Änderungsbedarf in den Rechnungsstellungs- prozessen beim Sender und zu geänderten Verarbeitungsprozessen beim Empfänger.</p>
+</li>
+<li>
+<p>Für Sammelrechnungen (z.B. mehrere Bestellbezüge, mehrere Lieferorte etc.) muss das Profil EXTENDED genutzt werden.</p>
+</li>
+<li>
+<p>Anders als in ZUGFeRD 1.0 schreibt die EN 16931-1 – und somit auch ZUGFeRD 2.0 – den Nettopreis als verbindliche Preisinformation vor. Der Nettopreis des Artikels in diesem Zusammenhang ist der Preis eines Artikels ohne Umsatzsteuer nach Abzug des Nachlasses auf den Artikelpreis. Der Nettobetrag der Rechnungsposition ist der „Netto“-Betrag d. h. ohne die Umsatzsteuer, aber einschließlich aller für die Positionsebene geltenden Zu- und Abschläge sowie sonstiger anfallender Steuern. Der Grundbetrag für die prozentuale Berechnung von Zu- und Abschlägen auf Ebene der Rechnungsposition wird absolut angegeben. Die EN 16931-1 macht keine Vorgaben, wie dieser Grundbetrag berechnet werden soll.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="abweichungen_in_den_profilen">Abweichungen in den Profilen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Da das COMFORT-Profil von ZUGFERD 1.0 nicht „compliant“ ist zum Datenmodell der
+EN 16931-1, mussten bestimmte Elemente ergänzt oder auch weggelassen werden
+(siehe Anlage).</p>
+</li>
+<li>
+<p>Änderungen im Profil EN 16931 (COMFORT) von ZUGFeRD 2.0 wirken sich auf das
+Profil EXTENDED aus, da dieses eine „conformant“ Erweiterung der EN 16931-1 darstellt. Insbesondere müssen Pflichtangaben des Profils EN 16931 (COMFORT) ebenfalls Pflichtangaben im Profil EXTENDED sein.</p>
+</li>
+<li>
+<p>Die beiden ZUGFeRD 2.0-Profile BASIC WL und MINIMUM wurden aus Factur-X übernommen. In Deutschland stellen diese ausschließlich Buchungshilfen dar, d.h. es darf nur der Dokumententyp „751“ genutzt werden. In Frankreich können für die Profile BASIC WL und MINIMUM alle für die Rechnung vorgesehenen Dokumenten- typen genutzt werden, da in Frankreich nicht zwingend alle Rechnungsdaten der Bild- Repräsentanz auch in der Daten-Repräsentanz (XML-Instanz) enthalten sein müssen.</p>
+</li>
+<li>
+<p>In der EN 16931-1 werden alle Beträge in der Rechnungswährung angegeben. Diese wird auf Dokumentenebene festgelegt. Einzige Ausnahme ist der Gesamtbetrag der Umsatzsteuer, die zusätzlich auch in einer zweiten Währung, die für die Buchhaltung maßgeblich ist, angegeben werden kann. Dieses Prinzip wurde auch für das EXTENDED Profil übernommen.</p>
+</li>
+<li>
+<p>Analog zur EN 16931-1 können Rechnungsperioden von ZUGFeRD 2.0 nur noch auf Positionsebene angegeben werden, nicht mehr auf Dokumentenebene. Dies gilt auch für das EXTENDED Profil.</p>
+</li>
+<li>
+<p>Bei den Zahlungsinstrumenten wird die deutsche Bankleitzahl nicht mehr unterstützt. Nationale Kontonummern und nationale Bankleitzahlen werden analog zur
+EN 16931-1 nur noch für Überweisungen unterstützt.
+ 0319  2019 Arbeitsgemeinschaft für Wirtschaft und Verwaltung e.V. Seite 31 von 35
+ZUGFeRD 2.0 Spezifikation</p>
+</li>
+<li>
+<p>Die EN 16931-1 unterstützt nur Nachlass auf den Bruttopreis des Artikels. Im EXTENDED Profil wird zusätzlich ein Zuschlag auf den Bruttopreis des Artikels unterstützt. Deshalb muss im EXTENDED Profil bei der Nutzung dieses Informations- elementes der „Charge Indicator“ genutzt werden, um anzugeben, ob es sich um einen Zu- oder Abschlag handelt. Der „Charge Indicator“ kann bis zum Profil
+EN 16931 (COMFORT) optional genutzt werden, aber dann immer nur mit dem Wert „false“ für einen Abschlag (Nachlass).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="geschäftsregeln">Geschäftsregeln</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Die Geschäftsregeln sind in der Norm EN 16931-1 formalisiert und werden in der
+Beschreibung des Technischen Anhangs bei den betroffenen Business Terms explizit
+angegeben. In ZUGFeRD 1.0 wurden diese Regeln im Basisdokument beschrieben.</p>
+</li>
+<li>
+<p>Geschäftsregeln, die die verschiedenen Steuerkategoriecodes betreffen, müssen der
+EN 16931-1 direkt entnommen werden.</p>
+</li>
+<li>
+<p>Für das Profil EXTENDED wurden keine gesonderten Geschäftsregeln definiert (weder
+in ZUGFeRD 1.0 noch in ZUGFeRD 2.0).</p>
+</li>
+<li>
+<p>Zur Prüfung dieser Regeln werden für ZUGFeRD 2.0 Schematron-Dateien veröffent-
+licht.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kalkulationsmethode">Kalkulationsmethode</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Die Kalkulationsmethoden sind in den Geschäftsregeln hinterlegt.</p>
+</li>
+<li>
+<p>Kalkulationsbeispiele können der Norm EN 16931-1 direkt entnommen werden und
+wurden nicht in den Fließtext der ZUGFeRD 2.0 Spezifikation übernommen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="zulässige_steuerarten">Zulässige Steuerarten</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>In ZUGFeRD 2.0 wird bis zum Profil EN 16931 (COMFORT) nur die Steuerart
+„Umsatzsteuer“ mit dem Code „VAT“ unterstützt.</p>
+</li>
+<li>
+<p>Sollen andere Steuerarten angegeben wie beispielsweise eine Versicherungssteuer
+oder eine Mineralölsteuer werden, muss das EXTENDED Profil genutzt werden. Der Code für die Steuerart muss dann der Codeliste UNTDID 5153 entnommen werden.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="andere_tags_im_syntaxmapping">Andere Tags im Syntaxmapping</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Aufgrund von Entscheidungen bei UN/CEFACT zur Vereinfachung der „Name and
+Design Rules“ weisen die aus dem Supply Chain Reference Data Model (einer
+Untermenge der Core Component Library) abgeleiteten Tags Unterschiede auf.</p>
+</li>
+<li>
+<p>Das ZUGFeRD 2.0 -Schema hat daher eine neue Struktur nach dem CII 16B Schema
+und dadurch beispielsweise auch ein neues Root-Element, <code>CrossIndustryInvoice</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="codelisten">Codelisten</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Die unterstützten Codes werden nicht mehr in einem gesonderten Dokument
+beschrieben, sondern sind den Datentypen im technischen Anhang zugeordnet.</p>
+</li>
+<li>
+<p>Codelisten, die von ZUGFeRD 2.0 vollständig unterstützt werden, werden nur
+referenziert.</p>
+</li>
+<li>
+<p>Bei Datentypen, die nur eine Auswahl von Codes unterstützen, wird die abschlie-
+ßende Liste der unterstützten Codes im technischen Anhang bei den jeweiligen
+Business Terms angegeben.</p>
+</li>
+<li>
+<p>Die Codelisten werden zusammen mit dem Schema im Genericode-Format
+veröffentlicht.
+ 0319  2019 Arbeitsgemeinschaft für Wirtschaft und Verwaltung e.V. Seite 32 von 35</p>
+</li>
+<li>
+<p>Die Codeliste für die Steuerart, die bis zum Profil EN 16931 (COMFORT) nur den fixen Wert „VAT“ haben kann, wurde im EXTENDED Profil auf die gesamte Codeliste UNTDID 5153 erweitert.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="einbettung_in_pdf_a_3">Einbettung in PDF/A-3</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Der Name der eingebetteten Datei lautet weiterhin zugferd-invoice.xml.</p>
+</li>
+<li>
+<p>Das Metadatenschema ZUGFeRD PDFA Extension Schema hat sich geändert, hier ist
+die ZUGFeRD-Version 2p0 angegeben.</p>
+</li>
+<li>
+<p>Rechnungsbegründende Unterlagen, die in das PDF eingebettet werden, werden aus
+der XML-Datei über einen relativen Pfad referenziert.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+		</div>	    
+	</div>
+</div> <!-- section-colored  --> 
+   
+<div class="section-colored">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Weiterer Beiträge zum Thema <strong>Unterschiede zwischen ZUGFeRD 1.0 und ZUGFeRD 2.0</strong></h3>
+            </div>
+        </div>
+     
+        <div class="row">
+   
+                      <div class="col-md-6 col-sm-12">
+                           <a href="/blog/2019/ZUGFeRD-2.0.html">ZUGFeRD 2.0 und Konik 2.0</a>
+                      </div>
+        </div>
+    </div>
+</div>
+        
+<div id="footer" class="section-colored">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+            <header><h3>Weitere Themen rund um ZUGFeRD</h3></header>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>ZUGFeRD Dokumentation</h3></header>                  
+                  <p><a href="http://zugferd.de">Forum Elektronische Rechnung Deutschland</a></p>
+                  <p><a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0.pdf">ZUGFeRD Format</a> 
+                     <a href="/ZUGFeRD-Spezifikation/ZUGFeRD-Format_1p0_Specification-english.pdf"> [English Version]</a></p> 
+                     <a href="/ZUGFeRD-Spezifikation/Das-ZUGFeRD-Format_1p0_technische_Dokumentation.pdf">ZUGFeRD Technische Dokumentation</a></p>                     
+                  <p><a href="/ZUGFeRD-Spezifikation/ZUGFeRD_1p0_Technical_Documentation.pdf"> [English Version]</a>
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Artikel</h3></header> 
+                  <p><a href="/ZUGFeRD.html">Über ZUGFeRD</a></p>
+                  <p><a href="http://www.heise.de/ix/heft/Fakturierungsautomat-2268413.html">iX Artikel über ZUGFeRD</a></<p> 
+                  <p><a href="https://www.bitkom.org/Publikationen/2014/Leitfaden/ZUGFeRD-Standard-fuer-elektronische-Rechnungen/140916_Broschuere_Zugferd.pdf">ZUGFeRD Leitfaden</a></p>                                   
+               </div>
+            </article>
+         </div>
+         <div class="col-lg-4 col-md-6 col-sm-12">
+            <article class="full">
+               <div>
+                  <header><h3>Unsere Produkte</h3></header>
+                  <p><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validierung Service</a></p>   
+                  <p><a href="https://z-rechnung.com">Z-RECHNUNG</a></p>   
+                  <p><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Microsoft Dynamics NAV</a></p>                
+               </div>
+            </article>
+         </div>
+      </div>
+   </div>
+ </div>
+<footer>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <p class="pull-right">
+               Copyright &copy; 8gears AG 2015-2017
+<!--                | <a href="/en/index.html">English</a> -->
+               | <a href="/legal-notice.html">Impressum</a> 
+               | <a href="/license.html">Lizenz</a>
+               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
+                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
+                  title="Reveal the Email address">Kontakt</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/java.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/xml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/bash.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
+<script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
+<script src="/js/konik.js"></script>
+</body>
+
+</html>

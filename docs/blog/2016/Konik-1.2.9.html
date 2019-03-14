@@ -56,7 +56,8 @@
 
     <div id="navbar-main" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-                <li><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
+        <li><a href="/order/Bestellung.html">Lizenzen</a></li>
+        <li><a href="/ZUGFeRD-fuer-Microsoft-Dynamics-NAV/">ZUGFeRD für Dynamics NAV</a></li>
         <li><a href="/docs/index.html">Dokumentation</a></li>        
         <li><a href="/ZUGFeRD-Validierung/">ZUGFeRD Validation</a></li>
         <li><a href="/blog.html">Blog</a></li>
@@ -103,23 +104,18 @@
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java" data-lang="java">private Invoice createInvoice() {
 
-   Invoice invoice = new Invoice(EXTENDED);    <b class="conum">(1)</b>
-   invoice.setHeader(new Header()
-      .setInvoiceNumber("20131122-42")
-      .setCode(_380)
-      .setIssued(today)
-      .setName("Rechnung"));
+   Invoice invoice = new Invoice(EXTENDED); <b class="conum">(1)</b>
+   invoice
+         .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
 
    Trade trade = new Trade();
    trade.setAgreement(new Agreement()
          .setSeller(new TradeParty()
-               .setName("Seller Inc.")
-               .setAddress(new Address("80331", "Marienplatz 1", "München", DE))
+               .setName("Seller Inc.").setAddress(new Address("80331", "Marienplatz 1", "München", DE))
                .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
-         .setBuyer(new TradeParty()
-               .setName("Buyer Inc.")
-               .setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
-               .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
+         .setBuyer(
+               new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
+                     .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
 
    trade.setDelivery(new Delivery(nextMonth));
 
@@ -127,18 +123,15 @@
    itemTax.setPercentage(BigDecimal.valueOf(19));
    itemTax.setType(TaxCode.VAT);
 
-   trade.addItem(new Item()
-      .setProduct(new Product().setName("Saddle"))
-      .setAgreement(new SpecifiedAgreement()/*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))<b class="conum">(2)</b>
-      .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
-      .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
+   trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
+         .setAgreement(new SpecifiedAgreement()
+               /*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))<b class="conum">(2)</b>
+         .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
+         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
 
-   trade.setSettlement(new Settlement()
-   .setPaymentReference("20131122-42")
-   .setCurrency(EUR)
-   .addPaymentMeans(new PaymentMeans()
-      .setPayerAccount(new DebtorFinancialAccount("DE01234.."))
-         .setPayerInstitution(new FinancialInstitution("GENO..."))));
+   trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
+         .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
+               .setPayerInstitution(new FinancialInstitution("GENO..."))));
    /*.setMonetarySummation(new MonetarySummation() <b class="conum">(3)</b>
       .setLineTotal(new Amount(100, EUR))
       .setChargeTotal(new Amount(0,EUR))
@@ -271,6 +264,9 @@
                            <a href="/blog/2015/Konik-1.1.0.html">Konik 1.1.0 Release und PDFBox-Carriage 1.0</a>
                       </div>
                       <div class="col-md-6 col-sm-12">
+                           <a href="/blog/2018/Konik-1.2.9.html">Release Konik 1.3.1 und PDFBox-Carriage 1.1.0</a>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
                            <a href="/blog/2014/february/release-0.1.0.html">Konik library and iText-Carriage version 0.1.0 released</a>
                       </div>
                       <div class="col-md-6 col-sm-12">
@@ -290,6 +286,9 @@
                       </div>
                       <div class="col-md-6 col-sm-12">
                            <a href="/blog/2015/Konik-1.1.0.html">Konik 1.1.0 Release und PDFBox-Carriage 1.0</a>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                           <a href="/blog/2018/Konik-1.2.9.html">Release Konik 1.3.1 und PDFBox-Carriage 1.1.0</a>
                       </div>
         </div>
     </div>

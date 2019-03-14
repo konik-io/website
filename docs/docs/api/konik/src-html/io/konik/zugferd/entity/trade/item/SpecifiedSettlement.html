@@ -25,38 +25,38 @@
 <span class="sourceLineNo">017</span> */<a name="line.17"></a>
 <span class="sourceLineNo">018</span>package io.konik.zugferd.entity.trade.item;<a name="line.18"></a>
 <span class="sourceLineNo">019</span><a name="line.19"></a>
-<span class="sourceLineNo">020</span>import io.konik.jaxb.bindable.entity.AccountingAccountAdapter;<a name="line.20"></a>
-<span class="sourceLineNo">021</span>import io.konik.validator.annotation.Comfort;<a name="line.21"></a>
-<span class="sourceLineNo">022</span>import io.konik.validator.annotation.Extended;<a name="line.22"></a>
-<span class="sourceLineNo">023</span>import io.konik.zugferd.entity.CommonSettlement;<a name="line.23"></a>
-<span class="sourceLineNo">024</span>import io.konik.zugferd.entity.Period;<a name="line.24"></a>
-<span class="sourceLineNo">025</span><a name="line.25"></a>
-<span class="sourceLineNo">026</span>import javax.validation.Valid;<a name="line.26"></a>
-<span class="sourceLineNo">027</span>import javax.xml.bind.annotation.XmlElement;<a name="line.27"></a>
-<span class="sourceLineNo">028</span>import javax.xml.bind.annotation.XmlType;<a name="line.28"></a>
-<span class="sourceLineNo">029</span>import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;<a name="line.29"></a>
-<span class="sourceLineNo">030</span>import java.util.ArrayList;<a name="line.30"></a>
-<span class="sourceLineNo">031</span>import java.util.List;<a name="line.31"></a>
-<span class="sourceLineNo">032</span><a name="line.32"></a>
-<span class="sourceLineNo">033</span>/**<a name="line.33"></a>
-<span class="sourceLineNo">034</span> * = The Trade Item Settlement<a name="line.34"></a>
-<span class="sourceLineNo">035</span> * <a name="line.35"></a>
-<span class="sourceLineNo">036</span> * Contains payment related information on an Item basis.<a name="line.36"></a>
-<span class="sourceLineNo">037</span> */<a name="line.37"></a>
-<span class="sourceLineNo">038</span>@XmlType(propOrder = { "tradeTax", "billingPeriod", "bookingReference", "monetarySummation" })<a name="line.38"></a>
-<span class="sourceLineNo">039</span>public class SpecifiedSettlement implements CommonSettlement&lt;ItemTax, SpecifiedMonetarySummation&gt; {<a name="line.39"></a>
-<span class="sourceLineNo">040</span><a name="line.40"></a>
-<span class="sourceLineNo">041</span>   @XmlElement(name = "ApplicableTradeTax")<a name="line.41"></a>
-<span class="sourceLineNo">042</span>   private List&lt;ItemTax&gt; tradeTax;<a name="line.42"></a>
-<span class="sourceLineNo">043</span><a name="line.43"></a>
-<span class="sourceLineNo">044</span>   @XmlElement(name = "BillingSpecifiedPeriod")<a name="line.44"></a>
-<span class="sourceLineNo">045</span>   private Period billingPeriod;<a name="line.45"></a>
-<span class="sourceLineNo">046</span><a name="line.46"></a>
-<span class="sourceLineNo">047</span>   @XmlElement(name = "SpecifiedTradeAccountingAccount")<a name="line.47"></a>
-<span class="sourceLineNo">048</span>   @XmlJavaTypeAdapter(AccountingAccountAdapter.class)<a name="line.48"></a>
-<span class="sourceLineNo">049</span>   private String bookingReference;<a name="line.49"></a>
-<span class="sourceLineNo">050</span><a name="line.50"></a>
-<span class="sourceLineNo">051</span>   <a name="line.51"></a>
+<span class="sourceLineNo">020</span>import java.util.ArrayList;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import java.util.List;<a name="line.21"></a>
+<span class="sourceLineNo">022</span><a name="line.22"></a>
+<span class="sourceLineNo">023</span>import javax.validation.Valid;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import javax.xml.bind.annotation.XmlElement;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import javax.xml.bind.annotation.XmlType;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;<a name="line.26"></a>
+<span class="sourceLineNo">027</span><a name="line.27"></a>
+<span class="sourceLineNo">028</span>import io.konik.jaxb.bindable.entity.AccountingAccountAdapter;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import io.konik.validator.annotation.Comfort;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import io.konik.validator.annotation.Extended;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import io.konik.zugferd.entity.CommonSettlement;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import io.konik.zugferd.entity.Period;<a name="line.32"></a>
+<span class="sourceLineNo">033</span><a name="line.33"></a>
+<span class="sourceLineNo">034</span>/**<a name="line.34"></a>
+<span class="sourceLineNo">035</span> * = The Trade Item Settlement<a name="line.35"></a>
+<span class="sourceLineNo">036</span> * <a name="line.36"></a>
+<span class="sourceLineNo">037</span> * Contains payment related information on an Item basis.<a name="line.37"></a>
+<span class="sourceLineNo">038</span> */<a name="line.38"></a>
+<span class="sourceLineNo">039</span>@XmlType(propOrder = { "tradeTax", "billingPeriod", "bookingReference", "monetarySummation" })<a name="line.39"></a>
+<span class="sourceLineNo">040</span>public class SpecifiedSettlement implements CommonSettlement&lt;ItemTax, SpecifiedMonetarySummation&gt; {<a name="line.40"></a>
+<span class="sourceLineNo">041</span><a name="line.41"></a>
+<span class="sourceLineNo">042</span>   @XmlElement(name = "ApplicableTradeTax")<a name="line.42"></a>
+<span class="sourceLineNo">043</span>   private List&lt;ItemTax&gt; tradeTax;<a name="line.43"></a>
+<span class="sourceLineNo">044</span><a name="line.44"></a>
+<span class="sourceLineNo">045</span>   @XmlElement(name = "BillingSpecifiedPeriod")<a name="line.45"></a>
+<span class="sourceLineNo">046</span>   private Period billingPeriod;<a name="line.46"></a>
+<span class="sourceLineNo">047</span><a name="line.47"></a>
+<span class="sourceLineNo">048</span>   @XmlElement(name = "SpecifiedTradeAccountingAccount")<a name="line.48"></a>
+<span class="sourceLineNo">049</span>   @XmlJavaTypeAdapter(AccountingAccountAdapter.class)<a name="line.49"></a>
+<span class="sourceLineNo">050</span>   private String bookingReference;<a name="line.50"></a>
+<span class="sourceLineNo">051</span><a name="line.51"></a>
 <span class="sourceLineNo">052</span>   @XmlElement(name = "SpecifiedTradeSettlementMonetarySummation")<a name="line.52"></a>
 <span class="sourceLineNo">053</span>   private SpecifiedMonetarySummation monetarySummation;<a name="line.53"></a>
 <span class="sourceLineNo">054</span><a name="line.54"></a>

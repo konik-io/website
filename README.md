@@ -1,32 +1,34 @@
-# Project website
+# Konik.io Project Website
 
-The master branch of this repository contains the website source code of [konik.io](http://konik.io). 
+The master branch contains the website source code of [konik.io](http://konik.io).
 
-The generated website which the visitor sees is located in the [gh-pages](https://github.com/konik-io/website/tree/gh-pages) branch.
+The generated website which the visitor sees is located in the docs/ folder.
 
-You can see the result in action on [konik.io](http://konik.io).
+The published result is located at [konik.io](http://konik.io).
 
 ## Setup
 
-Before you start make sure Java and Maven are installed on your system and work correctly. 
+Before you start make sure Java and Maven are installed on your system and work correctly.
 
-After Checking out the code 
+After Checking out the code
 
+Build website:
 
-Build website 
-```
+```sh
 > mvn package
-or 
+or
 > mvn clean package
 ```
 
-Open new Terminal window and start webserver.
-```
+Start the local webserver to see the rendered page locally.
+
+```sh
 > mvn exec:java
 ```
 
 Open http://localhost:8820/
 
+## References
 
-
-[![Build Status](https://travis-ci.org/konik-io/website.png?branch=master)](https://travis-ci.org/konik-io/website)
+- The Website [konik.io](https://konik.io)
+- Konik is made with [JBake](https://jbake.org) a Java based, open source, static site/blog generator for developers & designers.

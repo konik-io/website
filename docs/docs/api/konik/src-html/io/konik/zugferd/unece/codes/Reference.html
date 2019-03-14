@@ -6120,15 +6120,17 @@
 <span class="sourceLineNo">6112</span>    * @return the type by code<a name="line.6112"></a>
 <span class="sourceLineNo">6113</span>    */<a name="line.6113"></a>
 <span class="sourceLineNo">6114</span>   public static Reference getByCode(String enumCode) {<a name="line.6114"></a>
-<span class="sourceLineNo">6115</span>      if (isNullOrEmpty(enumCode)) { return null; }<a name="line.6115"></a>
-<span class="sourceLineNo">6116</span>      return valueOf(enumCode);<a name="line.6116"></a>
-<span class="sourceLineNo">6117</span>   }<a name="line.6117"></a>
-<span class="sourceLineNo">6118</span><a name="line.6118"></a>
-<span class="sourceLineNo">6119</span>   @Override<a name="line.6119"></a>
-<span class="sourceLineNo">6120</span>   public String toString() {<a name="line.6120"></a>
-<span class="sourceLineNo">6121</span>      return new StringBuilder().append("[").append(getCode()).append("] ").append(description).toString();<a name="line.6121"></a>
-<span class="sourceLineNo">6122</span>   }<a name="line.6122"></a>
-<span class="sourceLineNo">6123</span>}<a name="line.6123"></a>
+<span class="sourceLineNo">6115</span>      if (isNullOrEmpty(enumCode)) {<a name="line.6115"></a>
+<span class="sourceLineNo">6116</span>         return null;<a name="line.6116"></a>
+<span class="sourceLineNo">6117</span>      }<a name="line.6117"></a>
+<span class="sourceLineNo">6118</span>      return valueOf(enumCode);<a name="line.6118"></a>
+<span class="sourceLineNo">6119</span>   }<a name="line.6119"></a>
+<span class="sourceLineNo">6120</span><a name="line.6120"></a>
+<span class="sourceLineNo">6121</span>   @Override<a name="line.6121"></a>
+<span class="sourceLineNo">6122</span>   public String toString() {<a name="line.6122"></a>
+<span class="sourceLineNo">6123</span>      return new StringBuilder().append("[").append(getCode()).append("] ").append(description).toString();<a name="line.6123"></a>
+<span class="sourceLineNo">6124</span>   }<a name="line.6124"></a>
+<span class="sourceLineNo">6125</span>}<a name="line.6125"></a>
 
 
 

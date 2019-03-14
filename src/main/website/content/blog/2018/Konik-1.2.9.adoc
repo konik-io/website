@@ -1,0 +1,23 @@
+= Release Konik 1.3.1 und PDFBox-Carriage 1.1.0
+Vadim Bauer
+2018-04-27
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release,Changelog
+:idprefix:
+:linkattrs:
+:lnk_minimal_calculated_latest_raw: https://raw.githubusercontent.com/konik-io/konik/master/src/test/java/io/konik/examples/MinimalInvoiceWithCalculation.java
+
+ 
+Release von Konik 1.3.1 und PDFBox-Carriage 1.1.0
+
+== Changelog
+
+- Verbessere Überprüfung und Validierung der Rechnungen und der Summatischen Berechnung. 
+- Korregierte Verifikation der Abschläge/Zuschläge auf Positionseben und auf Gesamtrechnung
+   
+
+=== PDFBox-Carriage 
+
+- Update von PDFBox von 2.0.1 -> 2.0.6
+- Bugfixes

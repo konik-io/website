@@ -1,0 +1,21 @@
+= ZUGFeRD 2.0 und Konik 2.0
+Vadim Bauer
+2019-03-14
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: News,ZUGFeRD 2.0
+:idprefix:
+:linkattrs:
+
+
+== ZUGFeRD 2.0 offiziel veröffentlicht
+
+Es soweit: Die ZUGFeRD 2.0 Spezifikation ist veröffentlicht.
+
+Wir arbeiten aktuell an der neuen Version von Konik 2.0.
+Eine erste Veröffentlichung ist in den nächsten Wochen geplant.
+
+== Konik 2.0
+
+Im Laufe der nächsten Wochen werden wir schrittweise die Roadmap für Konik 2.x
+und neue Funktionen vorstellen.

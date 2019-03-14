@@ -28,7 +28,7 @@ This is a new format for the Konik Blog to summarize this week’s happenings in
 	ZUGFeRD invoices.
 
 - GS1 Germany is hosting an {link_4}[all-day electronic invoicing workshop^] 
-on the 12^^th^ of July. The main focus of the event will be ZUGFeRD.
+on the 12^th^ of July. The main focus of the event will be ZUGFeRD.
 
 === Articles
 - {link_5}[ZUGFeRD für die E-Rechnung^]. An article explaining ZUGFeRD to 

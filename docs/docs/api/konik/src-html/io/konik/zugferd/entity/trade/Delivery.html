@@ -25,28 +25,28 @@
 <span class="sourceLineNo">017</span> */<a name="line.17"></a>
 <span class="sourceLineNo">018</span>package io.konik.zugferd.entity.trade;<a name="line.18"></a>
 <span class="sourceLineNo">019</span><a name="line.19"></a>
-<span class="sourceLineNo">020</span>import io.konik.validator.annotation.Comfort;<a name="line.20"></a>
-<span class="sourceLineNo">021</span>import io.konik.validator.annotation.Extended;<a name="line.21"></a>
-<span class="sourceLineNo">022</span>import io.konik.zugferd.entity.CommonDelivery;<a name="line.22"></a>
-<span class="sourceLineNo">023</span>import io.konik.zugferd.entity.Consignment;<a name="line.23"></a>
-<span class="sourceLineNo">024</span>import io.konik.zugferd.entity.ReferencedDocument;<a name="line.24"></a>
-<span class="sourceLineNo">025</span>import io.konik.zugferd.entity.TradeParty;<a name="line.25"></a>
-<span class="sourceLineNo">026</span>import io.konik.zugferd.unqualified.ZfDate;<a name="line.26"></a>
-<span class="sourceLineNo">027</span><a name="line.27"></a>
-<span class="sourceLineNo">028</span>import javax.validation.Valid;<a name="line.28"></a>
-<span class="sourceLineNo">029</span>import javax.xml.bind.annotation.XmlAccessType;<a name="line.29"></a>
-<span class="sourceLineNo">030</span>import javax.xml.bind.annotation.XmlAccessorType;<a name="line.30"></a>
-<span class="sourceLineNo">031</span>import javax.xml.bind.annotation.XmlElement;<a name="line.31"></a>
-<span class="sourceLineNo">032</span>import javax.xml.bind.annotation.XmlType;<a name="line.32"></a>
+<span class="sourceLineNo">020</span>import javax.validation.Valid;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import javax.xml.bind.annotation.XmlAccessType;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import javax.xml.bind.annotation.XmlAccessorType;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import javax.xml.bind.annotation.XmlElement;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import javax.xml.bind.annotation.XmlType;<a name="line.24"></a>
+<span class="sourceLineNo">025</span><a name="line.25"></a>
+<span class="sourceLineNo">026</span>import io.konik.validator.annotation.Comfort;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import io.konik.validator.annotation.Extended;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import io.konik.zugferd.entity.CommonDelivery;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import io.konik.zugferd.entity.Consignment;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import io.konik.zugferd.entity.ReferencedDocument;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import io.konik.zugferd.entity.TradeParty;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import io.konik.zugferd.unqualified.ZfDate;<a name="line.32"></a>
 <span class="sourceLineNo">033</span><a name="line.33"></a>
 <span class="sourceLineNo">034</span>/**<a name="line.34"></a>
 <span class="sourceLineNo">035</span> * = The trade delivery information.<a name="line.35"></a>
 <span class="sourceLineNo">036</span> */<a name="line.36"></a>
 <span class="sourceLineNo">037</span>@XmlAccessorType(XmlAccessType.NONE)<a name="line.37"></a>
-<span class="sourceLineNo">038</span>@XmlType(propOrder = { "relatedConsignment", "shipTo", "ultimateShipTo", "shipFrom", "actualDelivery",<a name="line.38"></a>
-<span class="sourceLineNo">039</span>      "despatchAdvice", "deliveryNote" })<a name="line.39"></a>
+<span class="sourceLineNo">038</span>@XmlType(propOrder = { "relatedConsignment", "shipTo", "ultimateShipTo", "shipFrom", "actualDelivery", "despatchAdvice",<a name="line.38"></a>
+<span class="sourceLineNo">039</span>      "deliveryNote" })<a name="line.39"></a>
 <span class="sourceLineNo">040</span>public class Delivery extends CommonDelivery&lt;ReferencedDocument&gt; {<a name="line.40"></a>
-<span class="sourceLineNo">041</span>  <a name="line.41"></a>
+<span class="sourceLineNo">041</span><a name="line.41"></a>
 <span class="sourceLineNo">042</span>   @XmlElement(name = "RelatedSupplyChainConsignment")<a name="line.42"></a>
 <span class="sourceLineNo">043</span>   private Consignment relatedConsignment;<a name="line.43"></a>
 <span class="sourceLineNo">044</span><a name="line.44"></a>
@@ -108,55 +108,56 @@
 <span class="sourceLineNo">100</span>   public TradeParty getUltimateShipTo() {<a name="line.100"></a>
 <span class="sourceLineNo">101</span>      return super.getUltimateShipTo();<a name="line.101"></a>
 <span class="sourceLineNo">102</span>   }<a name="line.102"></a>
-<span class="sourceLineNo">103</span>   /**<a name="line.103"></a>
-<span class="sourceLineNo">104</span>    * Gets the ship from.<a name="line.104"></a>
-<span class="sourceLineNo">105</span>    *<a name="line.105"></a>
-<span class="sourceLineNo">106</span>    * @return the ship from<a name="line.106"></a>
-<span class="sourceLineNo">107</span>    */<a name="line.107"></a>
-<span class="sourceLineNo">108</span>   @Valid<a name="line.108"></a>
-<span class="sourceLineNo">109</span>   @Extended<a name="line.109"></a>
-<span class="sourceLineNo">110</span>   public TradeParty getShipFrom() {<a name="line.110"></a>
-<span class="sourceLineNo">111</span>      return shipFrom;<a name="line.111"></a>
-<span class="sourceLineNo">112</span>   }<a name="line.112"></a>
-<span class="sourceLineNo">113</span><a name="line.113"></a>
-<span class="sourceLineNo">114</span>   /**<a name="line.114"></a>
-<span class="sourceLineNo">115</span>    * Sets the ship from.<a name="line.115"></a>
-<span class="sourceLineNo">116</span>    *<a name="line.116"></a>
-<span class="sourceLineNo">117</span>    * @param shipFrom the ship from<a name="line.117"></a>
-<span class="sourceLineNo">118</span>    * @return the trade delivery<a name="line.118"></a>
-<span class="sourceLineNo">119</span>    */<a name="line.119"></a>
-<span class="sourceLineNo">120</span>   public Delivery setShipFrom(TradeParty shipFrom) {<a name="line.120"></a>
-<span class="sourceLineNo">121</span>      this.shipFrom = shipFrom;<a name="line.121"></a>
-<span class="sourceLineNo">122</span>      return this;<a name="line.122"></a>
-<span class="sourceLineNo">123</span>   }<a name="line.123"></a>
-<span class="sourceLineNo">124</span>   <a name="line.124"></a>
-<span class="sourceLineNo">125</span>   @Valid<a name="line.125"></a>
-<span class="sourceLineNo">126</span>   @Extended<a name="line.126"></a>
-<span class="sourceLineNo">127</span>   @Override<a name="line.127"></a>
-<span class="sourceLineNo">128</span>   public ReferencedDocument getDespatchAdvice() {<a name="line.128"></a>
-<span class="sourceLineNo">129</span>      return despatchAdvice;<a name="line.129"></a>
-<span class="sourceLineNo">130</span>   }<a name="line.130"></a>
-<span class="sourceLineNo">131</span><a name="line.131"></a>
-<span class="sourceLineNo">132</span>   @Override<a name="line.132"></a>
-<span class="sourceLineNo">133</span>   public Delivery setDespatchAdvice(ReferencedDocument despatchAdvice) {<a name="line.133"></a>
-<span class="sourceLineNo">134</span>      this.despatchAdvice = despatchAdvice;<a name="line.134"></a>
-<span class="sourceLineNo">135</span>      return this;<a name="line.135"></a>
-<span class="sourceLineNo">136</span>   }<a name="line.136"></a>
-<span class="sourceLineNo">137</span><a name="line.137"></a>
-<span class="sourceLineNo">138</span>   @Valid<a name="line.138"></a>
-<span class="sourceLineNo">139</span>   @Comfort<a name="line.139"></a>
-<span class="sourceLineNo">140</span>   @Override<a name="line.140"></a>
-<span class="sourceLineNo">141</span>   public ReferencedDocument getDeliveryNote() {<a name="line.141"></a>
-<span class="sourceLineNo">142</span>      return deliveryNote;<a name="line.142"></a>
-<span class="sourceLineNo">143</span>   }<a name="line.143"></a>
-<span class="sourceLineNo">144</span><a name="line.144"></a>
-<span class="sourceLineNo">145</span>   @Override<a name="line.145"></a>
-<span class="sourceLineNo">146</span>   public Delivery setDeliveryNote(ReferencedDocument deliveryNote) {<a name="line.146"></a>
-<span class="sourceLineNo">147</span>      this.deliveryNote = deliveryNote;<a name="line.147"></a>
-<span class="sourceLineNo">148</span>      return this;<a name="line.148"></a>
-<span class="sourceLineNo">149</span>   }<a name="line.149"></a>
-<span class="sourceLineNo">150</span><a name="line.150"></a>
-<span class="sourceLineNo">151</span>}<a name="line.151"></a>
+<span class="sourceLineNo">103</span><a name="line.103"></a>
+<span class="sourceLineNo">104</span>   /**<a name="line.104"></a>
+<span class="sourceLineNo">105</span>    * Gets the ship from.<a name="line.105"></a>
+<span class="sourceLineNo">106</span>    *<a name="line.106"></a>
+<span class="sourceLineNo">107</span>    * @return the ship from<a name="line.107"></a>
+<span class="sourceLineNo">108</span>    */<a name="line.108"></a>
+<span class="sourceLineNo">109</span>   @Valid<a name="line.109"></a>
+<span class="sourceLineNo">110</span>   @Extended<a name="line.110"></a>
+<span class="sourceLineNo">111</span>   public TradeParty getShipFrom() {<a name="line.111"></a>
+<span class="sourceLineNo">112</span>      return shipFrom;<a name="line.112"></a>
+<span class="sourceLineNo">113</span>   }<a name="line.113"></a>
+<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">115</span>   /**<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    * Sets the ship from.<a name="line.116"></a>
+<span class="sourceLineNo">117</span>    *<a name="line.117"></a>
+<span class="sourceLineNo">118</span>    * @param shipFrom the ship from<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    * @return the trade delivery<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    */<a name="line.120"></a>
+<span class="sourceLineNo">121</span>   public Delivery setShipFrom(TradeParty shipFrom) {<a name="line.121"></a>
+<span class="sourceLineNo">122</span>      this.shipFrom = shipFrom;<a name="line.122"></a>
+<span class="sourceLineNo">123</span>      return this;<a name="line.123"></a>
+<span class="sourceLineNo">124</span>   }<a name="line.124"></a>
+<span class="sourceLineNo">125</span><a name="line.125"></a>
+<span class="sourceLineNo">126</span>   @Valid<a name="line.126"></a>
+<span class="sourceLineNo">127</span>   @Extended<a name="line.127"></a>
+<span class="sourceLineNo">128</span>   @Override<a name="line.128"></a>
+<span class="sourceLineNo">129</span>   public ReferencedDocument getDespatchAdvice() {<a name="line.129"></a>
+<span class="sourceLineNo">130</span>      return despatchAdvice;<a name="line.130"></a>
+<span class="sourceLineNo">131</span>   }<a name="line.131"></a>
+<span class="sourceLineNo">132</span><a name="line.132"></a>
+<span class="sourceLineNo">133</span>   @Override<a name="line.133"></a>
+<span class="sourceLineNo">134</span>   public Delivery setDespatchAdvice(ReferencedDocument despatchAdvice) {<a name="line.134"></a>
+<span class="sourceLineNo">135</span>      this.despatchAdvice = despatchAdvice;<a name="line.135"></a>
+<span class="sourceLineNo">136</span>      return this;<a name="line.136"></a>
+<span class="sourceLineNo">137</span>   }<a name="line.137"></a>
+<span class="sourceLineNo">138</span><a name="line.138"></a>
+<span class="sourceLineNo">139</span>   @Valid<a name="line.139"></a>
+<span class="sourceLineNo">140</span>   @Comfort<a name="line.140"></a>
+<span class="sourceLineNo">141</span>   @Override<a name="line.141"></a>
+<span class="sourceLineNo">142</span>   public ReferencedDocument getDeliveryNote() {<a name="line.142"></a>
+<span class="sourceLineNo">143</span>      return deliveryNote;<a name="line.143"></a>
+<span class="sourceLineNo">144</span>   }<a name="line.144"></a>
+<span class="sourceLineNo">145</span><a name="line.145"></a>
+<span class="sourceLineNo">146</span>   @Override<a name="line.146"></a>
+<span class="sourceLineNo">147</span>   public Delivery setDeliveryNote(ReferencedDocument deliveryNote) {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>      this.deliveryNote = deliveryNote;<a name="line.148"></a>
+<span class="sourceLineNo">149</span>      return this;<a name="line.149"></a>
+<span class="sourceLineNo">150</span>   }<a name="line.150"></a>
+<span class="sourceLineNo">151</span><a name="line.151"></a>
+<span class="sourceLineNo">152</span>}<a name="line.152"></a>
 
 
 

@@ -8,156 +8,157 @@
 <div class="sourceContainer">
 <pre><span class="sourceLineNo">001</span>package io.konik.csv.mapper;<a name="line.1"></a>
 <span class="sourceLineNo">002</span><a name="line.2"></a>
-<span class="sourceLineNo">003</span>import io.konik.csv.converter.RowToInvoiceConverter;<a name="line.3"></a>
-<span class="sourceLineNo">004</span>import io.konik.csv.model.Row;<a name="line.4"></a>
-<span class="sourceLineNo">005</span>import io.konik.zugferd.Invoice;<a name="line.5"></a>
-<span class="sourceLineNo">006</span>import org.slf4j.Logger;<a name="line.6"></a>
-<span class="sourceLineNo">007</span>import org.slf4j.LoggerFactory;<a name="line.7"></a>
-<span class="sourceLineNo">008</span>import org.supercsv.cellprocessor.ift.CellProcessor;<a name="line.8"></a>
-<span class="sourceLineNo">009</span>import org.supercsv.io.dozer.CsvDozerBeanReader;<a name="line.9"></a>
-<span class="sourceLineNo">010</span><a name="line.10"></a>
-<span class="sourceLineNo">011</span>import java.io.File;<a name="line.11"></a>
-<span class="sourceLineNo">012</span>import java.io.IOException;<a name="line.12"></a>
-<span class="sourceLineNo">013</span>import java.util.LinkedList;<a name="line.13"></a>
-<span class="sourceLineNo">014</span>import java.util.List;<a name="line.14"></a>
-<span class="sourceLineNo">015</span>import java.util.concurrent.atomic.AtomicInteger;<a name="line.15"></a>
-<span class="sourceLineNo">016</span><a name="line.16"></a>
-<span class="sourceLineNo">017</span>/**<a name="line.17"></a>
-<span class="sourceLineNo">018</span> * Reader class used for reading CSV files and returning a {@link List} of {@see Invoice}s.<a name="line.18"></a>
-<span class="sourceLineNo">019</span> *<a name="line.19"></a>
-<span class="sourceLineNo">020</span> * This is high-level component that should be used to import invoices from CSV files.<a name="line.20"></a>
-<span class="sourceLineNo">021</span> */<a name="line.21"></a>
-<span class="sourceLineNo">022</span>public class CsvInvoicesReader {<a name="line.22"></a>
-<span class="sourceLineNo">023</span><a name="line.23"></a>
-<span class="sourceLineNo">024</span>        private static final Logger log = LoggerFactory.getLogger(CsvInvoicesReader.class);<a name="line.24"></a>
-<span class="sourceLineNo">025</span><a name="line.25"></a>
-<span class="sourceLineNo">026</span>        private final ColumnsConfigurer columnsConfigurer;<a name="line.26"></a>
-<span class="sourceLineNo">027</span><a name="line.27"></a>
-<span class="sourceLineNo">028</span>        public CsvInvoicesReader() {<a name="line.28"></a>
-<span class="sourceLineNo">029</span>                this(new CsvMapperHeaderColumnsConfigurer());<a name="line.29"></a>
-<span class="sourceLineNo">030</span>        }<a name="line.30"></a>
-<span class="sourceLineNo">031</span><a name="line.31"></a>
-<span class="sourceLineNo">032</span>        public CsvInvoicesReader(ColumnsConfigurer columnsConfigurer) {<a name="line.32"></a>
-<span class="sourceLineNo">033</span>                this.columnsConfigurer = columnsConfigurer;<a name="line.33"></a>
-<span class="sourceLineNo">034</span>        }<a name="line.34"></a>
-<span class="sourceLineNo">035</span><a name="line.35"></a>
-<span class="sourceLineNo">036</span>        /**<a name="line.36"></a>
-<span class="sourceLineNo">037</span>         * Loads invoices from given CSV file.<a name="line.37"></a>
-<span class="sourceLineNo">038</span>         * @param csvFile<a name="line.38"></a>
-<span class="sourceLineNo">039</span>         * @return<a name="line.39"></a>
-<span class="sourceLineNo">040</span>         */<a name="line.40"></a>
-<span class="sourceLineNo">041</span>        public Result read(File csvFile) {<a name="line.41"></a>
-<span class="sourceLineNo">042</span>                CsvMapperBuilder mapperBuilder = CsvMapperBuilder.withHeadersFromCsvFile(csvFile, columnsConfigurer);<a name="line.42"></a>
-<span class="sourceLineNo">043</span>                CellProcessor[] processors = mapperBuilder.getCellProcessors();<a name="line.43"></a>
-<span class="sourceLineNo">044</span>                CsvDozerBeanReader reader = mapperBuilder.getBeanReader(csvFile, Row.class);<a name="line.44"></a>
-<span class="sourceLineNo">045</span><a name="line.45"></a>
-<span class="sourceLineNo">046</span>                List&lt;ConvertedRow&gt; convertedRows = new LinkedList&lt;ConvertedRow&gt;();<a name="line.46"></a>
-<span class="sourceLineNo">047</span>                List&lt;RowError&gt; rowErrors = new LinkedList&lt;RowError&gt;();<a name="line.47"></a>
-<span class="sourceLineNo">048</span>                Row currentRow = null;<a name="line.48"></a>
-<span class="sourceLineNo">049</span>                final AtomicInteger rowNumber = new AtomicInteger(1);<a name="line.49"></a>
-<span class="sourceLineNo">050</span><a name="line.50"></a>
-<span class="sourceLineNo">051</span>                try {<a name="line.51"></a>
-<span class="sourceLineNo">052</span>                        do {<a name="line.52"></a>
-<span class="sourceLineNo">053</span>                                try {<a name="line.53"></a>
-<span class="sourceLineNo">054</span>                                        currentRow = reader.read(Row.class, processors);<a name="line.54"></a>
-<span class="sourceLineNo">055</span>                                        if (currentRow != null) {<a name="line.55"></a>
-<span class="sourceLineNo">056</span>                                                Invoice invoice = RowToInvoiceConverter.convert(currentRow);<a name="line.56"></a>
-<span class="sourceLineNo">057</span>                                                convertedRows.add(new ConvertedRow(rowNumber.getAndIncrement(), currentRow, invoice));<a name="line.57"></a>
-<span class="sourceLineNo">058</span>                                        }<a name="line.58"></a>
-<span class="sourceLineNo">059</span>                                } catch (Exception e) {<a name="line.59"></a>
-<span class="sourceLineNo">060</span>                                        log.warn("Exception caught during reading a row");<a name="line.60"></a>
-<span class="sourceLineNo">061</span>                                        rowErrors.add(new RowError(rowNumber.getAndIncrement(), currentRow, e.getMessage(), e));<a name="line.61"></a>
-<span class="sourceLineNo">062</span>                                }<a name="line.62"></a>
-<span class="sourceLineNo">063</span>                        } while (currentRow != null);<a name="line.63"></a>
-<span class="sourceLineNo">064</span><a name="line.64"></a>
-<span class="sourceLineNo">065</span>                        return new Result(convertedRows, rowErrors);<a name="line.65"></a>
-<span class="sourceLineNo">066</span><a name="line.66"></a>
-<span class="sourceLineNo">067</span>                } catch (Exception e) {<a name="line.67"></a>
-<span class="sourceLineNo">068</span>                        throw new RuntimeException(e);<a name="line.68"></a>
-<span class="sourceLineNo">069</span><a name="line.69"></a>
-<span class="sourceLineNo">070</span>                } finally {<a name="line.70"></a>
-<span class="sourceLineNo">071</span>                        if (reader != null) {<a name="line.71"></a>
-<span class="sourceLineNo">072</span>                                try {<a name="line.72"></a>
-<span class="sourceLineNo">073</span>                                        reader.close();<a name="line.73"></a>
-<span class="sourceLineNo">074</span>                                } catch (IOException e) {<a name="line.74"></a>
-<span class="sourceLineNo">075</span>                                        log.error(e.getMessage(), e);<a name="line.75"></a>
-<span class="sourceLineNo">076</span>                                }<a name="line.76"></a>
-<span class="sourceLineNo">077</span>                        }<a name="line.77"></a>
-<span class="sourceLineNo">078</span>                }<a name="line.78"></a>
-<span class="sourceLineNo">079</span>        }<a name="line.79"></a>
-<span class="sourceLineNo">080</span><a name="line.80"></a>
-<span class="sourceLineNo">081</span>        static public class ConvertedRow {<a name="line.81"></a>
-<span class="sourceLineNo">082</span>                private final int rowNumber;<a name="line.82"></a>
-<span class="sourceLineNo">083</span>                private final Row row;<a name="line.83"></a>
-<span class="sourceLineNo">084</span>                private final Invoice invoice;<a name="line.84"></a>
-<span class="sourceLineNo">085</span><a name="line.85"></a>
-<span class="sourceLineNo">086</span>                public ConvertedRow(int rowNumber, Row row, Invoice invoice) {<a name="line.86"></a>
-<span class="sourceLineNo">087</span>                        this.rowNumber = rowNumber;<a name="line.87"></a>
-<span class="sourceLineNo">088</span>                        this.row = row;<a name="line.88"></a>
-<span class="sourceLineNo">089</span>                        this.invoice = invoice;<a name="line.89"></a>
-<span class="sourceLineNo">090</span>                }<a name="line.90"></a>
-<span class="sourceLineNo">091</span><a name="line.91"></a>
-<span class="sourceLineNo">092</span>                public int getRowNumber() {<a name="line.92"></a>
-<span class="sourceLineNo">093</span>                        return rowNumber;<a name="line.93"></a>
-<span class="sourceLineNo">094</span>                }<a name="line.94"></a>
-<span class="sourceLineNo">095</span><a name="line.95"></a>
-<span class="sourceLineNo">096</span>                public Row getRow() {<a name="line.96"></a>
-<span class="sourceLineNo">097</span>                        return row;<a name="line.97"></a>
-<span class="sourceLineNo">098</span>                }<a name="line.98"></a>
-<span class="sourceLineNo">099</span><a name="line.99"></a>
-<span class="sourceLineNo">100</span>                public Invoice getInvoice() {<a name="line.100"></a>
-<span class="sourceLineNo">101</span>                        return invoice;<a name="line.101"></a>
-<span class="sourceLineNo">102</span>                }<a name="line.102"></a>
-<span class="sourceLineNo">103</span>        }<a name="line.103"></a>
-<span class="sourceLineNo">104</span><a name="line.104"></a>
-<span class="sourceLineNo">105</span>        static public class RowError {<a name="line.105"></a>
-<span class="sourceLineNo">106</span>                private final int rowNumber;<a name="line.106"></a>
-<span class="sourceLineNo">107</span>                private final Row row;<a name="line.107"></a>
-<span class="sourceLineNo">108</span>                private final String errorMessage;<a name="line.108"></a>
-<span class="sourceLineNo">109</span>                private final Exception exception;<a name="line.109"></a>
-<span class="sourceLineNo">110</span><a name="line.110"></a>
-<span class="sourceLineNo">111</span>                public RowError(int rowNumber, Row row, String errorMessage, Exception exception) {<a name="line.111"></a>
-<span class="sourceLineNo">112</span>                        this.rowNumber = rowNumber;<a name="line.112"></a>
-<span class="sourceLineNo">113</span>                        this.row = row;<a name="line.113"></a>
-<span class="sourceLineNo">114</span>                        this.errorMessage = errorMessage;<a name="line.114"></a>
-<span class="sourceLineNo">115</span>                        this.exception = exception;<a name="line.115"></a>
-<span class="sourceLineNo">116</span>                }<a name="line.116"></a>
-<span class="sourceLineNo">117</span><a name="line.117"></a>
-<span class="sourceLineNo">118</span>                public int getRowNumber() {<a name="line.118"></a>
-<span class="sourceLineNo">119</span>                        return rowNumber;<a name="line.119"></a>
-<span class="sourceLineNo">120</span>                }<a name="line.120"></a>
-<span class="sourceLineNo">121</span><a name="line.121"></a>
-<span class="sourceLineNo">122</span>                public Row getRow() {<a name="line.122"></a>
-<span class="sourceLineNo">123</span>                        return row;<a name="line.123"></a>
-<span class="sourceLineNo">124</span>                }<a name="line.124"></a>
-<span class="sourceLineNo">125</span><a name="line.125"></a>
-<span class="sourceLineNo">126</span>                public String getErrorMessage() {<a name="line.126"></a>
-<span class="sourceLineNo">127</span>                        return errorMessage;<a name="line.127"></a>
-<span class="sourceLineNo">128</span>                }<a name="line.128"></a>
-<span class="sourceLineNo">129</span><a name="line.129"></a>
-<span class="sourceLineNo">130</span>                public Exception getException() {<a name="line.130"></a>
-<span class="sourceLineNo">131</span>                        return exception;<a name="line.131"></a>
-<span class="sourceLineNo">132</span>                }<a name="line.132"></a>
-<span class="sourceLineNo">133</span>        }<a name="line.133"></a>
-<span class="sourceLineNo">134</span><a name="line.134"></a>
-<span class="sourceLineNo">135</span>        static public class Result {<a name="line.135"></a>
-<span class="sourceLineNo">136</span>                private final List&lt;ConvertedRow&gt; convertedRows;<a name="line.136"></a>
-<span class="sourceLineNo">137</span>                private final List&lt;RowError&gt; rowErrors;<a name="line.137"></a>
-<span class="sourceLineNo">138</span><a name="line.138"></a>
-<span class="sourceLineNo">139</span>                public Result(List&lt;ConvertedRow&gt; convertedRows, List&lt;RowError&gt; rowErrors) {<a name="line.139"></a>
-<span class="sourceLineNo">140</span>                        this.convertedRows = convertedRows;<a name="line.140"></a>
-<span class="sourceLineNo">141</span>                        this.rowErrors = rowErrors;<a name="line.141"></a>
-<span class="sourceLineNo">142</span>                }<a name="line.142"></a>
-<span class="sourceLineNo">143</span><a name="line.143"></a>
-<span class="sourceLineNo">144</span>                public List&lt;ConvertedRow&gt; getConvertedRows() {<a name="line.144"></a>
-<span class="sourceLineNo">145</span>                        return convertedRows;<a name="line.145"></a>
-<span class="sourceLineNo">146</span>                }<a name="line.146"></a>
-<span class="sourceLineNo">147</span><a name="line.147"></a>
-<span class="sourceLineNo">148</span>                public List&lt;RowError&gt; getRowErrors() {<a name="line.148"></a>
-<span class="sourceLineNo">149</span>                        return rowErrors;<a name="line.149"></a>
-<span class="sourceLineNo">150</span>                }<a name="line.150"></a>
-<span class="sourceLineNo">151</span>        }<a name="line.151"></a>
-<span class="sourceLineNo">152</span>}<a name="line.152"></a>
+<span class="sourceLineNo">003</span>import java.io.File;<a name="line.3"></a>
+<span class="sourceLineNo">004</span>import java.io.IOException;<a name="line.4"></a>
+<span class="sourceLineNo">005</span>import java.util.LinkedList;<a name="line.5"></a>
+<span class="sourceLineNo">006</span>import java.util.List;<a name="line.6"></a>
+<span class="sourceLineNo">007</span>import java.util.concurrent.atomic.AtomicInteger;<a name="line.7"></a>
+<span class="sourceLineNo">008</span><a name="line.8"></a>
+<span class="sourceLineNo">009</span>import org.slf4j.Logger;<a name="line.9"></a>
+<span class="sourceLineNo">010</span>import org.slf4j.LoggerFactory;<a name="line.10"></a>
+<span class="sourceLineNo">011</span>import org.supercsv.cellprocessor.ift.CellProcessor;<a name="line.11"></a>
+<span class="sourceLineNo">012</span>import org.supercsv.io.dozer.CsvDozerBeanReader;<a name="line.12"></a>
+<span class="sourceLineNo">013</span><a name="line.13"></a>
+<span class="sourceLineNo">014</span>import io.konik.csv.converter.RowToInvoiceConverter;<a name="line.14"></a>
+<span class="sourceLineNo">015</span>import io.konik.csv.model.Row;<a name="line.15"></a>
+<span class="sourceLineNo">016</span>import io.konik.zugferd.Invoice;<a name="line.16"></a>
+<span class="sourceLineNo">017</span><a name="line.17"></a>
+<span class="sourceLineNo">018</span>/**<a name="line.18"></a>
+<span class="sourceLineNo">019</span> * Reader class used for reading CSV files and returning a {@link List} of {@see Invoice}s.<a name="line.19"></a>
+<span class="sourceLineNo">020</span> *<a name="line.20"></a>
+<span class="sourceLineNo">021</span> * This is high-level component that should be used to import invoices from CSV files.<a name="line.21"></a>
+<span class="sourceLineNo">022</span> */<a name="line.22"></a>
+<span class="sourceLineNo">023</span>public class CsvInvoicesReader {<a name="line.23"></a>
+<span class="sourceLineNo">024</span><a name="line.24"></a>
+<span class="sourceLineNo">025</span>   private static final Logger log = LoggerFactory.getLogger(CsvInvoicesReader.class);<a name="line.25"></a>
+<span class="sourceLineNo">026</span><a name="line.26"></a>
+<span class="sourceLineNo">027</span>   private final ColumnsConfigurer columnsConfigurer;<a name="line.27"></a>
+<span class="sourceLineNo">028</span><a name="line.28"></a>
+<span class="sourceLineNo">029</span>   public CsvInvoicesReader() {<a name="line.29"></a>
+<span class="sourceLineNo">030</span>      this(new CsvMapperHeaderColumnsConfigurer());<a name="line.30"></a>
+<span class="sourceLineNo">031</span>   }<a name="line.31"></a>
+<span class="sourceLineNo">032</span><a name="line.32"></a>
+<span class="sourceLineNo">033</span>   public CsvInvoicesReader(ColumnsConfigurer columnsConfigurer) {<a name="line.33"></a>
+<span class="sourceLineNo">034</span>      this.columnsConfigurer = columnsConfigurer;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>   }<a name="line.35"></a>
+<span class="sourceLineNo">036</span><a name="line.36"></a>
+<span class="sourceLineNo">037</span>   /**<a name="line.37"></a>
+<span class="sourceLineNo">038</span>    * Loads invoices from given CSV file.<a name="line.38"></a>
+<span class="sourceLineNo">039</span>    * @param csvFile<a name="line.39"></a>
+<span class="sourceLineNo">040</span>    * @return<a name="line.40"></a>
+<span class="sourceLineNo">041</span>    */<a name="line.41"></a>
+<span class="sourceLineNo">042</span>   public Result read(File csvFile) {<a name="line.42"></a>
+<span class="sourceLineNo">043</span>      CsvMapperBuilder mapperBuilder = CsvMapperBuilder.withHeadersFromCsvFile(csvFile, columnsConfigurer);<a name="line.43"></a>
+<span class="sourceLineNo">044</span>      CellProcessor[] processors = mapperBuilder.getCellProcessors();<a name="line.44"></a>
+<span class="sourceLineNo">045</span>      CsvDozerBeanReader reader = mapperBuilder.getBeanReader(csvFile, Row.class);<a name="line.45"></a>
+<span class="sourceLineNo">046</span><a name="line.46"></a>
+<span class="sourceLineNo">047</span>      List&lt;ConvertedRow&gt; convertedRows = new LinkedList&lt;ConvertedRow&gt;();<a name="line.47"></a>
+<span class="sourceLineNo">048</span>      List&lt;RowError&gt; rowErrors = new LinkedList&lt;RowError&gt;();<a name="line.48"></a>
+<span class="sourceLineNo">049</span>      Row currentRow = null;<a name="line.49"></a>
+<span class="sourceLineNo">050</span>      final AtomicInteger rowNumber = new AtomicInteger(1);<a name="line.50"></a>
+<span class="sourceLineNo">051</span><a name="line.51"></a>
+<span class="sourceLineNo">052</span>      try {<a name="line.52"></a>
+<span class="sourceLineNo">053</span>         do {<a name="line.53"></a>
+<span class="sourceLineNo">054</span>            try {<a name="line.54"></a>
+<span class="sourceLineNo">055</span>               currentRow = reader.read(Row.class, processors);<a name="line.55"></a>
+<span class="sourceLineNo">056</span>               if (currentRow != null) {<a name="line.56"></a>
+<span class="sourceLineNo">057</span>                  Invoice invoice = RowToInvoiceConverter.convert(currentRow);<a name="line.57"></a>
+<span class="sourceLineNo">058</span>                  convertedRows.add(new ConvertedRow(rowNumber.getAndIncrement(), currentRow, invoice));<a name="line.58"></a>
+<span class="sourceLineNo">059</span>               }<a name="line.59"></a>
+<span class="sourceLineNo">060</span>            } catch (Exception e) {<a name="line.60"></a>
+<span class="sourceLineNo">061</span>               log.warn("Exception caught during reading a row");<a name="line.61"></a>
+<span class="sourceLineNo">062</span>               rowErrors.add(new RowError(rowNumber.getAndIncrement(), currentRow, e.getMessage(), e));<a name="line.62"></a>
+<span class="sourceLineNo">063</span>            }<a name="line.63"></a>
+<span class="sourceLineNo">064</span>         } while (currentRow != null);<a name="line.64"></a>
+<span class="sourceLineNo">065</span><a name="line.65"></a>
+<span class="sourceLineNo">066</span>         return new Result(convertedRows, rowErrors);<a name="line.66"></a>
+<span class="sourceLineNo">067</span><a name="line.67"></a>
+<span class="sourceLineNo">068</span>      } catch (Exception e) {<a name="line.68"></a>
+<span class="sourceLineNo">069</span>         throw new RuntimeException(e);<a name="line.69"></a>
+<span class="sourceLineNo">070</span><a name="line.70"></a>
+<span class="sourceLineNo">071</span>      } finally {<a name="line.71"></a>
+<span class="sourceLineNo">072</span>         if (reader != null) {<a name="line.72"></a>
+<span class="sourceLineNo">073</span>            try {<a name="line.73"></a>
+<span class="sourceLineNo">074</span>               reader.close();<a name="line.74"></a>
+<span class="sourceLineNo">075</span>            } catch (IOException e) {<a name="line.75"></a>
+<span class="sourceLineNo">076</span>               log.error(e.getMessage(), e);<a name="line.76"></a>
+<span class="sourceLineNo">077</span>            }<a name="line.77"></a>
+<span class="sourceLineNo">078</span>         }<a name="line.78"></a>
+<span class="sourceLineNo">079</span>      }<a name="line.79"></a>
+<span class="sourceLineNo">080</span>   }<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>   static public class ConvertedRow {<a name="line.82"></a>
+<span class="sourceLineNo">083</span>      private final int rowNumber;<a name="line.83"></a>
+<span class="sourceLineNo">084</span>      private final Row row;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>      private final Invoice invoice;<a name="line.85"></a>
+<span class="sourceLineNo">086</span><a name="line.86"></a>
+<span class="sourceLineNo">087</span>      public ConvertedRow(int rowNumber, Row row, Invoice invoice) {<a name="line.87"></a>
+<span class="sourceLineNo">088</span>         this.rowNumber = rowNumber;<a name="line.88"></a>
+<span class="sourceLineNo">089</span>         this.row = row;<a name="line.89"></a>
+<span class="sourceLineNo">090</span>         this.invoice = invoice;<a name="line.90"></a>
+<span class="sourceLineNo">091</span>      }<a name="line.91"></a>
+<span class="sourceLineNo">092</span><a name="line.92"></a>
+<span class="sourceLineNo">093</span>      public int getRowNumber() {<a name="line.93"></a>
+<span class="sourceLineNo">094</span>         return rowNumber;<a name="line.94"></a>
+<span class="sourceLineNo">095</span>      }<a name="line.95"></a>
+<span class="sourceLineNo">096</span><a name="line.96"></a>
+<span class="sourceLineNo">097</span>      public Row getRow() {<a name="line.97"></a>
+<span class="sourceLineNo">098</span>         return row;<a name="line.98"></a>
+<span class="sourceLineNo">099</span>      }<a name="line.99"></a>
+<span class="sourceLineNo">100</span><a name="line.100"></a>
+<span class="sourceLineNo">101</span>      public Invoice getInvoice() {<a name="line.101"></a>
+<span class="sourceLineNo">102</span>         return invoice;<a name="line.102"></a>
+<span class="sourceLineNo">103</span>      }<a name="line.103"></a>
+<span class="sourceLineNo">104</span>   }<a name="line.104"></a>
+<span class="sourceLineNo">105</span><a name="line.105"></a>
+<span class="sourceLineNo">106</span>   static public class RowError {<a name="line.106"></a>
+<span class="sourceLineNo">107</span>      private final int rowNumber;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>      private final Row row;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>      private final String errorMessage;<a name="line.109"></a>
+<span class="sourceLineNo">110</span>      private final Exception exception;<a name="line.110"></a>
+<span class="sourceLineNo">111</span><a name="line.111"></a>
+<span class="sourceLineNo">112</span>      public RowError(int rowNumber, Row row, String errorMessage, Exception exception) {<a name="line.112"></a>
+<span class="sourceLineNo">113</span>         this.rowNumber = rowNumber;<a name="line.113"></a>
+<span class="sourceLineNo">114</span>         this.row = row;<a name="line.114"></a>
+<span class="sourceLineNo">115</span>         this.errorMessage = errorMessage;<a name="line.115"></a>
+<span class="sourceLineNo">116</span>         this.exception = exception;<a name="line.116"></a>
+<span class="sourceLineNo">117</span>      }<a name="line.117"></a>
+<span class="sourceLineNo">118</span><a name="line.118"></a>
+<span class="sourceLineNo">119</span>      public int getRowNumber() {<a name="line.119"></a>
+<span class="sourceLineNo">120</span>         return rowNumber;<a name="line.120"></a>
+<span class="sourceLineNo">121</span>      }<a name="line.121"></a>
+<span class="sourceLineNo">122</span><a name="line.122"></a>
+<span class="sourceLineNo">123</span>      public Row getRow() {<a name="line.123"></a>
+<span class="sourceLineNo">124</span>         return row;<a name="line.124"></a>
+<span class="sourceLineNo">125</span>      }<a name="line.125"></a>
+<span class="sourceLineNo">126</span><a name="line.126"></a>
+<span class="sourceLineNo">127</span>      public String getErrorMessage() {<a name="line.127"></a>
+<span class="sourceLineNo">128</span>         return errorMessage;<a name="line.128"></a>
+<span class="sourceLineNo">129</span>      }<a name="line.129"></a>
+<span class="sourceLineNo">130</span><a name="line.130"></a>
+<span class="sourceLineNo">131</span>      public Exception getException() {<a name="line.131"></a>
+<span class="sourceLineNo">132</span>         return exception;<a name="line.132"></a>
+<span class="sourceLineNo">133</span>      }<a name="line.133"></a>
+<span class="sourceLineNo">134</span>   }<a name="line.134"></a>
+<span class="sourceLineNo">135</span><a name="line.135"></a>
+<span class="sourceLineNo">136</span>   static public class Result {<a name="line.136"></a>
+<span class="sourceLineNo">137</span>      private final List&lt;ConvertedRow&gt; convertedRows;<a name="line.137"></a>
+<span class="sourceLineNo">138</span>      private final List&lt;RowError&gt; rowErrors;<a name="line.138"></a>
+<span class="sourceLineNo">139</span><a name="line.139"></a>
+<span class="sourceLineNo">140</span>      public Result(List&lt;ConvertedRow&gt; convertedRows, List&lt;RowError&gt; rowErrors) {<a name="line.140"></a>
+<span class="sourceLineNo">141</span>         this.convertedRows = convertedRows;<a name="line.141"></a>
+<span class="sourceLineNo">142</span>         this.rowErrors = rowErrors;<a name="line.142"></a>
+<span class="sourceLineNo">143</span>      }<a name="line.143"></a>
+<span class="sourceLineNo">144</span><a name="line.144"></a>
+<span class="sourceLineNo">145</span>      public List&lt;ConvertedRow&gt; getConvertedRows() {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>         return convertedRows;<a name="line.146"></a>
+<span class="sourceLineNo">147</span>      }<a name="line.147"></a>
+<span class="sourceLineNo">148</span><a name="line.148"></a>
+<span class="sourceLineNo">149</span>      public List&lt;RowError&gt; getRowErrors() {<a name="line.149"></a>
+<span class="sourceLineNo">150</span>         return rowErrors;<a name="line.150"></a>
+<span class="sourceLineNo">151</span>      }<a name="line.151"></a>
+<span class="sourceLineNo">152</span>   }<a name="line.152"></a>
+<span class="sourceLineNo">153</span>}<a name="line.153"></a>
 
 
 
