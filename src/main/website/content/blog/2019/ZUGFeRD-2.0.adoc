@@ -6,7 +6,8 @@ Vadim Bauer
 :jbake-tags: News,ZUGFeRD 2.0
 :idprefix:
 :linkattrs:
-
+:1: http://www.awv-net.de/updates/zugferd20/zugferd20.zip
+:2: https://www.ferd-net.de/aktuelles/meldungen/release-zugferd-in-der-finalen-version-2.0-veroeffentlicht.html
 
 == ZUGFeRD 2.0 offiziel veröffentlicht
 
@@ -14,6 +15,21 @@ Es soweit: Die ZUGFeRD 2.0 Spezifikation ist veröffentlicht.
 
 Wir arbeiten aktuell an der neuen Version von Konik 2.0.
 Eine erste Veröffentlichung ist in den nächsten Wochen geplant.
+
+{1}[Spezifikation ZUGFeRD 2.0] zum Herunterladen.
+
+Aus der Mitteilung von FeRD:
+
+    Mit ZUGFeRD 2.0 steht ein frei verfügbares Rechnungsformat zur Verfügung,
+    das die Bedürfnisse der Unternehmen an eine elektronische Rechnung optimal erfüllt:
+    Es ist kostenfrei verfügbar und es ist kompatibel zur Europäischen Norm EN 16931.
+    ZUGFeRD 2.0 kann im nationalen und internationalen Rechnungsverkehr genutzt werden.
+    Darüber hinaus ist es von kleinen und großen Unternehmen gleichermaßen nutzbar.
+    Die Erstellung der Rechnung im PDF-Format ist einfach, die Auswertung kann entweder
+    vom Sachbearbeiter durch die PDF-Bildrepräsentanz oder automatisiert durch die
+    eingebettete XML-Datei geschehen. Der Standard hat mehrere Profile, um auch spezielle
+    Anforderungen an die Inhalte der Rechnung erfüllen zu können.
+
 
 == Konik 2.0
 

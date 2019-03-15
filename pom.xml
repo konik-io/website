@@ -265,7 +265,7 @@
       <dependency>
          <groupId>org.eclipse.jetty</groupId>
          <artifactId>jetty-server</artifactId>
-         <version>[9.3.24.v20180605,)</version>
+         <version>8.1.12.v20130726</version>
       </dependency>
       <dependency>
          <groupId>org.freemarker</groupId>
@@ -280,7 +280,7 @@
       <dependency>
          <groupId>org.asciidoctor</groupId>
          <artifactId>asciidoctorj</artifactId>
-         <version>1.5.0</version>
+         <version>1.5.8</version>
       </dependency>
       <dependency>
          <groupId>org.thymeleaf</groupId>

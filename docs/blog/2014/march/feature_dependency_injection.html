@@ -80,7 +80,7 @@
 			<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Starting with version 0.2.0, the Konik library and iText-Carriage are supporting <a href="https://jcp.org/en/jsr/detail?id=330" target="_blank">JSR 330</a> dependency injection.</p>
+<p>Starting with version 0.2.0, the Konik library and iText-Carriage are supporting <a href="https://jcp.org/en/jsr/detail?id=330" target="_blank" rel="noopener">JSR 330</a> dependency injection.</p>
 </div>
 </div>
 </div>
@@ -104,7 +104,7 @@ In your project pom.xml file, add the following dependency.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
    &lt;groupId&gt;javax.inject&lt;/groupId&gt;
    &lt;artifactId&gt;javax.inject&lt;/artifactId&gt;
    &lt;version&gt;1&lt;/version&gt;
@@ -119,12 +119,12 @@ In your project pom.xml file, add the following dependency.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;context:component-scan base-package="com.myCompany, io.konik" /&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;context:component-scan base-package="com.myCompany, io.konik" /&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">@Configuration
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
 @ComponentScan("com.myCompany, io.konik")<i class="conum" data-value="1"></i><b>(1)</b>
 @EnableAutoConfiguration
 class Application {
@@ -147,7 +147,7 @@ class Application {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
    &lt;groupId&gt;org.apache.geronimo.specs&lt;/groupId&gt;
    &lt;artifactId&gt;geronimo-atinject_1.0_spec&lt;/artifactId&gt;
    &lt;version&gt;1.0&lt;/version&gt;
@@ -236,14 +236,26 @@ class Application {
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

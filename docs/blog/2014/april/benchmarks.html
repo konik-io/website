@@ -130,7 +130,7 @@ Initially we start small by <a href="https://github.com/konik-io/barn/blob/maste
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plain" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
+<pre class="highlightjs highlight"><code class="language-plain hljs" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_witStreams              thrpt         1        20      27,16     ops/s
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_witStreamsAndThreads    thrpt         4        20      38,25     ops/s
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_withByteArray           thrpt         1        20      26,88     ops/s</code></pre>
@@ -142,7 +142,7 @@ content to the PDF. Results of this benchmark represent the state of the iText-C
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plain" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
+<pre class="highlightjs highlight"><code class="language-plain hljs" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_witStreams              thrpt         1        20      27,97     ops/s
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_witStreamsAndThreads    thrpt         4	     20      39,32     ops/s
 i.k.b.ITextPdfInvoiceAppenderBenchmark.append_withByteArray           thrpt         1	     20      29,30     ops/s</code></pre>
@@ -153,7 +153,7 @@ i.k.b.ITextPdfInvoiceAppenderBenchmark.append_withByteArray           thrpt     
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plain" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
+<pre class="highlightjs highlight"><code class="language-plain hljs" data-lang="plain">Benchmark                                                              Mode   Threads   Samples       Mean     Units
 i.k.b.XmpAppenderBenchmark.append_reuseAppender                       thrpt         1        20     656,90     ops/s
 i.k.b.XmpAppenderBenchmark.append_reuseAppenderWithThreads            thrpt         4        20    1203,26     ops/s
 i.k.b.XmpAppenderBenchmark.append_withNewAppender                     thrpt         1        20     439,76     ops/s</code></pre>
@@ -238,14 +238,26 @@ performing nightly benchmark tests of the library.</p>
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

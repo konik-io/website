@@ -92,12 +92,12 @@ was steht noch alles auf der TODO-Liste für den 1.0 Release?</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">Invoice invoice = new Invoice(BASIC);
-    invoice.setHeader(new Header()
-       .setInvoiceNumber("20131122-42")
-       .setCode(_380)
-       .setIssued(today)
-       .setName("Rechnung"));</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  Invoice invoice = new Invoice(BASIC);
+      invoice.setHeader(new Header()
+         .setInvoiceNumber("20131122-42")
+         .setCode(_380)
+         .setIssued(today)
+         .setName("Rechnung"));</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -110,7 +110,7 @@ Zu jeder Klasse wird es einen Builder geben, der dann auch einige weitere Funkti
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">Invoice invoice = new InvoiceBuilder(BASIC).header(
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Invoice invoice = new InvoiceBuilder(BASIC).header(
 new HeaderBuilder()
   .invoiceNumber("20131122-42")
   .code(_380)
@@ -263,14 +263,26 @@ Ziel ist, bis Dezember 2014 Konik Release 1.0 zu veröffentlichen.</p>
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

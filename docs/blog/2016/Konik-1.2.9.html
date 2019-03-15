@@ -102,63 +102,63 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">private Invoice createInvoice() {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   private Invoice createInvoice() {
 
-   Invoice invoice = new Invoice(EXTENDED); <b class="conum">(1)</b>
-   invoice
-         .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
+      Invoice invoice = new Invoice(EXTENDED); // <b class="conum">(1)</b>
+      invoice
+            .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
 
-   Trade trade = new Trade();
-   trade.setAgreement(new Agreement()
-         .setSeller(new TradeParty()
-               .setName("Seller Inc.").setAddress(new Address("80331", "Marienplatz 1", "München", DE))
-               .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
-         .setBuyer(
-               new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
-                     .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
+      Trade trade = new Trade();
+      trade.setAgreement(new Agreement()
+            .setSeller(new TradeParty()
+                  .setName("Seller Inc.").setAddress(new Address("80331", "Marienplatz 1", "München", DE))
+                  .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
+            .setBuyer(
+                  new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
+                        .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
 
-   trade.setDelivery(new Delivery(nextMonth));
+      trade.setDelivery(new Delivery(nextMonth));
 
-   ItemTax itemTax = new ItemTax();
-   itemTax.setPercentage(BigDecimal.valueOf(19));
-   itemTax.setType(TaxCode.VAT);
+      ItemTax itemTax = new ItemTax();
+      itemTax.setPercentage(BigDecimal.valueOf(19));
+      itemTax.setType(TaxCode.VAT);
 
-   trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
-         .setAgreement(new SpecifiedAgreement()
-               /*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))<b class="conum">(2)</b>
-         .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
-         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
+      trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
+            .setAgreement(new SpecifiedAgreement()
+                  /*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))// <b class="conum">(2)</b>
+            .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
+            .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
 
-   trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
-         .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
-               .setPayerInstitution(new FinancialInstitution("GENO..."))));
-   /*.setMonetarySummation(new MonetarySummation() <b class="conum">(3)</b>
-      .setLineTotal(new Amount(100, EUR))
-      .setChargeTotal(new Amount(0,EUR))
-      .setAllowanceTotal(new Amount(0, EUR))
-      .setTaxBasisTotal(new Amount(100, EUR))
-      .setTaxTotal(new Amount(19, EUR))
-      .setDuePayable(new Amount(119, EUR))
-      .setTotalPrepaid(new Amount(0, EUR))
-      .setGrandTotal(new Amount(119, EUR))));*/
+      trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
+            .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
+                  .setPayerInstitution(new FinancialInstitution("GENO..."))));
+      /*.setMonetarySummation(new MonetarySummation() // <b class="conum">(3)</b>
+         .setLineTotal(new Amount(100, EUR))
+         .setChargeTotal(new Amount(0,EUR))
+         .setAllowanceTotal(new Amount(0, EUR))
+         .setTaxBasisTotal(new Amount(100, EUR))
+         .setTaxTotal(new Amount(19, EUR))
+         .setDuePayable(new Amount(119, EUR))
+         .setTotalPrepaid(new Amount(0, EUR))
+         .setGrandTotal(new Amount(119, EUR))));*/
 
-   invoice.setTrade(trade);
-   Invoice completedInvoice = new InvoiceCalculator(invoice).complete(); <b class="conum">(4)</b>
+      invoice.setTrade(trade);
+      Invoice completedInvoice = new InvoiceCalculator(invoice).complete(); // <b class="conum">(4)</b>
 
-   log.info(completedInvoice.getTrade().getSettlement().getMonetarySummation().toString());<b class="conum">(5)</b>
-   /* MonetarySummation [
-    * lineTotal=100.00 EUR,
-    * chargeTotal=0.00 EUR,
-    * allowanceTotal=0.00 EUR,
-    * taxBasisTotal=100.00 EUR,
-    * taxTotal=19.00 EUR,
-    * grandTotal=119.00 EUR,
-    * totalPrepaid=0.00 EUR,
-    * duePayable=119.00 EUR]
-    */
+      log.info(completedInvoice.getTrade().getSettlement().getMonetarySummation().toString());// <b class="conum">(5)</b>
+      /* MonetarySummation [
+       * lineTotal=100.00 EUR,
+       * chargeTotal=0.00 EUR,
+       * allowanceTotal=0.00 EUR,
+       * taxBasisTotal=100.00 EUR,
+       * taxTotal=19.00 EUR,
+       * grandTotal=119.00 EUR,
+       * totalPrepaid=0.00 EUR,
+       * duePayable=119.00 EUR]
+       */
 
-   return completedInvoice;
-}</code></pre>
+      return completedInvoice;
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -340,14 +340,26 @@
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

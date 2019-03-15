@@ -92,11 +92,11 @@ This is the "in-between" release and it does not support all of the features of 
 existing API.</p>
 </div>
 <div class="paragraph">
-<p>A zip <a href="https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/0.5.0/distribution-0.5.0.zip" class="download-zip-package" target="_blank">distribution package</a>
+<p>A zip <a href="https://oss.sonatype.org/content/repositories/releases/io/konik/distribution/0.5.0/distribution-0.5.0.zip" class="download-zip-package" target="_blank" rel="noopener">distribution package</a>
 is also available for users without a Build System.</p>
 </div>
 <div class="paragraph">
-<p>Artifacts are available on the Central Repository by the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.konik%22" target="_blank">io.konik</a> Group ID.</p>
+<p>Artifacts are available on the Central Repository by the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.konik%22" target="_blank" rel="noopener">io.konik</a> Group ID.</p>
 </div>
 </div>
 		</div>	    
@@ -232,14 +232,26 @@ is also available for users without a Build System.</p>
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>

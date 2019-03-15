@@ -126,7 +126,7 @@
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="quick_start"><a class="anchor" href="#quick_start"></a>1. Quick Start</h2>
+<h2 id="quick_start"><a class="anchor" href="#quick_start"></a><a class="link" href="#quick_start">1. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The example code from
@@ -136,49 +136,49 @@
 <p>Let us step through the code and take a look at the interesting parts.</p>
 </div>
 <div class="sect2">
-<h3 id="creating_the_invoice_model"><a class="anchor" href="#creating_the_invoice_model"></a>1.1. Creating the invoice model</h3>
+<h3 id="creating_the_invoice_model"><a class="anchor" href="#creating_the_invoice_model"></a><a class="link" href="#creating_the_invoice_model">1.1. Creating the invoice model</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">private Invoice createInvoice() {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   private Invoice createInvoice() {
 
-   Invoice invoice = new Invoice(BASIC); <i class="conum" data-value="1"></i><b>(1)</b>
-   invoice
-         .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
+      Invoice invoice = new Invoice(BASIC); <i class="conum" data-value="1"></i><b>(1)</b>
+      invoice
+            .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
 
-   Trade trade = new Trade();
-   trade.setAgreement(new Agreement() <i class="conum" data-value="2"></i><b>(2)</b>
-         .setSeller(new TradeParty().setName("Seller Inc.")
-               .setAddress(new Address("80331", "Marienplatz 1", "München", DE))
-               .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
-         .setBuyer(
-               new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
-                     .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
+      Trade trade = new Trade();
+      trade.setAgreement(new Agreement() <i class="conum" data-value="2"></i><b>(2)</b>
+            .setSeller(new TradeParty().setName("Seller Inc.")
+                  .setAddress(new Address("80331", "Marienplatz 1", "München", DE))
+                  .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
+            .setBuyer(
+                  new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
+                        .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
 
-   trade.setDelivery(new Delivery(nextMonth));
+      trade.setDelivery(new Delivery(nextMonth));
 
-   ItemTax itemTax = new ItemTax();
-   itemTax.setPercentage(BigDecimal.valueOf(19));
-   itemTax.setType(TaxCode.VAT);
+      ItemTax itemTax = new ItemTax();
+      itemTax.setPercentage(BigDecimal.valueOf(19));
+      itemTax.setType(TaxCode.VAT);
 
-   trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
-         .setAgreement(new SpecifiedAgreement().setGrossPrice(new GrossPrice(new Amount(100, EUR)))
-               .setNetPrice(new Price(new Amount(100, EUR))))
-         .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
-         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
+      trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
+            .setAgreement(new SpecifiedAgreement().setGrossPrice(new GrossPrice(new Amount(100, EUR)))
+                  .setNetPrice(new Price(new Amount(100, EUR))))
+            .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
+            .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
 
-   trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
-         .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
-               .setPayerInstitution(new FinancialInstitution("GENO...")))
-         .setMonetarySummation(
-               new MonetarySummation().setLineTotal(new Amount(100, EUR)).setChargeTotal(new Amount(0, EUR))
-                     .setAllowanceTotal(new Amount(0, EUR)).setTaxBasisTotal(new Amount(100, EUR))
-                     .setTaxTotal(new Amount(19, EUR)).setDuePayable(new Amount(119, EUR))
-                     .setTotalPrepaid(new Amount(0, EUR)).setGrandTotal(new Amount(119, EUR))));
+      trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
+            .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
+                  .setPayerInstitution(new FinancialInstitution("GENO...")))
+            .setMonetarySummation(
+                  new MonetarySummation().setLineTotal(new Amount(100, EUR)).setChargeTotal(new Amount(0, EUR))
+                        .setAllowanceTotal(new Amount(0, EUR)).setTaxBasisTotal(new Amount(100, EUR))
+                        .setTaxTotal(new Amount(19, EUR)).setDuePayable(new Amount(119, EUR))
+                        .setTotalPrepaid(new Amount(0, EUR)).setGrandTotal(new Amount(119, EUR))));
 
-   invoice.setTrade(trade);
+      invoice.setTrade(trade);
 
-   return invoice;
-}</code></pre>
+      return invoice;
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -195,14 +195,14 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="transforming_the_invoice_model_to_xml_and_vice_versa"><a class="anchor" href="#transforming_the_invoice_model_to_xml_and_vice_versa"></a>1.2. Transforming the invoice model to XML and vice versa.</h3>
+<h3 id="transforming_the_invoice_model_to_xml_and_vice_versa"><a class="anchor" href="#transforming_the_invoice_model_to_xml_and_vice_versa"></a><a class="link" href="#transforming_the_invoice_model_to_xml_and_vice_versa">1.2. Transforming the invoice model to XML and vice versa.</a></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public void transformInvoiceToXml(Invoice invoice) throws IOException {
-   InvoiceTransformer transformer = new InvoiceTransformer(); <i class="conum" data-value="1"></i><b>(1)</b>
-   FileOutputStream outputStream = new FileOutputStream("target/minimal-invoice.xml");
-   transformer.fromModel(invoice, outputStream); <i class="conum" data-value="2"></i><b>(2)</b>
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public void transformInvoiceToXml(Invoice invoice) throws IOException {
+      InvoiceTransformer transformer = new InvoiceTransformer(); <i class="conum" data-value="1"></i><b>(1)</b>
+      FileOutputStream outputStream = new FileOutputStream("target/minimal-invoice.xml");
+      transformer.fromModel(invoice, outputStream); <i class="conum" data-value="2"></i><b>(2)</b>
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -219,19 +219,19 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="append_a_zugferd_invoice_to_an_existing_pdf"><a class="anchor" href="#append_a_zugferd_invoice_to_an_existing_pdf"></a>1.3. Append a ZUGFeRD invoice to an existing PDF</h3>
+<h3 id="append_a_zugferd_invoice_to_an_existing_pdf"><a class="anchor" href="#append_a_zugferd_invoice_to_an_existing_pdf"></a><a class="link" href="#append_a_zugferd_invoice_to_an_existing_pdf">1.3. Append a ZUGFeRD invoice to an existing PDF</a></h3>
 <div class="paragraph">
 <p>This alternative step performs a model conversation. So you don&#8217;t have to do it yourself.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public void appendInvoiceToPdf() throws IOException {
-   Invoice invoice = createInvoice();
-   PdfHandler handler = new PdfHandler(); <i class="conum" data-value="1"></i><b>(1)</b>
-   InputStream inputPdf = getClass().getResourceAsStream("/acme_invoice-42.pdf");
-   OutputStream resultingPdf = new FileOutputStream("target/acme_invoice-42_ZUGFeRD.pdf");
-   handler.appendInvoice(invoice, inputPdf, resultingPdf); <i class="conum" data-value="2"></i><b>(2)</b>
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public void appendInvoiceToPdf() throws IOException {
+      Invoice invoice = createInvoice();
+      PdfHandler handler = new PdfHandler(); <i class="conum" data-value="1"></i><b>(1)</b>
+      InputStream inputPdf = getClass().getResourceAsStream("/acme_invoice-42.pdf");
+      OutputStream resultingPdf = new FileOutputStream("target/acme_invoice-42_ZUGFeRD.pdf");
+      handler.appendInvoice(invoice, inputPdf, resultingPdf); <i class="conum" data-value="2"></i><b>(2)</b>
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -248,18 +248,18 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="extract_zugferd_invoice_from_pdf"><a class="anchor" href="#extract_zugferd_invoice_from_pdf"></a>1.4. Extract ZUGFeRD invoice from PDF</h3>
+<h3 id="extract_zugferd_invoice_from_pdf"><a class="anchor" href="#extract_zugferd_invoice_from_pdf"></a><a class="link" href="#extract_zugferd_invoice_from_pdf">1.4. Extract ZUGFeRD invoice from PDF</a></h3>
 <div class="paragraph">
 <p>This step internally also performs a model conversation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public void extracInvoiceFromPdf() {
-   PdfHandler handler = new PdfHandler(); <i class="conum" data-value="1"></i><b>(1)</b>
-   InputStream inputZugferdPdfStream = getClass().getResourceAsStream("/acme_invoice-42_ZUGFeRD.pdf");
-   Invoice invoice = handler.extractInvoice(inputZugferdPdfStream); <i class="conum" data-value="2"></i><b>(2)</b>
-   assertThat(invoice).isNotNull();
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public void extracInvoiceFromPdf() {
+      PdfHandler handler = new PdfHandler(); <i class="conum" data-value="1"></i><b>(1)</b>
+      InputStream inputZugferdPdfStream = getClass().getResourceAsStream("/acme_invoice-42_ZUGFeRD.pdf");
+      Invoice invoice = handler.extractInvoice(inputZugferdPdfStream); <i class="conum" data-value="2"></i><b>(2)</b>
+      assertThat(invoice).isNotNull();
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -276,26 +276,26 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="validate_correctness_of_a_zugferd_invoice"><a class="anchor" href="#validate_correctness_of_a_zugferd_invoice"></a>1.5. Validate correctness of a ZUGFeRD Invoice</h3>
+<h3 id="validate_correctness_of_a_zugferd_invoice"><a class="anchor" href="#validate_correctness_of_a_zugferd_invoice"></a><a class="link" href="#validate_correctness_of_a_zugferd_invoice">1.5. Validate correctness of a ZUGFeRD Invoice</a></h3>
 <div class="paragraph">
 <p>This example shows how one can validates the correction of an invoice.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public void validateInvoice() {
-   //setup
-   Invoice invoice = createInvoice();
-   InvoiceValidator invoiceValidator = new InvoiceValidator(); <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public void validateInvoice() {
+      //setup
+      Invoice invoice = createInvoice();
+      InvoiceValidator invoiceValidator = new InvoiceValidator(); <i class="conum" data-value="1"></i><b>(1)</b>
 
-   //execute
-   Set&lt;ConstraintViolation&lt;Invoice&gt;&gt; violations = invoiceValidator.validate(invoice); <i class="conum" data-value="2"></i><b>(2)</b>
+      //execute
+      Set&lt;ConstraintViolation&lt;Invoice&gt;&gt; violations = invoiceValidator.validate(invoice); <i class="conum" data-value="2"></i><b>(2)</b>
 
-   for (ConstraintViolation&lt;Invoice&gt; violation : violations) {
-      log.log(Level.INFO, violation.getMessage() + " at: " + violation.getPropertyPath());
-   }
-   //verify
-   assertThat(violations.size()).isZero(); <i class="conum" data-value="3"></i><b>(3)</b>
-}</code></pre>
+      for (ConstraintViolation&lt;Invoice&gt; violation : violations) {
+         log.log(Level.INFO, violation.getMessage() + " at: " + violation.getPropertyPath());
+      }
+      //verify
+      assertThat(violations.size()).isZero(); <i class="conum" data-value="3"></i><b>(3)</b>
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -316,70 +316,70 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="calculate_and_apply_missing_invoice_amounts"><a class="anchor" href="#calculate_and_apply_missing_invoice_amounts"></a>1.6. Calculate and apply missing invoice amounts</h3>
+<h3 id="calculate_and_apply_missing_invoice_amounts"><a class="anchor" href="#calculate_and_apply_missing_invoice_amounts"></a><a class="link" href="#calculate_and_apply_missing_invoice_amounts">1.6. Calculate and apply missing invoice amounts</a></h3>
 <div class="paragraph">
 <p>Next to validating the existing amounts of the invoice it is also possible to calculate missing or incomplete amounts.
 An error is thrown if an existing amount in the model is different then the newly calculated amount.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">private Invoice createInvoice() {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   private Invoice createInvoice() {
 
-   Invoice invoice = new Invoice(EXTENDED); <i class="conum" data-value="1"></i><b>(1)</b>
-   invoice
-         .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
+      Invoice invoice = new Invoice(EXTENDED); <i class="conum" data-value="1"></i><b>(1)</b>
+      invoice
+            .setHeader(new Header().setInvoiceNumber("20131122-42").setCode(_380).setIssued(today).setName("Rechnung"));
 
-   Trade trade = new Trade();
-   trade.setAgreement(new Agreement()
-         .setSeller(new TradeParty()
-               .setName("Seller Inc.").setAddress(new Address("80331", "Marienplatz 1", "München", DE))
-               .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
-         .setBuyer(
-               new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
-                     .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
+      Trade trade = new Trade();
+      trade.setAgreement(new Agreement()
+            .setSeller(new TradeParty()
+                  .setName("Seller Inc.").setAddress(new Address("80331", "Marienplatz 1", "München", DE))
+                  .addTaxRegistrations(new TaxRegistration("DE122...", FC)))
+            .setBuyer(
+                  new TradeParty().setName("Buyer Inc.").setAddress(new Address("50667", "Domkloster 4", "Köln", DE))
+                        .addTaxRegistrations(new TaxRegistration("DE123...", FC))));
 
-   trade.setDelivery(new Delivery(nextMonth));
+      trade.setDelivery(new Delivery(nextMonth));
 
-   ItemTax itemTax = new ItemTax();
-   itemTax.setPercentage(BigDecimal.valueOf(19));
-   itemTax.setType(TaxCode.VAT);
+      ItemTax itemTax = new ItemTax();
+      itemTax.setPercentage(BigDecimal.valueOf(19));
+      itemTax.setType(TaxCode.VAT);
 
-   trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
-         .setAgreement(new SpecifiedAgreement()
-               /*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))<i class="conum" data-value="2"></i><b>(2)</b>
-         .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
-         .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
+      trade.addItem(new Item().setProduct(new Product().setName("Saddle"))
+            .setAgreement(new SpecifiedAgreement()
+                  /*.setGrossPrice(new GrossPrice(new Amount(100, EUR)))*/.setNetPrice(new Price(new Amount(100, EUR))))<i class="conum" data-value="2"></i><b>(2)</b>
+            .setSettlement(new SpecifiedSettlement().addTradeTax(itemTax))
+            .setDelivery(new SpecifiedDelivery(new Quantity(1, UNIT))));
 
-   trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
-         .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
-               .setPayerInstitution(new FinancialInstitution("GENO..."))));
-   /*.setMonetarySummation(new MonetarySummation() <i class="conum" data-value="3"></i><b>(3)</b>
-      .setLineTotal(new Amount(100, EUR))
-      .setChargeTotal(new Amount(0,EUR))
-      .setAllowanceTotal(new Amount(0, EUR))
-      .setTaxBasisTotal(new Amount(100, EUR))
-      .setTaxTotal(new Amount(19, EUR))
-      .setDuePayable(new Amount(119, EUR))
-      .setTotalPrepaid(new Amount(0, EUR))
-      .setGrandTotal(new Amount(119, EUR))));*/
+      trade.setSettlement(new Settlement().setPaymentReference("20131122-42").setCurrency(EUR)
+            .addPaymentMeans(new PaymentMeans().setPayerAccount(new DebtorFinancialAccount("DE01234.."))
+                  .setPayerInstitution(new FinancialInstitution("GENO..."))));
+      /*.setMonetarySummation(new MonetarySummation() <i class="conum" data-value="3"></i><b>(3)</b>
+         .setLineTotal(new Amount(100, EUR))
+         .setChargeTotal(new Amount(0,EUR))
+         .setAllowanceTotal(new Amount(0, EUR))
+         .setTaxBasisTotal(new Amount(100, EUR))
+         .setTaxTotal(new Amount(19, EUR))
+         .setDuePayable(new Amount(119, EUR))
+         .setTotalPrepaid(new Amount(0, EUR))
+         .setGrandTotal(new Amount(119, EUR))));*/
 
-   invoice.setTrade(trade);
-   Invoice completedInvoice = new InvoiceCalculator(invoice).complete(); <i class="conum" data-value="4"></i><b>(4)</b>
+      invoice.setTrade(trade);
+      Invoice completedInvoice = new InvoiceCalculator(invoice).complete(); <i class="conum" data-value="4"></i><b>(4)</b>
 
-   log.info(completedInvoice.getTrade().getSettlement().getMonetarySummation().toString());<i class="conum" data-value="5"></i><b>(5)</b>
-   /* MonetarySummation [
-    * lineTotal=100.00 EUR,
-    * chargeTotal=0.00 EUR,
-    * allowanceTotal=0.00 EUR,
-    * taxBasisTotal=100.00 EUR,
-    * taxTotal=19.00 EUR,
-    * grandTotal=119.00 EUR,
-    * totalPrepaid=0.00 EUR,
-    * duePayable=119.00 EUR]
-    */
+      log.info(completedInvoice.getTrade().getSettlement().getMonetarySummation().toString());<i class="conum" data-value="5"></i><b>(5)</b>
+      /* MonetarySummation [
+       * lineTotal=100.00 EUR,
+       * chargeTotal=0.00 EUR,
+       * allowanceTotal=0.00 EUR,
+       * taxBasisTotal=100.00 EUR,
+       * taxTotal=19.00 EUR,
+       * grandTotal=119.00 EUR,
+       * totalPrepaid=0.00 EUR,
+       * duePayable=119.00 EUR]
+       */
 
-   return completedInvoice;
-}</code></pre>
+      return completedInvoice;
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -410,7 +410,7 @@ An error is thrown if an existing amount in the model is different then the newl
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="setup"><a class="anchor" href="#setup"></a>2. Setup</h2>
+<h2 id="setup"><a class="anchor" href="#setup"></a><a class="link" href="#setup">2. Setup</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Or how to integrate the Konik library into a project.</p>
@@ -425,7 +425,7 @@ of the application and the invoice validator implementation.</p>
 <p>Friends of .NET have only one option to choose from.</p>
 </div>
 <div class="sect2">
-<h3 id="java_projects"><a class="anchor" href="#java_projects"></a>2.1. Java Projects</h3>
+<h3 id="java_projects"><a class="anchor" href="#java_projects"></a><a class="link" href="#java_projects">2.1. Java Projects</a></h3>
 <div class="paragraph">
 <p>The minimal requirement for Konik is Java 6 although we recommend
 Java 7 and above because of newer JaxB libraries.
@@ -440,26 +440,26 @@ The default option for Konik is to use Java
 <a href="http://docs.oracle.com/javase/tutorial/ext/basics/spi.html">Service provider interface (SPI)</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="jee_environment"><a class="anchor" href="#jee_environment"></a>2.1.1. JEE Environment</h4>
+<h4 id="jee_environment"><a class="anchor" href="#jee_environment"></a><a class="link" href="#jee_environment">2.1.1. JEE Environment</a></h4>
 <div class="paragraph">
 <p>If your environment is JEE6 and above include just</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.konik&lt;/groupId&gt;
-    &lt;artifactId&gt;konik&lt;/artifactId&gt;
-    &lt;version&gt;1.3.2&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;konik&lt;/artifactId&gt;
+        &lt;version&gt;1.3.2&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.konik&lt;/groupId&gt;
-    &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-    &lt;version&gt;1.1.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;version&gt;1.1.0&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -473,7 +473,7 @@ Make sure there is only one PDF carriage on the classpath.</td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="spring"><a class="anchor" href="#spring"></a>2.1.2. Spring</h4>
+<h4 id="spring"><a class="anchor" href="#spring"></a><a class="link" href="#spring">2.1.2. Spring</a></h4>
 <div class="paragraph">
 <p>Select the dependencies according to the
 <a href="#jee_environment">JEE Environment</a> description.
@@ -488,11 +488,11 @@ to your project, so Spring can use JSR330 annotated components.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;javax.inject&lt;/groupId&gt;
-    &lt;artifactId&gt;javax.inject&lt;/artifactId&gt;
-    &lt;version&gt;1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;javax.inject&lt;/groupId&gt;
+        &lt;artifactId&gt;javax.inject&lt;/artifactId&gt;
+        &lt;version&gt;1&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -501,7 +501,7 @@ components based on the package name preifix io.konik.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java"> @Configuration
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> @Configuration
  @ComponentScan(basePackages = "com.acme.app.xyz , io.konik")	<i class="conum" data-value="1"></i><b>(1)</b>
  public class SpringApplicationConfig  {
      ...
@@ -520,7 +520,7 @@ Configuration refer to <a href="http://docs.spring.io/spring/docs/current/spring
 </div>
 </div>
 <div class="sect3">
-<h4 id="java_standalone"><a class="anchor" href="#java_standalone"></a>2.1.3. Java standalone</h4>
+<h4 id="java_standalone"><a class="anchor" href="#java_standalone"></a><a class="link" href="#java_standalone">2.1.3. Java standalone</a></h4>
 <div class="paragraph">
 <p>Working in a standalone Java project or any other environment
 which is not JEE5+ or JSR330 compatible.</p>
@@ -530,17 +530,17 @@ which is not JEE5+ or JSR330 compatible.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;io.konik&lt;/groupId&gt;
-    &lt;artifactId&gt;konik&lt;/artifactId&gt;
-    &lt;version&gt;1.3.2&lt;/version&gt;
-&lt;/dependency&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;konik&lt;/artifactId&gt;
+        &lt;version&gt;1.3.2&lt;/version&gt;
+    &lt;/dependency&gt;
 
-&lt;dependency&gt;
-    &lt;groupId&gt;io.konik&lt;/groupId&gt;
-    &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-    &lt;version&gt;1.1.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.konik&lt;/groupId&gt;
+        &lt;artifactId&gt;pdfbox-carriage&lt;/artifactId&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;version&gt;1.1.0&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -558,16 +558,16 @@ If the stack you are using contains any other validation framework such as Hiber
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;org.apache.bval&lt;/groupId&gt;
-    &lt;artifactId&gt;bval-jsr&lt;/artifactId&gt;
-    &lt;version&gt;1.1.1&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.bval&lt;/groupId&gt;
+        &lt;artifactId&gt;bval-jsr&lt;/artifactId&gt;
+        &lt;version&gt;1.1.1&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="working_with_java_6"><a class="anchor" href="#working_with_java_6"></a>2.1.4. Working with Java 6</h4>
+<h4 id="working_with_java_6"><a class="anchor" href="#working_with_java_6"></a><a class="link" href="#working_with_java_6">2.1.4. Working with Java 6</a></h4>
 <div class="paragraph">
 <p>We recommend Java 7 and above because of newer JaxB library
 which does not contain namespace prefix issues. If you still need to
@@ -580,29 +580,29 @@ XML implementations who will receive your invoice might still complain about it.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependencies&gt;
-   &lt;dependency&gt;
-      &lt;groupId&gt;com.sun.xml.bind&lt;/groupId&gt;
-      &lt;artifactId&gt;jaxb-impl&lt;/artifactId&gt;
-      &lt;version&gt;2.2.10-b140310.1920&lt;/version&gt;
-   &lt;/dependency&gt;
-   &lt;dependency&gt;
-      &lt;groupId&gt;javax.xml.bind&lt;/groupId&gt;
-      &lt;artifactId&gt;jaxb-api&lt;/artifactId&gt;
-      &lt;version&gt;2.2.10&lt;/version&gt;
-   &lt;/dependency&gt;
-   &lt;dependency&gt;
-      &lt;groupId&gt;com.sun.xml.bind&lt;/groupId&gt;
-      &lt;artifactId&gt;jaxb-core&lt;/artifactId&gt;
-      &lt;version&gt;2.2.10-b140310.1920&lt;/version&gt;
-   &lt;/dependency&gt;
-&lt;/dependencies&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">         &lt;dependencies&gt;
+            &lt;dependency&gt;
+               &lt;groupId&gt;com.sun.xml.bind&lt;/groupId&gt;
+               &lt;artifactId&gt;jaxb-impl&lt;/artifactId&gt;
+               &lt;version&gt;2.2.10-b140310.1920&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+               &lt;groupId&gt;javax.xml.bind&lt;/groupId&gt;
+               &lt;artifactId&gt;jaxb-api&lt;/artifactId&gt;
+               &lt;version&gt;2.2.10&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+               &lt;groupId&gt;com.sun.xml.bind&lt;/groupId&gt;
+               &lt;artifactId&gt;jaxb-core&lt;/artifactId&gt;
+               &lt;version&gt;2.2.10-b140310.1920&lt;/version&gt;
+            &lt;/dependency&gt;
+         &lt;/dependencies&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="invoice_validator_option"><a class="anchor" href="#invoice_validator_option"></a>2.2. Invoice Validator Option</h3>
+<h3 id="invoice_validator_option"><a class="anchor" href="#invoice_validator_option"></a><a class="link" href="#invoice_validator_option">2.2. Invoice Validator Option</a></h3>
 <div class="paragraph">
 <p>The second option to choose from is the {http://beanvalidation.org/}[Java Bean Validation] Provider.
 With the support of Bean Validation you can verify the correctness
@@ -624,15 +624,15 @@ on what dependencies you might need in your environment.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
-    &lt;groupId&gt;org.apache.bval&lt;/groupId&gt;
-    &lt;artifactId&gt;bval-jsr303&lt;/artifactId&gt;
-    &lt;version&gt;0.5&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;dependency&gt;
+		&lt;groupId&gt;org.apache.bval&lt;/groupId&gt;
+        &lt;artifactId&gt;bval-jsr303&lt;/artifactId&gt;
+        &lt;version&gt;0.5&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="references"><a class="anchor" href="#references"></a>2.2.1. References</h4>
+<h4 id="references"><a class="anchor" href="#references"></a><a class="link" href="#references">2.2.1. References</a></h4>
 <div class="paragraph">
 <p>A Blog entry deals with the topic of
 <a href="/blog.html#Dependency-Injection-with-the-Konik-library">Konik and dependeny injection</a>.</p>
@@ -640,14 +640,14 @@ on what dependencies you might need in your environment.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="net_projects"><a class="anchor" href="#net_projects"></a>2.3. .NET projects</h3>
+<h3 id="net_projects"><a class="anchor" href="#net_projects"></a><a class="link" href="#net_projects">2.3. .NET projects</a></h3>
 <div class="paragraph">
 <p>The .NET package consists of Konik, PDFBox-carriage &amp; BVal for Invoice Validation.
 Everything is bundled together in one single dll. You can install the Konik library directly via NuGet.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">PM&gt; Install-Package ZUGFeRD-NET</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">PM&gt; Install-Package ZUGFeRD-NET</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -655,7 +655,7 @@ Everything is bundled together in one single dll. You can install the Konik libr
 </div>
 </div>
 <div class="sect2">
-<h3 id="net_example"><a class="anchor" href="#net_example"></a>2.4. .NET Example</h3>
+<h3 id="net_example"><a class="anchor" href="#net_example"></a><a class="link" href="#net_example">2.4. .NET Example</a></h3>
 <div class="paragraph">
 <p>To help you get started there is also an <a href="https://github.com/konik-io/ZUGFeRD.NET-Example">.NET example</a> available on GitHub.</p>
 </div>
@@ -663,7 +663,7 @@ Everything is bundled together in one single dll. You can install the Konik libr
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="konik_configuration"><a class="anchor" href="#konik_configuration"></a>3. Konik Configuration</h2>
+<h2 id="konik_configuration"><a class="anchor" href="#konik_configuration"></a><a class="link" href="#konik_configuration">3. Konik Configuration</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Konik has sensible default configuration settings out of the box.
@@ -674,7 +674,7 @@ In most cases you should not need to change this default settings.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">#konik library default settings
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#konik library default settings
 io.konik.stripTrailingZeros=false
 io.konik.jaxb.adapter.TwoDigitRoundingAdapter.scale=2
 io.konik.jaxb.adapter.TwoDigitRoundingAdapter.roundingMode=HALF_UP
@@ -690,14 +690,14 @@ io.konik.jaxb.adapter.QuantityRoundingAdapter.roundingMode=HALF_UP</code></pre>
 <p>There are two possible ways how Konik can be configured.</p>
 </div>
 <div class="sect2">
-<h3 id="property_file"><a class="anchor" href="#property_file"></a>3.1. Property file</h3>
+<h3 id="property_file"><a class="anchor" href="#property_file"></a><a class="link" href="#property_file">3.1. Property file</a></h3>
 <div class="paragraph">
 <p>If a property file with the name io.konik.configuration.properties exists in the root of the classpath it will be loaded when accessing the configuration.
 When using maven <code>io.konik.configuration.properties</code> should be placed in <code>src/main/resources</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="system_property"><a class="anchor" href="#system_property"></a>3.2. System property</h3>
+<h3 id="system_property"><a class="anchor" href="#system_property"></a><a class="link" href="#system_property">3.2. System property</a></h3>
 <div class="paragraph">
 <p>In addition system properties can be also used to change the Konik configuration.
 Setting System Properties is either done with <code>-D</code> command line argument on application start or with
@@ -713,7 +713,7 @@ This is can be useful in cases where you define a default configuration in the p
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="javadoc_api_documentation"><a class="anchor" href="#javadoc_api_documentation"></a>4. JavaDoc API Documentation</h2>
+<h2 id="javadoc_api_documentation"><a class="anchor" href="#javadoc_api_documentation"></a><a class="link" href="#javadoc_api_documentation">4. JavaDoc API Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We host the API Documentation for the last stable release.</p>
@@ -737,7 +737,7 @@ This is can be useful in cases where you define a default configuration in the p
 </div>
 </div>
 <div class="sect1">
-<h2 id="zugferd_specification"><a class="anchor" href="#zugferd_specification"></a>5. ZUGFeRD Specification</h2>
+<h2 id="zugferd_specification"><a class="anchor" href="#zugferd_specification"></a><a class="link" href="#zugferd_specification">5. ZUGFeRD Specification</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Collection of links to the original ZUGFeRD Specification by AWV e.V.</p>
@@ -761,7 +761,7 @@ This is can be useful in cases where you define a default configuration in the p
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="csv_file_import_and_export"><a class="anchor" href="#csv_file_import_and_export"></a>6. CSV file import and export</h2>
+<h2 id="csv_file_import_and_export"><a class="anchor" href="#csv_file_import_and_export"></a><a class="link" href="#csv_file_import_and_export">6. CSV file import and export</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Konik &gt;1.1.0 introduces the feature to import and export CSV files. This makes it possible to create create multiple ZUGFeRD invoices from a CSV file. Below you can find exemplary CSV file that contains 3 documents and one CSV with description of each column.</p>
@@ -801,11 +801,11 @@ This is can be useful in cases where you define a default configuration in the p
 <p>As you can see indexes start from 0 to n-1 when you add n elements.</p>
 </div>
 <div class="sect2">
-<h3 id="csv_file_fields_description"><a class="anchor" href="#csv_file_fields_description"></a>6.1. CSV file fields description</h3>
-<table class="tableblock frame-all grid-all spread">
+<h3 id="csv_file_fields_description"><a class="anchor" href="#csv_file_fields_description"></a><a class="link" href="#csv_file_fields_description">6.1. CSV file fields description</a></h3>
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28%;">
-<col style="width: 71%;">
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
 </colgroup>
 <thead>
 <tr>
@@ -974,15 +974,15 @@ This is can be useful in cases where you define a default configuration in the p
 </table>
 </div>
 <div class="sect2">
-<h3 id="convert_pdf_file_to_zugferd_compliant_invoice"><a class="anchor" href="#convert_pdf_file_to_zugferd_compliant_invoice"></a>6.2. Convert PDF file to ZUGFeRD compliant invoice</h3>
+<h3 id="convert_pdf_file_to_zugferd_compliant_invoice"><a class="anchor" href="#convert_pdf_file_to_zugferd_compliant_invoice"></a><a class="link" href="#convert_pdf_file_to_zugferd_compliant_invoice">6.2. Convert PDF file to ZUGFeRD compliant invoice</a></h3>
 <div class="paragraph">
 <p>Konik CSV feature allows you to convert plain PDF invoice to ZUGFeRD compliant one, using model created from your CSV file. All you have to do
 is add two optional columns to your CSV file (e.g. in the beginning of the file)</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28%;">
-<col style="width: 71%;">
+<col style="width: 28.5714%;">
+<col style="width: 71.4286%;">
 </colgroup>
 <thead>
 <tr>
@@ -1002,7 +1002,7 @@ is add two optional columns to your CSV file (e.g. in the beginning of the file)
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="example_convert_2_pdf_files_to_zugferd_compliant_invoice"><a class="anchor" href="#example_convert_2_pdf_files_to_zugferd_compliant_invoice"></a>6.2.1. Example: convert 2 PDF files to ZUGFeRD compliant invoice</h4>
+<h4 id="example_convert_2_pdf_files_to_zugferd_compliant_invoice"><a class="anchor" href="#example_convert_2_pdf_files_to_zugferd_compliant_invoice"></a><a class="link" href="#example_convert_2_pdf_files_to_zugferd_compliant_invoice">6.2.1. Example: convert 2 PDF files to ZUGFeRD compliant invoice</a></h4>
 <div class="paragraph">
 <p>Let&#8217;s start with downloading the latest Konik distribution (&gt;1.0.0) and other dependencies. Here is the list of all required dependencies:</p>
 </div>
@@ -1164,7 +1164,7 @@ drwxrwxr-x. 5 konik konik   140 01-26 15:15 ..
 </div>
 </div>
 <div class="sect1 col-lg-12">
-<h2 id="z_rechnung_sdk"><a class="anchor" href="#z_rechnung_sdk"></a>7. Z-RECHNUNG SDK</h2>
+<h2 id="z_rechnung_sdk"><a class="anchor" href="#z_rechnung_sdk"></a><a class="link" href="#z_rechnung_sdk">7. Z-RECHNUNG SDK</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Konik library integrates with <a href="https://z-rechnung.com/">Z-RECHNUNG</a> using SDK components.
@@ -1172,7 +1172,7 @@ It allows using all Z-RECHNUNG features directly from your project that uses Kon
 This documentation describes how to start using Konik Z-RECHNUNG SDK and use all the Z-RECHNUNG features in your project.</p>
 </div>
 <div class="sect2">
-<h3 id="before_you_start"><a class="anchor" href="#before_you_start"></a>7.1. Before you start</h3>
+<h3 id="before_you_start"><a class="anchor" href="#before_you_start"></a><a class="link" href="#before_you_start">7.1. Before you start</a></h3>
 <div class="paragraph">
 <p>Before you start, Register on Z-RECHNUNG and then go to the <a href="https://app.z-rechnung.com/#/settings-application">Z-RECHNUNG Application Settings</a> page and claim your API key.</p>
 </div>
@@ -1181,7 +1181,7 @@ This documentation describes how to start using Konik Z-RECHNUNG SDK and use all
 </div>
 </div>
 <div class="sect2">
-<h3 id="setup_config_class"><a class="anchor" href="#setup_config_class"></a>7.2. Setup config class</h3>
+<h3 id="setup_config_class"><a class="anchor" href="#setup_config_class"></a><a class="link" href="#setup_config_class">7.2. Setup config class</a></h3>
 <div class="paragraph">
 <p>Now you can instantiate SDK main configuration class - <a href="https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/ZinvoiceApiConfig.java">ZinvoiceApiConfig.java</a>. It&#8217;s recommended to instantiate this
 class as a commonly shared object e.g. Spring Framework bean component. You only need to create one instance and use it as a dependency everywhere
@@ -1189,11 +1189,11 @@ this object is required. Here is the code sample of the method that creates API 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public ZinvoiceApiConfig zinvoiceApiConfig() {
-   return new ZinvoiceApiConfig("f4eb6f7b-e3c3-43b2-a456-c116315102b6", <i class="conum" data-value="1"></i><b>(1)</b>
-         "https://app.z-rechnung.com" <i class="conum" data-value="2"></i><b>(2)</b>
-   );
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public ZinvoiceApiConfig zinvoiceApiConfig() {
+      return new ZinvoiceApiConfig("f4eb6f7b-e3c3-43b2-a456-c116315102b6", <i class="conum" data-value="1"></i><b>(1)</b>
+            "https://app.z-rechnung.com" <i class="conum" data-value="2"></i><b>(2)</b>
+      );
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1209,14 +1209,14 @@ this object is required. Here is the code sample of the method that creates API 
 </table>
 </div>
 <div class="sect3">
-<h4 id="setup_sdk_config_class_with_properties_file"><a class="anchor" href="#setup_sdk_config_class_with_properties_file"></a>7.2.1. Setup SDK config class with properties file</h4>
+<h4 id="setup_sdk_config_class_with_properties_file"><a class="anchor" href="#setup_sdk_config_class_with_properties_file"></a><a class="link" href="#setup_sdk_config_class_with_properties_file">7.2.1. Setup SDK config class with properties file</a></h4>
 <div class="paragraph">
 <p>You can also instantiate <code>ZinvoiceApiConfig</code> class using default constructor. In that case values from properties file or passed as
 a system property will be loaded. You can define them in a property file stored in <code>src/main/resources</code> or pass them as a system property with <code>-D</code> option.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">io.konik.zinvoice.api-key=1234-1234-1234-1234
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">io.konik.zinvoice.api-key=1234-1234-1234-1234
 io.konik.zinvoice.url=https://app.Z-RECHNUNG.com</code></pre>
 </div>
 </div>
@@ -1226,17 +1226,17 @@ io.konik.zinvoice.url=https://app.Z-RECHNUNG.com</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setup_http_client_class"><a class="anchor" href="#setup_http_client_class"></a>7.3. Setup HTTP client class</h3>
+<h3 id="setup_http_client_class"><a class="anchor" href="#setup_http_client_class"></a><a class="link" href="#setup_http_client_class">7.3. Setup HTTP client class</a></h3>
 <div class="paragraph">
 <p>Each SDK component uses <a href="https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/http/ZinvoiceHttpClient.java">ZinvoiceHttpClient.java</a> class for establishing Z-RECHNUNG connection. It uses <code>ZinvoiceApiConfig</code> instance
 to get API key and Z-RECHNUNG absolute URL. Each request contains header <code>API-KEY: {your API key here}</code> to authenticate the user.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public ZinvoiceHttpClient zinvoiceHttpClient() {
-   return new ZinvoiceHttpClient(zinvoiceApiConfig() <i class="conum" data-value="3"></i><b>(3)</b>
-   );
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public ZinvoiceHttpClient zinvoiceHttpClient() {
+      return new ZinvoiceHttpClient(zinvoiceApiConfig() <i class="conum" data-value="3"></i><b>(3)</b>
+      );
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1249,7 +1249,7 @@ to get API key and Z-RECHNUNG absolute URL. Each request contains header <code>A
 </div>
 </div>
 <div class="sect2">
-<h3 id="access_z_rechnung_services"><a class="anchor" href="#access_z_rechnung_services"></a>7.4. Access Z-RECHNUNG services</h3>
+<h3 id="access_z_rechnung_services"><a class="anchor" href="#access_z_rechnung_services"></a><a class="link" href="#access_z_rechnung_services">7.4. Access Z-RECHNUNG services</a></h3>
 <div class="paragraph">
 <p>Currently SDK provides components:</p>
 </div>
@@ -1264,16 +1264,16 @@ to get API key and Z-RECHNUNG absolute URL. Each request contains header <code>A
 </ul>
 </div>
 <div class="sect3">
-<h4 id="invoicesapi"><a class="anchor" href="#invoicesapi"></a>7.4.1. InvoicesApi</h4>
+<h4 id="invoicesapi"><a class="anchor" href="#invoicesapi"></a><a class="link" href="#invoicesapi">7.4.1. InvoicesApi</a></h4>
 <div class="paragraph">
 <p><code>InvoicesApi</code> implementation class <a href="https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoices/RestInvoicesApi.java">RestInvoicesApi.java</a> allows you to access your Z-RECHNUNG&#8217;s invoices outbox
 and inbox.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public InvoicesApi invoicesApi() {
-   return new RestInvoicesApi(zinvoiceHttpClient()); <i class="conum" data-value="6"></i><b>(6)</b>
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public InvoicesApi invoicesApi() {
+      return new RestInvoicesApi(zinvoiceHttpClient()); <i class="conum" data-value="6"></i><b>(6)</b>
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1286,7 +1286,7 @@ and inbox.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="invoiceapi"><a class="anchor" href="#invoiceapi"></a>7.4.2. InvoiceApi</h4>
+<h4 id="invoiceapi"><a class="anchor" href="#invoiceapi"></a><a class="link" href="#invoiceapi">7.4.2. InvoiceApi</a></h4>
 <div class="paragraph">
 <p><code>InvoiceApi</code> implementation class <a href="https://github.com/konik-io/konik/blob/develop/src/main/java/io/konik/sdk/invoice/RestInvoiceApi.java">RestInvoiceApi.java</a> allows you to manage all aspects of the invoice object, including:
 creating, loading, updating, deleting, downloading, sending to email and uploading ZUGFeRD compatible invoice.</p>
@@ -1298,10 +1298,10 @@ Keep in mind that some features (like downloading PDF invoice for the first time
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">public InvoiceApi invoiceApi() {
-   return new RestInvoiceApi(zinvoiceHttpClient()); <i class="conum" data-value="7"></i><b>(7)</b>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public InvoiceApi invoiceApi() {
+      return new RestInvoiceApi(zinvoiceHttpClient()); <i class="conum" data-value="7"></i><b>(7)</b>
 
-}</code></pre>
+   }</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1315,12 +1315,12 @@ Keep in mind that some features (like downloading PDF invoice for the first time
 </div>
 </div>
 <div class="sect2">
-<h3 id="examples"><a class="anchor" href="#examples"></a>7.5. Examples</h3>
+<h3 id="examples"><a class="anchor" href="#examples"></a><a class="link" href="#examples">7.5. Examples</a></h3>
 <div class="sect3">
-<h4 id="loading_all_created_invoices"><a class="anchor" href="#loading_all_created_invoices"></a>7.5.1. Loading all created invoices</h4>
+<h4 id="loading_all_created_invoices"><a class="anchor" href="#loading_all_created_invoices"></a><a class="link" href="#loading_all_created_invoices">7.5.1. Loading all created invoices</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">InvoicesApi invoicesApi = new RestInvoicesApi(zinvoiceHttpClient);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">InvoicesApi invoicesApi = new RestInvoicesApi(zinvoiceHttpClient);
 List&lt;InvoicesListElement&gt; outbox = invoicesApi.outbox();
 for (InvoiceListElement invoice : outbox) {
     System.out.println(invoice.getId());
@@ -1329,10 +1329,10 @@ for (InvoiceListElement invoice : outbox) {
 </div>
 </div>
 <div class="sect3">
-<h4 id="loading_invoice_via_id"><a class="anchor" href="#loading_invoice_via_id"></a>7.5.2. Loading invoice via ID</h4>
+<h4 id="loading_invoice_via_id"><a class="anchor" href="#loading_invoice_via_id"></a><a class="link" href="#loading_invoice_via_id">7.5.2. Loading invoice via ID</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
 String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
 InvoiceDocument invoiceDocument = invoiceApi.getInvoice(invoiceId);
 Invoice invoice = invoiceDocument.getInvoice();</code></pre>
@@ -1340,10 +1340,10 @@ Invoice invoice = invoiceDocument.getInvoice();</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="downloading_pdf_invoice"><a class="anchor" href="#downloading_pdf_invoice"></a>7.5.3. Downloading PDF invoice</h4>
+<h4 id="downloading_pdf_invoice"><a class="anchor" href="#downloading_pdf_invoice"></a><a class="link" href="#downloading_pdf_invoice">7.5.3. Downloading PDF invoice</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
 String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
 InputStream pdf = invoiceApi.downloadInvoiceAsPDF(invoiceId);
 
@@ -1354,10 +1354,10 @@ fos.close();</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sending_invoice_via_e_mail"><a class="anchor" href="#sending_invoice_via_e_mail"></a>7.5.4. Sending invoice via e-mail</h4>
+<h4 id="sending_invoice_via_e_mail"><a class="anchor" href="#sending_invoice_via_e_mail"></a><a class="link" href="#sending_invoice_via_e_mail">7.5.4. Sending invoice via e-mail</a></h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">InvoiceApi invoiceApi = new RestInvoiceApi(zinvoiceHttpClient);
 String invoiceId = "b3f3cb68-5524-11e5-bd6a-28d24459a4d4";
 invoiceApi.sendInvoice(invoiceId, "joe.doe@example.com", "You can put a message here");</code></pre>
 </div>
@@ -1365,7 +1365,7 @@ invoiceApi.sendInvoice(invoiceId, "joe.doe@example.com", "You can put a message 
 </div>
 </div>
 <div class="sect2">
-<h3 id="test_classes"><a class="anchor" href="#test_classes"></a>7.6. Test classes</h3>
+<h3 id="test_classes"><a class="anchor" href="#test_classes"></a><a class="link" href="#test_classes">7.6. Test classes</a></h3>
 <div class="paragraph">
 <p>If you want to see in details how the Konik SDK works, take look at the unit test cases provided with the SDK:</p>
 </div>
@@ -1435,14 +1435,26 @@ invoiceApi.sendInvoice(invoiceId, "joe.doe@example.com", "You can put a message 
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2017
+               Copyright &copy; 8gears AG 2015-2019
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
-               | <a href="http://www.google.com/recaptcha/mailhide/d?k=01q8vnbfNmxk0T5DM_GteAAg==&amp;c=zwuGbJbE2eqJvqdTIykGHA=="
-                  onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\07501q8vnbfNmxk0T5DM_GteAAg\75\75\46c\75zwuGbJbE2eqJvqdTIykGHA\75\075', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;"
-                  title="Reveal the Email address">Kontakt</a>
+               | <a href="#" data-toggle="modal" data-target=".bs-contact-modal" title="Kontakt">Kontakt</a>
             </p>
+            <div class="modal fade bs-contact-modal" tabindex="-1" role="dialog" aria-labelledby="modalKontactTitle"
+                 aria-hidden="true">
+               <div class="modal-dialog modal-sm">
+                  <div class="modal-content jumbotron">
+                     <h3 class="modal-title" id="modalKontactTitle">Kontakt E-Mail:</h3>
+                     <span> <i class="fa fa-envelope fa-3"></i> hello<span style="display: none">_no_</span>@<span
+                                style="display: none">_no_</span>konik.io
+               </span>
+                     <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+               </span>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </div>
