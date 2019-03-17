@@ -8,7 +8,7 @@ The published result is located at [konik.io](http://konik.io).
 
 ## Setup
 
-Before you start make sure Java and Maven are installed on your system and work correctly.
+Before you start make sure Java (1.8) and Maven are installed on your system and work correctly.
 
 After Checking out the code
 

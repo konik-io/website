@@ -12,7 +12,7 @@ Vadim Bauer
 :3: http://www.e-docs-standards.de/cms/images/Publikationen/Leitfaden/Franken_Loosen_Bernius_-_eRechnung_Fallbeispiel_THW.pdf
 :4: http://www.task-edoc.de/edoc.shtml
 :5: http://www.ferd-net.de/front_content.php?idart=931
-:6: http://www.bmi.bund.de/SharedDocs/Downloads/DE/Broschueren/2014/e-rechnung.html
+:6: https://www.verwaltung-innovativ.de/SharedDocs/Publikationen/Organisation/e_rechnung_leitfaden_online.pdf?__blob=publicationFile&v=3
 :7: http://www.project-consult.de/ecm/news/2013/zugferd_standard_f%C3%BCr_die_elektronische_rechnung#comment-2547
 
 
