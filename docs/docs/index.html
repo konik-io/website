@@ -200,7 +200,7 @@
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">   public void transformInvoiceToXml(Invoice invoice) throws IOException {
       InvoiceTransformer transformer = new InvoiceTransformer(); <i class="conum" data-value="1"></i><b>(1)</b>
-      FileOutputStream outputStream = new FileOutputStream("target/minimal-invoice.xml");
+      FileOutputStream outputStream = openOutputStream(new File("build/test-results/pdfs/minimal-invoice.xml"));
       transformer.fromModel(invoice, outputStream); <i class="conum" data-value="2"></i><b>(2)</b>
    }</code></pre>
 </div>
@@ -229,7 +229,7 @@
       Invoice invoice = createInvoice();
       PdfHandler handler = new PdfHandler(); <i class="conum" data-value="1"></i><b>(1)</b>
       InputStream inputPdf = getClass().getResourceAsStream("/acme_invoice-42.pdf");
-      OutputStream resultingPdf = new FileOutputStream("target/acme_invoice-42_ZUGFeRD.pdf");
+      OutputStream resultingPdf = openOutputStream(new File("build/test-results/pdfs/acme_invoice-42_ZUGFeRD.pdf"));
       handler.appendInvoice(invoice, inputPdf, resultingPdf); <i class="conum" data-value="2"></i><b>(2)</b>
    }</code></pre>
 </div>
