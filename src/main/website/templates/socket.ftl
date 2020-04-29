@@ -3,7 +3,7 @@
       <div class="row">
          <div class="col-lg-12">
             <p class="pull-right">
-               Copyright &copy; 8gears AG 2015-2019
+               Copyright &copy; 8gears AG 2015-2020
 <!--                | <a href="/en/index.html">English</a> -->
                | <a href="/legal-notice.html">Impressum</a> 
                | <a href="/license.html">Lizenz</a>
@@ -18,7 +18,7 @@
                                 style="display: none">_no_</span>konik.io
                </span>
                      <h3 class="modal-title" id="modalKontactTitleTel">Telefon:</h3>
-                     <span> <i class="fa fa-phone-square fa-3"></i> +41 (0)78 68 38 023
+                     <span> <i class="fa fa-phone-square fa-3"></i> +41 44 500 86 00
                </span>
                   </div>
                </div>
