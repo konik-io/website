@@ -242,21 +242,25 @@
         <lastmod>2015-03-03</lastmod>
     </url>
     <url>
+        <loc>http://konik.io/index.html</loc>
+        <lastmod>2014-09-26</lastmod>
+    </url>
+    <url>
         <loc>http://konik.io/en/index.html</loc>
         <lastmod>2014-09-22</lastmod>
     </url>
 
     <url>
         <loc>http://konik.io/docs/api/konik/</loc>
-        <lastmod>2019-12-16</lastmod>
+        <lastmod>2020-04-30</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/pdfbox-carriage/</loc>
-        <lastmod>2019-12-16</lastmod>
+        <lastmod>2020-04-30</lastmod>
     </url>
     <url>
         <loc>http://konik.io/docs/api/itext-carriage/</loc>
-        <lastmod>2019-12-16</lastmod>
+        <lastmod>2020-04-30</lastmod>
     </url>
 
 </urlset>
