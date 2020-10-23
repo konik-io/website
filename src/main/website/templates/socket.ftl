@@ -36,6 +36,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/languages/bash.min.js"></script>
 <script src="//cdn.jsdelivr.net/headroomjs/0.7.0/headroom.min.js"></script>
 <script src="//cdn.jsdelivr.net/headroomjs/0.7.0/jQuery.headroom.min.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7006577.js"></script>
 <script src="/js/konik.js"></script>
 </body>
 
